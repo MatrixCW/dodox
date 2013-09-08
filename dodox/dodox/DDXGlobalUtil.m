@@ -15,6 +15,7 @@
 @property Reachability *internetReachableDetector;
 @property CLLocationManager *locationManager;
 @property (readwrite) CLLocationCoordinate2D myCurrentPosotion;
+@property (readwrite) NSString *currentSelectedSpeciality;
 
 @end
 
@@ -68,5 +69,11 @@ static DDXGlobalUtil *sharedInstance;
     return [NSString stringWithFormat:@"latitude: %f longitude: %f", self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.longitude];
 }
 
+
+-(void)saveSpeciality:(NSString*)speciality{
+    
+    self.currentSelectedSpeciality = speciality;
+    
+}
 
 @end

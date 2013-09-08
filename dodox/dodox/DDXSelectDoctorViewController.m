@@ -9,14 +9,15 @@
 #import "DDXSelectDoctorViewController.h"
 #import "DDXDoctorTableViewCell.h"
 #import "DDXConstants.h"
+#import "DDXGlobalUtil.h"
 
 @interface DDXSelectDoctorViewController ()
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *sortingChoice;
-@property (weak, nonatomic) IBOutlet UILabel *title;
+@property (weak, nonatomic) IBOutlet UINavigationBar *titleBar;
+
 @property (weak, nonatomic) IBOutlet UITableView *doctorTable;
 @property NSMutableArray *doctors;
-@property NSMutableArray *doctorAvatars;
 
 @end
 
@@ -34,15 +35,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    DDXGlobalUtil *sharedInstance = [DDXGlobalUtil getSharedInstance];
+    self.titleBar.topItem.title = sharedInstance.currentSelectedSpeciality;
 	// Do any additional setup after loading the view.
-    [self.sortingChoice addTarget:self
-                         action:@selector(pickOne:)
-               forControlEvents:UIControlEventValueChanged];
+    //[self.sortingChoice addTarget:self
+                        // action:@selector(pickOne:)
+               //forControlEvents:UIControlEventValueChanged];
 }
 
--(void) pickOne:(id)sender{
-    UISegmentedControl *segmentedControl = (UISegmentedControl *)sender;
-}
+//-(void) pickOne:(id)sender{
+ //   UISegmentedControl *segmentedControl = (UISegmentedControl *)sender;
+//}
 
 /*
 #pragma mark UITableView DataSource

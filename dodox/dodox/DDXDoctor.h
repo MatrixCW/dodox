@@ -19,4 +19,14 @@
 
 @property UIImage *doctorAvatar;
 
+-(id)initWithName:(NSString*)doctorName
+          address:(NSString*)doctorAddress
+       coordinate:(CLLocationCoordinate2D) position
+          andRate:(CGFloat)rate;
+
+- (NSComparisonResult)compareName:(DDXDoctor *)otherObject;
+- (NSComparisonResult)compareRate:(DDXDoctor *)otherObject;
+- (NSComparisonResult)compareDistance:(DDXDoctor *)otherObject;
+
+
 @end

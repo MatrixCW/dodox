@@ -7,7 +7,7 @@
 //
 
 #import "DDXDoctor.h"
-
+#import "DDXGlobalUtil.h"
 
 @interface DDXDoctor ()
 
@@ -15,6 +15,8 @@
 @property (readwrite) NSString *doctorAddress;
 @property (readwrite) CGFloat rate;
 @property (readwrite) CLLocationCoordinate2D position;
+@property (readwrite) CGFloat distance;
+
 
 
 @end
@@ -34,6 +36,8 @@
         self.doctorAddress = doctorAddress;
         self.position = position;
         self.rate = rate;
+        
+        [self calculateDistance];
     }
     return self;
     
@@ -48,12 +52,29 @@
 
 - (NSComparisonResult)compareRate:(DDXDoctor *)otherObject{
     
-    return [self.doctorName compare:otherObject.doctorName];
+    return [[NSNumber numberWithDouble:self.rate] compare:[NSNumber numberWithDouble:otherObject.rate]];
     
 }
 - (NSComparisonResult)compareDistance:(DDXDoctor *)otherObject{
     
-    return [self.doctorName compare:otherObject.doctorName];
+    return [[NSNumber numberWithDouble:self.distance] compare:[NSNumber numberWithDouble:otherObject.distance]];
+    
+}
+
+
+-(void)calculateDistance{
+    
+    DDXGlobalUtil *sharedInstance = [DDXGlobalUtil getSharedInstance];
+    CLLocation *locA = [[CLLocation alloc] initWithLatitude:sharedInstance.myCurrentPosotion.latitude
+                                                  longitude:sharedInstance.myCurrentPosotion.longitude];
+    
+    CLLocation *locB = [[CLLocation alloc] initWithLatitude:self.position.latitude
+                                                  longitude:self.position.longitude];
+    
+    CLLocationDistance distance = [locA distanceFromLocation:locB];
+    
+    self.distance = distance;
+
     
 }
 

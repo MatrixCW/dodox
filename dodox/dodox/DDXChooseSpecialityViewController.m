@@ -9,6 +9,7 @@
 #import "DDXChooseSpecialityViewController.h"
 #import "DDXSpecialityTableViewCell.h"
 #import "DDXConstants.h"
+#import "DDXGlobalUtil.h"
 
 @interface DDXChooseSpecialityViewController ()
 
@@ -121,8 +122,19 @@
 #pragma mark UITableView Delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    DDXSpecialityTableViewCell *cell = (DDXSpecialityTableViewCell*)[tableView cellForRowAtIndexPath:indexPath];
+    
+    [[DDXGlobalUtil getSharedInstance] saveSpeciality:cell.speciality.text];
+    
+    [self performSegueWithIdentifier:SEGUE_FROM_SPECIALITY_TO_CHOOSE_DOCTOR sender:Nil];
+    
 }
 
+-(void)go{
+    
+    [self performSegueWithIdentifier:SEGUE_FROM_SPECIALITY_TO_CHOOSE_DOCTOR sender:Nil];
+    
+}
 - (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

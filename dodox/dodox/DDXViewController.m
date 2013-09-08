@@ -25,9 +25,9 @@
     if([sharedUtil isNetworkActive]){
     
         NSLog(@"%@",[sharedUtil findMyCurrentLocation]);
-    //[self performSelector:@selector(goToNextSceneWithIdentifier:)
-      //         withObject:SEGUE_FROM_START_TO_CHOOSE_SPECIAL
-        //       afterDelay:1.5];
+        [self performSelector:@selector(goToNextSceneWithIdentifier:)
+               withObject:SEGUE_FROM_START_TO_CHOOSE_SPECIAL
+               afterDelay:1.5];
     }
     else{
         

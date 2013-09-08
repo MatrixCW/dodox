@@ -30,6 +30,8 @@
 		A00F364A17DCC3F000BD0467 /* DDXGlobalUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A00F364717DCC35B00BD0467 /* DDXGlobalUtil.m */; };
 		A00F365317DCC64200BD0467 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A00F365217DCC64200BD0467 /* Reachability.m */; };
 		A00F365517DCC96800BD0467 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A00F365417DCC96800BD0467 /* SystemConfiguration.framework */; };
+		A00F365B17DCE06A00BD0467 /* cartoon-doctor.png in Resources */ = {isa = PBXBuildFile; fileRef = A00F365A17DCE06A00BD0467 /* cartoon-doctor.png */; };
+		A00F365E17DCECFD00BD0467 /* DDXLeftToRightSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = A00F365D17DCECFD00BD0467 /* DDXLeftToRightSegue.m */; };
 		FBCB50AC17DC81B70099AA5C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCB50AB17DC81B70099AA5C /* Foundation.framework */; };
 		FBCB50AE17DC81B70099AA5C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCB50AD17DC81B70099AA5C /* CoreGraphics.framework */; };
 		FBCB50B017DC81B70099AA5C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCB50AF17DC81B70099AA5C /* UIKit.framework */; };
@@ -92,6 +94,9 @@
 		A00F365117DCC64200BD0467 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		A00F365217DCC64200BD0467 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		A00F365417DCC96800BD0467 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		A00F365A17DCE06A00BD0467 /* cartoon-doctor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cartoon-doctor.png"; sourceTree = "<group>"; };
+		A00F365C17DCECFD00BD0467 /* DDXLeftToRightSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXLeftToRightSegue.h; sourceTree = "<group>"; };
+		A00F365D17DCECFD00BD0467 /* DDXLeftToRightSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXLeftToRightSegue.m; sourceTree = "<group>"; };
 		FBCB50A817DC81B70099AA5C /* dodox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dodox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBCB50AB17DC81B70099AA5C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FBCB50AD17DC81B70099AA5C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -208,6 +213,8 @@
 		A00F364817DCC36200BD0467 /* Common Util */ = {
 			isa = PBXGroup;
 			children = (
+				A00F365C17DCECFD00BD0467 /* DDXLeftToRightSegue.h */,
+				A00F365D17DCECFD00BD0467 /* DDXLeftToRightSegue.m */,
 				A00F365117DCC64200BD0467 /* Reachability.h */,
 				A00F365217DCC64200BD0467 /* Reachability.m */,
 				FBCB50E517DC85960099AA5C /* DDXConstants.h */,
@@ -306,6 +313,7 @@
 		FBCB50E017DC83E20099AA5C /* pictures */ = {
 			isa = PBXGroup;
 			children = (
+				A00F365A17DCE06A00BD0467 /* cartoon-doctor.png */,
 				A00F362717DCB83E00BD0467 /* rate stars */,
 				A00F361717DCAA0D00BD0467 /* specialities */,
 				FBCB50E317DC84800099AA5C /* doctor.jpg */,
@@ -392,6 +400,7 @@
 			files = (
 				A00F363617DCB85300BD0467 /* StarFullLarge.png in Resources */,
 				A00F362617DCB50D00BD0467 /* doctorTableViewCell.xib in Resources */,
+				A00F365B17DCE06A00BD0467 /* cartoon-doctor.png in Resources */,
 				A00F360E17DCA8F900BD0467 /* aesthetic medicine doctor.jpg in Resources */,
 				A00F363117DCB85300BD0467 /* StarEmpty@2x.png in Resources */,
 				A00F360C17DCA8DE00BD0467 /* cardiologist.jpg in Resources */,
@@ -437,6 +446,7 @@
 				FBCB50B817DC81B70099AA5C /* main.m in Sources */,
 				FBCB50BC17DC81B70099AA5C /* DDXAppDelegate.m in Sources */,
 				A00F361C17DCB36300BD0467 /* DDXSelectDoctorViewController.m in Sources */,
+				A00F365E17DCECFD00BD0467 /* DDXLeftToRightSegue.m in Sources */,
 				FBCB50F117DC917E0099AA5C /* DDXSpecialityTableViewCell.m in Sources */,
 				A00F363A17DCB86A00BD0467 /* DYRateView.m in Sources */,
 				A00F365317DCC64200BD0467 /* Reachability.m in Sources */,
