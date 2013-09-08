@@ -7,6 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A00F360A17DCA1BA00BD0467 /* cancer specialist.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A00F360917DCA1BA00BD0467 /* cancer specialist.jpg */; };
+		A00F360C17DCA8DE00BD0467 /* cardiologist.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A00F360B17DCA8DE00BD0467 /* cardiologist.jpg */; };
+		A00F360E17DCA8F900BD0467 /* aesthetic medicine doctor.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A00F360D17DCA8F900BD0467 /* aesthetic medicine doctor.jpg */; };
+		A00F361417DCA90000BD0467 /* psychologist.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A00F361017DCA90000BD0467 /* psychologist.jpg */; };
+		A00F361617DCA90000BD0467 /* chiropracter.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A00F361217DCA90000BD0467 /* chiropracter.jpg */; };
+		A00F361917DCACC600BD0467 /* cardiothoracic surgeon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A00F361817DCACC600BD0467 /* cardiothoracic surgeon.jpg */; };
+		A00F361C17DCB36300BD0467 /* DDXSelectDoctorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A00F361B17DCB36300BD0467 /* DDXSelectDoctorViewController.m */; };
+		A00F362617DCB50D00BD0467 /* doctorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A00F362517DCB50D00BD0467 /* doctorTableViewCell.xib */; };
+		A00F363017DCB85300BD0467 /* StarEmpty.png in Resources */ = {isa = PBXBuildFile; fileRef = A00F362817DCB85300BD0467 /* StarEmpty.png */; };
+		A00F363117DCB85300BD0467 /* StarEmpty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A00F362917DCB85300BD0467 /* StarEmpty@2x.png */; };
+		A00F363217DCB85300BD0467 /* StarEmptyLarge.png in Resources */ = {isa = PBXBuildFile; fileRef = A00F362A17DCB85300BD0467 /* StarEmptyLarge.png */; };
+		A00F363317DCB85300BD0467 /* StarEmptyLarge@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A00F362B17DCB85300BD0467 /* StarEmptyLarge@2x.png */; };
+		A00F363417DCB85300BD0467 /* StarFull.png in Resources */ = {isa = PBXBuildFile; fileRef = A00F362C17DCB85300BD0467 /* StarFull.png */; };
+		A00F363517DCB85300BD0467 /* StarFull@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A00F362D17DCB85300BD0467 /* StarFull@2x.png */; };
+		A00F363617DCB85300BD0467 /* StarFullLarge.png in Resources */ = {isa = PBXBuildFile; fileRef = A00F362E17DCB85300BD0467 /* StarFullLarge.png */; };
+		A00F363717DCB85300BD0467 /* StarFullLarge@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A00F362F17DCB85300BD0467 /* StarFullLarge@2x.png */; };
+		A00F363A17DCB86A00BD0467 /* DYRateView.m in Sources */ = {isa = PBXBuildFile; fileRef = A00F363917DCB86A00BD0467 /* DYRateView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A00F363D17DCB8D500BD0467 /* DDXDoctorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A00F363C17DCB8D500BD0467 /* DDXDoctorTableViewCell.m */; };
+		A00F364217DCBD8100BD0467 /* DDXSpeciality.m in Sources */ = {isa = PBXBuildFile; fileRef = A00F364117DCBD8100BD0467 /* DDXSpeciality.m */; };
+		A00F364517DCC0BE00BD0467 /* DDXDoctor.m in Sources */ = {isa = PBXBuildFile; fileRef = A00F364417DCC0BE00BD0467 /* DDXDoctor.m */; };
+		A00F364A17DCC3F000BD0467 /* DDXGlobalUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A00F364717DCC35B00BD0467 /* DDXGlobalUtil.m */; };
+		A00F365317DCC64200BD0467 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A00F365217DCC64200BD0467 /* Reachability.m */; };
+		A00F365517DCC96800BD0467 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A00F365417DCC96800BD0467 /* SystemConfiguration.framework */; };
 		FBCB50AC17DC81B70099AA5C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCB50AB17DC81B70099AA5C /* Foundation.framework */; };
 		FBCB50AE17DC81B70099AA5C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCB50AD17DC81B70099AA5C /* CoreGraphics.framework */; };
 		FBCB50B017DC81B70099AA5C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCB50AF17DC81B70099AA5C /* UIKit.framework */; };
@@ -21,12 +44,11 @@
 		FBCB50CD17DC81B70099AA5C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCB50AF17DC81B70099AA5C /* UIKit.framework */; };
 		FBCB50D517DC81B70099AA5C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FBCB50D317DC81B70099AA5C /* InfoPlist.strings */; };
 		FBCB50D717DC81B70099AA5C /* dodoxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCB50D617DC81B70099AA5C /* dodoxTests.m */; };
-		FBCB50E217DC83F30099AA5C /* doctor.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FBCB50E117DC83F30099AA5C /* doctor.jpg */; };
-		FBCB50E417DC84800099AA5C /* doctor2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FBCB50E317DC84800099AA5C /* doctor2.jpg */; };
+		FBCB50E417DC84800099AA5C /* doctor.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FBCB50E317DC84800099AA5C /* doctor.jpg */; };
 		FBCB50EA17DC87E00099AA5C /* DDXChooseSpecialityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCB50E917DC87E00099AA5C /* DDXChooseSpecialityViewController.m */; };
-		FBCB50EC17DC88880099AA5C /* dental.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FBCB50EB17DC88880099AA5C /* dental.jpg */; };
+		FBCB50EC17DC88880099AA5C /* dentist.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FBCB50EB17DC88880099AA5C /* dentist.jpg */; };
 		FBCB50EE17DC90140099AA5C /* SpecialityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBCB50ED17DC90140099AA5C /* SpecialityTableViewCell.xib */; };
-		FBCB50F117DC917E0099AA5C /* DDXCustomizedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCB50F017DC917E0099AA5C /* DDXCustomizedTableViewCell.m */; };
+		FBCB50F117DC917E0099AA5C /* DDXSpecialityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCB50F017DC917E0099AA5C /* DDXSpecialityTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +62,36 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A00F360917DCA1BA00BD0467 /* cancer specialist.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cancer specialist.jpg"; sourceTree = "<group>"; };
+		A00F360B17DCA8DE00BD0467 /* cardiologist.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cardiologist.jpg; sourceTree = "<group>"; };
+		A00F360D17DCA8F900BD0467 /* aesthetic medicine doctor.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "aesthetic medicine doctor.jpg"; sourceTree = "<group>"; };
+		A00F361017DCA90000BD0467 /* psychologist.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = psychologist.jpg; sourceTree = "<group>"; };
+		A00F361217DCA90000BD0467 /* chiropracter.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chiropracter.jpg; sourceTree = "<group>"; };
+		A00F361817DCACC600BD0467 /* cardiothoracic surgeon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cardiothoracic surgeon.jpg"; sourceTree = "<group>"; };
+		A00F361A17DCB36300BD0467 /* DDXSelectDoctorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXSelectDoctorViewController.h; sourceTree = "<group>"; };
+		A00F361B17DCB36300BD0467 /* DDXSelectDoctorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXSelectDoctorViewController.m; sourceTree = "<group>"; };
+		A00F362517DCB50D00BD0467 /* doctorTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = doctorTableViewCell.xib; sourceTree = "<group>"; };
+		A00F362817DCB85300BD0467 /* StarEmpty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StarEmpty.png; sourceTree = "<group>"; };
+		A00F362917DCB85300BD0467 /* StarEmpty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StarEmpty@2x.png"; sourceTree = "<group>"; };
+		A00F362A17DCB85300BD0467 /* StarEmptyLarge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StarEmptyLarge.png; sourceTree = "<group>"; };
+		A00F362B17DCB85300BD0467 /* StarEmptyLarge@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StarEmptyLarge@2x.png"; sourceTree = "<group>"; };
+		A00F362C17DCB85300BD0467 /* StarFull.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StarFull.png; sourceTree = "<group>"; };
+		A00F362D17DCB85300BD0467 /* StarFull@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StarFull@2x.png"; sourceTree = "<group>"; };
+		A00F362E17DCB85300BD0467 /* StarFullLarge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StarFullLarge.png; sourceTree = "<group>"; };
+		A00F362F17DCB85300BD0467 /* StarFullLarge@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StarFullLarge@2x.png"; sourceTree = "<group>"; };
+		A00F363817DCB86A00BD0467 /* DYRateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYRateView.h; sourceTree = "<group>"; };
+		A00F363917DCB86A00BD0467 /* DYRateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYRateView.m; sourceTree = "<group>"; };
+		A00F363B17DCB8D500BD0467 /* DDXDoctorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXDoctorTableViewCell.h; sourceTree = "<group>"; };
+		A00F363C17DCB8D500BD0467 /* DDXDoctorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXDoctorTableViewCell.m; sourceTree = "<group>"; };
+		A00F364017DCBD8100BD0467 /* DDXSpeciality.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXSpeciality.h; sourceTree = "<group>"; };
+		A00F364117DCBD8100BD0467 /* DDXSpeciality.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXSpeciality.m; sourceTree = "<group>"; };
+		A00F364317DCC0BE00BD0467 /* DDXDoctor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXDoctor.h; sourceTree = "<group>"; };
+		A00F364417DCC0BE00BD0467 /* DDXDoctor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXDoctor.m; sourceTree = "<group>"; };
+		A00F364617DCC35B00BD0467 /* DDXGlobalUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDXGlobalUtil.h; sourceTree = "<group>"; };
+		A00F364717DCC35B00BD0467 /* DDXGlobalUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDXGlobalUtil.m; sourceTree = "<group>"; };
+		A00F365117DCC64200BD0467 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		A00F365217DCC64200BD0467 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		A00F365417DCC96800BD0467 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		FBCB50A817DC81B70099AA5C /* dodox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dodox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBCB50AB17DC81B70099AA5C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FBCB50AD17DC81B70099AA5C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -59,15 +111,14 @@
 		FBCB50D217DC81B70099AA5C /* dodoxTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "dodoxTests-Info.plist"; sourceTree = "<group>"; };
 		FBCB50D417DC81B70099AA5C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FBCB50D617DC81B70099AA5C /* dodoxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dodoxTests.m; sourceTree = "<group>"; };
-		FBCB50E117DC83F30099AA5C /* doctor.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = doctor.jpg; sourceTree = "<group>"; };
-		FBCB50E317DC84800099AA5C /* doctor2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = doctor2.jpg; sourceTree = "<group>"; };
+		FBCB50E317DC84800099AA5C /* doctor.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = doctor.jpg; sourceTree = "<group>"; };
 		FBCB50E517DC85960099AA5C /* DDXConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXConstants.h; sourceTree = "<group>"; };
 		FBCB50E817DC87E00099AA5C /* DDXChooseSpecialityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXChooseSpecialityViewController.h; sourceTree = "<group>"; };
 		FBCB50E917DC87E00099AA5C /* DDXChooseSpecialityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXChooseSpecialityViewController.m; sourceTree = "<group>"; };
-		FBCB50EB17DC88880099AA5C /* dental.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dental.jpg; sourceTree = "<group>"; };
+		FBCB50EB17DC88880099AA5C /* dentist.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dentist.jpg; sourceTree = "<group>"; };
 		FBCB50ED17DC90140099AA5C /* SpecialityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpecialityTableViewCell.xib; sourceTree = "<group>"; };
-		FBCB50EF17DC917E0099AA5C /* DDXCustomizedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXCustomizedTableViewCell.h; sourceTree = "<group>"; };
-		FBCB50F017DC917E0099AA5C /* DDXCustomizedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXCustomizedTableViewCell.m; sourceTree = "<group>"; };
+		FBCB50EF17DC917E0099AA5C /* DDXSpecialityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXSpecialityTableViewCell.h; sourceTree = "<group>"; };
+		FBCB50F017DC917E0099AA5C /* DDXSpecialityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXSpecialityTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A00F365517DCC96800BD0467 /* SystemConfiguration.framework in Frameworks */,
 				FBCB50AE17DC81B70099AA5C /* CoreGraphics.framework in Frameworks */,
 				FBCB50B017DC81B70099AA5C /* UIKit.framework in Frameworks */,
 				FBCB50AC17DC81B70099AA5C /* Foundation.framework in Frameworks */,
@@ -94,6 +146,89 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A00F361717DCAA0D00BD0467 /* specialities */ = {
+			isa = PBXGroup;
+			children = (
+				A00F360D17DCA8F900BD0467 /* aesthetic medicine doctor.jpg */,
+				A00F360917DCA1BA00BD0467 /* cancer specialist.jpg */,
+				A00F360B17DCA8DE00BD0467 /* cardiologist.jpg */,
+				A00F361817DCACC600BD0467 /* cardiothoracic surgeon.jpg */,
+				A00F361217DCA90000BD0467 /* chiropracter.jpg */,
+				FBCB50EB17DC88880099AA5C /* dentist.jpg */,
+				A00F361017DCA90000BD0467 /* psychologist.jpg */,
+			);
+			name = specialities;
+			sourceTree = "<group>";
+		};
+		A00F362717DCB83E00BD0467 /* rate stars */ = {
+			isa = PBXGroup;
+			children = (
+				A00F362817DCB85300BD0467 /* StarEmpty.png */,
+				A00F362917DCB85300BD0467 /* StarEmpty@2x.png */,
+				A00F362A17DCB85300BD0467 /* StarEmptyLarge.png */,
+				A00F362B17DCB85300BD0467 /* StarEmptyLarge@2x.png */,
+				A00F362C17DCB85300BD0467 /* StarFull.png */,
+				A00F362D17DCB85300BD0467 /* StarFull@2x.png */,
+				A00F362E17DCB85300BD0467 /* StarFullLarge.png */,
+				A00F362F17DCB85300BD0467 /* StarFullLarge@2x.png */,
+			);
+			name = "rate stars";
+			sourceTree = "<group>";
+		};
+		A00F363E17DCBB0E00BD0467 /* step 1 choose speciality */ = {
+			isa = PBXGroup;
+			children = (
+				FBCB50E817DC87E00099AA5C /* DDXChooseSpecialityViewController.h */,
+				FBCB50E917DC87E00099AA5C /* DDXChooseSpecialityViewController.m */,
+				FBCB50ED17DC90140099AA5C /* SpecialityTableViewCell.xib */,
+				FBCB50EF17DC917E0099AA5C /* DDXSpecialityTableViewCell.h */,
+				FBCB50F017DC917E0099AA5C /* DDXSpecialityTableViewCell.m */,
+				A00F364017DCBD8100BD0467 /* DDXSpeciality.h */,
+				A00F364117DCBD8100BD0467 /* DDXSpeciality.m */,
+			);
+			name = "step 1 choose speciality";
+			sourceTree = "<group>";
+		};
+		A00F363F17DCBB2000BD0467 /* step 2 choose doctor */ = {
+			isa = PBXGroup;
+			children = (
+				A00F363817DCB86A00BD0467 /* DYRateView.h */,
+				A00F363917DCB86A00BD0467 /* DYRateView.m */,
+				A00F361A17DCB36300BD0467 /* DDXSelectDoctorViewController.h */,
+				A00F361B17DCB36300BD0467 /* DDXSelectDoctorViewController.m */,
+				A00F362517DCB50D00BD0467 /* doctorTableViewCell.xib */,
+				A00F363B17DCB8D500BD0467 /* DDXDoctorTableViewCell.h */,
+				A00F363C17DCB8D500BD0467 /* DDXDoctorTableViewCell.m */,
+				A00F364317DCC0BE00BD0467 /* DDXDoctor.h */,
+				A00F364417DCC0BE00BD0467 /* DDXDoctor.m */,
+			);
+			name = "step 2 choose doctor";
+			sourceTree = "<group>";
+		};
+		A00F364817DCC36200BD0467 /* Common Util */ = {
+			isa = PBXGroup;
+			children = (
+				A00F365117DCC64200BD0467 /* Reachability.h */,
+				A00F365217DCC64200BD0467 /* Reachability.m */,
+				FBCB50E517DC85960099AA5C /* DDXConstants.h */,
+				A00F364617DCC35B00BD0467 /* DDXGlobalUtil.h */,
+				A00F364717DCC35B00BD0467 /* DDXGlobalUtil.m */,
+			);
+			name = "Common Util";
+			sourceTree = "<group>";
+		};
+		A00F364917DCC37F00BD0467 /* Auto-generated */ = {
+			isa = PBXGroup;
+			children = (
+				FBCB50BA17DC81B70099AA5C /* DDXAppDelegate.h */,
+				FBCB50BB17DC81B70099AA5C /* DDXAppDelegate.m */,
+				FBCB50BD17DC81B70099AA5C /* Main.storyboard */,
+				FBCB50C017DC81B70099AA5C /* DDXViewController.h */,
+				FBCB50C117DC81B70099AA5C /* DDXViewController.m */,
+			);
+			name = "Auto-generated";
+			sourceTree = "<group>";
+		};
 		FBCB509F17DC81B70099AA5C = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +251,7 @@
 		FBCB50AA17DC81B70099AA5C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A00F365417DCC96800BD0467 /* SystemConfiguration.framework */,
 				FBCB50AB17DC81B70099AA5C /* Foundation.framework */,
 				FBCB50AD17DC81B70099AA5C /* CoreGraphics.framework */,
 				FBCB50AF17DC81B70099AA5C /* UIKit.framework */,
@@ -127,17 +263,10 @@
 		FBCB50B117DC81B70099AA5C /* dodox */ = {
 			isa = PBXGroup;
 			children = (
-				FBCB50BA17DC81B70099AA5C /* DDXAppDelegate.h */,
-				FBCB50BB17DC81B70099AA5C /* DDXAppDelegate.m */,
-				FBCB50BD17DC81B70099AA5C /* Main.storyboard */,
-				FBCB50E517DC85960099AA5C /* DDXConstants.h */,
-				FBCB50C017DC81B70099AA5C /* DDXViewController.h */,
-				FBCB50C117DC81B70099AA5C /* DDXViewController.m */,
-				FBCB50E817DC87E00099AA5C /* DDXChooseSpecialityViewController.h */,
-				FBCB50E917DC87E00099AA5C /* DDXChooseSpecialityViewController.m */,
-				FBCB50ED17DC90140099AA5C /* SpecialityTableViewCell.xib */,
-				FBCB50EF17DC917E0099AA5C /* DDXCustomizedTableViewCell.h */,
-				FBCB50F017DC917E0099AA5C /* DDXCustomizedTableViewCell.m */,
+				A00F364917DCC37F00BD0467 /* Auto-generated */,
+				A00F364817DCC36200BD0467 /* Common Util */,
+				A00F363E17DCBB0E00BD0467 /* step 1 choose speciality */,
+				A00F363F17DCBB2000BD0467 /* step 2 choose doctor */,
 				FBCB50C317DC81B70099AA5C /* Images.xcassets */,
 				FBCB50B217DC81B70099AA5C /* Supporting Files */,
 			);
@@ -177,9 +306,9 @@
 		FBCB50E017DC83E20099AA5C /* pictures */ = {
 			isa = PBXGroup;
 			children = (
-				FBCB50EB17DC88880099AA5C /* dental.jpg */,
-				FBCB50E317DC84800099AA5C /* doctor2.jpg */,
-				FBCB50E117DC83F30099AA5C /* doctor.jpg */,
+				A00F362717DCB83E00BD0467 /* rate stars */,
+				A00F361717DCAA0D00BD0467 /* specialities */,
+				FBCB50E317DC84800099AA5C /* doctor.jpg */,
 			);
 			name = pictures;
 			sourceTree = "<group>";
@@ -261,13 +390,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FBCB50EC17DC88880099AA5C /* dental.jpg in Resources */,
+				A00F363617DCB85300BD0467 /* StarFullLarge.png in Resources */,
+				A00F362617DCB50D00BD0467 /* doctorTableViewCell.xib in Resources */,
+				A00F360E17DCA8F900BD0467 /* aesthetic medicine doctor.jpg in Resources */,
+				A00F363117DCB85300BD0467 /* StarEmpty@2x.png in Resources */,
+				A00F360C17DCA8DE00BD0467 /* cardiologist.jpg in Resources */,
+				A00F363717DCB85300BD0467 /* StarFullLarge@2x.png in Resources */,
+				FBCB50EC17DC88880099AA5C /* dentist.jpg in Resources */,
+				A00F361617DCA90000BD0467 /* chiropracter.jpg in Resources */,
+				A00F363017DCB85300BD0467 /* StarEmpty.png in Resources */,
+				A00F360A17DCA1BA00BD0467 /* cancer specialist.jpg in Resources */,
 				FBCB50C417DC81B70099AA5C /* Images.xcassets in Resources */,
-				FBCB50E417DC84800099AA5C /* doctor2.jpg in Resources */,
+				A00F363217DCB85300BD0467 /* StarEmptyLarge.png in Resources */,
+				A00F363517DCB85300BD0467 /* StarFull@2x.png in Resources */,
+				FBCB50E417DC84800099AA5C /* doctor.jpg in Resources */,
+				A00F361917DCACC600BD0467 /* cardiothoracic surgeon.jpg in Resources */,
 				FBCB50B617DC81B70099AA5C /* InfoPlist.strings in Resources */,
-				FBCB50E217DC83F30099AA5C /* doctor.jpg in Resources */,
+				A00F361417DCA90000BD0467 /* psychologist.jpg in Resources */,
+				A00F363417DCB85300BD0467 /* StarFull.png in Resources */,
 				FBCB50EE17DC90140099AA5C /* SpecialityTableViewCell.xib in Resources */,
 				FBCB50BF17DC81B70099AA5C /* Main.storyboard in Resources */,
+				A00F363317DCB85300BD0467 /* StarEmptyLarge@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,11 +429,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A00F364A17DCC3F000BD0467 /* DDXGlobalUtil.m in Sources */,
 				FBCB50C217DC81B70099AA5C /* DDXViewController.m in Sources */,
+				A00F364217DCBD8100BD0467 /* DDXSpeciality.m in Sources */,
+				A00F363D17DCB8D500BD0467 /* DDXDoctorTableViewCell.m in Sources */,
 				FBCB50EA17DC87E00099AA5C /* DDXChooseSpecialityViewController.m in Sources */,
 				FBCB50B817DC81B70099AA5C /* main.m in Sources */,
 				FBCB50BC17DC81B70099AA5C /* DDXAppDelegate.m in Sources */,
-				FBCB50F117DC917E0099AA5C /* DDXCustomizedTableViewCell.m in Sources */,
+				A00F361C17DCB36300BD0467 /* DDXSelectDoctorViewController.m in Sources */,
+				FBCB50F117DC917E0099AA5C /* DDXSpecialityTableViewCell.m in Sources */,
+				A00F363A17DCB86A00BD0467 /* DYRateView.m in Sources */,
+				A00F365317DCC64200BD0467 /* Reachability.m in Sources */,
+				A00F364517DCC0BE00BD0467 /* DDXDoctor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +643,7 @@
 				FBCB50DC17DC81B70099AA5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FBCB50DD17DC81B70099AA5C /* Build configuration list for PBXNativeTarget "dodoxTests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +652,7 @@
 				FBCB50DF17DC81B70099AA5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

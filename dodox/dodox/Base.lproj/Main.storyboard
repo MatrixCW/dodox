@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4457.6" systemVersion="12A269" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="OMZ-lU-osy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4457.6" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="OMZ-lU-osy">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3682.6"/>
     </dependencies>
@@ -12,7 +12,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="doctor2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="wfJ-3g-04Q">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="doctor.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="wfJ-3g-04Q">
                                 <rect key="frame" x="0.0" y="142" width="320" height="426"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -40,7 +40,85 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="722" y="73"/>
+            <point key="canvasLocation" x="320" y="-683"/>
+        </scene>
+        <!--Select Doctor View Controller-->
+        <scene sceneID="zB1-6t-CPx">
+            <objects>
+                <viewController id="sf9-3G-SAf" customClass="DDXSelectDoctorViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lyc-P5-JgX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PK9-80-ul3">
+                                <rect key="frame" x="7" y="28" width="301" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="N9D-wk-abA">
+                                <rect key="frame" x="0.0" y="117" width="320" height="451"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VcH-cl-RZC">
+                                <rect key="frame" x="147" y="74" width="161" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Distance"/>
+                                    <segment title="Ratings"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sort according to:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7mC-Rc-SjT">
+                                <rect key="frame" x="7" y="77" width="132" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="3gx-Ew-G9B"/>
+                    <connections>
+                        <outlet property="doctorTable" destination="N9D-wk-abA" id="ZGN-e2-46m"/>
+                        <outlet property="sortingChoice" destination="VcH-cl-RZC" id="16S-M9-hhV"/>
+                        <outlet property="title" destination="PK9-80-ul3" id="Qj6-jf-fkv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cXb-pM-VC1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1325" y="-683"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Mf4-5m-MN2">
+            <objects>
+                <viewController id="02z-vy-J4i" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lTb-fd-aKY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CqM-8H-2eb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="855" y="179"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="z6X-Wu-baA">
+            <objects>
+                <viewController id="hby-1e-sYd" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Dy-bu-alf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Acx-5V-9jb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1403" y="197"/>
         </scene>
         <!--Choose Speciality View Controller-->
         <scene sceneID="K4l-cs-5Bt">
@@ -68,11 +146,12 @@
                     <navigationItem key="navigationItem" id="EbG-VT-jtG"/>
                     <connections>
                         <outlet property="specialityTable" destination="aPq-0a-Lyc" id="Hwy-vC-MYN"/>
+                        <segue destination="sf9-3G-SAf" kind="push" identifier="CHOOSE_DOCTOR" id="2oK-4x-KL9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3An-eL-L1e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1173" y="73"/>
+            <point key="canvasLocation" x="857" y="-683"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5VT-wE-m6N">
@@ -91,11 +170,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uqB-sd-YWp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="278" y="73"/>
+            <point key="canvasLocation" x="-276" y="-683"/>
         </scene>
     </scenes>
     <resources>
-        <image name="doctor2.jpg" width="589.67999267578125" height="705.5999755859375"/>
+        <image name="doctor.jpg" width="589.67999267578125" height="705.5999755859375"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

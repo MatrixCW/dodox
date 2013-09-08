@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DDXCustomizedTableViewCell : UITableViewCell
+@interface DDXSpecialityTableViewCell : UITableViewCell
 
 
 @property (nonatomic, weak) IBOutlet UILabel *speciality;

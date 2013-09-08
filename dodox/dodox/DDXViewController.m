@@ -7,6 +7,7 @@
 //
 
 #import "DDXViewController.h"
+#import "DDXGlobalUtil.h"
 
 @interface DDXViewController ()
 
@@ -19,9 +20,20 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    [self performSelector:@selector(goToNextSceneWithIdentifier:)
-               withObject:SEGUE_FROM_START_TO_CHOOSE_SPECIAL
-               afterDelay:3.0];
+    DDXGlobalUtil *sharedUtil = [DDXGlobalUtil getSharedInstance];
+    
+    if([sharedUtil isNetworkActive]){
+    
+        NSLog(@"%@",[sharedUtil findMyCurrentLocation]);
+    //[self performSelector:@selector(goToNextSceneWithIdentifier:)
+      //         withObject:SEGUE_FROM_START_TO_CHOOSE_SPECIAL
+        //       afterDelay:1.5];
+    }
+    else{
+        
+        [sharedUtil alertNoNetwork];
+        
+    }
     
 
 }

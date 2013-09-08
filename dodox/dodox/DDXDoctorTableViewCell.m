@@ -1,14 +1,14 @@
 //
-//  DDXCustomizedTableViewCell.m
+//  DDXDoctorTableViewCell.m
 //  dodox
 //
-//  Created by Cui Wei on 9/8/13.
+//  Created by Enravi on 8/9/13.
 //  Copyright (c) 2013 Cui Wei. All rights reserved.
 //
 
-#import "DDXCustomizedTableViewCell.h"
+#import "DDXDoctorTableViewCell.h"
 
-@implementation DDXCustomizedTableViewCell
+@implementation DDXDoctorTableViewCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
