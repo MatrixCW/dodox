@@ -15,7 +15,6 @@
 @property Reachability *internetReachableDetector;
 @property CLLocationManager *locationManager;
 @property (readwrite) CLLocationCoordinate2D myCurrentPosotion;
-@property (readwrite) NSString *currentSelectedSpeciality;
 
 @end
 
@@ -70,10 +69,5 @@ static DOCGlobalUtil *sharedInstance;
 }
 
 
--(void)saveSpeciality:(NSString*)speciality{
-    
-    self.currentSelectedSpeciality = speciality;
-    
-}
 
 @end

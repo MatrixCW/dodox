@@ -14,13 +14,13 @@
 
 @property (readonly) CLLocationCoordinate2D myCurrentPosotion;
 
-@property (readonly) NSString *currentSelectedSpeciality;
+@property NSString *currentSelectedSpeciality;
+@property int currentSelectedSpecialityID;
 
 - (NSString *)findMyCurrentLocation;
 -(void)alertNoNetwork;
 -(BOOL)isNetworkActive;
 +(id)getSharedInstance;
 
--(void)saveSpeciality:(NSString*)speciality;
 
 @end

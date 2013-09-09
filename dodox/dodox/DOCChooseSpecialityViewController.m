@@ -10,6 +10,8 @@
 #import "DOCSpecialityTableViewCell.h"
 #import "DOCConstants.h"
 #import "DOCGlobalUtil.h"
+#import "DOCSpeciality.h"
+#import "AFJSONRequestOperation.h"
 
 @interface DOCChooseSpecialityViewController ()
 
@@ -41,25 +43,61 @@
     
     self.specialityTable.dataSource = self;
     self.specialityTable.delegate = self;
-
+    
 }
 
 
 -(void)populateSpecialities{
     
+    NSURL *url = [NSURL URLWithString:@"http://docxor.herokuapp.com/api/categories.json"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
     NSMutableArray *dataArray = [NSMutableArray array];
     
-    [dataArray addObject:@"Dentist"];
-    [dataArray addObject:@"Aesthetic Medine Doctor"];
-    [dataArray addObject:@"Cancer Specialist"];
-    [dataArray addObject:@"Cardiologist"];
-    [dataArray addObject:@"Cardiothoracic Surgeon"];
-    [dataArray addObject:@"Chiropractor"];
-    [dataArray addObject:@"Psychologist"];
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request
+                                                                                        success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+                                                                                            
+                                                                                            for(NSDictionary *dic in JSON){
+                                                                                                
+                                                                                                NSString *specialityID = [dic objectForKey:@"id"];
+                                                                                                
+                                                                                                NSString *specialityName = [dic objectForKey:@"name"];
+                                                                                                
+                                                                                                NSString *imageUrl = [dic objectForKey:@"pic"];
+                                                                                                
+                                                                                
+                                                                                                
+                                                                                                 NSString *numberOfDoctors = [dic objectForKey:@"number_of_doctors"];
+                                                                                                
+                                                                                                NSLog(@"%@ %@ %@ %@", specialityID, specialityName, imageUrl, numberOfDoctors);
+                                                                                                
+                                                                                                DOCSpeciality *tempSpeciality = [[DOCSpeciality alloc] initWithName:specialityName
+                                                                                                                                                           identity:[specialityID intValue]
+                                                                                                                                                             number:[numberOfDoctors intValue]
+                                                                                                                                                        andImageURL:imageUrl];
+                                                                                                
+                                                                                        [dataArray addObject:tempSpeciality];
+                                                                                                
+                                                                                            }
+                                                                                            
+                                                                                            [self formarRetrivedResults:dataArray];
+                                                                                        }
+                                                                                        failure:nil];
+    [operation start];
     
-    self.specialities = [dataArray sortedArrayUsingComparator:^NSComparisonResult(NSString *first, NSString *second) {
+    
+    
+    
+}
+
+
+-(void)formarRetrivedResults:(NSMutableArray *)dataArray{
+    
+    self.specialities = [dataArray sortedArrayUsingComparator:^NSComparisonResult(DOCSpeciality *first, DOCSpeciality *second) {
         return [first compare:second];
     }];
+    
+    [self.specialityTable reloadData];
 }
 
 
@@ -87,6 +125,7 @@
 }
 
 
+
 #pragma mark UITableView DataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -102,8 +141,9 @@
         cell = [nib objectAtIndex:0];
     }
     
-    cell.speciality.text = [self.specialities objectAtIndex:indexPath.row];
-    cell.numberOfSpecialists.text = [NSString stringWithFormat:@"Number of doctors: %@", @"99"];
+    DOCSpeciality *speciality = (DOCSpeciality*)[self.specialities objectAtIndex:indexPath.row];
+    cell.speciality.text = speciality.specialityName;
+    cell.numberOfSpecialists.text = [NSString stringWithFormat:@"Number of doctors: %d", speciality.numberOfDoctors];
     
     [cell.speciality sizeToFit];
     [cell.numberOfSpecialists sizeToFit];
@@ -124,7 +164,10 @@
     
     DOCSpecialityTableViewCell *cell = (DOCSpecialityTableViewCell*)[tableView cellForRowAtIndexPath:indexPath];
     
-    [[DOCGlobalUtil getSharedInstance] saveSpeciality:cell.speciality.text];
+    DOCGlobalUtil *sharedInstance = [DOCGlobalUtil getSharedInstance];
+    
+     sharedInstance.currentSelectedSpeciality = cell.speciality.text;
+     sharedInstance.currentSelectedSpecialityID = 1;
     
     [self performSegueWithIdentifier:SEGUE_FROM_SPECIALITY_TO_CHOOSE_DOCTOR sender:Nil];
     

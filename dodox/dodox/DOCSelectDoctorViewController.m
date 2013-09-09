@@ -10,6 +10,9 @@
 #import "DOCDoctorTableViewCell.h"
 #import "DOCConstants.h"
 #import "DOCGlobalUtil.h"
+#import "AFJSONRequestOperation.h"
+#import "DOCDoctor.h"
+#import "DYRateView.h"
 
 @interface DOCSelectDoctorViewController ()
 
@@ -36,41 +39,150 @@
 {
     [super viewDidLoad];
     
+    self.doctorTable.delegate = self;
+    self.doctorTable.dataSource = self;
+    
     DOCGlobalUtil *sharedInstance = [DOCGlobalUtil getSharedInstance];
     self.titleBar.topItem.title = sharedInstance.currentSelectedSpeciality;
+    
+    self.doctors = [NSMutableArray array];
+    
+    DOCDoctor *myDoctorOne = [[DOCDoctor alloc] initWithIdentity:1
+                                                         Name:@"Michael Yeong"
+                                                      address:@"NUS SOC"
+                                                         rate:4.6
+                                                     position:CLLocationCoordinate2DMake(123.0, 123.4)
+                                                        phone:@"12345678"
+                                                  description:Nil
+                                               andPictureURLs:Nil];
+    
+    DOCDoctor *myDoctorTwo = [[DOCDoctor alloc] initWithIdentity:1
+                                                         Name:@"Koh Zi Chun"
+                                                      address:@"usa"
+                                                         rate:4.3
+                                                     position:CLLocationCoordinate2DMake(123.0, 123.4)
+                                                        phone:@"12345678"
+                                                  description:Nil
+                                               andPictureURLs:Nil];
+    
+    DOCDoctor *myDoctorThree = [[DOCDoctor alloc] initWithIdentity:1
+                                                         Name:@"Lin WeiQuan"
+                                                      address:@"com1"
+                                                         rate:3.5
+                                                     position:CLLocationCoordinate2DMake(123.0, 123.4)
+                                                        phone:@"12345678"
+                                                  description:Nil
+                                               andPictureURLs:Nil];
+    
+    DOCDoctor *myDoctorFour = [[DOCDoctor alloc] initWithIdentity:1
+                                                         Name:@"Jiang Yanxuan"
+                                                      address:@"sheares"
+                                                         rate:2.9
+                                                     position:CLLocationCoordinate2DMake(123.0, 123.4)
+                                                        phone:@"12345678"
+                                                  description:Nil
+                                               andPictureURLs:Nil];
+    
+    DOCDoctor *myDoctorFive = [[DOCDoctor alloc] initWithIdentity:1
+                                                         Name:@"Yang ManSheng"
+                                                      address:@"pgp"
+                                                         rate:5.0
+                                                     position:CLLocationCoordinate2DMake(123.0, 123.4)
+                                                        phone:@"12345678"
+                                                  description:Nil
+                                               andPictureURLs:Nil];
+    
+    [self.doctors addObject:myDoctorOne];
+    [self.doctors addObject:myDoctorTwo];
+    [self.doctors addObject:myDoctorThree];
+    [self.doctors addObject:myDoctorFour];
+    [self.doctors addObject:myDoctorFive];
+    
+    
+    
 	// Do any additional setup after loading the view.
     //[self.sortingChoice addTarget:self
                         // action:@selector(pickOne:)
                //forControlEvents:UIControlEventValueChanged];
 }
 
+
+/*
+
+-(void)retriveDoctorUnderSpeciality{
+    
+    DOCGlobalUtil *sharedInstance = [DOCGlobalUtil getSharedInstance];
+    
+    int specialityID = sharedInstance.currentSelectedSpecialityID;
+    
+    NSURL *url = [NSURL URLWithString:@"http://docxor.heroku.com/api/categories.json"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request
+                                                                                        success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+                                                                                            
+                                                                                            for(NSDictionary *dic in JSON){
+                                                                                                
+                                                                                                NSString *specialityID = [dic objectForKey:@"id"];
+                                                                                                
+                                                                                                NSString *specialityName = [dic objectForKey:@"name"];
+                                                                                                
+                                                                                                NSString *imageUrl = [dic objectForKey:@"imageUrl"];
+                                                                                                
+                                                                                                NSString *numberOfDoctors = [dic objectForKey:@"number"];
+                                                                                                
+                                                                                                NSLog(@"%@ %@ %@ %@", specialityID, specialityName, imageUrl, numberOfDoctors);
+                                                                                                
+                                                                                                DOCSpeciality *tempSpeciality = [[DOCSpeciality alloc] initWithName:specialityName
+                                                                                                                                                           identity:[specialityID intValue]
+                                                                                                                                                             number:[numberOfDoctors intValue]
+                                                                                                                                                        andImageURL:imageUrl];
+                                                                                                
+                                                                                                [self.specialities addObject:tempSpeciality];
+                                                                                                
+                                                                                            }
+                                                                                        }
+                                                                                        failure:nil];
+    [operation start];
+    
+}
+ */
+
+
 //-(void) pickOne:(id)sender{
  //   UISegmentedControl *segmentedControl = (UISegmentedControl *)sender;
 //}
 
-/*
+
 #pragma mark UITableView DataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [self.specialities count];
+    
+    NSLog(@"sdklnvkldfnvflnv %d",self.doctors.count);
+    return [self.doctors count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    DDXSpecialityTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CUSTOMIZED_CELL_IDENTIFIER_FOR_SPECIALITY];
+    DOCDoctorTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CUSTOMIZED_CELL_IDENTIFIER_FOR_DOCTOR];
     
     if (cell == nil) {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"SpecialityTableViewCell" owner:self options:nil];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"DoctorTableViewCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
     
-    cell.speciality.text = [self.specialities objectAtIndex:indexPath.row];
-    cell.numberOfSpecialists.text = [NSString stringWithFormat:@"Number of doctors: %@", @"99"];
+    DOCDoctor *tempDoctor = [self.doctors objectAtIndex:indexPath.row];
     
-    [cell.speciality sizeToFit];
-    [cell.numberOfSpecialists sizeToFit];
+    cell.doctorName.text = tempDoctor.doctorName;
+    cell.doctorAddress.text = tempDoctor.doctorAddress;
     
-    cell.thumbnailImageView.image = [self.specialityImages objectAtIndex:indexPath.row];
+    [cell.doctorName sizeToFit];
+    [cell.doctorAddress sizeToFit];
+    
+    DYRateView *rateView = [[DYRateView alloc] initWithFrame:CGRectMake(0, 10, 100, 14)];
+    rateView.rate = tempDoctor.doctorRate;
+    rateView.alignment = RateViewAlignmentRight;
+    [cell.rate addSubview:rateView];
     
     
     return cell;
@@ -78,14 +190,13 @@
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 85;
+    return 120;
 }
 
 #pragma mark UITableView Delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
 }
- */
 
 - (void)didReceiveMemoryWarning
 {

@@ -13,19 +13,23 @@
 
 @property (readwrite) NSString *specialityName;
 @property (readwrite) int numberOfDoctors;
+@property (readwrite) int specialityID;
+@property (readwrite) NSString *specialityImageURL;
+
 
 @end
 
 @implementation DOCSpeciality
 
 
--(id)initWithName:(NSString*)specialityName number:(int)numberOfDoctors andImage:(UIImage*)image{
+-(id)initWithName:(NSString*)specialityName identity:(int)specialityID number:(int)numberOfDoctors andImageURL:(NSString*)url{
     
     self = [super init];
     if (self) {
         self.specialityName = specialityName;
+        self.specialityID = specialityID;
         self.numberOfDoctors = numberOfDoctors;
-        self.specialityImage = image;
+        self.specialityImageURL = url;
     }
     return self;
     

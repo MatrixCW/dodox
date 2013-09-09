@@ -11,19 +11,29 @@
 
 @interface DOCDoctor : NSObject
 
-@property (readonly) int identity;
+@property (readonly) int doctorID;
 @property (readonly) NSString *doctorName;
 @property (readonly) NSString *doctorAddress;
-@property (readonly) CGFloat rate;
+@property (readonly) CGFloat doctorRate;
 @property (readonly) CGFloat distance;
-@property (readonly) CLLocationCoordinate2D position;
+@property (readonly) CLLocationCoordinate2D doctorPosition;
+@property (readonly) NSString *doctorPhoneNumber;
+@property (readonly) NSDictionary *doctorDescription;
+@property (readonly) NSDictionary *doctorPictureURLs;
 
 @property UIImage *doctorAvatar;
+@property UIImage *doctorAvatarThumbnail;
 
--(id)initWithName:(NSString*)doctorName
-          address:(NSString*)doctorAddress
-       coordinate:(CLLocationCoordinate2D) position
-          andRate:(CGFloat)rate;
+
+-(id)initWithIdentity:(int)doctorID
+                 Name:(NSString*)doctorName
+              address:(NSString*)doctorAddress
+                 rate:(CGFloat)rate
+             position:(CLLocationCoordinate2D) position
+                phone:(NSString*) phoneNumber
+          description:(NSDictionary*)description
+       andPictureURLs:(NSDictionary*)pictureURLs;
+
 
 - (NSComparisonResult)compareName:(DOCDoctor *)otherObject;
 - (NSComparisonResult)compareRate:(DOCDoctor *)otherObject;

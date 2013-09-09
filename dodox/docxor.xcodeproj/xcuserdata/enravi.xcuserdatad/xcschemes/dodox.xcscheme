@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FBCB50A717DC81B70099AA5C"
-               BuildableName = "dodox.app"
+               BuildableName = "docxor.app"
                BlueprintName = "docxor"
                ReferencedContainer = "container:docxor.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FBCB50C817DC81B70099AA5C"
-               BuildableName = "dodoxTests.xctest"
+               BuildableName = "docxorTests.xctest"
                BlueprintName = "docxorTests"
                ReferencedContainer = "container:docxor.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FBCB50A717DC81B70099AA5C"
-            BuildableName = "dodox.app"
+            BuildableName = "docxor.app"
             BlueprintName = "docxor"
             ReferencedContainer = "container:docxor.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FBCB50A717DC81B70099AA5C"
-            BuildableName = "dodox.app"
+            BuildableName = "docxor.app"
             BlueprintName = "docxor"
             ReferencedContainer = "container:docxor.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FBCB50A717DC81B70099AA5C"
-            BuildableName = "dodox.app"
+            BuildableName = "docxor.app"
             BlueprintName = "docxor"
             ReferencedContainer = "container:docxor.xcodeproj">
          </BuildableReference>

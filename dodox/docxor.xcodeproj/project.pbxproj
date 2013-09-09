@@ -14,7 +14,7 @@
 		A00F361617DCA90000BD0467 /* chiropracter.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A00F361217DCA90000BD0467 /* chiropracter.jpg */; };
 		A00F361917DCACC600BD0467 /* cardiothoracic surgeon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A00F361817DCACC600BD0467 /* cardiothoracic surgeon.jpg */; };
 		A00F361C17DCB36300BD0467 /* DOCSelectDoctorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A00F361B17DCB36300BD0467 /* DOCSelectDoctorViewController.m */; };
-		A00F362617DCB50D00BD0467 /* doctorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A00F362517DCB50D00BD0467 /* doctorTableViewCell.xib */; };
+		A00F362617DCB50D00BD0467 /* DoctorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A00F362517DCB50D00BD0467 /* DoctorTableViewCell.xib */; };
 		A00F363017DCB85300BD0467 /* StarEmpty.png in Resources */ = {isa = PBXBuildFile; fileRef = A00F362817DCB85300BD0467 /* StarEmpty.png */; };
 		A00F363117DCB85300BD0467 /* StarEmpty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A00F362917DCB85300BD0467 /* StarEmpty@2x.png */; };
 		A00F363217DCB85300BD0467 /* StarEmptyLarge.png in Resources */ = {isa = PBXBuildFile; fileRef = A00F362A17DCB85300BD0467 /* StarEmptyLarge.png */; };
@@ -41,6 +41,7 @@
 		A00F367917DD959500BD0467 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A00F366E17DD959400BD0467 /* AFURLConnectionOperation.m */; };
 		A00F367A17DD959500BD0467 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A00F367017DD959400BD0467 /* AFXMLRequestOperation.m */; };
 		A00F367B17DD959500BD0467 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = A00F367217DD959400BD0467 /* UIImageView+AFNetworking.m */; };
+		A00F367F17DDB3BB00BD0467 /* DOCDoctorSpecificsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A00F367E17DDB3BB00BD0467 /* DOCDoctorSpecificsViewController.m */; };
 		FBCB50AC17DC81B70099AA5C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCB50AB17DC81B70099AA5C /* Foundation.framework */; };
 		FBCB50AE17DC81B70099AA5C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCB50AD17DC81B70099AA5C /* CoreGraphics.framework */; };
 		FBCB50B017DC81B70099AA5C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCB50AF17DC81B70099AA5C /* UIKit.framework */; };
@@ -81,7 +82,7 @@
 		A00F361817DCACC600BD0467 /* cardiothoracic surgeon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cardiothoracic surgeon.jpg"; sourceTree = "<group>"; };
 		A00F361A17DCB36300BD0467 /* DOCSelectDoctorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCSelectDoctorViewController.h; sourceTree = "<group>"; };
 		A00F361B17DCB36300BD0467 /* DOCSelectDoctorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCSelectDoctorViewController.m; sourceTree = "<group>"; };
-		A00F362517DCB50D00BD0467 /* doctorTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = doctorTableViewCell.xib; sourceTree = "<group>"; };
+		A00F362517DCB50D00BD0467 /* DoctorTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoctorTableViewCell.xib; sourceTree = "<group>"; };
 		A00F362817DCB85300BD0467 /* StarEmpty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StarEmpty.png; sourceTree = "<group>"; };
 		A00F362917DCB85300BD0467 /* StarEmpty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StarEmpty@2x.png"; sourceTree = "<group>"; };
 		A00F362A17DCB85300BD0467 /* StarEmptyLarge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StarEmptyLarge.png; sourceTree = "<group>"; };
@@ -125,6 +126,8 @@
 		A00F367017DD959400BD0467 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
 		A00F367117DD959400BD0467 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		A00F367217DD959400BD0467 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		A00F367D17DDB3BB00BD0467 /* DOCDoctorSpecificsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCDoctorSpecificsViewController.h; sourceTree = "<group>"; };
+		A00F367E17DDB3BB00BD0467 /* DOCDoctorSpecificsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCDoctorSpecificsViewController.m; sourceTree = "<group>"; };
 		FBCB50A817DC81B70099AA5C /* docxor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = docxor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBCB50AB17DC81B70099AA5C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FBCB50AD17DC81B70099AA5C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -229,7 +232,7 @@
 				A00F363917DCB86A00BD0467 /* DYRateView.m */,
 				A00F361A17DCB36300BD0467 /* DOCSelectDoctorViewController.h */,
 				A00F361B17DCB36300BD0467 /* DOCSelectDoctorViewController.m */,
-				A00F362517DCB50D00BD0467 /* doctorTableViewCell.xib */,
+				A00F362517DCB50D00BD0467 /* DoctorTableViewCell.xib */,
 				A00F363B17DCB8D500BD0467 /* DOCDoctorTableViewCell.h */,
 				A00F363C17DCB8D500BD0467 /* DOCDoctorTableViewCell.m */,
 				A00F364317DCC0BE00BD0467 /* DOCDoctor.h */,
@@ -290,6 +293,15 @@
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
+		A00F367C17DDA19B00BD0467 /* step 3 view doctor specifics */ = {
+			isa = PBXGroup;
+			children = (
+				A00F367D17DDB3BB00BD0467 /* DOCDoctorSpecificsViewController.h */,
+				A00F367E17DDB3BB00BD0467 /* DOCDoctorSpecificsViewController.m */,
+			);
+			name = "step 3 view doctor specifics";
+			sourceTree = "<group>";
+		};
 		FBCB509F17DC81B70099AA5C = {
 			isa = PBXGroup;
 			children = (
@@ -329,6 +341,7 @@
 				A00F364817DCC36200BD0467 /* Common Util */,
 				A00F363E17DCBB0E00BD0467 /* step 1 choose speciality */,
 				A00F363F17DCBB2000BD0467 /* step 2 choose doctor */,
+				A00F367C17DDA19B00BD0467 /* step 3 view doctor specifics */,
 				FBCB50C317DC81B70099AA5C /* Images.xcassets */,
 				FBCB50B217DC81B70099AA5C /* Supporting Files */,
 			);
@@ -454,7 +467,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A00F363617DCB85300BD0467 /* StarFullLarge.png in Resources */,
-				A00F362617DCB50D00BD0467 /* doctorTableViewCell.xib in Resources */,
+				A00F362617DCB50D00BD0467 /* DoctorTableViewCell.xib in Resources */,
 				A00F365B17DCE06A00BD0467 /* cartoon-doctor.png in Resources */,
 				A00F360E17DCA8F900BD0467 /* aesthetic medicine doctor.jpg in Resources */,
 				A00F363117DCB85300BD0467 /* StarEmpty@2x.png in Resources */,
@@ -494,6 +507,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A00F364A17DCC3F000BD0467 /* DOCGlobalUtil.m in Sources */,
+				A00F367F17DDB3BB00BD0467 /* DOCDoctorSpecificsViewController.m in Sources */,
 				FBCB50C217DC81B70099AA5C /* DOCViewController.m in Sources */,
 				A00F364217DCBD8100BD0467 /* DOCSpeciality.m in Sources */,
 				A00F363D17DCB8D500BD0467 /* DOCDoctorTableViewCell.m in Sources */,
