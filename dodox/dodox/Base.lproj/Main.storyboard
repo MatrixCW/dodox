@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4457.6" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="OMZ-lU-osy">
     <dependencies>
+        <development version="5000" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3682.6"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="DDXViewController" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="DOCViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -16,8 +17,8 @@
                                 <rect key="frame" x="0.0" y="142" width="320" height="426"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DODOX" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQU-X0-gVl">
-                                <rect key="frame" x="90" y="47" width="141" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DOCXOR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQU-X0-gVl">
+                                <rect key="frame" x="90" y="47" width="141" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -45,7 +46,7 @@
         <!--Select Doctor View Controller-->
         <scene sceneID="zB1-6t-CPx">
             <objects>
-                <viewController id="sf9-3G-SAf" customClass="DDXSelectDoctorViewController" sceneMemberID="viewController">
+                <viewController id="sf9-3G-SAf" customClass="DOCSelectDoctorViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lyc-P5-JgX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -147,7 +148,7 @@
         <!--Choose Speciality View Controller-->
         <scene sceneID="K4l-cs-5Bt">
             <objects>
-                <viewController id="OBW-3V-YcF" customClass="DDXChooseSpecialityViewController" sceneMemberID="viewController">
+                <viewController id="OBW-3V-YcF" customClass="DOCChooseSpecialityViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gcy-SF-Dyp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -200,12 +201,31 @@
     <resources>
         <image name="doctor.jpg" width="589.67999267578125" height="705.5999755859375"/>
     </resources>
+    <classes>
+        <class className="DOCChooseSpecialityViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DOCChooseSpecialityViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="specialityTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="DOCSelectDoctorViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DOCSelectDoctorViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="doctorTable" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="sortingChoice" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="titleBar" candidateClass="UINavigationBar"/>
+            </relationships>
+        </class>
+        <class className="DOCViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DOCViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="DcX-01-NY0"/>
+        <segue reference="oBT-3S-bgV"/>
     </inferredMetricsTieBreakers>
 </document>

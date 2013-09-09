@@ -1,0 +1,734 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A00F360A17DCA1BA00BD0467 /* cancer specialist.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A00F360917DCA1BA00BD0467 /* cancer specialist.jpg */; };
+		A00F360C17DCA8DE00BD0467 /* cardiologist.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A00F360B17DCA8DE00BD0467 /* cardiologist.jpg */; };
+		A00F360E17DCA8F900BD0467 /* aesthetic medicine doctor.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A00F360D17DCA8F900BD0467 /* aesthetic medicine doctor.jpg */; };
+		A00F361417DCA90000BD0467 /* psychologist.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A00F361017DCA90000BD0467 /* psychologist.jpg */; };
+		A00F361617DCA90000BD0467 /* chiropracter.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A00F361217DCA90000BD0467 /* chiropracter.jpg */; };
+		A00F361917DCACC600BD0467 /* cardiothoracic surgeon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A00F361817DCACC600BD0467 /* cardiothoracic surgeon.jpg */; };
+		A00F361C17DCB36300BD0467 /* DOCSelectDoctorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A00F361B17DCB36300BD0467 /* DOCSelectDoctorViewController.m */; };
+		A00F362617DCB50D00BD0467 /* doctorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A00F362517DCB50D00BD0467 /* doctorTableViewCell.xib */; };
+		A00F363017DCB85300BD0467 /* StarEmpty.png in Resources */ = {isa = PBXBuildFile; fileRef = A00F362817DCB85300BD0467 /* StarEmpty.png */; };
+		A00F363117DCB85300BD0467 /* StarEmpty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A00F362917DCB85300BD0467 /* StarEmpty@2x.png */; };
+		A00F363217DCB85300BD0467 /* StarEmptyLarge.png in Resources */ = {isa = PBXBuildFile; fileRef = A00F362A17DCB85300BD0467 /* StarEmptyLarge.png */; };
+		A00F363317DCB85300BD0467 /* StarEmptyLarge@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A00F362B17DCB85300BD0467 /* StarEmptyLarge@2x.png */; };
+		A00F363417DCB85300BD0467 /* StarFull.png in Resources */ = {isa = PBXBuildFile; fileRef = A00F362C17DCB85300BD0467 /* StarFull.png */; };
+		A00F363517DCB85300BD0467 /* StarFull@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A00F362D17DCB85300BD0467 /* StarFull@2x.png */; };
+		A00F363617DCB85300BD0467 /* StarFullLarge.png in Resources */ = {isa = PBXBuildFile; fileRef = A00F362E17DCB85300BD0467 /* StarFullLarge.png */; };
+		A00F363717DCB85300BD0467 /* StarFullLarge@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A00F362F17DCB85300BD0467 /* StarFullLarge@2x.png */; };
+		A00F363A17DCB86A00BD0467 /* DYRateView.m in Sources */ = {isa = PBXBuildFile; fileRef = A00F363917DCB86A00BD0467 /* DYRateView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A00F363D17DCB8D500BD0467 /* DOCDoctorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A00F363C17DCB8D500BD0467 /* DOCDoctorTableViewCell.m */; };
+		A00F364217DCBD8100BD0467 /* DOCSpeciality.m in Sources */ = {isa = PBXBuildFile; fileRef = A00F364117DCBD8100BD0467 /* DOCSpeciality.m */; };
+		A00F364517DCC0BE00BD0467 /* DOCDoctor.m in Sources */ = {isa = PBXBuildFile; fileRef = A00F364417DCC0BE00BD0467 /* DOCDoctor.m */; };
+		A00F364A17DCC3F000BD0467 /* DOCGlobalUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A00F364717DCC35B00BD0467 /* DOCGlobalUtil.m */; };
+		A00F365317DCC64200BD0467 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A00F365217DCC64200BD0467 /* Reachability.m */; };
+		A00F365517DCC96800BD0467 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A00F365417DCC96800BD0467 /* SystemConfiguration.framework */; };
+		A00F365B17DCE06A00BD0467 /* cartoon-doctor.png in Resources */ = {isa = PBXBuildFile; fileRef = A00F365A17DCE06A00BD0467 /* cartoon-doctor.png */; };
+		A00F365E17DCECFD00BD0467 /* DOCLeftToRightSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = A00F365D17DCECFD00BD0467 /* DOCLeftToRightSegue.m */; };
+		A00F367317DD959400BD0467 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A00F366117DD959400BD0467 /* AFHTTPClient.m */; };
+		A00F367417DD959400BD0467 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A00F366317DD959400BD0467 /* AFHTTPRequestOperation.m */; };
+		A00F367517DD959400BD0467 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A00F366517DD959400BD0467 /* AFImageRequestOperation.m */; };
+		A00F367617DD959400BD0467 /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A00F366717DD959400BD0467 /* AFJSONRequestOperation.m */; };
+		A00F367717DD959500BD0467 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A00F366917DD959400BD0467 /* AFNetworkActivityIndicatorManager.m */; };
+		A00F367817DD959500BD0467 /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A00F366C17DD959400BD0467 /* AFPropertyListRequestOperation.m */; };
+		A00F367917DD959500BD0467 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A00F366E17DD959400BD0467 /* AFURLConnectionOperation.m */; };
+		A00F367A17DD959500BD0467 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A00F367017DD959400BD0467 /* AFXMLRequestOperation.m */; };
+		A00F367B17DD959500BD0467 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = A00F367217DD959400BD0467 /* UIImageView+AFNetworking.m */; };
+		FBCB50AC17DC81B70099AA5C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCB50AB17DC81B70099AA5C /* Foundation.framework */; };
+		FBCB50AE17DC81B70099AA5C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCB50AD17DC81B70099AA5C /* CoreGraphics.framework */; };
+		FBCB50B017DC81B70099AA5C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCB50AF17DC81B70099AA5C /* UIKit.framework */; };
+		FBCB50B617DC81B70099AA5C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FBCB50B417DC81B70099AA5C /* InfoPlist.strings */; };
+		FBCB50B817DC81B70099AA5C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCB50B717DC81B70099AA5C /* main.m */; };
+		FBCB50BC17DC81B70099AA5C /* DOCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCB50BB17DC81B70099AA5C /* DOCAppDelegate.m */; };
+		FBCB50BF17DC81B70099AA5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBCB50BD17DC81B70099AA5C /* Main.storyboard */; };
+		FBCB50C217DC81B70099AA5C /* DOCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCB50C117DC81B70099AA5C /* DOCViewController.m */; };
+		FBCB50C417DC81B70099AA5C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBCB50C317DC81B70099AA5C /* Images.xcassets */; };
+		FBCB50CB17DC81B70099AA5C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCB50CA17DC81B70099AA5C /* XCTest.framework */; };
+		FBCB50CC17DC81B70099AA5C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCB50AB17DC81B70099AA5C /* Foundation.framework */; };
+		FBCB50CD17DC81B70099AA5C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCB50AF17DC81B70099AA5C /* UIKit.framework */; };
+		FBCB50D517DC81B70099AA5C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FBCB50D317DC81B70099AA5C /* InfoPlist.strings */; };
+		FBCB50D717DC81B70099AA5C /* dodoxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCB50D617DC81B70099AA5C /* dodoxTests.m */; };
+		FBCB50E417DC84800099AA5C /* doctor.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FBCB50E317DC84800099AA5C /* doctor.jpg */; };
+		FBCB50EA17DC87E00099AA5C /* DOCChooseSpecialityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCB50E917DC87E00099AA5C /* DOCChooseSpecialityViewController.m */; };
+		FBCB50EC17DC88880099AA5C /* dentist.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FBCB50EB17DC88880099AA5C /* dentist.jpg */; };
+		FBCB50EE17DC90140099AA5C /* SpecialityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBCB50ED17DC90140099AA5C /* SpecialityTableViewCell.xib */; };
+		FBCB50F117DC917E0099AA5C /* DOCSpecialityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCB50F017DC917E0099AA5C /* DOCSpecialityTableViewCell.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FBCB50CE17DC81B70099AA5C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FBCB50A017DC81B70099AA5C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FBCB50A717DC81B70099AA5C;
+			remoteInfo = dodox;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A00F360917DCA1BA00BD0467 /* cancer specialist.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cancer specialist.jpg"; sourceTree = "<group>"; };
+		A00F360B17DCA8DE00BD0467 /* cardiologist.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cardiologist.jpg; sourceTree = "<group>"; };
+		A00F360D17DCA8F900BD0467 /* aesthetic medicine doctor.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "aesthetic medicine doctor.jpg"; sourceTree = "<group>"; };
+		A00F361017DCA90000BD0467 /* psychologist.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = psychologist.jpg; sourceTree = "<group>"; };
+		A00F361217DCA90000BD0467 /* chiropracter.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chiropracter.jpg; sourceTree = "<group>"; };
+		A00F361817DCACC600BD0467 /* cardiothoracic surgeon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cardiothoracic surgeon.jpg"; sourceTree = "<group>"; };
+		A00F361A17DCB36300BD0467 /* DOCSelectDoctorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCSelectDoctorViewController.h; sourceTree = "<group>"; };
+		A00F361B17DCB36300BD0467 /* DOCSelectDoctorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCSelectDoctorViewController.m; sourceTree = "<group>"; };
+		A00F362517DCB50D00BD0467 /* doctorTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = doctorTableViewCell.xib; sourceTree = "<group>"; };
+		A00F362817DCB85300BD0467 /* StarEmpty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StarEmpty.png; sourceTree = "<group>"; };
+		A00F362917DCB85300BD0467 /* StarEmpty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StarEmpty@2x.png"; sourceTree = "<group>"; };
+		A00F362A17DCB85300BD0467 /* StarEmptyLarge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StarEmptyLarge.png; sourceTree = "<group>"; };
+		A00F362B17DCB85300BD0467 /* StarEmptyLarge@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StarEmptyLarge@2x.png"; sourceTree = "<group>"; };
+		A00F362C17DCB85300BD0467 /* StarFull.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StarFull.png; sourceTree = "<group>"; };
+		A00F362D17DCB85300BD0467 /* StarFull@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StarFull@2x.png"; sourceTree = "<group>"; };
+		A00F362E17DCB85300BD0467 /* StarFullLarge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StarFullLarge.png; sourceTree = "<group>"; };
+		A00F362F17DCB85300BD0467 /* StarFullLarge@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StarFullLarge@2x.png"; sourceTree = "<group>"; };
+		A00F363817DCB86A00BD0467 /* DYRateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYRateView.h; sourceTree = "<group>"; };
+		A00F363917DCB86A00BD0467 /* DYRateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYRateView.m; sourceTree = "<group>"; };
+		A00F363B17DCB8D500BD0467 /* DOCDoctorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCDoctorTableViewCell.h; sourceTree = "<group>"; };
+		A00F363C17DCB8D500BD0467 /* DOCDoctorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCDoctorTableViewCell.m; sourceTree = "<group>"; };
+		A00F364017DCBD8100BD0467 /* DOCSpeciality.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCSpeciality.h; sourceTree = "<group>"; };
+		A00F364117DCBD8100BD0467 /* DOCSpeciality.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCSpeciality.m; sourceTree = "<group>"; };
+		A00F364317DCC0BE00BD0467 /* DOCDoctor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCDoctor.h; sourceTree = "<group>"; };
+		A00F364417DCC0BE00BD0467 /* DOCDoctor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCDoctor.m; sourceTree = "<group>"; };
+		A00F364617DCC35B00BD0467 /* DOCGlobalUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DOCGlobalUtil.h; sourceTree = "<group>"; };
+		A00F364717DCC35B00BD0467 /* DOCGlobalUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DOCGlobalUtil.m; sourceTree = "<group>"; };
+		A00F365117DCC64200BD0467 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		A00F365217DCC64200BD0467 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		A00F365417DCC96800BD0467 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		A00F365A17DCE06A00BD0467 /* cartoon-doctor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cartoon-doctor.png"; sourceTree = "<group>"; };
+		A00F365C17DCECFD00BD0467 /* DOCLeftToRightSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCLeftToRightSegue.h; sourceTree = "<group>"; };
+		A00F365D17DCECFD00BD0467 /* DOCLeftToRightSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCLeftToRightSegue.m; sourceTree = "<group>"; };
+		A00F366017DD959400BD0467 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
+		A00F366117DD959400BD0467 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
+		A00F366217DD959400BD0467 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		A00F366317DD959400BD0467 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		A00F366417DD959400BD0467 /* AFImageRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFImageRequestOperation.h; sourceTree = "<group>"; };
+		A00F366517DD959400BD0467 /* AFImageRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFImageRequestOperation.m; sourceTree = "<group>"; };
+		A00F366617DD959400BD0467 /* AFJSONRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFJSONRequestOperation.h; sourceTree = "<group>"; };
+		A00F366717DD959400BD0467 /* AFJSONRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFJSONRequestOperation.m; sourceTree = "<group>"; };
+		A00F366817DD959400BD0467 /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
+		A00F366917DD959400BD0467 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
+		A00F366A17DD959400BD0467 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		A00F366B17DD959400BD0467 /* AFPropertyListRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPropertyListRequestOperation.h; sourceTree = "<group>"; };
+		A00F366C17DD959400BD0467 /* AFPropertyListRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFPropertyListRequestOperation.m; sourceTree = "<group>"; };
+		A00F366D17DD959400BD0467 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		A00F366E17DD959400BD0467 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		A00F366F17DD959400BD0467 /* AFXMLRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFXMLRequestOperation.h; sourceTree = "<group>"; };
+		A00F367017DD959400BD0467 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
+		A00F367117DD959400BD0467 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
+		A00F367217DD959400BD0467 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		FBCB50A817DC81B70099AA5C /* docxor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = docxor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBCB50AB17DC81B70099AA5C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FBCB50AD17DC81B70099AA5C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FBCB50AF17DC81B70099AA5C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FBCB50B317DC81B70099AA5C /* docxor-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "docxor-Info.plist"; sourceTree = "<group>"; };
+		FBCB50B517DC81B70099AA5C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FBCB50B717DC81B70099AA5C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FBCB50B917DC81B70099AA5C /* docxor-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "docxor-Prefix.pch"; sourceTree = "<group>"; };
+		FBCB50BA17DC81B70099AA5C /* DOCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DOCAppDelegate.h; sourceTree = "<group>"; };
+		FBCB50BB17DC81B70099AA5C /* DOCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DOCAppDelegate.m; sourceTree = "<group>"; };
+		FBCB50BE17DC81B70099AA5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FBCB50C017DC81B70099AA5C /* DOCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DOCViewController.h; sourceTree = "<group>"; };
+		FBCB50C117DC81B70099AA5C /* DOCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DOCViewController.m; sourceTree = "<group>"; };
+		FBCB50C317DC81B70099AA5C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FBCB50C917DC81B70099AA5C /* docxorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = docxorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBCB50CA17DC81B70099AA5C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		FBCB50D217DC81B70099AA5C /* docxorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "docxorTests-Info.plist"; sourceTree = "<group>"; };
+		FBCB50D417DC81B70099AA5C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FBCB50D617DC81B70099AA5C /* dodoxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dodoxTests.m; sourceTree = "<group>"; };
+		FBCB50E317DC84800099AA5C /* doctor.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = doctor.jpg; sourceTree = "<group>"; };
+		FBCB50E517DC85960099AA5C /* DOCConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCConstants.h; sourceTree = "<group>"; };
+		FBCB50E817DC87E00099AA5C /* DOCChooseSpecialityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCChooseSpecialityViewController.h; sourceTree = "<group>"; };
+		FBCB50E917DC87E00099AA5C /* DOCChooseSpecialityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCChooseSpecialityViewController.m; sourceTree = "<group>"; };
+		FBCB50EB17DC88880099AA5C /* dentist.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dentist.jpg; sourceTree = "<group>"; };
+		FBCB50ED17DC90140099AA5C /* SpecialityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpecialityTableViewCell.xib; sourceTree = "<group>"; };
+		FBCB50EF17DC917E0099AA5C /* DOCSpecialityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCSpecialityTableViewCell.h; sourceTree = "<group>"; };
+		FBCB50F017DC917E0099AA5C /* DOCSpecialityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCSpecialityTableViewCell.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FBCB50A517DC81B70099AA5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A00F365517DCC96800BD0467 /* SystemConfiguration.framework in Frameworks */,
+				FBCB50AE17DC81B70099AA5C /* CoreGraphics.framework in Frameworks */,
+				FBCB50B017DC81B70099AA5C /* UIKit.framework in Frameworks */,
+				FBCB50AC17DC81B70099AA5C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBCB50C617DC81B70099AA5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBCB50CB17DC81B70099AA5C /* XCTest.framework in Frameworks */,
+				FBCB50CD17DC81B70099AA5C /* UIKit.framework in Frameworks */,
+				FBCB50CC17DC81B70099AA5C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A00F361717DCAA0D00BD0467 /* specialities */ = {
+			isa = PBXGroup;
+			children = (
+				A00F360D17DCA8F900BD0467 /* aesthetic medicine doctor.jpg */,
+				A00F360917DCA1BA00BD0467 /* cancer specialist.jpg */,
+				A00F360B17DCA8DE00BD0467 /* cardiologist.jpg */,
+				A00F361817DCACC600BD0467 /* cardiothoracic surgeon.jpg */,
+				A00F361217DCA90000BD0467 /* chiropracter.jpg */,
+				FBCB50EB17DC88880099AA5C /* dentist.jpg */,
+				A00F361017DCA90000BD0467 /* psychologist.jpg */,
+			);
+			name = specialities;
+			sourceTree = "<group>";
+		};
+		A00F362717DCB83E00BD0467 /* rate stars */ = {
+			isa = PBXGroup;
+			children = (
+				A00F362817DCB85300BD0467 /* StarEmpty.png */,
+				A00F362917DCB85300BD0467 /* StarEmpty@2x.png */,
+				A00F362A17DCB85300BD0467 /* StarEmptyLarge.png */,
+				A00F362B17DCB85300BD0467 /* StarEmptyLarge@2x.png */,
+				A00F362C17DCB85300BD0467 /* StarFull.png */,
+				A00F362D17DCB85300BD0467 /* StarFull@2x.png */,
+				A00F362E17DCB85300BD0467 /* StarFullLarge.png */,
+				A00F362F17DCB85300BD0467 /* StarFullLarge@2x.png */,
+			);
+			name = "rate stars";
+			sourceTree = "<group>";
+		};
+		A00F363E17DCBB0E00BD0467 /* step 1 choose speciality */ = {
+			isa = PBXGroup;
+			children = (
+				FBCB50E817DC87E00099AA5C /* DOCChooseSpecialityViewController.h */,
+				FBCB50E917DC87E00099AA5C /* DOCChooseSpecialityViewController.m */,
+				FBCB50ED17DC90140099AA5C /* SpecialityTableViewCell.xib */,
+				FBCB50EF17DC917E0099AA5C /* DOCSpecialityTableViewCell.h */,
+				FBCB50F017DC917E0099AA5C /* DOCSpecialityTableViewCell.m */,
+				A00F364017DCBD8100BD0467 /* DOCSpeciality.h */,
+				A00F364117DCBD8100BD0467 /* DOCSpeciality.m */,
+			);
+			name = "step 1 choose speciality";
+			sourceTree = "<group>";
+		};
+		A00F363F17DCBB2000BD0467 /* step 2 choose doctor */ = {
+			isa = PBXGroup;
+			children = (
+				A00F363817DCB86A00BD0467 /* DYRateView.h */,
+				A00F363917DCB86A00BD0467 /* DYRateView.m */,
+				A00F361A17DCB36300BD0467 /* DOCSelectDoctorViewController.h */,
+				A00F361B17DCB36300BD0467 /* DOCSelectDoctorViewController.m */,
+				A00F362517DCB50D00BD0467 /* doctorTableViewCell.xib */,
+				A00F363B17DCB8D500BD0467 /* DOCDoctorTableViewCell.h */,
+				A00F363C17DCB8D500BD0467 /* DOCDoctorTableViewCell.m */,
+				A00F364317DCC0BE00BD0467 /* DOCDoctor.h */,
+				A00F364417DCC0BE00BD0467 /* DOCDoctor.m */,
+			);
+			name = "step 2 choose doctor";
+			sourceTree = "<group>";
+		};
+		A00F364817DCC36200BD0467 /* Common Util */ = {
+			isa = PBXGroup;
+			children = (
+				A00F365C17DCECFD00BD0467 /* DOCLeftToRightSegue.h */,
+				A00F365D17DCECFD00BD0467 /* DOCLeftToRightSegue.m */,
+				A00F365117DCC64200BD0467 /* Reachability.h */,
+				A00F365217DCC64200BD0467 /* Reachability.m */,
+				FBCB50E517DC85960099AA5C /* DOCConstants.h */,
+				A00F364617DCC35B00BD0467 /* DOCGlobalUtil.h */,
+				A00F364717DCC35B00BD0467 /* DOCGlobalUtil.m */,
+			);
+			name = "Common Util";
+			sourceTree = "<group>";
+		};
+		A00F364917DCC37F00BD0467 /* Auto-generated */ = {
+			isa = PBXGroup;
+			children = (
+				FBCB50BA17DC81B70099AA5C /* DOCAppDelegate.h */,
+				FBCB50BB17DC81B70099AA5C /* DOCAppDelegate.m */,
+				FBCB50BD17DC81B70099AA5C /* Main.storyboard */,
+				FBCB50C017DC81B70099AA5C /* DOCViewController.h */,
+				FBCB50C117DC81B70099AA5C /* DOCViewController.m */,
+			);
+			name = "Auto-generated";
+			sourceTree = "<group>";
+		};
+		A00F365F17DD959400BD0467 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				A00F366017DD959400BD0467 /* AFHTTPClient.h */,
+				A00F366117DD959400BD0467 /* AFHTTPClient.m */,
+				A00F366217DD959400BD0467 /* AFHTTPRequestOperation.h */,
+				A00F366317DD959400BD0467 /* AFHTTPRequestOperation.m */,
+				A00F366417DD959400BD0467 /* AFImageRequestOperation.h */,
+				A00F366517DD959400BD0467 /* AFImageRequestOperation.m */,
+				A00F366617DD959400BD0467 /* AFJSONRequestOperation.h */,
+				A00F366717DD959400BD0467 /* AFJSONRequestOperation.m */,
+				A00F366817DD959400BD0467 /* AFNetworkActivityIndicatorManager.h */,
+				A00F366917DD959400BD0467 /* AFNetworkActivityIndicatorManager.m */,
+				A00F366A17DD959400BD0467 /* AFNetworking.h */,
+				A00F366B17DD959400BD0467 /* AFPropertyListRequestOperation.h */,
+				A00F366C17DD959400BD0467 /* AFPropertyListRequestOperation.m */,
+				A00F366D17DD959400BD0467 /* AFURLConnectionOperation.h */,
+				A00F366E17DD959400BD0467 /* AFURLConnectionOperation.m */,
+				A00F366F17DD959400BD0467 /* AFXMLRequestOperation.h */,
+				A00F367017DD959400BD0467 /* AFXMLRequestOperation.m */,
+				A00F367117DD959400BD0467 /* UIImageView+AFNetworking.h */,
+				A00F367217DD959400BD0467 /* UIImageView+AFNetworking.m */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		FBCB509F17DC81B70099AA5C = {
+			isa = PBXGroup;
+			children = (
+				FBCB50B117DC81B70099AA5C /* dodox */,
+				FBCB50D017DC81B70099AA5C /* dodoxTests */,
+				FBCB50AA17DC81B70099AA5C /* Frameworks */,
+				FBCB50A917DC81B70099AA5C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FBCB50A917DC81B70099AA5C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FBCB50A817DC81B70099AA5C /* docxor.app */,
+				FBCB50C917DC81B70099AA5C /* docxorTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FBCB50AA17DC81B70099AA5C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A00F365417DCC96800BD0467 /* SystemConfiguration.framework */,
+				FBCB50AB17DC81B70099AA5C /* Foundation.framework */,
+				FBCB50AD17DC81B70099AA5C /* CoreGraphics.framework */,
+				FBCB50AF17DC81B70099AA5C /* UIKit.framework */,
+				FBCB50CA17DC81B70099AA5C /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FBCB50B117DC81B70099AA5C /* dodox */ = {
+			isa = PBXGroup;
+			children = (
+				A00F365F17DD959400BD0467 /* AFNetworking */,
+				A00F364917DCC37F00BD0467 /* Auto-generated */,
+				A00F364817DCC36200BD0467 /* Common Util */,
+				A00F363E17DCBB0E00BD0467 /* step 1 choose speciality */,
+				A00F363F17DCBB2000BD0467 /* step 2 choose doctor */,
+				FBCB50C317DC81B70099AA5C /* Images.xcassets */,
+				FBCB50B217DC81B70099AA5C /* Supporting Files */,
+			);
+			path = dodox;
+			sourceTree = "<group>";
+		};
+		FBCB50B217DC81B70099AA5C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FBCB50E017DC83E20099AA5C /* pictures */,
+				FBCB50B317DC81B70099AA5C /* docxor-Info.plist */,
+				FBCB50B417DC81B70099AA5C /* InfoPlist.strings */,
+				FBCB50B717DC81B70099AA5C /* main.m */,
+				FBCB50B917DC81B70099AA5C /* docxor-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FBCB50D017DC81B70099AA5C /* dodoxTests */ = {
+			isa = PBXGroup;
+			children = (
+				FBCB50D617DC81B70099AA5C /* dodoxTests.m */,
+				FBCB50D117DC81B70099AA5C /* Supporting Files */,
+			);
+			path = dodoxTests;
+			sourceTree = "<group>";
+		};
+		FBCB50D117DC81B70099AA5C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FBCB50D217DC81B70099AA5C /* docxorTests-Info.plist */,
+				FBCB50D317DC81B70099AA5C /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FBCB50E017DC83E20099AA5C /* pictures */ = {
+			isa = PBXGroup;
+			children = (
+				A00F365A17DCE06A00BD0467 /* cartoon-doctor.png */,
+				A00F362717DCB83E00BD0467 /* rate stars */,
+				A00F361717DCAA0D00BD0467 /* specialities */,
+				FBCB50E317DC84800099AA5C /* doctor.jpg */,
+			);
+			name = pictures;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FBCB50A717DC81B70099AA5C /* docxor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBCB50DA17DC81B70099AA5C /* Build configuration list for PBXNativeTarget "docxor" */;
+			buildPhases = (
+				FBCB50A417DC81B70099AA5C /* Sources */,
+				FBCB50A517DC81B70099AA5C /* Frameworks */,
+				FBCB50A617DC81B70099AA5C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = docxor;
+			productName = dodox;
+			productReference = FBCB50A817DC81B70099AA5C /* docxor.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FBCB50C817DC81B70099AA5C /* docxorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBCB50DD17DC81B70099AA5C /* Build configuration list for PBXNativeTarget "docxorTests" */;
+			buildPhases = (
+				FBCB50C517DC81B70099AA5C /* Sources */,
+				FBCB50C617DC81B70099AA5C /* Frameworks */,
+				FBCB50C717DC81B70099AA5C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FBCB50CF17DC81B70099AA5C /* PBXTargetDependency */,
+			);
+			name = docxorTests;
+			productName = dodoxTests;
+			productReference = FBCB50C917DC81B70099AA5C /* docxorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FBCB50A017DC81B70099AA5C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = DOC;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Cui Wei";
+				TargetAttributes = {
+					FBCB50C817DC81B70099AA5C = {
+						TestTargetID = FBCB50A717DC81B70099AA5C;
+					};
+				};
+			};
+			buildConfigurationList = FBCB50A317DC81B70099AA5C /* Build configuration list for PBXProject "docxor" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FBCB509F17DC81B70099AA5C;
+			productRefGroup = FBCB50A917DC81B70099AA5C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FBCB50A717DC81B70099AA5C /* docxor */,
+				FBCB50C817DC81B70099AA5C /* docxorTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FBCB50A617DC81B70099AA5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A00F363617DCB85300BD0467 /* StarFullLarge.png in Resources */,
+				A00F362617DCB50D00BD0467 /* doctorTableViewCell.xib in Resources */,
+				A00F365B17DCE06A00BD0467 /* cartoon-doctor.png in Resources */,
+				A00F360E17DCA8F900BD0467 /* aesthetic medicine doctor.jpg in Resources */,
+				A00F363117DCB85300BD0467 /* StarEmpty@2x.png in Resources */,
+				A00F360C17DCA8DE00BD0467 /* cardiologist.jpg in Resources */,
+				A00F363717DCB85300BD0467 /* StarFullLarge@2x.png in Resources */,
+				FBCB50EC17DC88880099AA5C /* dentist.jpg in Resources */,
+				A00F361617DCA90000BD0467 /* chiropracter.jpg in Resources */,
+				A00F363017DCB85300BD0467 /* StarEmpty.png in Resources */,
+				A00F360A17DCA1BA00BD0467 /* cancer specialist.jpg in Resources */,
+				FBCB50C417DC81B70099AA5C /* Images.xcassets in Resources */,
+				A00F363217DCB85300BD0467 /* StarEmptyLarge.png in Resources */,
+				A00F363517DCB85300BD0467 /* StarFull@2x.png in Resources */,
+				FBCB50E417DC84800099AA5C /* doctor.jpg in Resources */,
+				A00F361917DCACC600BD0467 /* cardiothoracic surgeon.jpg in Resources */,
+				FBCB50B617DC81B70099AA5C /* InfoPlist.strings in Resources */,
+				A00F361417DCA90000BD0467 /* psychologist.jpg in Resources */,
+				A00F363417DCB85300BD0467 /* StarFull.png in Resources */,
+				FBCB50EE17DC90140099AA5C /* SpecialityTableViewCell.xib in Resources */,
+				FBCB50BF17DC81B70099AA5C /* Main.storyboard in Resources */,
+				A00F363317DCB85300BD0467 /* StarEmptyLarge@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBCB50C717DC81B70099AA5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBCB50D517DC81B70099AA5C /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FBCB50A417DC81B70099AA5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A00F364A17DCC3F000BD0467 /* DOCGlobalUtil.m in Sources */,
+				FBCB50C217DC81B70099AA5C /* DOCViewController.m in Sources */,
+				A00F364217DCBD8100BD0467 /* DOCSpeciality.m in Sources */,
+				A00F363D17DCB8D500BD0467 /* DOCDoctorTableViewCell.m in Sources */,
+				A00F367917DD959500BD0467 /* AFURLConnectionOperation.m in Sources */,
+				FBCB50EA17DC87E00099AA5C /* DOCChooseSpecialityViewController.m in Sources */,
+				A00F367317DD959400BD0467 /* AFHTTPClient.m in Sources */,
+				A00F367817DD959500BD0467 /* AFPropertyListRequestOperation.m in Sources */,
+				FBCB50B817DC81B70099AA5C /* main.m in Sources */,
+				A00F367B17DD959500BD0467 /* UIImageView+AFNetworking.m in Sources */,
+				FBCB50BC17DC81B70099AA5C /* DOCAppDelegate.m in Sources */,
+				A00F367717DD959500BD0467 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				A00F367517DD959400BD0467 /* AFImageRequestOperation.m in Sources */,
+				A00F361C17DCB36300BD0467 /* DOCSelectDoctorViewController.m in Sources */,
+				A00F367A17DD959500BD0467 /* AFXMLRequestOperation.m in Sources */,
+				A00F365E17DCECFD00BD0467 /* DOCLeftToRightSegue.m in Sources */,
+				FBCB50F117DC917E0099AA5C /* DOCSpecialityTableViewCell.m in Sources */,
+				A00F363A17DCB86A00BD0467 /* DYRateView.m in Sources */,
+				A00F367417DD959400BD0467 /* AFHTTPRequestOperation.m in Sources */,
+				A00F367617DD959400BD0467 /* AFJSONRequestOperation.m in Sources */,
+				A00F365317DCC64200BD0467 /* Reachability.m in Sources */,
+				A00F364517DCC0BE00BD0467 /* DOCDoctor.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBCB50C517DC81B70099AA5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBCB50D717DC81B70099AA5C /* dodoxTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FBCB50CF17DC81B70099AA5C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FBCB50A717DC81B70099AA5C /* docxor */;
+			targetProxy = FBCB50CE17DC81B70099AA5C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FBCB50B417DC81B70099AA5C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FBCB50B517DC81B70099AA5C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FBCB50BD17DC81B70099AA5C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FBCB50BE17DC81B70099AA5C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FBCB50D317DC81B70099AA5C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FBCB50D417DC81B70099AA5C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FBCB50D817DC81B70099AA5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FBCB50D917DC81B70099AA5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FBCB50DB17DC81B70099AA5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "dodox/docxor-Prefix.pch";
+				INFOPLIST_FILE = "dodox/docxor-Info.plist";
+				PRODUCT_NAME = docxor;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FBCB50DC17DC81B70099AA5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "dodox/docxor-Prefix.pch";
+				INFOPLIST_FILE = "dodox/docxor-Info.plist";
+				PRODUCT_NAME = docxor;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		FBCB50DE17DC81B70099AA5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/dodox.app/dodox";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(SYSTEM_APPS_DIR)/Xcode5-DP.app/Contents/Developer/Library/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "dodox/dodox-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "dodoxTests/docxorTests-Info.plist";
+				PRODUCT_NAME = docxorTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		FBCB50DF17DC81B70099AA5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/dodox.app/dodox";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(SYSTEM_APPS_DIR)/Xcode5-DP.app/Contents/Developer/Library/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "dodox/dodox-Prefix.pch";
+				INFOPLIST_FILE = "dodoxTests/docxorTests-Info.plist";
+				PRODUCT_NAME = docxorTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FBCB50A317DC81B70099AA5C /* Build configuration list for PBXProject "docxor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBCB50D817DC81B70099AA5C /* Debug */,
+				FBCB50D917DC81B70099AA5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FBCB50DA17DC81B70099AA5C /* Build configuration list for PBXNativeTarget "docxor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBCB50DB17DC81B70099AA5C /* Debug */,
+				FBCB50DC17DC81B70099AA5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FBCB50DD17DC81B70099AA5C /* Build configuration list for PBXNativeTarget "docxorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBCB50DE17DC81B70099AA5C /* Debug */,
+				FBCB50DF17DC81B70099AA5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FBCB50A017DC81B70099AA5C /* Project object */;
+}
