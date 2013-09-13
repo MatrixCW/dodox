@@ -51,7 +51,7 @@
                                                          Name:@"Michael Yeong"
                                                       address:@"NUS SOC"
                                                          rate:4.6
-                                                     position:CLLocationCoordinate2DMake(123.0, 123.4)
+                                                     position:CLLocationCoordinate2DMake(123.0, 23.4)
                                                         phone:@"12345678"
                                                   description:Nil
                                                andPictureURLs:Nil];
@@ -60,7 +60,7 @@
                                                          Name:@"Koh Zi Chun"
                                                       address:@"usa"
                                                          rate:4.3
-                                                     position:CLLocationCoordinate2DMake(123.0, 123.4)
+                                                     position:CLLocationCoordinate2DMake(34.0, 13.4)
                                                         phone:@"12345678"
                                                   description:Nil
                                                andPictureURLs:Nil];
@@ -69,7 +69,7 @@
                                                          Name:@"Lin WeiQuan"
                                                       address:@"com1"
                                                          rate:3.5
-                                                     position:CLLocationCoordinate2DMake(123.0, 123.4)
+                                                     position:CLLocationCoordinate2DMake(23.0, 53.4)
                                                         phone:@"12345678"
                                                   description:Nil
                                                andPictureURLs:Nil];
@@ -78,7 +78,7 @@
                                                          Name:@"Jiang Yanxuan"
                                                       address:@"sheares"
                                                          rate:2.9
-                                                     position:CLLocationCoordinate2DMake(123.0, 123.4)
+                                                     position:CLLocationCoordinate2DMake(3.0, 3.4)
                                                         phone:@"12345678"
                                                   description:Nil
                                                andPictureURLs:Nil];
@@ -87,7 +87,7 @@
                                                          Name:@"Yang ManSheng"
                                                       address:@"pgp"
                                                          rate:5.0
-                                                     position:CLLocationCoordinate2DMake(123.0, 123.4)
+                                                     position:CLLocationCoordinate2DMake(13.0, 1.4)
                                                         phone:@"12345678"
                                                   description:Nil
                                                andPictureURLs:Nil];
@@ -98,14 +98,60 @@
     [self.doctors addObject:myDoctorFour];
     [self.doctors addObject:myDoctorFive];
     
+    NSArray *dataArray = [self.doctors sortedArrayUsingComparator:^NSComparisonResult(DOCDoctor *first, DOCDoctor *second) {
+        return [first compareName:second];
+    }];
     
+    self.doctors = [NSMutableArray arrayWithArray:dataArray];
     
-	// Do any additional setup after loading the view.
-    //[self.sortingChoice addTarget:self
-                        // action:@selector(pickOne:)
-               //forControlEvents:UIControlEventValueChanged];
+    [self.sortingChoice addTarget:self
+                           action:@selector(pickOne:)
+                 forControlEvents:UIControlEventValueChanged];
 }
 
+-(void) pickOne:(id)sender{
+   UISegmentedControl *segmentedControl = (UISegmentedControl *)sender;
+    
+    NSLog(@"%ld",(long)segmentedControl.selectedSegmentIndex);
+
+    
+    if(segmentedControl.selectedSegmentIndex == 0){
+        
+        
+        NSArray *dataArray = [self.doctors sortedArrayUsingComparator:^NSComparisonResult(DOCDoctor *first, DOCDoctor *second) {
+            return [first compareName:second];
+        }];
+        
+        self.doctors = [NSMutableArray arrayWithArray:dataArray];
+        
+        [self.doctorTable reloadData];
+        
+    }
+    
+    if(segmentedControl.selectedSegmentIndex == 1){
+        
+        NSArray *dataArray = [self.doctors sortedArrayUsingComparator:^NSComparisonResult(DOCDoctor *first, DOCDoctor *second) {
+            return [first compareDistance:second];
+        }];
+        
+        self.doctors = [NSMutableArray arrayWithArray:dataArray];
+        
+        [self.doctorTable reloadData];
+        
+    }
+    
+    if(segmentedControl.selectedSegmentIndex == 2){
+        
+        NSArray *dataArray = [self.doctors sortedArrayUsingComparator:^NSComparisonResult(DOCDoctor *first, DOCDoctor *second) {
+            return [first compareRate:second];
+        }];
+        
+        self.doctors = [NSMutableArray arrayWithArray:dataArray];
+        
+        [self.doctorTable reloadData];
+        
+    }
+}
 
 /*
 
@@ -158,7 +204,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    NSLog(@"sdklnvkldfnvflnv %d",self.doctors.count);
     return [self.doctors count];
 }
 
@@ -195,6 +240,8 @@
 
 #pragma mark UITableView Delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    [self performSegueWithIdentifier:@"DOCTOR_SPECIFICS" sender:self];
     
 }
 

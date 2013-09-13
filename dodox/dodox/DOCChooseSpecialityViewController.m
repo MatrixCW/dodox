@@ -49,13 +49,15 @@
 
 -(void)populateSpecialities{
     
-    NSURL *url = [NSURL URLWithString:@"http://docxor.herokuapp.com/api/categories.json"];
+    NSURL *url = [NSURL URLWithString:@"http://doxor.herokuapp.com/api/categories.json"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
     NSMutableArray *dataArray = [NSMutableArray array];
     
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request
                                                                                         success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+                                                                                            
+                                                                                            NSLog(@"ddddsdfsdfsdf");
                                                                                             
                                                                                             for(NSDictionary *dic in JSON){
                                                                                                 
@@ -183,4 +185,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+-(void) viewDidDisappear:(BOOL)animated{
+    
+}
 @end

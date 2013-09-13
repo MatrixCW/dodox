@@ -42,6 +42,19 @@
 		A00F367A17DD959500BD0467 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A00F367017DD959400BD0467 /* AFXMLRequestOperation.m */; };
 		A00F367B17DD959500BD0467 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = A00F367217DD959400BD0467 /* UIImageView+AFNetworking.m */; };
 		A00F367F17DDB3BB00BD0467 /* DOCDoctorSpecificsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A00F367E17DDB3BB00BD0467 /* DOCDoctorSpecificsViewController.m */; };
+		A00F368117E1CEE700BD0467 /* DoctorSpecificsTableViewCellGeneral.xib in Resources */ = {isa = PBXBuildFile; fileRef = A00F368017E1CEE700BD0467 /* DoctorSpecificsTableViewCellGeneral.xib */; };
+		A039186117E21F6B00934DFA /* DoctorSpecificsTableViewCellPhotos.xib in Resources */ = {isa = PBXBuildFile; fileRef = A039186017E21F6B00934DFA /* DoctorSpecificsTableViewCellPhotos.xib */; };
+		A039186317E21FA500934DFA /* DoctorSpecificsTableViewCellLocation.xib in Resources */ = {isa = PBXBuildFile; fileRef = A039186217E21FA500934DFA /* DoctorSpecificsTableViewCellLocation.xib */; };
+		A039186517E21FD400934DFA /* DoctorSpecificsTableViewCellPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = A039186417E21FD400934DFA /* DoctorSpecificsTableViewCellPhone.xib */; };
+		A039186717E2200900934DFA /* DoctorSpecificsTableViewCellDescription.xib in Resources */ = {isa = PBXBuildFile; fileRef = A039186617E2200900934DFA /* DoctorSpecificsTableViewCellDescription.xib */; };
+		A039186A17E2FAA200934DFA /* DOCDoctorGeneralInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A039186917E2FAA200934DFA /* DOCDoctorGeneralInfoCell.m */; };
+		A039186D17E2FAC500934DFA /* DOCDoctorPhoneNumberCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A039186C17E2FAC500934DFA /* DOCDoctorPhoneNumberCell.m */; };
+		A039187017E2FAE100934DFA /* DOCDoctorLocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A039186F17E2FAE100934DFA /* DOCDoctorLocationCell.m */; };
+		A039187317E2FB1A00934DFA /* DOCDoctorGalleryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A039187217E2FB1A00934DFA /* DOCDoctorGalleryCell.m */; };
+		A039187617E2FB3F00934DFA /* DOCDoctorDescriptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A039187517E2FB3F00934DFA /* DOCDoctorDescriptionCell.m */; };
+		A039187817E2FF8700934DFA /* BookButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A039187717E2FF8700934DFA /* BookButtonCell.xib */; };
+		A039187A17E2FFAE00934DFA /* green button.png in Resources */ = {isa = PBXBuildFile; fileRef = A039187917E2FFAE00934DFA /* green button.png */; };
+		A039187D17E300A800934DFA /* DOCStartBookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A039187C17E300A800934DFA /* DOCStartBookCell.m */; };
 		FBCB50AC17DC81B70099AA5C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCB50AB17DC81B70099AA5C /* Foundation.framework */; };
 		FBCB50AE17DC81B70099AA5C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCB50AD17DC81B70099AA5C /* CoreGraphics.framework */; };
 		FBCB50B017DC81B70099AA5C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCB50AF17DC81B70099AA5C /* UIKit.framework */; };
@@ -128,6 +141,25 @@
 		A00F367217DD959400BD0467 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		A00F367D17DDB3BB00BD0467 /* DOCDoctorSpecificsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCDoctorSpecificsViewController.h; sourceTree = "<group>"; };
 		A00F367E17DDB3BB00BD0467 /* DOCDoctorSpecificsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCDoctorSpecificsViewController.m; sourceTree = "<group>"; };
+		A00F368017E1CEE700BD0467 /* DoctorSpecificsTableViewCellGeneral.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoctorSpecificsTableViewCellGeneral.xib; sourceTree = "<group>"; };
+		A039186017E21F6B00934DFA /* DoctorSpecificsTableViewCellPhotos.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoctorSpecificsTableViewCellPhotos.xib; sourceTree = "<group>"; };
+		A039186217E21FA500934DFA /* DoctorSpecificsTableViewCellLocation.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoctorSpecificsTableViewCellLocation.xib; sourceTree = "<group>"; };
+		A039186417E21FD400934DFA /* DoctorSpecificsTableViewCellPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoctorSpecificsTableViewCellPhone.xib; sourceTree = "<group>"; };
+		A039186617E2200900934DFA /* DoctorSpecificsTableViewCellDescription.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoctorSpecificsTableViewCellDescription.xib; sourceTree = "<group>"; };
+		A039186817E2FAA200934DFA /* DOCDoctorGeneralInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCDoctorGeneralInfoCell.h; sourceTree = "<group>"; };
+		A039186917E2FAA200934DFA /* DOCDoctorGeneralInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCDoctorGeneralInfoCell.m; sourceTree = "<group>"; };
+		A039186B17E2FAC500934DFA /* DOCDoctorPhoneNumberCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCDoctorPhoneNumberCell.h; sourceTree = "<group>"; };
+		A039186C17E2FAC500934DFA /* DOCDoctorPhoneNumberCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCDoctorPhoneNumberCell.m; sourceTree = "<group>"; };
+		A039186E17E2FAE100934DFA /* DOCDoctorLocationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCDoctorLocationCell.h; sourceTree = "<group>"; };
+		A039186F17E2FAE100934DFA /* DOCDoctorLocationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCDoctorLocationCell.m; sourceTree = "<group>"; };
+		A039187117E2FB1A00934DFA /* DOCDoctorGalleryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCDoctorGalleryCell.h; sourceTree = "<group>"; };
+		A039187217E2FB1A00934DFA /* DOCDoctorGalleryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCDoctorGalleryCell.m; sourceTree = "<group>"; };
+		A039187417E2FB3F00934DFA /* DOCDoctorDescriptionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCDoctorDescriptionCell.h; sourceTree = "<group>"; };
+		A039187517E2FB3F00934DFA /* DOCDoctorDescriptionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCDoctorDescriptionCell.m; sourceTree = "<group>"; };
+		A039187717E2FF8700934DFA /* BookButtonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookButtonCell.xib; sourceTree = "<group>"; };
+		A039187917E2FFAE00934DFA /* green button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green button.png"; sourceTree = "<group>"; };
+		A039187B17E300A800934DFA /* DOCStartBookCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCStartBookCell.h; sourceTree = "<group>"; };
+		A039187C17E300A800934DFA /* DOCStartBookCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCStartBookCell.m; sourceTree = "<group>"; };
 		FBCB50A817DC81B70099AA5C /* docxor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = docxor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBCB50AB17DC81B70099AA5C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FBCB50AD17DC81B70099AA5C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -260,8 +292,8 @@
 			children = (
 				FBCB50BA17DC81B70099AA5C /* DOCAppDelegate.h */,
 				FBCB50BB17DC81B70099AA5C /* DOCAppDelegate.m */,
-				FBCB50BD17DC81B70099AA5C /* Main.storyboard */,
 				FBCB50C017DC81B70099AA5C /* DOCViewController.h */,
+				FBCB50BD17DC81B70099AA5C /* Main.storyboard */,
 				FBCB50C117DC81B70099AA5C /* DOCViewController.m */,
 			);
 			name = "Auto-generated";
@@ -298,6 +330,24 @@
 			children = (
 				A00F367D17DDB3BB00BD0467 /* DOCDoctorSpecificsViewController.h */,
 				A00F367E17DDB3BB00BD0467 /* DOCDoctorSpecificsViewController.m */,
+				A00F368017E1CEE700BD0467 /* DoctorSpecificsTableViewCellGeneral.xib */,
+				A039186817E2FAA200934DFA /* DOCDoctorGeneralInfoCell.h */,
+				A039186917E2FAA200934DFA /* DOCDoctorGeneralInfoCell.m */,
+				A039186017E21F6B00934DFA /* DoctorSpecificsTableViewCellPhotos.xib */,
+				A039187117E2FB1A00934DFA /* DOCDoctorGalleryCell.h */,
+				A039187217E2FB1A00934DFA /* DOCDoctorGalleryCell.m */,
+				A039186217E21FA500934DFA /* DoctorSpecificsTableViewCellLocation.xib */,
+				A039186E17E2FAE100934DFA /* DOCDoctorLocationCell.h */,
+				A039186F17E2FAE100934DFA /* DOCDoctorLocationCell.m */,
+				A039186417E21FD400934DFA /* DoctorSpecificsTableViewCellPhone.xib */,
+				A039186B17E2FAC500934DFA /* DOCDoctorPhoneNumberCell.h */,
+				A039186C17E2FAC500934DFA /* DOCDoctorPhoneNumberCell.m */,
+				A039186617E2200900934DFA /* DoctorSpecificsTableViewCellDescription.xib */,
+				A039187417E2FB3F00934DFA /* DOCDoctorDescriptionCell.h */,
+				A039187517E2FB3F00934DFA /* DOCDoctorDescriptionCell.m */,
+				A039187717E2FF8700934DFA /* BookButtonCell.xib */,
+				A039187B17E300A800934DFA /* DOCStartBookCell.h */,
+				A039187C17E300A800934DFA /* DOCStartBookCell.m */,
 			);
 			name = "step 3 view doctor specifics";
 			sourceTree = "<group>";
@@ -381,6 +431,7 @@
 		FBCB50E017DC83E20099AA5C /* pictures */ = {
 			isa = PBXGroup;
 			children = (
+				A039187917E2FFAE00934DFA /* green button.png */,
 				A00F365A17DCE06A00BD0467 /* cartoon-doctor.png */,
 				A00F362717DCB83E00BD0467 /* rate stars */,
 				A00F361717DCAA0D00BD0467 /* specialities */,
@@ -469,25 +520,32 @@
 				A00F363617DCB85300BD0467 /* StarFullLarge.png in Resources */,
 				A00F362617DCB50D00BD0467 /* DoctorTableViewCell.xib in Resources */,
 				A00F365B17DCE06A00BD0467 /* cartoon-doctor.png in Resources */,
+				A039186517E21FD400934DFA /* DoctorSpecificsTableViewCellPhone.xib in Resources */,
+				A039187A17E2FFAE00934DFA /* green button.png in Resources */,
 				A00F360E17DCA8F900BD0467 /* aesthetic medicine doctor.jpg in Resources */,
 				A00F363117DCB85300BD0467 /* StarEmpty@2x.png in Resources */,
 				A00F360C17DCA8DE00BD0467 /* cardiologist.jpg in Resources */,
 				A00F363717DCB85300BD0467 /* StarFullLarge@2x.png in Resources */,
+				A039186717E2200900934DFA /* DoctorSpecificsTableViewCellDescription.xib in Resources */,
 				FBCB50EC17DC88880099AA5C /* dentist.jpg in Resources */,
 				A00F361617DCA90000BD0467 /* chiropracter.jpg in Resources */,
 				A00F363017DCB85300BD0467 /* StarEmpty.png in Resources */,
 				A00F360A17DCA1BA00BD0467 /* cancer specialist.jpg in Resources */,
+				A039186117E21F6B00934DFA /* DoctorSpecificsTableViewCellPhotos.xib in Resources */,
 				FBCB50C417DC81B70099AA5C /* Images.xcassets in Resources */,
+				A039186317E21FA500934DFA /* DoctorSpecificsTableViewCellLocation.xib in Resources */,
 				A00F363217DCB85300BD0467 /* StarEmptyLarge.png in Resources */,
 				A00F363517DCB85300BD0467 /* StarFull@2x.png in Resources */,
 				FBCB50E417DC84800099AA5C /* doctor.jpg in Resources */,
 				A00F361917DCACC600BD0467 /* cardiothoracic surgeon.jpg in Resources */,
 				FBCB50B617DC81B70099AA5C /* InfoPlist.strings in Resources */,
 				A00F361417DCA90000BD0467 /* psychologist.jpg in Resources */,
+				A039187817E2FF8700934DFA /* BookButtonCell.xib in Resources */,
 				A00F363417DCB85300BD0467 /* StarFull.png in Resources */,
 				FBCB50EE17DC90140099AA5C /* SpecialityTableViewCell.xib in Resources */,
 				FBCB50BF17DC81B70099AA5C /* Main.storyboard in Resources */,
 				A00F363317DCB85300BD0467 /* StarEmptyLarge@2x.png in Resources */,
+				A00F368117E1CEE700BD0467 /* DoctorSpecificsTableViewCellGeneral.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,9 +564,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A039186A17E2FAA200934DFA /* DOCDoctorGeneralInfoCell.m in Sources */,
 				A00F364A17DCC3F000BD0467 /* DOCGlobalUtil.m in Sources */,
 				A00F367F17DDB3BB00BD0467 /* DOCDoctorSpecificsViewController.m in Sources */,
 				FBCB50C217DC81B70099AA5C /* DOCViewController.m in Sources */,
+				A039187D17E300A800934DFA /* DOCStartBookCell.m in Sources */,
 				A00F364217DCBD8100BD0467 /* DOCSpeciality.m in Sources */,
 				A00F363D17DCB8D500BD0467 /* DOCDoctorTableViewCell.m in Sources */,
 				A00F367917DD959500BD0467 /* AFURLConnectionOperation.m in Sources */,
@@ -516,14 +576,18 @@
 				A00F367317DD959400BD0467 /* AFHTTPClient.m in Sources */,
 				A00F367817DD959500BD0467 /* AFPropertyListRequestOperation.m in Sources */,
 				FBCB50B817DC81B70099AA5C /* main.m in Sources */,
+				A039187317E2FB1A00934DFA /* DOCDoctorGalleryCell.m in Sources */,
 				A00F367B17DD959500BD0467 /* UIImageView+AFNetworking.m in Sources */,
 				FBCB50BC17DC81B70099AA5C /* DOCAppDelegate.m in Sources */,
 				A00F367717DD959500BD0467 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				A00F367517DD959400BD0467 /* AFImageRequestOperation.m in Sources */,
 				A00F361C17DCB36300BD0467 /* DOCSelectDoctorViewController.m in Sources */,
 				A00F367A17DD959500BD0467 /* AFXMLRequestOperation.m in Sources */,
+				A039187617E2FB3F00934DFA /* DOCDoctorDescriptionCell.m in Sources */,
 				A00F365E17DCECFD00BD0467 /* DOCLeftToRightSegue.m in Sources */,
+				A039186D17E2FAC500934DFA /* DOCDoctorPhoneNumberCell.m in Sources */,
 				FBCB50F117DC917E0099AA5C /* DOCSpecialityTableViewCell.m in Sources */,
+				A039187017E2FAE100934DFA /* DOCDoctorLocationCell.m in Sources */,
 				A00F363A17DCB86A00BD0467 /* DYRateView.m in Sources */,
 				A00F367417DD959400BD0467 /* AFHTTPRequestOperation.m in Sources */,
 				A00F367617DD959400BD0467 /* AFJSONRequestOperation.m in Sources */,

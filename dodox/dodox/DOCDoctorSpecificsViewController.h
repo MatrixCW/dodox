@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DOCDoctorSpecificsViewController : UIViewController
+@interface DOCDoctorSpecificsViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UINavigationBar *doctorTitleBar;
+
+@property (weak, nonatomic) IBOutlet UITableView *doctorInfoTable;
+
 
 @end

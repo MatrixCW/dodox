@@ -19,6 +19,8 @@
 #define CUSTOMIZED_CELL_IDENTIFIER_FOR_DOCTOR @"DoctorCell"
 
 #define ABSOLUTE_URL_PREFIX @"http://dddddd.com"
+
+#define NUMBER_OF_CELLS_IN_DOCTOR_SPECIFICS 6
 @interface DOCConstants : NSObject
 
 @end
