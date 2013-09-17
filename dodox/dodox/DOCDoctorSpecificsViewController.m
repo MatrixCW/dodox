@@ -14,8 +14,12 @@
 #import "DOCDoctorPhoneNumberCell.h"
 #import "DOCDoctorDescriptionCell.h"
 #import "DOCStartBookCell.h"
+#import "DOCTimeSlotPicker.h"
 
 @interface DOCDoctorSpecificsViewController ()
+
+
+@property UIView *blackView;
 
 @end
 
@@ -39,7 +43,9 @@
     
     self.doctorInfoTable.delegate = self;
     self.doctorInfoTable.dataSource = self;
+    
 }
+
 
 
 
@@ -161,7 +167,7 @@
             height = 420;
             break;
         case 5:
-            height = 80;
+            height = 60;
             break;
             
         default:
@@ -186,10 +192,102 @@
         NSLog(@"%@",phoneNumber);
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
     }
+    
+    if(indexPath.row == 5){
+        
+        [self showPicker];
+    }
 
     
 }
 
+- (void)showPicker {
+    
+    self.blackView = [[UIView alloc] initWithFrame:self.view.bounds];
+    self.blackView.center = CGPointMake(self.blackView.center.x, self.blackView.center.y+600);
+    
+    
+    self.blackView.backgroundColor = [UIColor whiteColor];
+    self.blackView.alpha = 0.90;
+    [self.view addSubview:self.blackView];
+    
+        
+    UIPickerView *picker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 330, 320, 100)];
+    picker.dataSource = self;
+    picker.delegate = self;
+    [self.blackView addSubview:picker];
+    
+    UIToolbar *toolbar = [[UIToolbar alloc] init];
+    toolbar.frame = CGRectMake(0, 300, 320, 50);
+    NSMutableArray *items = [[NSMutableArray alloc] init];
+    
+    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel"
+                                                                     style:UIBarButtonItemStyleBordered
+                                                                    target:self
+                                                                    action:@selector(cancelPicker)];
+    
+    UIBarButtonItem *flexible = [[UIBarButtonItem alloc]
+                                 initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                                                              target:nil
+                                                                              action:nil];
+    
+    
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Done"
+                                                                     style:UIBarButtonItemStyleBordered
+                                                                    target:self
+                                                                    action:Nil];
+    
+    [items addObject:cancelButton];
+    [items addObject:flexible];
+
+    [items addObject:doneButton];
+    [toolbar setItems:items animated:NO];
+    [self.blackView addSubview:toolbar];
+    
+    [UIView animateWithDuration:1.5
+                     animations:^{
+                         self.blackView.center = CGPointMake(self.blackView.center.x, self.blackView.center.y-600);
+                     }];
+    
+    
+        
+    
+}
+
+
+-(void)cancelPicker{
+    [self.blackView removeFromSuperview];
+    self.blackView = Nil;
+}
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+    return 3;
+    
+    
+}
+
+// returns the # of rows in each component..
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent: (NSInteger)component{
+    
+    return 5;
+    
+}
+
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    
+    if(component == 0)
+    return @"Oct";
+    if(component == 1)
+        return @"10th";
+    return @"10am";
+    
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row   inComponent:(NSInteger)component
+{
+    NSLog(@"haha");
+}
 
 - (void)didReceiveMemoryWarning
 {

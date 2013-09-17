@@ -12,13 +12,13 @@
 #import "DOCGlobalUtil.h"
 #import "DOCSpeciality.h"
 #import "AFJSONRequestOperation.h"
+#import "UIImageView+UIActivityIndicatorForSDWebImage.h"
 
 @interface DOCChooseSpecialityViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *specialityTable;
 
 @property NSArray *specialities;
-@property NSMutableArray *specialityImages;
 
 @end
 
@@ -39,7 +39,6 @@
     //[self.specialityTable setContentInset:UIEdgeInsetsMake(0, 0, 85, 0)];
     
     [self populateSpecialities];
-    [self addSpecialityImages];
     
     self.specialityTable.dataSource = self;
     self.specialityTable.delegate = self;
@@ -71,12 +70,10 @@
                                                                                                 
                                                                                                  NSString *numberOfDoctors = [dic objectForKey:@"number_of_doctors"];
                                                                                                 
-                                                                                                NSLog(@"%@ %@ %@ %@", specialityID, specialityName, imageUrl, numberOfDoctors);
-                                                                                                
                                                                                                 DOCSpeciality *tempSpeciality = [[DOCSpeciality alloc] initWithName:specialityName
                                                                                                                                                            identity:[specialityID intValue]
                                                                                                                                                              number:[numberOfDoctors intValue]
-                                                                                                                                                        andImageURL:imageUrl];
+                                                                                                                                                        andImageURL:[NSString stringWithFormat:@"http://doxor.herokuapp.com%@",imageUrl]];
                                                                                                 
                                                                                         [dataArray addObject:tempSpeciality];
                                                                                                 
@@ -93,6 +90,9 @@
 }
 
 
+-(void)setCategoryImage{
+    
+}
 -(void)formarRetrivedResults:(NSMutableArray *)dataArray{
     
     self.specialities = [dataArray sortedArrayUsingComparator:^NSComparisonResult(DOCSpeciality *first, DOCSpeciality *second) {
@@ -100,30 +100,6 @@
     }];
     
     [self.specialityTable reloadData];
-}
-
-
--(void)addSpecialityImages{
-    
-    if(self.specialityImages == NULL ){
-        self.specialityImages = [NSMutableArray array];
-    }
-    
-    [self.specialityImages removeAllObjects];
-    
-    [self.specialityImages addObject:[UIImage imageNamed:@"aesthetic medicine doctor.jpg"]];
-    [self.specialityImages addObject:[UIImage imageNamed:@"cancer specialist.jpg"]];
-    [self.specialityImages addObject:[UIImage imageNamed:@"cardiologist.jpg"]];
-    [self.specialityImages addObject:[UIImage imageNamed:@"cardiothoracic surgeon.jpg"]];
-    [self.specialityImages addObject:[UIImage imageNamed:@"chiropracter.jpg"]];
-    [self.specialityImages addObject:[UIImage imageNamed:@"dentist.jpg"]];
-    [self.specialityImages addObject:[UIImage imageNamed:@"psychologist.jpg"]];
-    
-    for(UIImage *img in self.specialityImages){
-        assert(img != NULL);
-    }
-
-    
 }
 
 
@@ -150,7 +126,9 @@
     [cell.speciality sizeToFit];
     [cell.numberOfSpecialists sizeToFit];
     
-    cell.thumbnailImageView.image = [self.specialityImages objectAtIndex:indexPath.row];
+    
+    [cell.thumbnailImageView setImageWithURL:[NSURL URLWithString:speciality.specialityImageURL]
+                 usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
 
     
     return cell;
@@ -164,22 +142,17 @@
 #pragma mark UITableView Delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    DOCSpecialityTableViewCell *cell = (DOCSpecialityTableViewCell*)[tableView cellForRowAtIndexPath:indexPath];
     
     DOCGlobalUtil *sharedInstance = [DOCGlobalUtil getSharedInstance];
     
-     sharedInstance.currentSelectedSpeciality = cell.speciality.text;
-     sharedInstance.currentSelectedSpecialityID = 1;
+    DOCSpeciality *selectedSpeciality = [self.specialities objectAtIndex:indexPath.row];
+     sharedInstance.currentSelectedSpeciality = selectedSpeciality.specialityName;
+     sharedInstance.currentSelectedSpecialityID = selectedSpeciality.specialityID;
     
     [self performSegueWithIdentifier:SEGUE_FROM_SPECIALITY_TO_CHOOSE_DOCTOR sender:Nil];
     
 }
 
--(void)go{
-    
-    [self performSegueWithIdentifier:SEGUE_FROM_SPECIALITY_TO_CHOOSE_DOCTOR sender:Nil];
-    
-}
 - (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

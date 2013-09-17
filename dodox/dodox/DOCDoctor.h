@@ -13,6 +13,7 @@
 
 @property (readonly) int doctorID;
 @property (readonly) NSString *doctorName;
+@property (readonly) NSString *doctorSpeciality;
 @property (readonly) NSString *doctorAddress;
 @property (readonly) CGFloat doctorRate;
 @property (readonly) CGFloat distance;
@@ -27,6 +28,7 @@
 
 -(id)initWithIdentity:(int)doctorID
                  Name:(NSString*)doctorName
+           speciality:(NSString*)doctorSpeciality
               address:(NSString*)doctorAddress
                  rate:(CGFloat)rate
              position:(CLLocationCoordinate2D) position

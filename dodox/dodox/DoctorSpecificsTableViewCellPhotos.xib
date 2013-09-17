@@ -17,6 +17,12 @@
                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iKJ-2j-7wD">
                         <rect key="frame" x="20" y="19" width="280" height="280"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="clinic.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="W8z-uH-BNq">
+                                <rect key="frame" x="0.0" y="0.0" width="280" height="280"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
                     </scrollView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -26,4 +32,7 @@
             </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="clinic.JPG" width="245.75999450683594" height="184.32000732421875"/>
+    </resources>
 </document>

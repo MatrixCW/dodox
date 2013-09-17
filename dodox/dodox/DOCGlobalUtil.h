@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
+#import "DOCDoctor.h"
 
 @interface DOCGlobalUtil : NSObject
 
@@ -16,6 +17,8 @@
 
 @property NSString *currentSelectedSpeciality;
 @property int currentSelectedSpecialityID;
+
+@property DOCDoctor *currentSelectedDoctor;
 
 - (NSString *)findMyCurrentLocation;
 -(void)alertNoNetwork;

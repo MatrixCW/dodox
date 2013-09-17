@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DOCDoctorSpecificsViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface DOCDoctorSpecificsViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIActionSheetDelegate,UIPickerViewDelegate,UIPickerViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UINavigationBar *doctorTitleBar;
 

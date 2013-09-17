@@ -47,57 +47,9 @@
     
     self.doctors = [NSMutableArray array];
     
-    DOCDoctor *myDoctorOne = [[DOCDoctor alloc] initWithIdentity:1
-                                                         Name:@"Michael Yeong"
-                                                      address:@"NUS SOC"
-                                                         rate:4.6
-                                                     position:CLLocationCoordinate2DMake(123.0, 23.4)
-                                                        phone:@"12345678"
-                                                  description:Nil
-                                               andPictureURLs:Nil];
+    [self retriveDoctorUnderSpeciality];
     
-    DOCDoctor *myDoctorTwo = [[DOCDoctor alloc] initWithIdentity:1
-                                                         Name:@"Koh Zi Chun"
-                                                      address:@"usa"
-                                                         rate:4.3
-                                                     position:CLLocationCoordinate2DMake(34.0, 13.4)
-                                                        phone:@"12345678"
-                                                  description:Nil
-                                               andPictureURLs:Nil];
-    
-    DOCDoctor *myDoctorThree = [[DOCDoctor alloc] initWithIdentity:1
-                                                         Name:@"Lin WeiQuan"
-                                                      address:@"com1"
-                                                         rate:3.5
-                                                     position:CLLocationCoordinate2DMake(23.0, 53.4)
-                                                        phone:@"12345678"
-                                                  description:Nil
-                                               andPictureURLs:Nil];
-    
-    DOCDoctor *myDoctorFour = [[DOCDoctor alloc] initWithIdentity:1
-                                                         Name:@"Jiang Yanxuan"
-                                                      address:@"sheares"
-                                                         rate:2.9
-                                                     position:CLLocationCoordinate2DMake(3.0, 3.4)
-                                                        phone:@"12345678"
-                                                  description:Nil
-                                               andPictureURLs:Nil];
-    
-    DOCDoctor *myDoctorFive = [[DOCDoctor alloc] initWithIdentity:1
-                                                         Name:@"Yang ManSheng"
-                                                      address:@"pgp"
-                                                         rate:5.0
-                                                     position:CLLocationCoordinate2DMake(13.0, 1.4)
-                                                        phone:@"12345678"
-                                                  description:Nil
-                                               andPictureURLs:Nil];
-    
-    [self.doctors addObject:myDoctorOne];
-    [self.doctors addObject:myDoctorTwo];
-    [self.doctors addObject:myDoctorThree];
-    [self.doctors addObject:myDoctorFour];
-    [self.doctors addObject:myDoctorFive];
-    
+    /*
     NSArray *dataArray = [self.doctors sortedArrayUsingComparator:^NSComparisonResult(DOCDoctor *first, DOCDoctor *second) {
         return [first compareName:second];
     }];
@@ -107,6 +59,9 @@
     [self.sortingChoice addTarget:self
                            action:@selector(pickOne:)
                  forControlEvents:UIControlEventValueChanged];
+     */
+
+    
 }
 
 -(void) pickOne:(id)sender{
@@ -153,15 +108,21 @@
     }
 }
 
-/*
+
 
 -(void)retriveDoctorUnderSpeciality{
+    
+    NSString *urlPrefix = @"http://doxor.herokuapp.com/api/categories/%d/doctors.json";
     
     DOCGlobalUtil *sharedInstance = [DOCGlobalUtil getSharedInstance];
     
     int specialityID = sharedInstance.currentSelectedSpecialityID;
     
-    NSURL *url = [NSURL URLWithString:@"http://docxor.heroku.com/api/categories.json"];
+    NSString *requestUrlString = [NSString stringWithFormat:urlPrefix,specialityID];
+    
+    NSLog(@"%@", requestUrlString);
+    
+    NSURL *url = [NSURL URLWithString:requestUrlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request
@@ -169,37 +130,36 @@
                                                                                             
                                                                                             for(NSDictionary *dic in JSON){
                                                                                                 
-                                                                                                NSString *specialityID = [dic objectForKey:@"id"];
-                                                                                                
-                                                                                                NSString *specialityName = [dic objectForKey:@"name"];
-                                                                                                
-                                                                                                NSString *imageUrl = [dic objectForKey:@"imageUrl"];
-                                                                                                
-                                                                                                NSString *numberOfDoctors = [dic objectForKey:@"number"];
-                                                                                                
-                                                                                                NSLog(@"%@ %@ %@ %@", specialityID, specialityName, imageUrl, numberOfDoctors);
-                                                                                                
-                                                                                                DOCSpeciality *tempSpeciality = [[DOCSpeciality alloc] initWithName:specialityName
-                                                                                                                                                           identity:[specialityID intValue]
-                                                                                                                                                             number:[numberOfDoctors intValue]
-                                                                                                                                                        andImageURL:imageUrl];
-                                                                                                
-                                                                                                [self.specialities addObject:tempSpeciality];
-                                                                                                
+                                                                                                [self constructDoctorObjectFromDictionary:dic];
+                                                                                                                                                                                                
                                                                                             }
                                                                                         }
                                                                                         failure:nil];
     [operation start];
     
 }
- */
 
 
-//-(void) pickOne:(id)sender{
- //   UISegmentedControl *segmentedControl = (UISegmentedControl *)sender;
-//}
-
-
+-(void)constructDoctorObjectFromDictionary:(NSDictionary *)dict{
+    
+    NSString *doctorID = [dict valueForKey:@"id"];
+    NSString *doctorName = [dict valueForKey:@"name"];
+    NSString *doctorSpeciality = [dict valueForKey:@"category_name"];
+    NSString *doctorAddress = [dict valueForKey:@"address"];
+    NSString *doctorRate = [dict valueForKey:@"rate"];
+    NSString *doctorPhone = [dict valueForKey:@"phone"];
+    NSDictionary *doctorGallery = [dict valueForKey:@"doctor_gallary_images"];
+    NSDictionary *doctorAvatar = [dict valueForKey:@"pic"];
+    NSDictionary *doctorCoordinate = [dict valueForKey:@"coorinate"];
+    NSDictionary *doctorDescription = [dict valueForKey:@"description"];
+    
+    NSLog(@"%@ %@ %@ %@ %@ %@ %@ %@ %@ %@", doctorID, doctorName, doctorSpeciality, doctorAddress, doctorRate
+          , doctorPhone, doctorGallery, doctorAvatar, doctorCoordinate, doctorDescription);
+    
+    
+    
+    
+}
 #pragma mark UITableView DataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

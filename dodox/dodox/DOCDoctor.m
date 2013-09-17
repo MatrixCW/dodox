@@ -13,6 +13,7 @@
 
 @property (readwrite) int doctorID;
 @property (readwrite) NSString *doctorName;
+@property (readwrite) NSString *doctorSpeciality;
 @property (readwrite) NSString *doctorAddress;
 @property (readwrite) CGFloat doctorRate;
 @property (readwrite) CGFloat distance;
@@ -28,6 +29,7 @@
 
 -(id)initWithIdentity:(int)doctorID
                  Name:(NSString*)doctorName
+           speciality:(NSString*)doctorSpeciality
               address:(NSString*)doctorAddress
                  rate:(CGFloat)rate
              position:(CLLocationCoordinate2D) position
@@ -40,6 +42,7 @@
     if (self) {
         self.doctorID = doctorID;
         self.doctorName = doctorName;
+        self.doctorSpeciality = doctorSpeciality;
         self.doctorAddress = doctorAddress;
         self.doctorRate = rate;
         self.doctorPosition = position;
