@@ -19,8 +19,9 @@
 @property (readwrite) CGFloat distance;
 @property (readwrite) CLLocationCoordinate2D doctorPosition;
 @property (readwrite) NSString *doctorPhoneNumber;
+@property (readwrite) NSDictionary *doctorAvatars;
 @property (readwrite) NSDictionary *doctorDescription;
-@property (readwrite) NSDictionary *doctorPictureURLs;
+@property (readwrite) NSArray *doctorPictureURLs;
 @end
 
 
@@ -34,8 +35,9 @@
                  rate:(CGFloat)rate
              position:(CLLocationCoordinate2D) position
                 phone:(NSString*) phoneNumber
+              avatars:(NSDictionary*)avatarUrls
           description:(NSDictionary*)description
-       andPictureURLs:(NSDictionary*)pictureURLs{
+       andPictureURLs:(NSArray*)pictureURLs{
     
     self = [super init];
     
@@ -47,8 +49,9 @@
         self.doctorRate = rate;
         self.doctorPosition = position;
         self.doctorPhoneNumber = phoneNumber;
+        self.doctorAvatars = [NSDictionary dictionaryWithDictionary:avatarUrls];
         self.doctorDescription = [NSDictionary dictionaryWithDictionary:description];
-        self.doctorPictureURLs = [NSDictionary dictionaryWithDictionary:pictureURLs];
+        self.doctorPictureURLs = [NSArray arrayWithArray:pictureURLs];
         
         
         [self calculateDistance];

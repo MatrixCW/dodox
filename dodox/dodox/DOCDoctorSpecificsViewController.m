@@ -15,6 +15,8 @@
 #import "DOCDoctorDescriptionCell.h"
 #import "DOCStartBookCell.h"
 #import "DOCTimeSlotPicker.h"
+#import "DOCGlobalUtil.h"
+#import "UIImageView+UIActivityIndicatorForSDWebImage.h"
 
 @interface DOCDoctorSpecificsViewController ()
 
@@ -44,6 +46,11 @@
     self.doctorInfoTable.delegate = self;
     self.doctorInfoTable.dataSource = self;
     
+    DOCGlobalUtil *sharedInstance = [DOCGlobalUtil getSharedInstance];
+    
+    self.doctorTitleBar.topItem.title = [NSString stringWithFormat:@"Dr %@", sharedInstance.currentSelectedDoctor.doctorName];;
+    
+    
 }
 
 
@@ -58,6 +65,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    DOCGlobalUtil *sharedInstance = [DOCGlobalUtil getSharedInstance];
+    DOCDoctor *currentDoctor = sharedInstance.currentSelectedDoctor;
+    
     int index = indexPath.row;
     
     if(index == 0){
@@ -67,6 +77,16 @@
         if (cell == nil) {
             NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"DoctorSpecificsTableViewCellGeneral" owner:self options:nil];
             cell = [nib objectAtIndex:0];
+            
+            NSURL *avatarThumbnail = [NSURL URLWithString:[currentDoctor.doctorAvatars objectForKey:@"original"]];
+            
+            [cell.doctorAvatar setImageWithURL:avatarThumbnail usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+            
+            cell.doctorAddress.numberOfLines = 0;
+            cell.doctorAddress.numberOfLines = 0;
+            
+            cell.doctorCategory.text = currentDoctor.doctorSpeciality;
+            cell.doctorAddress.text = currentDoctor.doctorAddress;
         }
         
         return cell;
@@ -80,7 +100,11 @@
         if (cell == nil) {
             NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"DoctorSpecificsTableViewCellPhotos" owner:self options:nil];
             cell = [nib objectAtIndex:0];
+            
+            [cell setImages:currentDoctor.doctorPictureURLs];
+
         }
+        
         
         return cell;
         
@@ -94,6 +118,9 @@
         if (cell == nil) {
             NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"DoctorSpecificsTableViewCellLocation" owner:self options:nil];
             cell = [nib objectAtIndex:0];
+            
+            cell.address.numberOfLines = 0;
+            cell.address.text = currentDoctor.doctorAddress;
         }
         
         return cell;
@@ -108,6 +135,9 @@
         if (cell == nil) {
             NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"DoctorSpecificsTableViewCellPhone" owner:self options:nil];
             cell = [nib objectAtIndex:0];
+            
+            cell.doctorPhoneNumber.numberOfLines = 0;
+            cell.doctorPhoneNumber.text = currentDoctor.doctorPhoneNumber;
         }
         
         return cell;
@@ -122,6 +152,20 @@
         if (cell == nil) {
             NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"DoctorSpecificsTableViewCellDescription" owner:self options:nil];
             cell = [nib objectAtIndex:0];
+            
+            
+            NSDictionary *dict = currentDoctor.doctorDescription;
+            NSArray *languages = [dict objectForKey:@"spoken_language"];
+            NSString *clinicName = [dict objectForKey:@"clinic_name"];
+            NSString *doctorDetailedInfo = [dict objectForKey:@"desc"];
+            NSString *doctorQualification = [dict objectForKey:@"qualification"];
+            NSString *additionalInfo = [dict objectForKey:@"add"];
+            
+            cell.languages.text = [languages componentsJoinedByString: @", "];
+            cell.practiceName.text = clinicName;
+            cell.qualifications.text = doctorQualification;
+            cell.detailedInformation.text = doctorDetailedInfo;
+            cell.additionalInformation.text = additionalInfo;
         }
         
         return cell;
@@ -137,6 +181,9 @@
         if (cell == nil) {
             NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"BookButtonCell" owner:self options:nil];
             cell = [nib objectAtIndex:0];
+           
+            
+            
         }
         
         return cell;
@@ -152,7 +199,7 @@
     
     switch (indexPath.row) {
         case 0:
-            height = 120;
+            height = 160;
             break;
         case 1:
             height = 320;

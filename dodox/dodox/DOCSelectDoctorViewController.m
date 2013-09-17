@@ -13,6 +13,10 @@
 #import "AFJSONRequestOperation.h"
 #import "DOCDoctor.h"
 #import "DYRateView.h"
+#import <MapKit/MapKit.h>
+#import "UIImageView+UIActivityIndicatorForSDWebImage.h"
+
+
 
 @interface DOCSelectDoctorViewController ()
 
@@ -49,22 +53,13 @@
     
     [self retriveDoctorUnderSpeciality];
     
-    /*
-    NSArray *dataArray = [self.doctors sortedArrayUsingComparator:^NSComparisonResult(DOCDoctor *first, DOCDoctor *second) {
-        return [first compareName:second];
-    }];
-    
-    self.doctors = [NSMutableArray arrayWithArray:dataArray];
-    
     [self.sortingChoice addTarget:self
                            action:@selector(pickOne:)
                  forControlEvents:UIControlEventValueChanged];
-     */
-
-    
 }
 
 -(void) pickOne:(id)sender{
+    
    UISegmentedControl *segmentedControl = (UISegmentedControl *)sender;
     
     NSLog(@"%ld",(long)segmentedControl.selectedSegmentIndex);
@@ -133,6 +128,14 @@
                                                                                                 [self constructDoctorObjectFromDictionary:dic];
                                                                                                                                                                                                 
                                                                                             }
+                                                                                            
+                                                                                            NSArray *dataArray = [self.doctors sortedArrayUsingComparator:^NSComparisonResult(DOCDoctor *first, DOCDoctor *second) {
+                                                                                                return [first compareName:second];
+                                                                                            }];
+                                                                                            
+                                                                                            self.doctors = [NSMutableArray arrayWithArray:dataArray];
+                                                                                            
+                                                                                            [self.doctorTable reloadData];
                                                                                         }
                                                                                         failure:nil];
     [operation start];
@@ -148,18 +151,37 @@
     NSString *doctorAddress = [dict valueForKey:@"address"];
     NSString *doctorRate = [dict valueForKey:@"rate"];
     NSString *doctorPhone = [dict valueForKey:@"phone"];
-    NSDictionary *doctorGallery = [dict valueForKey:@"doctor_gallary_images"];
+    NSArray *doctorGallery = [dict valueForKey:@"doctor_gallary_images"];
     NSDictionary *doctorAvatar = [dict valueForKey:@"pic"];
     NSDictionary *doctorCoordinate = [dict valueForKey:@"coorinate"];
     NSDictionary *doctorDescription = [dict valueForKey:@"description"];
     
+    NSString *lat = [doctorCoordinate objectForKey:@"lat"];
+    NSString *lng = [doctorCoordinate objectForKey:@"lng"];
+    
+    /*
     NSLog(@"%@ %@ %@ %@ %@ %@ %@ %@ %@ %@", doctorID, doctorName, doctorSpeciality, doctorAddress, doctorRate
           , doctorPhone, doctorGallery, doctorAvatar, doctorCoordinate, doctorDescription);
+     */
+    
+    DOCDoctor *doctor = [[DOCDoctor alloc] initWithIdentity:[doctorID integerValue]
+                                                       Name:doctorName
+                                                 speciality:doctorSpeciality
+                                                    address:doctorAddress
+                                                       rate:[doctorRate floatValue]
+                                                   position:CLLocationCoordinate2DMake([lat floatValue], [lng floatValue])
+                                                      phone:doctorPhone
+                                                    avatars:doctorAvatar
+                                                description:doctorDescription
+                                             andPictureURLs:doctorGallery];
+        
+    [self.doctors addObject:doctor];
     
     
     
     
 }
+
 #pragma mark UITableView DataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -178,16 +200,21 @@
     
     DOCDoctor *tempDoctor = [self.doctors objectAtIndex:indexPath.row];
     
+    cell.doctorName.numberOfLines = 0;
+    cell.doctorAddress.numberOfLines = 0;
     cell.doctorName.text = tempDoctor.doctorName;
     cell.doctorAddress.text = tempDoctor.doctorAddress;
     
-    [cell.doctorName sizeToFit];
-    [cell.doctorAddress sizeToFit];
-    
-    DYRateView *rateView = [[DYRateView alloc] initWithFrame:CGRectMake(0, 10, 100, 14)];
+    DYRateView *rateView = [[DYRateView alloc] initWithFrame:CGRectMake(0, 0, 100, 14)];
     rateView.rate = tempDoctor.doctorRate;
     rateView.alignment = RateViewAlignmentRight;
     [cell.rate addSubview:rateView];
+    
+    NSURL *avatarThumbnail = [NSURL URLWithString:[tempDoctor.doctorAvatars objectForKey:@"medium"]];
+    [cell.thumbnailImageView setImageWithURL:avatarThumbnail usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    
+    
+
     
     
     return cell;
@@ -195,11 +222,15 @@
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 120;
+    return 125;
 }
 
 #pragma mark UITableView Delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    DOCGlobalUtil *sharedInstance = [DOCGlobalUtil getSharedInstance];
+    
+    sharedInstance.currentSelectedDoctor = [self.doctors objectAtIndex:indexPath.row];
     
     [self performSegueWithIdentifier:@"DOCTOR_SPECIFICS" sender:self];
     

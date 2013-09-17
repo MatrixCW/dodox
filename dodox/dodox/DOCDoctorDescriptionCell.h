@@ -13,7 +13,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *languages;
 
-
 @property (weak, nonatomic) IBOutlet UILabel *practiceName;
 
 @property (weak, nonatomic) IBOutlet UITextView *qualifications;

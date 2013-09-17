@@ -19,11 +19,11 @@
 @property (readonly) CGFloat distance;
 @property (readonly) CLLocationCoordinate2D doctorPosition;
 @property (readonly) NSString *doctorPhoneNumber;
-@property (readonly) NSDictionary *doctorDescription;
-@property (readonly) NSDictionary *doctorPictureURLs;
 
-@property UIImage *doctorAvatar;
-@property UIImage *doctorAvatarThumbnail;
+@property (readonly) NSDictionary *doctorAvatars;
+@property (readonly) NSDictionary *doctorDescription;
+@property (readonly) NSArray *doctorPictureURLs;
+
 
 
 -(id)initWithIdentity:(int)doctorID
@@ -33,8 +33,9 @@
                  rate:(CGFloat)rate
              position:(CLLocationCoordinate2D) position
                 phone:(NSString*) phoneNumber
+              avatars:(NSDictionary*)avatarUrls
           description:(NSDictionary*)description
-       andPictureURLs:(NSDictionary*)pictureURLs;
+       andPictureURLs:(NSArray*)pictureURLs;
 
 
 - (NSComparisonResult)compareName:(DOCDoctor *)otherObject;

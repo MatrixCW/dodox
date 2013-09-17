@@ -12,4 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *imageGallery;
 
+
+-(void)setImages:(NSArray*)imageUrls;
+
 @end

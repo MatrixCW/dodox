@@ -66,14 +66,12 @@
                                                                                                 
                                                                                                 NSString *imageUrl = [dic objectForKey:@"pic"];
                                                                                                 
-                                                                                
-                                                                                                
-                                                                                                 NSString *numberOfDoctors = [dic objectForKey:@"number_of_doctors"];
+                                                                                                                                                                                                NSString *numberOfDoctors = [dic objectForKey:@"number_of_doctors"];
                                                                                                 
                                                                                                 DOCSpeciality *tempSpeciality = [[DOCSpeciality alloc] initWithName:specialityName
                                                                                                                                                            identity:[specialityID intValue]
                                                                                                                                                              number:[numberOfDoctors intValue]
-                                                                                                                                                        andImageURL:[NSString stringWithFormat:@"http://doxor.herokuapp.com%@",imageUrl]];
+                                                                                                                                                        andImageURL:imageUrl];
                                                                                                 
                                                                                         [dataArray addObject:tempSpeciality];
                                                                                                 

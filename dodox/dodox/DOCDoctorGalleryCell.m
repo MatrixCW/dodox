@@ -7,6 +7,7 @@
 //
 
 #import "DOCDoctorGalleryCell.h"
+#import "UIImageView+UIActivityIndicatorForSDWebImage.h"
 
 @implementation DOCDoctorGalleryCell
 
@@ -26,4 +27,38 @@
     // Configure the view for the selected state
 }
 
+-(void)setImages:(NSArray*)imageUrls{
+    
+    self.imageGallery.scrollEnabled = YES;
+    self.imageGallery.pagingEnabled = YES;
+    
+    CGFloat imageSize = 280;
+    CGFloat seperatSpace = 20;
+    int totalNumberOfImages = imageUrls.count;
+    
+    CGFloat currentCenterX = seperatSpace + imageSize/2;
+    
+    for(int i = 0; i < totalNumberOfImages; i++){
+        
+        
+        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 20, imageSize, imageSize)];
+        imgView.center = CGPointMake(currentCenterX, imgView.center.y);
+        
+        currentCenterX = currentCenterX + seperatSpace * 2 + imageSize;
+        
+        self.imageGallery.frame = CGRectMake(self.imageGallery.frame.origin.x, self.imageGallery.frame.origin.y, self.imageGallery.frame.size.width + imageSize + seperatSpace, self.imageGallery.frame.size.height);
+        
+        [self.imageGallery addSubview:imgView];
+        
+        NSURL *url = [NSURL URLWithString:[imageUrls objectAtIndex:i]];
+        [imgView setImageWithURL:url usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        
+        
+        
+    }
+    
+    self.imageGallery.contentSize = CGSizeMake(totalNumberOfImages * (imageSize + seperatSpace * 2), 280);
+    
+    
+}
 @end
