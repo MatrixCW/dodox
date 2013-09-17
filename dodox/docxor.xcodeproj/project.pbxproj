@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4BAC7D3017E8A0C100EE293C /* DOCBookTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAC7D2F17E8A0C100EE293C /* DOCBookTimeViewController.m */; };
+		4BDE1C2517E8CD9F00001517 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4BDE1C2217E8CD9F00001517 /* SVProgressHUD.bundle */; };
+		4BDE1C2617E8CD9F00001517 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BDE1C2417E8CD9F00001517 /* SVProgressHUD.m */; };
 		A00F360A17DCA1BA00BD0467 /* cancer specialist.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A00F360917DCA1BA00BD0467 /* cancer specialist.jpg */; };
 		A00F360C17DCA8DE00BD0467 /* cardiologist.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A00F360B17DCA8DE00BD0467 /* cardiologist.jpg */; };
 		A00F360E17DCA8F900BD0467 /* aesthetic medicine doctor.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A00F360D17DCA8F900BD0467 /* aesthetic medicine doctor.jpg */; };
@@ -105,6 +108,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4BAC7D2E17E8A0C100EE293C /* DOCBookTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCBookTimeViewController.h; sourceTree = "<group>"; };
+		4BAC7D2F17E8A0C100EE293C /* DOCBookTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCBookTimeViewController.m; sourceTree = "<group>"; };
+		4BDE1C2217E8CD9F00001517 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		4BDE1C2317E8CD9F00001517 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		4BDE1C2417E8CD9F00001517 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		A00F360917DCA1BA00BD0467 /* cancer specialist.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cancer specialist.jpg"; sourceTree = "<group>"; };
 		A00F360B17DCA8DE00BD0467 /* cardiologist.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cardiologist.jpg; sourceTree = "<group>"; };
 		A00F360D17DCA8F900BD0467 /* aesthetic medicine doctor.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "aesthetic medicine doctor.jpg"; sourceTree = "<group>"; };
@@ -267,6 +275,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4BAC7D2D17E8A06C00EE293C /* Step 4 book a timeslot */ = {
+			isa = PBXGroup;
+			children = (
+				4BAC7D2E17E8A0C100EE293C /* DOCBookTimeViewController.h */,
+				4BAC7D2F17E8A0C100EE293C /* DOCBookTimeViewController.m */,
+			);
+			name = "Step 4 book a timeslot";
+			sourceTree = "<group>";
+		};
+		4BDE1C2117E8CD9F00001517 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				4BDE1C2217E8CD9F00001517 /* SVProgressHUD.bundle */,
+				4BDE1C2317E8CD9F00001517 /* SVProgressHUD.h */,
+				4BDE1C2417E8CD9F00001517 /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 		A00F361717DCAA0D00BD0467 /* specialities */ = {
 			isa = PBXGroup;
 			children = (
@@ -487,6 +514,7 @@
 		FBCB50B117DC81B70099AA5C /* dodox */ = {
 			isa = PBXGroup;
 			children = (
+				4BDE1C2117E8CD9F00001517 /* SVProgressHUD */,
 				A0C5D87C17E74D1C00C311CE /* SDWebImage */,
 				A0C5D87817E74CF800C311CE /* UIActivityIndicator-for-SDWebImage */,
 				A00F365F17DD959400BD0467 /* AFNetworking */,
@@ -495,6 +523,7 @@
 				A00F363E17DCBB0E00BD0467 /* step 1 choose speciality */,
 				A00F363F17DCBB2000BD0467 /* step 2 choose doctor */,
 				A00F367C17DDA19B00BD0467 /* step 3 view doctor specifics */,
+				4BAC7D2D17E8A06C00EE293C /* Step 4 book a timeslot */,
 				FBCB50C317DC81B70099AA5C /* Images.xcassets */,
 				FBCB50B217DC81B70099AA5C /* Supporting Files */,
 			);
@@ -648,6 +677,7 @@
 				A039188D17E73FE100934DFA /* clinic.JPG in Resources */,
 				A039187817E2FF8700934DFA /* BookButtonCell.xib in Resources */,
 				A00F363417DCB85300BD0467 /* StarFull.png in Resources */,
+				4BDE1C2517E8CD9F00001517 /* SVProgressHUD.bundle in Resources */,
 				FBCB50EE17DC90140099AA5C /* SpecialityTableViewCell.xib in Resources */,
 				FBCB50BF17DC81B70099AA5C /* Main.storyboard in Resources */,
 				A00F363317DCB85300BD0467 /* StarEmptyLarge@2x.png in Resources */,
@@ -673,6 +703,7 @@
 				A039186A17E2FAA200934DFA /* DOCDoctorGeneralInfoCell.m in Sources */,
 				A0C5D8A217E74D1C00C311CE /* SDWebImagePrefetcher.m in Sources */,
 				A0C5D89A17E74D1C00C311CE /* MKAnnotationView+WebCache.m in Sources */,
+				4BDE1C2617E8CD9F00001517 /* SVProgressHUD.m in Sources */,
 				A00F364A17DCC3F000BD0467 /* DOCGlobalUtil.m in Sources */,
 				A00F367F17DDB3BB00BD0467 /* DOCDoctorSpecificsViewController.m in Sources */,
 				FBCB50C217DC81B70099AA5C /* DOCViewController.m in Sources */,
@@ -711,6 +742,7 @@
 				A00F367417DD959400BD0467 /* AFHTTPRequestOperation.m in Sources */,
 				A0C5D89C17E74D1C00C311CE /* SDImageCache.m in Sources */,
 				A00F367617DD959400BD0467 /* AFJSONRequestOperation.m in Sources */,
+				4BAC7D3017E8A0C100EE293C /* DOCBookTimeViewController.m in Sources */,
 				A00F365317DCC64200BD0467 /* Reachability.m in Sources */,
 				A0C5D89B17E74D1C00C311CE /* NSData+GIF.m in Sources */,
 				A00F364517DCC0BE00BD0467 /* DOCDoctor.m in Sources */,

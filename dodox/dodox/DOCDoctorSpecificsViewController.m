@@ -93,7 +93,7 @@
         
     }
     
-    if(index == 1){
+    if(index == 2){
         
         DOCDoctorGalleryCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DoctorGallery"];
         
@@ -111,7 +111,7 @@
     }
 
     
-    if(index == 2){
+    if(index == 3){
         
         DOCDoctorLocationCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DoctorLocation"];
         
@@ -128,7 +128,7 @@
     }
 
     
-    if(index == 3){
+    if(index == 4){
         
         DOCDoctorPhoneNumberCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DoctorPhoneNumber"];
         
@@ -145,7 +145,7 @@
     }
 
     
-    if(index == 4){
+    if(index == 5){
         
         DOCDoctorDescriptionCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DoctorDescription"];
         
@@ -173,7 +173,7 @@
     }
 
     
-    assert(index == 5);
+    assert(index == 1);
     
         
         DOCStartBookCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BookAppointment"];
@@ -201,19 +201,19 @@
         case 0:
             height = 160;
             break;
-        case 1:
-            height = 320;
-            break;
         case 2:
-            height = 50;
+            height = 320;
             break;
         case 3:
             height = 50;
             break;
         case 4:
-            height = 420;
+            height = 50;
             break;
         case 5:
+            height = 420;
+            break;
+        case 1:
             height = 60;
             break;
             
@@ -240,9 +240,9 @@
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
     }
     
-    if(indexPath.row == 5){
+    if(indexPath.row == 1){
         
-        [self showPicker];
+        [self performSegueWithIdentifier:@"BOOK_DOCTOR_SEGUE" sender:self];
     }
 
     
