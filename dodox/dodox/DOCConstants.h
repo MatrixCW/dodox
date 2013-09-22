@@ -9,6 +9,13 @@
 
 #import <Foundation/Foundation.h>
 
+#define IS_IPHONE5 (([[UIScreen mainScreen] bounds].size.height-568)?NO:YES)
+
+#define SCREEN_WIDTH 320
+
+#define SCREEN_HEIGHT_SHORT 480
+
+#define SCREEN_HEIGHT_HIGH 568
 
 #define SEGUE_FROM_START_TO_CHOOSE_SPECIAL @"CHOOSE_SPECIALITY"
 #define SEGUE_FROM_SPECIALITY_TO_CHOOSE_DOCTOR @"CHOOSE_DOCTOR"

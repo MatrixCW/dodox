@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B4EB07017EF7652001D5533 /* specialityHolder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3B4EB06F17EF7652001D5533 /* specialityHolder.jpg */; };
 		4BAC7D3017E8A0C100EE293C /* DOCBookTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAC7D2F17E8A0C100EE293C /* DOCBookTimeViewController.m */; };
 		4BDE1C2517E8CD9F00001517 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4BDE1C2217E8CD9F00001517 /* SVProgressHUD.bundle */; };
 		4BDE1C2617E8CD9F00001517 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BDE1C2417E8CD9F00001517 /* SVProgressHUD.m */; };
@@ -108,6 +109,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B4EB06F17EF7652001D5533 /* specialityHolder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = specialityHolder.jpg; sourceTree = "<group>"; };
 		4BAC7D2E17E8A0C100EE293C /* DOCBookTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCBookTimeViewController.h; sourceTree = "<group>"; };
 		4BAC7D2F17E8A0C100EE293C /* DOCBookTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCBookTimeViewController.m; sourceTree = "<group>"; };
 		4BDE1C2217E8CD9F00001517 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 		A00F361717DCAA0D00BD0467 /* specialities */ = {
 			isa = PBXGroup;
 			children = (
+				3B4EB06F17EF7652001D5533 /* specialityHolder.jpg */,
 				A00F360D17DCA8F900BD0467 /* aesthetic medicine doctor.jpg */,
 				A00F360917DCA1BA00BD0467 /* cancer specialist.jpg */,
 				A00F360B17DCA8DE00BD0467 /* cardiologist.jpg */,
@@ -670,6 +673,7 @@
 				A00F363217DCB85300BD0467 /* StarEmptyLarge.png in Resources */,
 				A00F363517DCB85300BD0467 /* StarFull@2x.png in Resources */,
 				FBCB50E417DC84800099AA5C /* doctor.jpg in Resources */,
+				3B4EB07017EF7652001D5533 /* specialityHolder.jpg in Resources */,
 				A00F361917DCACC600BD0467 /* cardiothoracic surgeon.jpg in Resources */,
 				FBCB50B617DC81B70099AA5C /* InfoPlist.strings in Resources */,
 				A039188B17E729B300934DFA /* TimeSlotPicker.xib in Resources */,

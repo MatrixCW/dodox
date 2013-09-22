@@ -27,6 +27,7 @@ static DOCGlobalUtil *sharedInstance;
     
     if(sharedInstance == NULL){
         sharedInstance = [[DOCGlobalUtil alloc] init];
+        sharedInstance.firstTimeLaunch = YES;
     }
     
     return sharedInstance;
@@ -68,6 +69,9 @@ static DOCGlobalUtil *sharedInstance;
     return [NSString stringWithFormat:@"latitude: %f longitude: %f", self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.longitude];
 }
 
+-(void)storeSpecialities:(NSArray*)inputArray{
+    self.storedSpecialities = [NSArray arrayWithArray:inputArray];
+}
 
 
 @end

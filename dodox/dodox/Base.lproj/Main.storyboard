@@ -1,57 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4457.6" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="OMZ-lU-osy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="aTf-vp-PGO">
     <dependencies>
         <development version="5000" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3682.6"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="ufC-wZ-h7g">
-            <objects>
-                <viewController id="vXZ-lx-hvc" customClass="DOCViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="doctor.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="wfJ-3g-04Q">
-                                <rect key="frame" x="0.0" y="164" width="320" height="404"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DOCXOR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQU-X0-gVl">
-                                <rect key="frame" x="90" y="47" width="141" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Easy appointment, like never before." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Byg-MI-bpK">
-                                <rect key="frame" x="27" y="98" width="267" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" id="wTZ-gh-AnV"/>
-                    <connections>
-                        <segue destination="OBW-3V-YcF" kind="push" identifier="CHOOSE_SPECIALITY" id="oBT-3S-bgV"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="352" y="-1031"/>
-        </scene>
         <!--Select Doctor View Controller-->
         <scene sceneID="zB1-6t-CPx">
             <objects>
                 <viewController id="sf9-3G-SAf" customClass="DOCSelectDoctorViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="niT-81-HgQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qgc-BB-bLD"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Lyc-P5-JgX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="N9D-wk-abA">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="N9D-wk-abA">
                                 <rect key="frame" x="0.0" y="147" width="320" height="421"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -90,7 +56,7 @@
                                     <navigationItem title="Title" id="2IT-YS-s4S">
                                         <barButtonItem key="leftBarButtonItem" systemItem="reply" id="vNq-Sv-Kqg">
                                             <connections>
-                                                <segue destination="OBW-3V-YcF" kind="custom" customClass="DOCLeftToRightSegue" id="DcX-01-NY0"/>
+                                                <segue destination="OBW-3V-YcF" kind="custom" customClass="DOCLeftToRightSegue" id="l4c-6C-Bf6"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -114,12 +80,16 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cXb-pM-VC1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1447" y="-1099"/>
+            <point key="canvasLocation" x="2011" y="-1212"/>
         </scene>
         <!--Book Time View Controller-->
         <scene sceneID="Mf4-5m-MN2">
             <objects>
                 <viewController id="02z-vy-J4i" customClass="DOCBookTimeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QeB-Pd-HVD"/>
+                        <viewControllerLayoutGuide type="bottom" id="xvP-CC-ieH"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="lTb-fd-aKY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -240,8 +210,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <scene sceneID="z6X-Wu-baA">
             <objects>
                 <viewController id="hby-1e-sYd" customClass="DOCDoctorSpecificsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="c9w-HH-Puv"/>
+                        <viewControllerLayoutGuide type="bottom" id="n00-1L-IgO"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4Dy-bu-alf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="491-JM-XCY">
@@ -257,7 +231,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="OGE-ii-bEj">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="OGE-ii-bEj">
                                 <rect key="frame" x="0.0" y="67" width="320" height="545"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -281,23 +255,39 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <scene sceneID="K4l-cs-5Bt">
             <objects>
                 <viewController id="OBW-3V-YcF" customClass="DOCChooseSpecialityViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QCN-a2-X4J"/>
+                        <viewControllerLayoutGuide type="bottom" id="XDh-t0-m6p"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Gcy-SF-Dyp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose speciality of the doctor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d74-hW-FiY">
-                                <rect key="frame" x="20" y="33" width="280" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="aPq-0a-Lyc">
-                                <rect key="frame" x="0.0" y="95" width="320" height="473"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="aPq-0a-Lyc">
+                                <rect key="frame" x="0.0" y="83" width="320" height="453"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose speciality of the doctor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d74-hW-FiY">
+                                <rect key="frame" x="20" y="30" width="280" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="Isa-jZ-rtg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="d74-hW-FiY" firstAttribute="top" secondItem="QCN-a2-X4J" secondAttribute="bottom" constant="10" id="9jP-7k-woS"/>
+                            <constraint firstItem="aPq-0a-Lyc" firstAttribute="leading" secondItem="Gcy-SF-Dyp" secondAttribute="leading" id="Btn-Si-1Da"/>
+                            <constraint firstItem="d74-hW-FiY" firstAttribute="leading" secondItem="Gcy-SF-Dyp" secondAttribute="leading" constant="20" symbolic="YES" id="DGj-X4-CWe"/>
+                            <constraint firstItem="aPq-0a-Lyc" firstAttribute="top" secondItem="d74-hW-FiY" secondAttribute="bottom" constant="10" id="Nk6-Yo-X9Z"/>
+                            <constraint firstAttribute="trailing" secondItem="d74-hW-FiY" secondAttribute="trailing" constant="20" symbolic="YES" id="XSu-Om-Jf4"/>
+                            <constraint firstItem="XDh-t0-m6p" firstAttribute="top" secondItem="aPq-0a-Lyc" secondAttribute="bottom" constant="32" id="y66-EB-OQB"/>
+                            <constraint firstItem="d74-hW-FiY" firstAttribute="centerX" secondItem="aPq-0a-Lyc" secondAttribute="centerX" id="zvC-Hq-IiZ"/>
+                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="EbG-VT-jtG"/>
@@ -308,38 +298,34 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3An-eL-L1e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="975" y="-1039"/>
+            <point key="canvasLocation" x="1416" y="-1045"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="5VT-wE-m6N">
+        <scene sceneID="bhn-dq-XXB">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="OMZ-lU-osy" sceneMemberID="viewController">
-                    <extendedEdge key="edgesForExtendedLayout"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="aTf-vp-PGO" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Vg7-zP-GDJ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0zZ-mJ-Mbu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="f4P-J8-t8z"/>
+                        <segue destination="OBW-3V-YcF" kind="relationship" relationship="rootViewController" id="oDw-iQ-upX"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uqB-sd-YWp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G5j-VD-XkX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-192" y="-1039"/>
+            <point key="canvasLocation" x="606" y="-1045"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="doctor.jpg" width="589.67999267578125" height="705.5999755859375"/>
-    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="oBT-3S-bgV"/>
-        <segue reference="nfp-d9-1vG"/>
+        <segue reference="2oK-4x-KL9"/>
+        <segue reference="l4c-6C-Bf6"/>
     </inferredMetricsTieBreakers>
 </document>

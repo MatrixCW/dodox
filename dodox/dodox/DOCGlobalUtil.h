@@ -18,12 +18,16 @@
 @property NSString *currentSelectedSpeciality;
 @property int currentSelectedSpecialityID;
 
+@property BOOL firstTimeLaunch;
 @property DOCDoctor *currentSelectedDoctor;
+
+@property NSArray *storedSpecialities;
 
 - (NSString *)findMyCurrentLocation;
 -(void)alertNoNetwork;
 -(BOOL)isNetworkActive;
 +(id)getSharedInstance;
+-(void)storeSpecialities:(NSArray*)inputArray;
 
 
 @end
