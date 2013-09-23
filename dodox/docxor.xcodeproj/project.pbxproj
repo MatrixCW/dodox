@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3B4EB07017EF7652001D5533 /* specialityHolder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3B4EB06F17EF7652001D5533 /* specialityHolder.jpg */; };
 		3BA8212E17F0C11200AA19BE /* right arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA8212D17F0C11200AA19BE /* right arrow.png */; };
+		3BA8213017F0D46700AA19BE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA8212F17F0D46700AA19BE /* QuartzCore.framework */; };
 		4BAC7D3017E8A0C100EE293C /* DOCBookTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAC7D2F17E8A0C100EE293C /* DOCBookTimeViewController.m */; };
 		4BDE1C2517E8CD9F00001517 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4BDE1C2217E8CD9F00001517 /* SVProgressHUD.bundle */; };
 		4BDE1C2617E8CD9F00001517 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BDE1C2417E8CD9F00001517 /* SVProgressHUD.m */; };
@@ -118,6 +119,7 @@
 /* Begin PBXFileReference section */
 		3B4EB06F17EF7652001D5533 /* specialityHolder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = specialityHolder.jpg; sourceTree = "<group>"; };
 		3BA8212D17F0C11200AA19BE /* right arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right arrow.png"; sourceTree = "<group>"; };
+		3BA8212F17F0D46700AA19BE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		4BAC7D2E17E8A0C100EE293C /* DOCBookTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCBookTimeViewController.h; sourceTree = "<group>"; };
 		4BAC7D2F17E8A0C100EE293C /* DOCBookTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCBookTimeViewController.m; sourceTree = "<group>"; };
 		4BDE1C2217E8CD9F00001517 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BA8213017F0D46700AA19BE /* QuartzCore.framework in Frameworks */,
 				A00F365517DCC96800BD0467 /* SystemConfiguration.framework in Frameworks */,
 				FBCB50AE17DC81B70099AA5C /* CoreGraphics.framework in Frameworks */,
 				FBCB50B017DC81B70099AA5C /* UIKit.framework in Frameworks */,
@@ -523,6 +526,7 @@
 		FBCB50AA17DC81B70099AA5C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3BA8212F17F0D46700AA19BE /* QuartzCore.framework */,
 				A00F365417DCC96800BD0467 /* SystemConfiguration.framework */,
 				FBCB50AB17DC81B70099AA5C /* Foundation.framework */,
 				FBCB50AD17DC81B70099AA5C /* CoreGraphics.framework */,

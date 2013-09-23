@@ -14,6 +14,7 @@
 #import "AFJSONRequestOperation.h"
 #import "UIImageView+UIActivityIndicatorForSDWebImage.h"
 #import "Reachability.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface DOCChooseSpecialityViewController ()
 
@@ -304,7 +305,8 @@
                  usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     
 
-    
+    [cell.thumbnailImageView.layer setMasksToBounds:YES];
+    [cell.thumbnailImageView.layer setCornerRadius:8.0];
     return cell;
 }
 
