@@ -343,14 +343,17 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="aPq-0a-Lyc">
-                                <rect key="frame" x="0.0" y="78" width="320" height="458"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="aPq-0a-Lyc">
+                                <rect key="frame" x="0.0" y="90" width="320" height="453"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose speciality" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d74-hW-FiY">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose speciality" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d74-hW-FiY">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="byS-Zc-tA4"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -358,7 +361,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="aPq-0a-Lyc" firstAttribute="leading" secondItem="Gcy-SF-Dyp" secondAttribute="leading" id="Btn-Si-1Da"/>
-                            <constraint firstItem="XDh-t0-m6p" firstAttribute="top" secondItem="aPq-0a-Lyc" secondAttribute="bottom" constant="32" id="y66-EB-OQB"/>
+                            <constraint firstAttribute="trailing" secondItem="d74-hW-FiY" secondAttribute="trailing" id="GRg-ZT-hhS"/>
+                            <constraint firstItem="d74-hW-FiY" firstAttribute="leading" secondItem="aPq-0a-Lyc" secondAttribute="leading" id="Jn4-a7-Z1P"/>
+                            <constraint firstItem="d74-hW-FiY" firstAttribute="top" secondItem="Gcy-SF-Dyp" secondAttribute="top" id="bMx-wD-cgG"/>
+                            <constraint firstItem="d74-hW-FiY" firstAttribute="trailing" secondItem="aPq-0a-Lyc" secondAttribute="trailing" id="skN-8C-P1Z"/>
+                            <constraint firstItem="aPq-0a-Lyc" firstAttribute="top" secondItem="d74-hW-FiY" secondAttribute="bottom" constant="25" id="vg3-xK-ywv"/>
+                            <constraint firstItem="XDh-t0-m6p" firstAttribute="top" secondItem="aPq-0a-Lyc" secondAttribute="bottom" constant="25" id="y66-EB-OQB"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>

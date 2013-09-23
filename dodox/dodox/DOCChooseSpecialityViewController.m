@@ -38,6 +38,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 
+    self.specialityTable.backgroundColor = [UIColor colorWithRed:236.0/255 green:240.0/255 blue:243.0/255 alpha:1.0];
 
     self.specialityTitle.backgroundColor = [UIColor whiteColor];
     self.specialityTitle.numberOfLines = 0;
