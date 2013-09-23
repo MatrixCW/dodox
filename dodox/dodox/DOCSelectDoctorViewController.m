@@ -203,7 +203,7 @@
     cell.doctorName.numberOfLines = 0;
     cell.doctorAddress.numberOfLines = 0;
     cell.doctorName.text = tempDoctor.doctorName;
-    cell.doctorAddress.text = @"Next available slot:\n   13 Sep 2013\n   15:30";
+    cell.doctorAddress.text = @"15:30";
     
     //DYRateView *rateView = [[DYRateView alloc] initWithFrame:CGRectMake(0, 0, 100, 14)];
     //rateView.rate = tempDoctor.doctorRate;

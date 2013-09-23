@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *specialityTable;
 @property UIView *coverView;
 @property NSArray *specialities;
+@property (weak, nonatomic) IBOutlet UILabel *specialityTitle;
 
 @end
 
@@ -38,9 +39,23 @@
 	// Do any additional setup after loading the view.
 
 
+    self.specialityTitle.backgroundColor = [UIColor whiteColor];
+    self.specialityTitle.numberOfLines = 0;
+    self.specialityTitle.text = @"\nChoose Speciality";
+    
+    
+    CALayer *leftBorder = [CALayer layer];
+    leftBorder.borderColor = [UIColor colorWithRed:228.0/255 green:227.0/255 blue:230.0/255 alpha:1.0].CGColor;
+    leftBorder.borderWidth = 2.0;
+    leftBorder.frame = CGRectMake(-10, -2, self.specialityTitle.frame.size.width*2, self.specialityTitle.frame.size.height+3);
+    
+    [self.specialityTitle.layer addSublayer:leftBorder];
+
     
     NSLog(@"coming!!");
     
+    self.view.backgroundColor = [UIColor colorWithRed:236.0/255 green:240.0/255 blue:243.0/255 alpha:1.0];
+
     DOCGlobalUtil *sharedUtil = [DOCGlobalUtil getSharedInstance];
     
     
@@ -49,9 +64,10 @@
         [self setCoverImageViewMode:YES];
     }
     
-    [self performSegueWithIdentifier:@"ENTER_PI_FROM_SPECIALITY" sender:Nil];
+    //[self performSegueWithIdentifier:@"ENTER_PI_FROM_SPECIALITY" sender:Nil];
 
 
+   [self startMyJob];
     
 }
 
@@ -117,6 +133,7 @@
         [self.coverView removeFromSuperview];
         self.coverView = Nil;
         self.coverView = [[UIView alloc] initWithFrame:self.view.bounds];
+        
         self.coverView.backgroundColor = [UIColor whiteColor];
         self.coverView.alpha = 1.0;
         
@@ -169,13 +186,14 @@
     }
     else{
         
-        [NSThread sleepForTimeInterval:3];
+            [NSThread sleepForTimeInterval:1.5];
         
-            [UIView animateWithDuration:0.6 animations:^{
+            [UIView animateWithDuration:1.6 animations:^{
             
-            self.coverView.center = CGPointMake(self.coverView.center.x-300,
+            self.coverView.center = CGPointMake(self.coverView.center.x-320,
                                                 self.coverView.center.y);
-            
+            self.coverView.alpha = 0.0;
+                
         }completion:^(BOOL finished){
             
             [self.coverView removeFromSuperview];
