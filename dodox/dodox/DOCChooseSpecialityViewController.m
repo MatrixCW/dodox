@@ -37,13 +37,45 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 
+
+    
     NSLog(@"coming!!");
+    
     DOCGlobalUtil *sharedUtil = [DOCGlobalUtil getSharedInstance];
     
     
+    if(sharedUtil.firstTimeLaunch){
+        sharedUtil.firstTimeLaunch = NO;
+        [self setCoverImageViewMode:YES];
+    }
+    
+    [self performSegueWithIdentifier:@"ENTER_PI_FROM_SPECIALITY" sender:Nil];
+
+
+    
+}
+
+
+-(void)performTaskAfterUserEnteringInfo{
+    NSLog(@"dadadadad cancelled");
+
+    [self startMyJob];
+}
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    if ([segue.identifier isEqualToString:@"ENTER_PI_FROM_SPECIALITY"]){
+        DOCEnterPIViewController *vc = (DOCEnterPIViewController*)segue.destinationViewController;
+        vc.myDelgate = self;
+    }
+}
+-(void)startMyJob{
+    
+    DOCGlobalUtil *sharedUtil = [DOCGlobalUtil getSharedInstance];
+
+    
     if([sharedUtil isNetworkActive]){
         
-        NSLog(@"%@",[sharedUtil findMyCurrentLocation]);
+        //NSLog(@"%@",[sharedUtil findMyCurrentLocation]);
         
     }
     else{
@@ -51,7 +83,7 @@
         [sharedUtil alertNoNetwork];
         
     }
-
+    
     
     self.specialityTable.dataSource = self;
     self.specialityTable.delegate = self;
@@ -72,9 +104,8 @@
         self.specialities = sharedUtil.storedSpecialities;
     }
     
+    
 }
-
-
 
 
 -(void)setCoverImageViewMode:(BOOL)createImgView{

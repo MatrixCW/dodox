@@ -15,12 +15,12 @@
 #import "DYRateView.h"
 #import <MapKit/MapKit.h>
 #import "UIImageView+UIActivityIndicatorForSDWebImage.h"
-
+#import "JSFlatButton.h"
 
 
 @interface DOCSelectDoctorViewController ()
 
-@property (weak, nonatomic) IBOutlet UISegmentedControl *sortingChoice;
+//@property (weak, nonatomic) IBOutlet UISegmentedControl *sortingChoice;
 @property (weak, nonatomic) IBOutlet UINavigationBar *titleBar;
 
 @property (weak, nonatomic) IBOutlet UITableView *doctorTable;
@@ -53,9 +53,9 @@
     
     [self retriveDoctorUnderSpeciality];
     
-    [self.sortingChoice addTarget:self
-                           action:@selector(pickOne:)
-                 forControlEvents:UIControlEventValueChanged];
+    //[self.sortingChoice addTarget:self
+      //                     action:@selector(pickOne:)
+        //         forControlEvents:UIControlEventValueChanged];
 }
 
 -(void) pickOne:(id)sender{
@@ -203,12 +203,22 @@
     cell.doctorName.numberOfLines = 0;
     cell.doctorAddress.numberOfLines = 0;
     cell.doctorName.text = tempDoctor.doctorName;
-    cell.doctorAddress.text = tempDoctor.doctorAddress;
+    cell.doctorAddress.text = @"Next available slot:\n   13 Sep 2013\n   15:30";
     
-    DYRateView *rateView = [[DYRateView alloc] initWithFrame:CGRectMake(0, 0, 100, 14)];
-    rateView.rate = tempDoctor.doctorRate;
-    rateView.alignment = RateViewAlignmentRight;
-    [cell.rate addSubview:rateView];
+    //DYRateView *rateView = [[DYRateView alloc] initWithFrame:CGRectMake(0, 0, 100, 14)];
+    //rateView.rate = tempDoctor.doctorRate;
+    //rateView.alignment = RateViewAlignmentRight;
+    //[cell.rate addSubview:rateView];
+    
+    cell.bookButton.buttonBackgroundColor = [UIColor colorWithRed:0.32f green:0.64f blue:0.32f alpha:1.00f]; //[UIColor colorWithHue:0.0f saturation:0.0f brightness:0.60f alpha:1.0f];
+    cell.bookButton.buttonForegroundColor = [UIColor colorWithHue:0.0f saturation:0.0f brightness:1.0f alpha:1.0f];
+    cell.bookButton.titleLabel.font = [UIFont systemFontOfSize:11];
+    [cell.bookButton setFlatTitle:@"Book now"];
+    [cell.bookButton setFlatImage:[UIImage imageNamed:@"play.png"]];
+    
+    
+    //cell.bookButton.buttonBackgroundColor =  [UIColor colorWithRed:82 green:163 blue:82 alpha:1.0];
+    //[cell.bookButton setFlatTitle:@"Bpmoniijb ook now"];
     
     NSURL *avatarThumbnail = [NSURL URLWithString:[tempDoctor.doctorAvatars objectForKey:@"medium"]];
     [cell.thumbnailImageView setImageWithURL:avatarThumbnail usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
@@ -222,7 +232,7 @@
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 125;
+    return 100;
 }
 
 #pragma mark UITableView Delegate

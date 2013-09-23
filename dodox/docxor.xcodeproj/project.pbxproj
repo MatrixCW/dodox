@@ -96,6 +96,12 @@
 		FBCB50EC17DC88880099AA5C /* dentist.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FBCB50EB17DC88880099AA5C /* dentist.jpg */; };
 		FBCB50EE17DC90140099AA5C /* SpecialityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBCB50ED17DC90140099AA5C /* SpecialityTableViewCell.xib */; };
 		FBCB50F117DC917E0099AA5C /* DOCSpecialityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCB50F017DC917E0099AA5C /* DOCSpecialityTableViewCell.m */; };
+		FBCEF1D717F0759300B50B6F /* DOCEnterPIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCEF1D617F0759300B50B6F /* DOCEnterPIViewController.m */; };
+		FBD9242217F05D2A008FB24F /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = FBD9242117F05D2A008FB24F /* play.png */; };
+		FBD9242A17F05EA5008FB24F /* JSFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD9242517F05EA5008FB24F /* JSFlatButton.m */; };
+		FBD9242B17F05EA5008FB24F /* UIColor+JSFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD9242717F05EA5008FB24F /* UIColor+JSFlatButton.m */; };
+		FBD9242C17F05EA5008FB24F /* UIImage+JSFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD9242917F05EA5008FB24F /* UIImage+JSFlatButton.m */; };
+		FBD9242E17F06AC1008FB24F /* play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FBD9242D17F06AC1008FB24F /* play@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -250,6 +256,16 @@
 		FBCB50ED17DC90140099AA5C /* SpecialityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpecialityTableViewCell.xib; sourceTree = "<group>"; };
 		FBCB50EF17DC917E0099AA5C /* DOCSpecialityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCSpecialityTableViewCell.h; sourceTree = "<group>"; };
 		FBCB50F017DC917E0099AA5C /* DOCSpecialityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCSpecialityTableViewCell.m; sourceTree = "<group>"; };
+		FBCEF1D517F0759300B50B6F /* DOCEnterPIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCEnterPIViewController.h; sourceTree = "<group>"; };
+		FBCEF1D617F0759300B50B6F /* DOCEnterPIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCEnterPIViewController.m; sourceTree = "<group>"; };
+		FBD9242117F05D2A008FB24F /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
+		FBD9242417F05EA5008FB24F /* JSFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSFlatButton.h; sourceTree = "<group>"; };
+		FBD9242517F05EA5008FB24F /* JSFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSFlatButton.m; sourceTree = "<group>"; };
+		FBD9242617F05EA5008FB24F /* UIColor+JSFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+JSFlatButton.h"; sourceTree = "<group>"; };
+		FBD9242717F05EA5008FB24F /* UIColor+JSFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+JSFlatButton.m"; sourceTree = "<group>"; };
+		FBD9242817F05EA5008FB24F /* UIImage+JSFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JSFlatButton.h"; sourceTree = "<group>"; };
+		FBD9242917F05EA5008FB24F /* UIImage+JSFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JSFlatButton.m"; sourceTree = "<group>"; };
+		FBD9242D17F06AC1008FB24F /* play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -517,6 +533,8 @@
 		FBCB50B117DC81B70099AA5C /* dodox */ = {
 			isa = PBXGroup;
 			children = (
+				FBCEF1D417F0756000B50B6F /* step 0 enter personal information */,
+				FBD9242317F05EA5008FB24F /* JSFlatButton */,
 				4BDE1C2117E8CD9F00001517 /* SVProgressHUD */,
 				A0C5D87C17E74D1C00C311CE /* SDWebImage */,
 				A0C5D87817E74CF800C311CE /* UIActivityIndicator-for-SDWebImage */,
@@ -566,6 +584,8 @@
 		FBCB50E017DC83E20099AA5C /* pictures */ = {
 			isa = PBXGroup;
 			children = (
+				FBD9242D17F06AC1008FB24F /* play@2x.png */,
+				FBD9242117F05D2A008FB24F /* play.png */,
 				A039187917E2FFAE00934DFA /* green button.png */,
 				A039188C17E73FE100934DFA /* clinic.JPG */,
 				A00F365A17DCE06A00BD0467 /* cartoon-doctor.png */,
@@ -574,6 +594,28 @@
 				FBCB50E317DC84800099AA5C /* doctor.jpg */,
 			);
 			name = pictures;
+			sourceTree = "<group>";
+		};
+		FBCEF1D417F0756000B50B6F /* step 0 enter personal information */ = {
+			isa = PBXGroup;
+			children = (
+				FBCEF1D517F0759300B50B6F /* DOCEnterPIViewController.h */,
+				FBCEF1D617F0759300B50B6F /* DOCEnterPIViewController.m */,
+			);
+			name = "step 0 enter personal information";
+			sourceTree = "<group>";
+		};
+		FBD9242317F05EA5008FB24F /* JSFlatButton */ = {
+			isa = PBXGroup;
+			children = (
+				FBD9242417F05EA5008FB24F /* JSFlatButton.h */,
+				FBD9242517F05EA5008FB24F /* JSFlatButton.m */,
+				FBD9242617F05EA5008FB24F /* UIColor+JSFlatButton.h */,
+				FBD9242717F05EA5008FB24F /* UIColor+JSFlatButton.m */,
+				FBD9242817F05EA5008FB24F /* UIImage+JSFlatButton.h */,
+				FBD9242917F05EA5008FB24F /* UIImage+JSFlatButton.m */,
+			);
+			path = JSFlatButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -653,7 +695,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBD9242E17F06AC1008FB24F /* play@2x.png in Resources */,
 				A00F363617DCB85300BD0467 /* StarFullLarge.png in Resources */,
+				FBD9242217F05D2A008FB24F /* play.png in Resources */,
 				A00F362617DCB50D00BD0467 /* DoctorTableViewCell.xib in Resources */,
 				A00F365B17DCE06A00BD0467 /* cartoon-doctor.png in Resources */,
 				A039186517E21FD400934DFA /* DoctorSpecificsTableViewCellPhone.xib in Resources */,
@@ -723,6 +767,8 @@
 				A0C5D89F17E74D1C00C311CE /* SDWebImageDownloader.m in Sources */,
 				A0C5D89D17E74D1C00C311CE /* SDWebImageCompat.m in Sources */,
 				A00F367817DD959500BD0467 /* AFPropertyListRequestOperation.m in Sources */,
+				FBD9242C17F05EA5008FB24F /* UIImage+JSFlatButton.m in Sources */,
+				FBD9242B17F05EA5008FB24F /* UIColor+JSFlatButton.m in Sources */,
 				FBCB50B817DC81B70099AA5C /* main.m in Sources */,
 				A039187317E2FB1A00934DFA /* DOCDoctorGalleryCell.m in Sources */,
 				A0C5D89E17E74D1C00C311CE /* SDWebImageDecoder.m in Sources */,
@@ -738,6 +784,7 @@
 				A039187617E2FB3F00934DFA /* DOCDoctorDescriptionCell.m in Sources */,
 				A00F365E17DCECFD00BD0467 /* DOCLeftToRightSegue.m in Sources */,
 				A0C5D8A717E74D1C00C311CE /* UIImageView+WebCache.m in Sources */,
+				FBCEF1D717F0759300B50B6F /* DOCEnterPIViewController.m in Sources */,
 				A039186D17E2FAC500934DFA /* DOCDoctorPhoneNumberCell.m in Sources */,
 				FBCB50F117DC917E0099AA5C /* DOCSpecialityTableViewCell.m in Sources */,
 				A0C5D8A317E74D1C00C311CE /* UIButton+WebCache.m in Sources */,
@@ -745,6 +792,7 @@
 				A00F363A17DCB86A00BD0467 /* DYRateView.m in Sources */,
 				A00F367417DD959400BD0467 /* AFHTTPRequestOperation.m in Sources */,
 				A0C5D89C17E74D1C00C311CE /* SDImageCache.m in Sources */,
+				FBD9242A17F05EA5008FB24F /* JSFlatButton.m in Sources */,
 				A00F367617DD959400BD0467 /* AFJSONRequestOperation.m in Sources */,
 				4BAC7D3017E8A0C100EE293C /* DOCBookTimeViewController.m in Sources */,
 				A00F365317DCC64200BD0467 /* Reachability.m in Sources */,
@@ -873,10 +921,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "dodox/docxor-Prefix.pch";
 				INFOPLIST_FILE = "dodox/docxor-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = docxor;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -886,10 +937,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "dodox/docxor-Prefix.pch";
 				INFOPLIST_FILE = "dodox/docxor-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = docxor;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
