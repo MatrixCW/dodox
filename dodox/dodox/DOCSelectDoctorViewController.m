@@ -21,7 +21,8 @@
 @interface DOCSelectDoctorViewController ()
 
 //@property (weak, nonatomic) IBOutlet UISegmentedControl *sortingChoice;
-@property (weak, nonatomic) IBOutlet UINavigationBar *titleBar;
+
+@property (weak, nonatomic) IBOutlet UILabel *currentSprciality;
 
 @property (weak, nonatomic) IBOutlet UITableView *doctorTable;
 @property NSMutableArray *doctors;
@@ -47,7 +48,25 @@
     self.doctorTable.dataSource = self;
     
     DOCGlobalUtil *sharedInstance = [DOCGlobalUtil getSharedInstance];
-    self.titleBar.topItem.title = sharedInstance.currentSelectedSpeciality;
+    
+    self.currentSprciality.textAlignment = NSTextAlignmentCenter;
+    self.currentSprciality.numberOfLines = 0;
+    self.currentSprciality.text =[NSString stringWithFormat:@"\n%@", sharedInstance.currentSelectedSpeciality];
+    
+    self.currentSprciality.backgroundColor = [UIColor whiteColor];
+    
+    
+    CALayer *leftBorder = [CALayer layer];
+    leftBorder.borderColor = [UIColor colorWithRed:228.0/255 green:227.0/255 blue:230.0/255 alpha:1.0].CGColor;
+    leftBorder.borderWidth = 2.0;
+    leftBorder.frame = CGRectMake(-10, -2, self.currentSprciality.frame.size.width*2, self.currentSprciality.frame.size.height+3);
+    
+    [self.currentSprciality.layer addSublayer:leftBorder];
+    
+    self.doctorTable.backgroundColor =[UIColor colorWithRed:236.0/255 green:240.0/255 blue:243.0/255 alpha:1.0];
+    NSLog(@"coming!!");
+    
+    self.view.backgroundColor = [UIColor colorWithRed:236.0/255 green:240.0/255 blue:243.0/255 alpha:1.0];
     
     self.doctors = [NSMutableArray array];
     
@@ -223,6 +242,9 @@
     NSURL *avatarThumbnail = [NSURL URLWithString:[tempDoctor.doctorAvatars objectForKey:@"medium"]];
     [cell.thumbnailImageView setImageWithURL:avatarThumbnail usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     
+    [cell.thumbnailImageView.layer setMasksToBounds:YES];
+    [cell.thumbnailImageView.layer setCornerRadius:8.0];
+    
     
 
     
@@ -232,7 +254,7 @@
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 100;
+    return 85;
 }
 
 #pragma mark UITableView Delegate

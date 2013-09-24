@@ -12,10 +12,11 @@
 @protocol EnterPIProtocol
 
 -(void)removePIView;
+-(void)viewNeedMoveUp:(CGFloat)delta;
 
 @end
 
-@interface DOCEnterPIView : UIView
+@interface DOCEnterPIView : UIView<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *deviceIDField;
 @property (weak, nonatomic) IBOutlet UITextField *userNameField;
 @property (weak, nonatomic) IBOutlet UITextField *userPhoneField;
@@ -25,4 +26,6 @@
 - (IBAction)cancelButtonPressed:(id)sender;
 
 -(NSString*)calculateUniqueIdentifier;
+
+-(void)setUpView;
 @end

@@ -86,6 +86,7 @@
 		FB05891017F15B1C0023B254 /* DOCEnterPIView.m in Sources */ = {isa = PBXBuildFile; fileRef = FB05890F17F15B1C0023B254 /* DOCEnterPIView.m */; };
 		FB05891317F15E9A0023B254 /* done.png in Resources */ = {isa = PBXBuildFile; fileRef = FB05891117F15E9A0023B254 /* done.png */; };
 		FB05891417F15E9A0023B254 /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = FB05891217F15E9A0023B254 /* cancel.png */; };
+		FB05891617F16CE50023B254 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = FB05891517F16CE50023B254 /* back.png */; };
 		FBCB50AC17DC81B70099AA5C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCB50AB17DC81B70099AA5C /* Foundation.framework */; };
 		FBCB50AE17DC81B70099AA5C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCB50AD17DC81B70099AA5C /* CoreGraphics.framework */; };
 		FBCB50B017DC81B70099AA5C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCB50AF17DC81B70099AA5C /* UIKit.framework */; };
@@ -105,7 +106,6 @@
 		FBCB50EC17DC88880099AA5C /* dentist.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FBCB50EB17DC88880099AA5C /* dentist.jpg */; };
 		FBCB50EE17DC90140099AA5C /* SpecialityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBCB50ED17DC90140099AA5C /* SpecialityTableViewCell.xib */; };
 		FBCB50F117DC917E0099AA5C /* DOCSpecialityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCB50F017DC917E0099AA5C /* DOCSpecialityTableViewCell.m */; };
-		FBCEF1D717F0759300B50B6F /* DOCEnterPIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCEF1D617F0759300B50B6F /* DOCEnterPIViewController.m */; };
 		FBD9242217F05D2A008FB24F /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = FBD9242117F05D2A008FB24F /* play.png */; };
 		FBD9242A17F05EA5008FB24F /* JSFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD9242517F05EA5008FB24F /* JSFlatButton.m */; };
 		FBD9242B17F05EA5008FB24F /* UIColor+JSFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD9242717F05EA5008FB24F /* UIColor+JSFlatButton.m */; };
@@ -249,6 +249,7 @@
 		FB05890F17F15B1C0023B254 /* DOCEnterPIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCEnterPIView.m; sourceTree = "<group>"; };
 		FB05891117F15E9A0023B254 /* done.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = done.png; sourceTree = "<group>"; };
 		FB05891217F15E9A0023B254 /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
+		FB05891517F16CE50023B254 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		FBCB50A817DC81B70099AA5C /* docxor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = docxor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBCB50AB17DC81B70099AA5C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FBCB50AD17DC81B70099AA5C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -276,8 +277,6 @@
 		FBCB50ED17DC90140099AA5C /* SpecialityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpecialityTableViewCell.xib; sourceTree = "<group>"; };
 		FBCB50EF17DC917E0099AA5C /* DOCSpecialityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCSpecialityTableViewCell.h; sourceTree = "<group>"; };
 		FBCB50F017DC917E0099AA5C /* DOCSpecialityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCSpecialityTableViewCell.m; sourceTree = "<group>"; };
-		FBCEF1D517F0759300B50B6F /* DOCEnterPIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCEnterPIViewController.h; sourceTree = "<group>"; };
-		FBCEF1D617F0759300B50B6F /* DOCEnterPIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCEnterPIViewController.m; sourceTree = "<group>"; };
 		FBD9242117F05D2A008FB24F /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
 		FBD9242417F05EA5008FB24F /* JSFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSFlatButton.h; sourceTree = "<group>"; };
 		FBD9242517F05EA5008FB24F /* JSFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSFlatButton.m; sourceTree = "<group>"; };
@@ -568,7 +567,6 @@
 			isa = PBXGroup;
 			children = (
 				FB05890817F14FB70023B254 /* blurview */,
-				FBCEF1D417F0756000B50B6F /* step 0 enter personal information */,
 				FBD9242317F05EA5008FB24F /* JSFlatButton */,
 				4BDE1C2117E8CD9F00001517 /* SVProgressHUD */,
 				A0C5D87C17E74D1C00C311CE /* SDWebImage */,
@@ -619,6 +617,7 @@
 		FBCB50E017DC83E20099AA5C /* pictures */ = {
 			isa = PBXGroup;
 			children = (
+				FB05891517F16CE50023B254 /* back.png */,
 				FB05891117F15E9A0023B254 /* done.png */,
 				FB05891217F15E9A0023B254 /* cancel.png */,
 				FB05890617F14E410023B254 /* settings.png */,
@@ -634,15 +633,6 @@
 				FBCB50E317DC84800099AA5C /* doctor.jpg */,
 			);
 			name = pictures;
-			sourceTree = "<group>";
-		};
-		FBCEF1D417F0756000B50B6F /* step 0 enter personal information */ = {
-			isa = PBXGroup;
-			children = (
-				FBCEF1D517F0759300B50B6F /* DOCEnterPIViewController.h */,
-				FBCEF1D617F0759300B50B6F /* DOCEnterPIViewController.m */,
-			);
-			name = "step 0 enter personal information";
 			sourceTree = "<group>";
 		};
 		FBD9242317F05EA5008FB24F /* JSFlatButton */ = {
@@ -767,6 +757,7 @@
 				FBCB50B617DC81B70099AA5C /* InfoPlist.strings in Resources */,
 				A039188B17E729B300934DFA /* TimeSlotPicker.xib in Resources */,
 				A00F361417DCA90000BD0467 /* psychologist.jpg in Resources */,
+				FB05891617F16CE50023B254 /* back.png in Resources */,
 				A039188D17E73FE100934DFA /* clinic.JPG in Resources */,
 				A039187817E2FF8700934DFA /* BookButtonCell.xib in Resources */,
 				A00F363417DCB85300BD0467 /* StarFull.png in Resources */,
@@ -832,7 +823,6 @@
 				A039187617E2FB3F00934DFA /* DOCDoctorDescriptionCell.m in Sources */,
 				A00F365E17DCECFD00BD0467 /* DOCLeftToRightSegue.m in Sources */,
 				A0C5D8A717E74D1C00C311CE /* UIImageView+WebCache.m in Sources */,
-				FBCEF1D717F0759300B50B6F /* DOCEnterPIViewController.m in Sources */,
 				A039186D17E2FAC500934DFA /* DOCDoctorPhoneNumberCell.m in Sources */,
 				FBCB50F117DC917E0099AA5C /* DOCSpecialityTableViewCell.m in Sources */,
 				A0C5D8A317E74D1C00C311CE /* UIButton+WebCache.m in Sources */,

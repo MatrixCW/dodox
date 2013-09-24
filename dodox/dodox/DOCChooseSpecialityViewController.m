@@ -86,13 +86,7 @@
 
     [self startMyJob];
 }
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
-    if ([segue.identifier isEqualToString:@"ENTER_PI_FROM_SPECIALITY"]){
-        DOCEnterPIViewController *vc = (DOCEnterPIViewController*)segue.destinationViewController;
-        vc.myDelgate = self;
-    }
-}
+
 -(void)startMyJob{
     
     DOCGlobalUtil *sharedUtil = [DOCGlobalUtil getSharedInstance];
@@ -372,7 +366,7 @@
     self.piView.backgroundColor = [UIColor clearColor];
     self.piView.center = CGPointMake(self.view.bounds.size.width/2, 1500);
     
-    self.piView.deviceIDField.text = [self.piView calculateUniqueIdentifier];
+    [self.piView setUpView];
     [self.view addSubview:self.piView];
     self.piView.myDelegate = self;
     
@@ -395,5 +389,17 @@
         [self.blurView removeFromSuperview];
         self.blurView = Nil;
     }];
+}
+
+-(void)viewNeedMoveUp:(CGFloat)delta{
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        
+        
+        self.piView.center = CGPointMake(self.piView.center.x, self.piView.center.y+delta);
+        
+    }];
+    
+    
 }
 @end
