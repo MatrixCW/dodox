@@ -87,6 +87,7 @@
 		FB05891317F15E9A0023B254 /* done.png in Resources */ = {isa = PBXBuildFile; fileRef = FB05891117F15E9A0023B254 /* done.png */; };
 		FB05891417F15E9A0023B254 /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = FB05891217F15E9A0023B254 /* cancel.png */; };
 		FB05891617F16CE50023B254 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = FB05891517F16CE50023B254 /* back.png */; };
+		FB05891A17F173110023B254 /* leftarrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FB05891917F173110023B254 /* leftarrow.png */; };
 		FBCB50AC17DC81B70099AA5C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCB50AB17DC81B70099AA5C /* Foundation.framework */; };
 		FBCB50AE17DC81B70099AA5C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCB50AD17DC81B70099AA5C /* CoreGraphics.framework */; };
 		FBCB50B017DC81B70099AA5C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCB50AF17DC81B70099AA5C /* UIKit.framework */; };
@@ -250,6 +251,7 @@
 		FB05891117F15E9A0023B254 /* done.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = done.png; sourceTree = "<group>"; };
 		FB05891217F15E9A0023B254 /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
 		FB05891517F16CE50023B254 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		FB05891917F173110023B254 /* leftarrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftarrow.png; sourceTree = "<group>"; };
 		FBCB50A817DC81B70099AA5C /* docxor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = docxor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBCB50AB17DC81B70099AA5C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FBCB50AD17DC81B70099AA5C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -617,6 +619,7 @@
 		FBCB50E017DC83E20099AA5C /* pictures */ = {
 			isa = PBXGroup;
 			children = (
+				FB05891917F173110023B254 /* leftarrow.png */,
 				FB05891517F16CE50023B254 /* back.png */,
 				FB05891117F15E9A0023B254 /* done.png */,
 				FB05891217F15E9A0023B254 /* cancel.png */,
@@ -731,6 +734,7 @@
 				FBD9242217F05D2A008FB24F /* play.png in Resources */,
 				3BA8212E17F0C11200AA19BE /* right arrow.png in Resources */,
 				A00F362617DCB50D00BD0467 /* DoctorTableViewCell.xib in Resources */,
+				FB05891A17F173110023B254 /* leftarrow.png in Resources */,
 				A00F365B17DCE06A00BD0467 /* cartoon-doctor.png in Resources */,
 				FB05890717F14E410023B254 /* settings.png in Resources */,
 				FB05890D17F15AA70023B254 /* editPI.xib in Resources */,
