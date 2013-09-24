@@ -79,6 +79,8 @@
 		A0C5D8A517E74D1C00C311CE /* UIImage+MultiFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C5D89517E74D1C00C311CE /* UIImage+MultiFormat.m */; };
 		A0C5D8A617E74D1C00C311CE /* UIImage+WebP.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C5D89717E74D1C00C311CE /* UIImage+WebP.m */; };
 		A0C5D8A717E74D1C00C311CE /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C5D89917E74D1C00C311CE /* UIImageView+WebCache.m */; };
+		FB05890517F14D3B0023B254 /* account.png in Resources */ = {isa = PBXBuildFile; fileRef = FB05890417F14D3B0023B254 /* account.png */; };
+		FB05890717F14E410023B254 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = FB05890617F14E410023B254 /* settings.png */; };
 		FBCB50AC17DC81B70099AA5C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCB50AB17DC81B70099AA5C /* Foundation.framework */; };
 		FBCB50AE17DC81B70099AA5C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCB50AD17DC81B70099AA5C /* CoreGraphics.framework */; };
 		FBCB50B017DC81B70099AA5C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCB50AF17DC81B70099AA5C /* UIKit.framework */; };
@@ -233,6 +235,8 @@
 		A0C5D89717E74D1C00C311CE /* UIImage+WebP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WebP.m"; sourceTree = "<group>"; };
 		A0C5D89817E74D1C00C311CE /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		A0C5D89917E74D1C00C311CE /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
+		FB05890417F14D3B0023B254 /* account.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = account.png; sourceTree = "<group>"; };
+		FB05890617F14E410023B254 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		FBCB50A817DC81B70099AA5C /* docxor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = docxor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBCB50AB17DC81B70099AA5C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FBCB50AD17DC81B70099AA5C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -590,6 +594,8 @@
 		FBCB50E017DC83E20099AA5C /* pictures */ = {
 			isa = PBXGroup;
 			children = (
+				FB05890617F14E410023B254 /* settings.png */,
+				FB05890417F14D3B0023B254 /* account.png */,
 				3BA8212D17F0C11200AA19BE /* right arrow.png */,
 				FBD9242D17F06AC1008FB24F /* play@2x.png */,
 				FBD9242117F05D2A008FB24F /* play.png */,
@@ -708,6 +714,7 @@
 				3BA8212E17F0C11200AA19BE /* right arrow.png in Resources */,
 				A00F362617DCB50D00BD0467 /* DoctorTableViewCell.xib in Resources */,
 				A00F365B17DCE06A00BD0467 /* cartoon-doctor.png in Resources */,
+				FB05890717F14E410023B254 /* settings.png in Resources */,
 				A039186517E21FD400934DFA /* DoctorSpecificsTableViewCellPhone.xib in Resources */,
 				A039187A17E2FFAE00934DFA /* green button.png in Resources */,
 				A00F360E17DCA8F900BD0467 /* aesthetic medicine doctor.jpg in Resources */,
@@ -725,6 +732,7 @@
 				A00F363217DCB85300BD0467 /* StarEmptyLarge.png in Resources */,
 				A00F363517DCB85300BD0467 /* StarFull@2x.png in Resources */,
 				FBCB50E417DC84800099AA5C /* doctor.jpg in Resources */,
+				FB05890517F14D3B0023B254 /* account.png in Resources */,
 				3B4EB07017EF7652001D5533 /* specialityHolder.jpg in Resources */,
 				A00F361917DCACC600BD0467 /* cardiothoracic surgeon.jpg in Resources */,
 				FBCB50B617DC81B70099AA5C /* InfoPlist.strings in Resources */,

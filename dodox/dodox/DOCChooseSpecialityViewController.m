@@ -22,6 +22,7 @@
 @property UIView *coverView;
 @property NSArray *specialities;
 @property (weak, nonatomic) IBOutlet UILabel *specialityTitle;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *accountButton;
 
 @end
 
@@ -39,6 +40,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 
+    [self.accountButton setBackgroundImage:[UIImage imageNamed:@"account.png"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     self.specialityTable.backgroundColor = [UIColor colorWithRed:236.0/255 green:240.0/255 blue:243.0/255 alpha:1.0];
 
     self.specialityTitle.backgroundColor = [UIColor whiteColor];
