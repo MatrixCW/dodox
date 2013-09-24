@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "DOCEnterPIViewController.h"
+#import "DOCEnterPIView.h"
 
-@interface DOCChooseSpecialityViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,userFinishedEnteringData>
+
+@interface DOCChooseSpecialityViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,userFinishedEnteringData,EnterPIProtocol>
 
 @end

@@ -81,6 +81,11 @@
 		A0C5D8A717E74D1C00C311CE /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C5D89917E74D1C00C311CE /* UIImageView+WebCache.m */; };
 		FB05890517F14D3B0023B254 /* account.png in Resources */ = {isa = PBXBuildFile; fileRef = FB05890417F14D3B0023B254 /* account.png */; };
 		FB05890717F14E410023B254 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = FB05890617F14E410023B254 /* settings.png */; };
+		FB05890B17F14FCB0023B254 /* AMBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = FB05890A17F14FCB0023B254 /* AMBlurView.m */; };
+		FB05890D17F15AA70023B254 /* editPI.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB05890C17F15AA70023B254 /* editPI.xib */; };
+		FB05891017F15B1C0023B254 /* DOCEnterPIView.m in Sources */ = {isa = PBXBuildFile; fileRef = FB05890F17F15B1C0023B254 /* DOCEnterPIView.m */; };
+		FB05891317F15E9A0023B254 /* done.png in Resources */ = {isa = PBXBuildFile; fileRef = FB05891117F15E9A0023B254 /* done.png */; };
+		FB05891417F15E9A0023B254 /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = FB05891217F15E9A0023B254 /* cancel.png */; };
 		FBCB50AC17DC81B70099AA5C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCB50AB17DC81B70099AA5C /* Foundation.framework */; };
 		FBCB50AE17DC81B70099AA5C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCB50AD17DC81B70099AA5C /* CoreGraphics.framework */; };
 		FBCB50B017DC81B70099AA5C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCB50AF17DC81B70099AA5C /* UIKit.framework */; };
@@ -237,6 +242,13 @@
 		A0C5D89917E74D1C00C311CE /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		FB05890417F14D3B0023B254 /* account.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = account.png; sourceTree = "<group>"; };
 		FB05890617F14E410023B254 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		FB05890917F14FCB0023B254 /* AMBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMBlurView.h; sourceTree = "<group>"; };
+		FB05890A17F14FCB0023B254 /* AMBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMBlurView.m; sourceTree = "<group>"; };
+		FB05890C17F15AA70023B254 /* editPI.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = editPI.xib; sourceTree = "<group>"; };
+		FB05890E17F15B1C0023B254 /* DOCEnterPIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCEnterPIView.h; sourceTree = "<group>"; };
+		FB05890F17F15B1C0023B254 /* DOCEnterPIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCEnterPIView.m; sourceTree = "<group>"; };
+		FB05891117F15E9A0023B254 /* done.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = done.png; sourceTree = "<group>"; };
+		FB05891217F15E9A0023B254 /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
 		FBCB50A817DC81B70099AA5C /* docxor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = docxor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBCB50AB17DC81B70099AA5C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FBCB50AD17DC81B70099AA5C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -356,6 +368,9 @@
 			children = (
 				FBCB50E817DC87E00099AA5C /* DOCChooseSpecialityViewController.h */,
 				FBCB50E917DC87E00099AA5C /* DOCChooseSpecialityViewController.m */,
+				FB05890C17F15AA70023B254 /* editPI.xib */,
+				FB05890E17F15B1C0023B254 /* DOCEnterPIView.h */,
+				FB05890F17F15B1C0023B254 /* DOCEnterPIView.m */,
 				FBCB50ED17DC90140099AA5C /* SpecialityTableViewCell.xib */,
 				FBCB50EF17DC917E0099AA5C /* DOCSpecialityTableViewCell.h */,
 				FBCB50F017DC917E0099AA5C /* DOCSpecialityTableViewCell.m */,
@@ -508,6 +523,15 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
+		FB05890817F14FB70023B254 /* blurview */ = {
+			isa = PBXGroup;
+			children = (
+				FB05890917F14FCB0023B254 /* AMBlurView.h */,
+				FB05890A17F14FCB0023B254 /* AMBlurView.m */,
+			);
+			name = blurview;
+			sourceTree = "<group>";
+		};
 		FBCB509F17DC81B70099AA5C = {
 			isa = PBXGroup;
 			children = (
@@ -543,6 +567,7 @@
 		FBCB50B117DC81B70099AA5C /* dodox */ = {
 			isa = PBXGroup;
 			children = (
+				FB05890817F14FB70023B254 /* blurview */,
 				FBCEF1D417F0756000B50B6F /* step 0 enter personal information */,
 				FBD9242317F05EA5008FB24F /* JSFlatButton */,
 				4BDE1C2117E8CD9F00001517 /* SVProgressHUD */,
@@ -594,6 +619,8 @@
 		FBCB50E017DC83E20099AA5C /* pictures */ = {
 			isa = PBXGroup;
 			children = (
+				FB05891117F15E9A0023B254 /* done.png */,
+				FB05891217F15E9A0023B254 /* cancel.png */,
 				FB05890617F14E410023B254 /* settings.png */,
 				FB05890417F14D3B0023B254 /* account.png */,
 				3BA8212D17F0C11200AA19BE /* right arrow.png */,
@@ -709,12 +736,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBD9242E17F06AC1008FB24F /* play@2x.png in Resources */,
+				FB05891317F15E9A0023B254 /* done.png in Resources */,
 				A00F363617DCB85300BD0467 /* StarFullLarge.png in Resources */,
 				FBD9242217F05D2A008FB24F /* play.png in Resources */,
 				3BA8212E17F0C11200AA19BE /* right arrow.png in Resources */,
 				A00F362617DCB50D00BD0467 /* DoctorTableViewCell.xib in Resources */,
 				A00F365B17DCE06A00BD0467 /* cartoon-doctor.png in Resources */,
 				FB05890717F14E410023B254 /* settings.png in Resources */,
+				FB05890D17F15AA70023B254 /* editPI.xib in Resources */,
 				A039186517E21FD400934DFA /* DoctorSpecificsTableViewCellPhone.xib in Resources */,
 				A039187A17E2FFAE00934DFA /* green button.png in Resources */,
 				A00F360E17DCA8F900BD0467 /* aesthetic medicine doctor.jpg in Resources */,
@@ -745,6 +774,7 @@
 				FBCB50EE17DC90140099AA5C /* SpecialityTableViewCell.xib in Resources */,
 				FBCB50BF17DC81B70099AA5C /* Main.storyboard in Resources */,
 				A00F363317DCB85300BD0467 /* StarEmptyLarge@2x.png in Resources */,
+				FB05891417F15E9A0023B254 /* cancel.png in Resources */,
 				A00F368117E1CEE700BD0467 /* DoctorSpecificsTableViewCellGeneral.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -765,6 +795,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A039186A17E2FAA200934DFA /* DOCDoctorGeneralInfoCell.m in Sources */,
+				FB05890B17F14FCB0023B254 /* AMBlurView.m in Sources */,
 				A0C5D8A217E74D1C00C311CE /* SDWebImagePrefetcher.m in Sources */,
 				A0C5D89A17E74D1C00C311CE /* MKAnnotationView+WebCache.m in Sources */,
 				4BDE1C2617E8CD9F00001517 /* SVProgressHUD.m in Sources */,
@@ -791,6 +822,7 @@
 				A0C5D8A117E74D1C00C311CE /* SDWebImageManager.m in Sources */,
 				A0C5D87B17E74D0B00C311CE /* UIImageView+UIActivityIndicatorForSDWebImage.m in Sources */,
 				A00F367B17DD959500BD0467 /* UIImageView+AFNetworking.m in Sources */,
+				FB05891017F15B1C0023B254 /* DOCEnterPIView.m in Sources */,
 				FBCB50BC17DC81B70099AA5C /* DOCAppDelegate.m in Sources */,
 				A00F367717DD959500BD0467 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				A0C5D8A017E74D1C00C311CE /* SDWebImageDownloaderOperation.m in Sources */,

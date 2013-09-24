@@ -14,6 +14,8 @@
 #import "AFJSONRequestOperation.h"
 #import "UIImageView+UIActivityIndicatorForSDWebImage.h"
 #import "Reachability.h"
+#import "AMBlurView.h"
+#import "DOCEnterPIView.h"
 #import <QuartzCore/QuartzCore.h>
 
 @interface DOCChooseSpecialityViewController ()
@@ -22,7 +24,11 @@
 @property UIView *coverView;
 @property NSArray *specialities;
 @property (weak, nonatomic) IBOutlet UILabel *specialityTitle;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *accountButton;
+
+@property DOCEnterPIView *piView;
+@property AMBlurView *blurView;
+- (IBAction)historyButtonPressed:(id)sender;
+- (IBAction)settingsButtonPressed:(id)sender;
 
 @end
 
@@ -40,8 +46,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 
-    [self.accountButton setBackgroundImage:[UIImage imageNamed:@"account.png"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    self.specialityTable.backgroundColor = [UIColor colorWithRed:236.0/255 green:240.0/255 blue:243.0/255 alpha:1.0];
+       self.specialityTable.backgroundColor = [UIColor colorWithRed:236.0/255 green:240.0/255 blue:243.0/255 alpha:1.0];
 
     self.specialityTitle.backgroundColor = [UIColor whiteColor];
     self.specialityTitle.numberOfLines = 0;
@@ -339,5 +344,56 @@
 
 -(void) viewDidDisappear:(BOOL)animated{
     
+}
+
+-(void)cancelInput{
+    
+    NSLog(@"dsfsdfdsg");
+    
+}
+- (IBAction)historyButtonPressed:(id)sender {
+    
+}
+
+- (IBAction)settingsButtonPressed:(id)sender {
+    
+    NSLog(@"asjbajk6db");
+    self.blurView = [AMBlurView new];
+    [self.blurView setFrame:CGRectMake(30,1000,300.0f,500.0f)];
+    self.blurView.center = CGPointMake(self.view.bounds.size.width/2, 1500);
+    //self.blurView.center = CGPointMake(self.view.bounds.size.width/2, self.view.bounds.size.height/2);
+    
+    
+    [self.view addSubview:self.blurView];
+    
+    
+    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"editPI" owner:self options:nil];
+    self.piView = [nib objectAtIndex:0];
+    self.piView.backgroundColor = [UIColor clearColor];
+    self.piView.center = CGPointMake(self.view.bounds.size.width/2, 1500);
+    
+    self.piView.deviceIDField.text = [self.piView calculateUniqueIdentifier];
+    [self.view addSubview:self.piView];
+    self.piView.myDelegate = self;
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        
+        self.blurView.center = CGPointMake(self.view.bounds.size.width/2, self.view.bounds.size.height/2);
+
+        self.piView.center = CGPointMake(self.view.bounds.size.width/2, self.view.bounds.size.height/2);
+
+    }];
+}
+
+-(void)removePIView{
+    [UIView animateWithDuration:0.5 animations:^{
+        self.piView.center = CGPointMake(self.piView.center.x, self.piView.center.x+700);
+        self.blurView.center = CGPointMake(self.blurView.center.x, self.blurView.center.x+700);
+    }completion:^(BOOL finished){
+        [self.piView removeFromSuperview];
+        self.piView = Nil;
+        [self.blurView removeFromSuperview];
+        self.blurView = Nil;
+    }];
 }
 @end
