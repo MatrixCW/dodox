@@ -17,6 +17,7 @@
 #import "DOCTimeSlotPicker.h"
 #import "DOCGlobalUtil.h"
 #import "UIImageView+UIActivityIndicatorForSDWebImage.h"
+#import "DOCTimeSlotCell.h"
 
 @interface DOCDoctorSpecificsViewController ()
 
@@ -48,7 +49,22 @@
     
     DOCGlobalUtil *sharedInstance = [DOCGlobalUtil getSharedInstance];
     
-    self.doctorTitleBar.topItem.title = [NSString stringWithFormat:@"Dr %@", sharedInstance.currentSelectedDoctor.doctorName];;
+    self.doctorTitleLabel.textAlignment = NSTextAlignmentCenter;
+    self.doctorTitleLabel.numberOfLines = 0;
+    self.doctorTitleLabel.backgroundColor = [UIColor whiteColor];
+    
+    NSRange stringLocation =[sharedInstance.currentSelectedDoctor.doctorName rangeOfString:@"Dr"];
+    
+    self.doctorInfoTable.separatorColor = [UIColor clearColor];
+    if(stringLocation.location == NSNotFound)
+        self.doctorTitleLabel.text = [NSString stringWithFormat:@"\nDr %@", sharedInstance.currentSelectedDoctor.doctorName];
+    
+    else
+        self.doctorTitleLabel.text = [NSString stringWithFormat:@"\n%@", sharedInstance.currentSelectedDoctor.doctorName];
+    
+    self.view.backgroundColor = [UIColor colorWithRed:236.0/255 green:240.0/255 blue:243.0/255 alpha:1.0];
+    
+    self.doctorInfoTable.backgroundColor = self.view.backgroundColor;
     
     
 }
@@ -60,7 +76,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return NUMBER_OF_CELLS_IN_DOCTOR_SPECIFICS;
+    return 7;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -82,18 +98,50 @@
             
             [cell.doctorAvatar setImageWithURL:avatarThumbnail usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
             
-            cell.doctorAddress.numberOfLines = 0;
-            cell.doctorAddress.numberOfLines = 0;
             
             cell.doctorCategory.text = currentDoctor.doctorSpeciality;
-            cell.doctorAddress.text = currentDoctor.doctorAddress;
+            
+            [cell.doctorAvatar.layer setMasksToBounds:YES];
+            [cell.doctorAvatar.layer setCornerRadius:8.0];
         }
         
         return cell;
         
     }
     
+    if(index == 1){
+        
+        
+        DOCTimeSlotCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TimeSlots"];
+        
+        if (cell == nil) {
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"AvailableSlots" owner:self options:nil];
+            cell = [nib objectAtIndex:0];
+            
+            
+            
+        }
+        
+        return cell;
+    }
+    
     if(index == 2){
+        
+        
+        DOCStartBookCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BookAppointment"];
+        
+        if (cell == nil) {
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"BookButtonCell" owner:self options:nil];
+            cell = [nib objectAtIndex:0];
+            
+            
+            
+        }
+        
+        return cell;
+    }
+    
+    if(index == 3){
         
         DOCDoctorGalleryCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DoctorGallery"];
         
@@ -111,7 +159,7 @@
     }
 
     
-    if(index == 3){
+    if(index == 4){
         
         DOCDoctorLocationCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DoctorLocation"];
         
@@ -128,7 +176,7 @@
     }
 
     
-    if(index == 4){
+    if(index == 5){
         
         DOCDoctorPhoneNumberCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DoctorPhoneNumber"];
         
@@ -145,7 +193,7 @@
     }
 
     
-    if(index == 5){
+    assert(index == 6);
         
         DOCDoctorDescriptionCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DoctorDescription"];
         
@@ -170,24 +218,11 @@
         
         return cell;
         
-    }
+    
 
     
-    assert(index == 1);
     
-        
-        DOCStartBookCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BookAppointment"];
-        
-        if (cell == nil) {
-            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"BookButtonCell" owner:self options:nil];
-            cell = [nib objectAtIndex:0];
-           
-            
-            
-        }
-        
-        return cell;
-        
+    
 
 
 }
@@ -199,23 +234,27 @@
     
     switch (indexPath.row) {
         case 0:
-            height = 160;
+            height = 120;
+            break;
+        case 1:
+            height = 140;
             break;
         case 2:
-            height = 320;
+            height = 60;
             break;
         case 3:
-            height = 50;
+            height = 320;
             break;
         case 4:
             height = 50;
             break;
         case 5:
-            height = 420;
+            height = 50;
             break;
-        case 1:
-            height = 60;
+        case 6:
+            height = 630;
             break;
+
             
         default:
             break;
@@ -227,7 +266,9 @@
 #pragma mark UITableView Delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if(indexPath.row == 3){
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if(indexPath.row == 5){
         
         NSLog(@"phone phone phone");
         
@@ -240,7 +281,7 @@
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
     }
     
-    if(indexPath.row == 1){
+    if(indexPath.row == 2){
         
         [self performSegueWithIdentifier:@"BOOK_DOCTOR_SEGUE" sender:self];
     }

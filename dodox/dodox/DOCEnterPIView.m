@@ -100,7 +100,7 @@
         self.viewHasMovedUp = YES;
     }
     
-    const int movementDistance = 120; // tweak as needed
+    const int movementDistance = 140; // tweak as needed
     
     int movement = (up ? -movementDistance : movementDistance);
 

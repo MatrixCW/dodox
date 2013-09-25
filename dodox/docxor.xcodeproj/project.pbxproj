@@ -107,6 +107,14 @@
 		FBCB50EC17DC88880099AA5C /* dentist.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FBCB50EB17DC88880099AA5C /* dentist.jpg */; };
 		FBCB50EE17DC90140099AA5C /* SpecialityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBCB50ED17DC90140099AA5C /* SpecialityTableViewCell.xib */; };
 		FBCB50F117DC917E0099AA5C /* DOCSpecialityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCB50F017DC917E0099AA5C /* DOCSpecialityTableViewCell.m */; };
+		FBD5C90717F3326200E3E3DA /* placeholder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FBD5C90617F3326200E3E3DA /* placeholder.jpg */; };
+		FBD5C90917F3392000E3E3DA /* AvailableSlots.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBD5C90817F3392000E3E3DA /* AvailableSlots.xib */; };
+		FBD5C90B17F33A2200E3E3DA /* smallrightarrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FBD5C90A17F33A2200E3E3DA /* smallrightarrow.png */; };
+		FBD5C90E17F33B9E00E3E3DA /* DOCTimeSlotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD5C90D17F33B9E00E3E3DA /* DOCTimeSlotCell.m */; };
+		FBD5C91117F33E3800E3E3DA /* greenrightarrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FBD5C90F17F33E3800E3E3DA /* greenrightarrow.png */; };
+		FBD5C91217F33E3800E3E3DA /* greenleftarrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FBD5C91017F33E3800E3E3DA /* greenleftarrow.png */; };
+		FBD5C91417F3448500E3E3DA /* BookElements.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBD5C91317F3448500E3E3DA /* BookElements.xib */; };
+		FBD5C91717F345B900E3E3DA /* DOCBookingElementsView.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD5C91617F345B900E3E3DA /* DOCBookingElementsView.m */; };
 		FBD9242217F05D2A008FB24F /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = FBD9242117F05D2A008FB24F /* play.png */; };
 		FBD9242A17F05EA5008FB24F /* JSFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD9242517F05EA5008FB24F /* JSFlatButton.m */; };
 		FBD9242B17F05EA5008FB24F /* UIColor+JSFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD9242717F05EA5008FB24F /* UIColor+JSFlatButton.m */; };
@@ -279,6 +287,16 @@
 		FBCB50ED17DC90140099AA5C /* SpecialityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpecialityTableViewCell.xib; sourceTree = "<group>"; };
 		FBCB50EF17DC917E0099AA5C /* DOCSpecialityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCSpecialityTableViewCell.h; sourceTree = "<group>"; };
 		FBCB50F017DC917E0099AA5C /* DOCSpecialityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCSpecialityTableViewCell.m; sourceTree = "<group>"; };
+		FBD5C90617F3326200E3E3DA /* placeholder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = placeholder.jpg; sourceTree = "<group>"; };
+		FBD5C90817F3392000E3E3DA /* AvailableSlots.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AvailableSlots.xib; sourceTree = "<group>"; };
+		FBD5C90A17F33A2200E3E3DA /* smallrightarrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smallrightarrow.png; sourceTree = "<group>"; };
+		FBD5C90C17F33B9E00E3E3DA /* DOCTimeSlotCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCTimeSlotCell.h; sourceTree = "<group>"; };
+		FBD5C90D17F33B9E00E3E3DA /* DOCTimeSlotCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCTimeSlotCell.m; sourceTree = "<group>"; };
+		FBD5C90F17F33E3800E3E3DA /* greenrightarrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenrightarrow.png; sourceTree = "<group>"; };
+		FBD5C91017F33E3800E3E3DA /* greenleftarrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenleftarrow.png; sourceTree = "<group>"; };
+		FBD5C91317F3448500E3E3DA /* BookElements.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookElements.xib; sourceTree = "<group>"; };
+		FBD5C91517F345B900E3E3DA /* DOCBookingElementsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCBookingElementsView.h; sourceTree = "<group>"; };
+		FBD5C91617F345B900E3E3DA /* DOCBookingElementsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCBookingElementsView.m; sourceTree = "<group>"; };
 		FBD9242117F05D2A008FB24F /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
 		FBD9242417F05EA5008FB24F /* JSFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSFlatButton.h; sourceTree = "<group>"; };
 		FBD9242517F05EA5008FB24F /* JSFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSFlatButton.m; sourceTree = "<group>"; };
@@ -320,6 +338,9 @@
 			children = (
 				4BAC7D2E17E8A0C100EE293C /* DOCBookTimeViewController.h */,
 				4BAC7D2F17E8A0C100EE293C /* DOCBookTimeViewController.m */,
+				FBD5C91317F3448500E3E3DA /* BookElements.xib */,
+				FBD5C91517F345B900E3E3DA /* DOCBookingElementsView.h */,
+				FBD5C91617F345B900E3E3DA /* DOCBookingElementsView.m */,
 			);
 			name = "Step 4 book a timeslot";
 			sourceTree = "<group>";
@@ -475,6 +496,9 @@
 				A039187717E2FF8700934DFA /* BookButtonCell.xib */,
 				A039187B17E300A800934DFA /* DOCStartBookCell.h */,
 				A039187C17E300A800934DFA /* DOCStartBookCell.m */,
+				FBD5C90817F3392000E3E3DA /* AvailableSlots.xib */,
+				FBD5C90C17F33B9E00E3E3DA /* DOCTimeSlotCell.h */,
+				FBD5C90D17F33B9E00E3E3DA /* DOCTimeSlotCell.m */,
 			);
 			name = "step 3 view doctor specifics";
 			sourceTree = "<group>";
@@ -589,6 +613,8 @@
 		FBCB50B217DC81B70099AA5C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FBD5C90F17F33E3800E3E3DA /* greenrightarrow.png */,
+				FBD5C91017F33E3800E3E3DA /* greenleftarrow.png */,
 				FBCB50E017DC83E20099AA5C /* pictures */,
 				FBCB50B317DC81B70099AA5C /* docxor-Info.plist */,
 				FBCB50B417DC81B70099AA5C /* InfoPlist.strings */,
@@ -619,6 +645,8 @@
 		FBCB50E017DC83E20099AA5C /* pictures */ = {
 			isa = PBXGroup;
 			children = (
+				FBD5C90A17F33A2200E3E3DA /* smallrightarrow.png */,
+				FBD5C90617F3326200E3E3DA /* placeholder.jpg */,
 				FB05891917F173110023B254 /* leftarrow.png */,
 				FB05891517F16CE50023B254 /* back.png */,
 				FB05891117F15E9A0023B254 /* done.png */,
@@ -728,6 +756,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBD5C90B17F33A2200E3E3DA /* smallrightarrow.png in Resources */,
 				FBD9242E17F06AC1008FB24F /* play@2x.png in Resources */,
 				FB05891317F15E9A0023B254 /* done.png in Resources */,
 				A00F363617DCB85300BD0467 /* StarFullLarge.png in Resources */,
@@ -737,7 +766,9 @@
 				FB05891A17F173110023B254 /* leftarrow.png in Resources */,
 				A00F365B17DCE06A00BD0467 /* cartoon-doctor.png in Resources */,
 				FB05890717F14E410023B254 /* settings.png in Resources */,
+				FBD5C90717F3326200E3E3DA /* placeholder.jpg in Resources */,
 				FB05890D17F15AA70023B254 /* editPI.xib in Resources */,
+				FBD5C90917F3392000E3E3DA /* AvailableSlots.xib in Resources */,
 				A039186517E21FD400934DFA /* DoctorSpecificsTableViewCellPhone.xib in Resources */,
 				A039187A17E2FFAE00934DFA /* green button.png in Resources */,
 				A00F360E17DCA8F900BD0467 /* aesthetic medicine doctor.jpg in Resources */,
@@ -747,6 +778,7 @@
 				A039186717E2200900934DFA /* DoctorSpecificsTableViewCellDescription.xib in Resources */,
 				FBCB50EC17DC88880099AA5C /* dentist.jpg in Resources */,
 				A00F361617DCA90000BD0467 /* chiropracter.jpg in Resources */,
+				FBD5C91417F3448500E3E3DA /* BookElements.xib in Resources */,
 				A00F363017DCB85300BD0467 /* StarEmpty.png in Resources */,
 				A00F360A17DCA1BA00BD0467 /* cancer specialist.jpg in Resources */,
 				A039186117E21F6B00934DFA /* DoctorSpecificsTableViewCellPhotos.xib in Resources */,
@@ -755,6 +787,7 @@
 				A00F363217DCB85300BD0467 /* StarEmptyLarge.png in Resources */,
 				A00F363517DCB85300BD0467 /* StarFull@2x.png in Resources */,
 				FBCB50E417DC84800099AA5C /* doctor.jpg in Resources */,
+				FBD5C91117F33E3800E3E3DA /* greenrightarrow.png in Resources */,
 				FB05890517F14D3B0023B254 /* account.png in Resources */,
 				3B4EB07017EF7652001D5533 /* specialityHolder.jpg in Resources */,
 				A00F361917DCACC600BD0467 /* cardiothoracic surgeon.jpg in Resources */,
@@ -768,6 +801,7 @@
 				4BDE1C2517E8CD9F00001517 /* SVProgressHUD.bundle in Resources */,
 				FBCB50EE17DC90140099AA5C /* SpecialityTableViewCell.xib in Resources */,
 				FBCB50BF17DC81B70099AA5C /* Main.storyboard in Resources */,
+				FBD5C91217F33E3800E3E3DA /* greenleftarrow.png in Resources */,
 				A00F363317DCB85300BD0467 /* StarEmptyLarge@2x.png in Resources */,
 				FB05891417F15E9A0023B254 /* cancel.png in Resources */,
 				A00F368117E1CEE700BD0467 /* DoctorSpecificsTableViewCellGeneral.xib in Resources */,
@@ -825,6 +859,7 @@
 				A00F361C17DCB36300BD0467 /* DOCSelectDoctorViewController.m in Sources */,
 				A00F367A17DD959500BD0467 /* AFXMLRequestOperation.m in Sources */,
 				A039187617E2FB3F00934DFA /* DOCDoctorDescriptionCell.m in Sources */,
+				FBD5C91717F345B900E3E3DA /* DOCBookingElementsView.m in Sources */,
 				A00F365E17DCECFD00BD0467 /* DOCLeftToRightSegue.m in Sources */,
 				A0C5D8A717E74D1C00C311CE /* UIImageView+WebCache.m in Sources */,
 				A039186D17E2FAC500934DFA /* DOCDoctorPhoneNumberCell.m in Sources */,
@@ -836,6 +871,7 @@
 				A0C5D89C17E74D1C00C311CE /* SDImageCache.m in Sources */,
 				FBD9242A17F05EA5008FB24F /* JSFlatButton.m in Sources */,
 				A00F367617DD959400BD0467 /* AFJSONRequestOperation.m in Sources */,
+				FBD5C90E17F33B9E00E3E3DA /* DOCTimeSlotCell.m in Sources */,
 				4BAC7D3017E8A0C100EE293C /* DOCBookTimeViewController.m in Sources */,
 				A00F365317DCC64200BD0467 /* Reachability.m in Sources */,
 				A0C5D89B17E74D1C00C311CE /* NSData+GIF.m in Sources */,

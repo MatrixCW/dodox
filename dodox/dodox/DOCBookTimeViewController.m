@@ -11,6 +11,7 @@
 #import "AFHTTPRequestOperation.h"
 #import "AFHTTPClient.h"
 #import "SVProgressHUD.h"
+#import "DOCBookingElementsView.h"
 
 @interface DOCBookTimeViewController ()
 
@@ -30,7 +31,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.view.backgroundColor = [UIColor colorWithRed:236.0/255 green:240.0/255 blue:243.0/255 alpha:1.0];
 	// Do any additional setup after loading the view.
+    
+    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"BookElements" owner:self options:nil];
+    DOCBookingElementsView *piView = [nib objectAtIndex:0];
+    piView.backgroundColor = [UIColor clearColor];
+    piView.center = CGPointMake(self.view.bounds.size.width/2, self.view.bounds.size.height/2);
+    
+    piView.confirmButton.backgroundColor = [UIColor colorWithRed:68.0/255 green:149.0/255 blue:85.0/255 alpha:1.0];
+    
+    piView.confirmButton.tintColor = [UIColor whiteColor];
+    //[self.piView setUpView];
+    
+    [self.view addSubview:piView];
     
     self.phoneNumberField.delegate = self;
     self.symptonField.delegate = self;

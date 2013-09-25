@@ -29,6 +29,22 @@
 
 -(void)setImages:(NSArray*)imageUrls{
     
+    if(imageUrls.count == 0){
+        
+        UIImage* img = [UIImage imageNamed:@"placeholder.jpg"];
+        
+        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 20, 280, 280)];
+        imgView.center = self.imageGallery.center;
+        
+        [imgView setImage:img];
+        
+        [self.imageGallery addSubview:imgView];
+        
+        return;
+        
+        
+    }
+    
     self.imageGallery.scrollEnabled = YES;
     self.imageGallery.pagingEnabled = YES;
     

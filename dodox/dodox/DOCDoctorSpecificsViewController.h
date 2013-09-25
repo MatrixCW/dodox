@@ -10,7 +10,8 @@
 
 @interface DOCDoctorSpecificsViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIActionSheetDelegate,UIPickerViewDelegate,UIPickerViewDataSource>
 
-@property (weak, nonatomic) IBOutlet UINavigationBar *doctorTitleBar;
+
+@property (weak, nonatomic) IBOutlet UILabel *doctorTitleLabel;
 
 @property (weak, nonatomic) IBOutlet UITableView *doctorInfoTable;
 

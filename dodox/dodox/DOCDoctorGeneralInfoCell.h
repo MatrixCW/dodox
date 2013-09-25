@@ -12,6 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *doctorAvatar;
 @property (weak, nonatomic) IBOutlet UILabel *doctorCategory;
-@property (weak, nonatomic) IBOutlet UILabel *doctorAddress;
+
 
 @end
