@@ -10,12 +10,5 @@
 
 @interface DOCBookTimeViewController : UIViewController<UITextFieldDelegate, UITextViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *phoneNumberField;
-@property (weak, nonatomic) IBOutlet UITextView *symptonField;
-@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
-- (IBAction)cancelButtonPressed:(id)sender;
-- (IBAction)doneButtonPressed:(id)sender;
-@property (weak, nonatomic) IBOutlet UILabel *doctorNameTag;
-@property (strong, nonatomic) IBOutlet UILabel *textViewPlaceHolder;
 
 @end

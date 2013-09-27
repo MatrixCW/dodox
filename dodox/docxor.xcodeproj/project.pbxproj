@@ -107,6 +107,8 @@
 		FBCB50EC17DC88880099AA5C /* dentist.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FBCB50EB17DC88880099AA5C /* dentist.jpg */; };
 		FBCB50EE17DC90140099AA5C /* SpecialityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBCB50ED17DC90140099AA5C /* SpecialityTableViewCell.xib */; };
 		FBCB50F117DC917E0099AA5C /* DOCSpecialityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCB50F017DC917E0099AA5C /* DOCSpecialityTableViewCell.m */; };
+		FBD5926017F579A70098AF20 /* BookingConfirmed.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBD5925F17F579A70098AF20 /* BookingConfirmed.xib */; };
+		FBD5926317F57A650098AF20 /* DOCBookConfirmedView.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD5926217F57A650098AF20 /* DOCBookConfirmedView.m */; };
 		FBD5C90717F3326200E3E3DA /* placeholder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FBD5C90617F3326200E3E3DA /* placeholder.jpg */; };
 		FBD5C90917F3392000E3E3DA /* AvailableSlots.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBD5C90817F3392000E3E3DA /* AvailableSlots.xib */; };
 		FBD5C90B17F33A2200E3E3DA /* smallrightarrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FBD5C90A17F33A2200E3E3DA /* smallrightarrow.png */; };
@@ -287,6 +289,9 @@
 		FBCB50ED17DC90140099AA5C /* SpecialityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpecialityTableViewCell.xib; sourceTree = "<group>"; };
 		FBCB50EF17DC917E0099AA5C /* DOCSpecialityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCSpecialityTableViewCell.h; sourceTree = "<group>"; };
 		FBCB50F017DC917E0099AA5C /* DOCSpecialityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCSpecialityTableViewCell.m; sourceTree = "<group>"; };
+		FBD5925F17F579A70098AF20 /* BookingConfirmed.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookingConfirmed.xib; sourceTree = "<group>"; };
+		FBD5926117F57A650098AF20 /* DOCBookConfirmedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCBookConfirmedView.h; sourceTree = "<group>"; };
+		FBD5926217F57A650098AF20 /* DOCBookConfirmedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCBookConfirmedView.m; sourceTree = "<group>"; };
 		FBD5C90617F3326200E3E3DA /* placeholder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = placeholder.jpg; sourceTree = "<group>"; };
 		FBD5C90817F3392000E3E3DA /* AvailableSlots.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AvailableSlots.xib; sourceTree = "<group>"; };
 		FBD5C90A17F33A2200E3E3DA /* smallrightarrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smallrightarrow.png; sourceTree = "<group>"; };
@@ -339,6 +344,9 @@
 				4BAC7D2E17E8A0C100EE293C /* DOCBookTimeViewController.h */,
 				4BAC7D2F17E8A0C100EE293C /* DOCBookTimeViewController.m */,
 				FBD5C91317F3448500E3E3DA /* BookElements.xib */,
+				FBD5925F17F579A70098AF20 /* BookingConfirmed.xib */,
+				FBD5926117F57A650098AF20 /* DOCBookConfirmedView.h */,
+				FBD5926217F57A650098AF20 /* DOCBookConfirmedView.m */,
 				FBD5C91517F345B900E3E3DA /* DOCBookingElementsView.h */,
 				FBD5C91617F345B900E3E3DA /* DOCBookingElementsView.m */,
 			);
@@ -789,6 +797,7 @@
 				FBCB50E417DC84800099AA5C /* doctor.jpg in Resources */,
 				FBD5C91117F33E3800E3E3DA /* greenrightarrow.png in Resources */,
 				FB05890517F14D3B0023B254 /* account.png in Resources */,
+				FBD5926017F579A70098AF20 /* BookingConfirmed.xib in Resources */,
 				3B4EB07017EF7652001D5533 /* specialityHolder.jpg in Resources */,
 				A00F361917DCACC600BD0467 /* cardiothoracic surgeon.jpg in Resources */,
 				FBCB50B617DC81B70099AA5C /* InfoPlist.strings in Resources */,
@@ -848,6 +857,7 @@
 				FBCB50B817DC81B70099AA5C /* main.m in Sources */,
 				A039187317E2FB1A00934DFA /* DOCDoctorGalleryCell.m in Sources */,
 				A0C5D89E17E74D1C00C311CE /* SDWebImageDecoder.m in Sources */,
+				FBD5926317F57A650098AF20 /* DOCBookConfirmedView.m in Sources */,
 				A0C5D8A117E74D1C00C311CE /* SDWebImageManager.m in Sources */,
 				A0C5D87B17E74D0B00C311CE /* UIImageView+UIActivityIndicatorForSDWebImage.m in Sources */,
 				A00F367B17DD959500BD0467 /* UIImageView+AFNetworking.m in Sources */,

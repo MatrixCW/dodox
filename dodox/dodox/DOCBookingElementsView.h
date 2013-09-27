@@ -16,5 +16,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *timeMinute;
 @property (weak, nonatomic) IBOutlet UILabel *dateTag;
 @property (weak, nonatomic) IBOutlet UIButton *confirmButton;
+@property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 
 @end

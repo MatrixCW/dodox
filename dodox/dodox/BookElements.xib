@@ -61,11 +61,27 @@
                         <color key="titleShadowColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                     </state>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vno-cJ-VLf">
+                    <rect key="frame" x="20" y="312" width="30" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" backgroundImage="greenleftarrow.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kiq-8g-XBA">
+                    <rect key="frame" x="270" y="312" width="30" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" backgroundImage="greenrightarrow.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="bookingTitle" destination="vQu-CT-y8j" id="rPz-E1-8Xv"/>
+                <outlet property="cancelButton" destination="TsD-Ym-vuB" id="9zC-Iv-ekg"/>
                 <outlet property="confirmButton" destination="Oxi-Rs-T35" id="xdF-Vs-DIn"/>
                 <outlet property="dateTag" destination="YiB-zA-CwK" id="SLe-Ca-WSv"/>
                 <outlet property="doctorAvator" destination="3iY-If-ewT" id="0Vt-WF-sup"/>
@@ -78,5 +94,7 @@
     <resources>
         <image name="cancel.png" width="99" height="99"/>
         <image name="dentist.jpg" width="1000" height="766"/>
+        <image name="greenleftarrow.png" width="72" height="72"/>
+        <image name="greenrightarrow.png" width="72" height="72"/>
     </resources>
 </document>

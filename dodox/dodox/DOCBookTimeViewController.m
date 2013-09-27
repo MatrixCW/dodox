@@ -12,8 +12,11 @@
 #import "AFHTTPClient.h"
 #import "SVProgressHUD.h"
 #import "DOCBookingElementsView.h"
-
+#import "DOCBookConfirmedView.h"
 @interface DOCBookTimeViewController ()
+
+@property DOCBookingElementsView *bookingStartView;
+@property DOCBookConfirmedView *bookingConfirmedView;
 
 @end
 
@@ -36,180 +39,63 @@
 	// Do any additional setup after loading the view.
     
     NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"BookElements" owner:self options:nil];
-    DOCBookingElementsView *piView = [nib objectAtIndex:0];
-    piView.backgroundColor = [UIColor clearColor];
-    piView.center = CGPointMake(self.view.bounds.size.width/2, self.view.bounds.size.height/2);
+    self.bookingStartView = [nib objectAtIndex:0];
+    self.bookingStartView.backgroundColor = [UIColor clearColor];
+    self.bookingStartView.center = CGPointMake(self.view.bounds.size.width/2, self.view.bounds.size.height/2);
     
-    piView.confirmButton.backgroundColor = [UIColor colorWithRed:68.0/255 green:149.0/255 blue:85.0/255 alpha:1.0];
+    self.bookingStartView.confirmButton.backgroundColor = [UIColor colorWithRed:68.0/255 green:149.0/255 blue:85.0/255 alpha:1.0];
     
-    piView.confirmButton.tintColor = [UIColor whiteColor];
-    //[self.piView setUpView];
+    self.bookingStartView.confirmButton.tintColor = [UIColor whiteColor];
     
-    [self.view addSubview:piView];
+    [self.view addSubview:self.bookingStartView];
     
-    self.phoneNumberField.delegate = self;
-    self.symptonField.delegate = self;
     
-    self.phoneNumberField.returnKeyType = UIReturnKeyDone;
-    self.symptonField.returnKeyType = UIReturnKeyDone;
+    [self.bookingStartView.cancelButton addTarget:self action:@selector(dismissView) forControlEvents:UIControlEventTouchUpInside];
     
-    [self.phoneNumberField addTarget:self action:@selector(textFieldDidBeginEditing:) forControlEvents:UIControlEventEditingChanged];
-    
-    DOCGlobalUtil *sharedInstance = [DOCGlobalUtil getSharedInstance];
-    
-    self.doctorNameTag.text = [NSString stringWithFormat:@"Dr %@", sharedInstance.currentSelectedDoctor.doctorName];
+    [self.bookingStartView.confirmButton addTarget:self action:@selector(saveAndExit) forControlEvents:UIControlEventTouchUpInside];
+
     
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)cancelButtonPressed:(id)sender {
-    
+-(void)dismissView{
     [self dismissViewControllerAnimated:YES completion:Nil];
 }
 
-- (IBAction)doneButtonPressed:(id)sender {
+-(void)saveAndExit{
     
-    if(![self checkPhoneNumber]){
-        
-        UILabel *warningLabel = [[UILabel alloc] initWithFrame:self.phoneNumberField.bounds];
-        warningLabel.text = @"Invalid phone number";
-        warningLabel.textColor = [UIColor redColor];
-        warningLabel.textAlignment = NSTextAlignmentCenter;
-        
-        [self.phoneNumberField addSubview:warningLabel];
-        return;
-        
-    }
-        
-        
-    DOCGlobalUtil *sharedInstance = [DOCGlobalUtil getSharedInstance];
-    NSString *doctorID = [[NSNumber numberWithInt:sharedInstance.currentSelectedDoctor.doctorID] stringValue];
     
-    NSString *symptons;
-    NSArray* words = [self.symptonField.text componentsSeparatedByCharactersInSet :[NSCharacterSet whitespaceCharacterSet]];
-    NSString* nospacestring = [words componentsJoinedByString:@""];
+    [UIView animateWithDuration:0.8
+                     animations:^{
+                         
+                         self.bookingStartView.center  = CGPointMake(self.bookingStartView.center.x,self.bookingStartView.center.y+1000);
+                    
+                     }
+                     completion:^(BOOL finished){
+                         
+                         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"BookingConfirmed" owner:self options:nil];
+                         self.bookingConfirmedView = [nib objectAtIndex:0];
+                         self.bookingConfirmedView.backgroundColor = [UIColor clearColor];
+                         self.bookingConfirmedView.center = CGPointMake(self.view.bounds.size.width/2, self.view.bounds.size.height/2+1000);
+                         
+                         [self.bookingConfirmedView.addCalendarButton addTarget:self
+                                                                         action:@selector(dismissView)
+                                                               forControlEvents:UIControlEventTouchUpInside];
+                         
+                         [self.view addSubview:self.bookingConfirmedView];
+                         
+                         [UIView animateWithDuration:0.8 animations:^{
+                             
+                             self.bookingConfirmedView.center = CGPointMake(self.view.bounds.size.width/2, self.view.bounds.size.height/2);
+                         }];
+     }];
     
-    if([nospacestring isEqualToString:@""]){
-        symptons = @"The patient did not enter any information";
-    }
-    else{
-        symptons = self.symptonField.text;
-    }
     
-    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-    [dic setObject:doctorID forKey:@"doctor_id"];
-    [dic setObject:self.phoneNumberField.text forKey:@"patient_phone"];
-    [dic setObject:@"1,3,4444,5" forKey:@"slots"];
-    [dic setObject:self.symptonField.text forKey:@"symptoms"];
     
-    NSMutableDictionary *bk = [NSMutableDictionary dictionary];
-    [bk setObject:dic forKey:@"booking"];
-   
-    NSURL *requestUrl = [NSURL URLWithString:@"http://doxor.herokuapp.com/"];
-    AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:requestUrl];
-    [httpClient postPath:@"/api/bookings.json"
-              parameters:bk
-                 success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                     
-                     NSString *text = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-                     NSLog(@"Response: %@", text);
-                     
-                     [SVProgressHUD showSuccessWithStatus:@"Booking succeeded!"];
-                     
-                     
-                     [self dismissViewControllerAnimated:YES completion:Nil];
-                     
-                 }
-                 failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                     
-                     NSLog(@"%@", operation.request.URL);
-                     NSLog(@"ccdscds %@", [error localizedDescription]);
-                 }];
- 
-              
-}
-
-
-
--(BOOL)checkPhoneNumber{
-    
-    NSArray* words = [self.phoneNumberField.text componentsSeparatedByCharactersInSet :[NSCharacterSet whitespaceCharacterSet]];
-    NSString* nospacestring = [words componentsJoinedByString:@""];
-    
-    if([nospacestring isEqualToString:@""]){
-        return FALSE;
-    }
-    else
-        return TRUE;
-    
+    //[self dismissViewControllerAnimated:YES completion:Nil];
     
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    [textField resignFirstResponder];
-    
-    return YES;
-}
-
--(void)textFieldDidBeginEditing:(UITextField *)textField{
-    NSArray *array = textField.subviews;
-    
-    for(UIView *view in array){
-        if([view isKindOfClass:[UILabel class]])
-            [view removeFromSuperview];
-    }
-    
-}
-
-- (void)textViewDidBeginEditing:(UITextView *)textView{
-    
-    [self animateTextField:textView up:YES];
-    
-    self.textViewPlaceHolder.hidden = YES;
-    
-}
-
--(void)textViewDidEndEditing:(UITextView *)textView{
-    
-    
-    [self animateTextField:textView up:NO];
-    
-    NSArray* words = [textView.text componentsSeparatedByCharactersInSet :[NSCharacterSet whitespaceCharacterSet]];
-    NSString* nospacestring = [words componentsJoinedByString:@""];
-    
-    if([nospacestring isEqualToString:@""]){
-        self.textViewPlaceHolder.hidden = NO;
-    }
-}
 
 
-- (void) animateTextField: (UITextView*) textField up: (BOOL) up
-{
-    const int movementDistance = 100; // tweak as needed
-    const float movementDuration = 0.3f; // tweak as needed
-    
-    int movement = (up ? -movementDistance : movementDistance);
-    
-    [UIView beginAnimations: @"anim" context: nil];
-    [UIView setAnimationBeginsFromCurrentState: YES];
-    [UIView setAnimationDuration: movementDuration];
-    self.view.frame = CGRectOffset(self.view.frame, 0, movement);
-    [UIView commitAnimations];
-}
 
-- (BOOL) textView: (UITextView*) textView shouldChangeTextInRange: (NSRange) range
-  replacementText: (NSString*) text
-{
-    if ([text isEqualToString:@"\n"]) {
-        [textView resignFirstResponder];
-        return NO;
-    }
-    return YES;
-}
 @end

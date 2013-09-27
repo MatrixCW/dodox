@@ -163,7 +163,7 @@
 
 
 -(void)constructDoctorObjectFromDictionary:(NSDictionary *)dict{
-    
+        
     NSString *doctorID = [dict valueForKey:@"id"];
     NSString *doctorName = [dict valueForKey:@"name"];
     NSString *doctorSpeciality = [dict valueForKey:@"category_name"];
@@ -178,12 +178,15 @@
     NSString *lat = [doctorCoordinate objectForKey:@"lat"];
     NSString *lng = [doctorCoordinate objectForKey:@"lng"];
     
+    lat = @"123";
+    lng = @"234";
     /*
     NSLog(@"%@ %@ %@ %@ %@ %@ %@ %@ %@ %@", doctorID, doctorName, doctorSpeciality, doctorAddress, doctorRate
           , doctorPhone, doctorGallery, doctorAvatar, doctorCoordinate, doctorDescription);
      */
     
-    DOCDoctor *doctor = [[DOCDoctor alloc] initWithIdentity:[doctorID integerValue]
+    
+   DOCDoctor *doctor = [[DOCDoctor alloc] initWithIdentity:[doctorID integerValue]
                                                        Name:doctorName
                                                  speciality:doctorSpeciality
                                                     address:doctorAddress
@@ -245,14 +248,18 @@
     [cell.thumbnailImageView.layer setMasksToBounds:YES];
     [cell.thumbnailImageView.layer setCornerRadius:8.0];
     
-    
-
-    
+    [cell.bookButton addTarget:self
+                        action:@selector(book)
+              forControlEvents:UIControlEventTouchUpInside];
     
     return cell;
 }
 
 
+
+-(void)book{
+    [self performSegueWithIdentifier:@"BOOK_DIRECTLY" sender:self];
+}
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 85;
 }

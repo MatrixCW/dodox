@@ -34,7 +34,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speciality" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDK-qV-43W">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Doctors" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDK-qV-43W">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -75,6 +75,7 @@
                         <outlet property="currentSprciality" destination="iDK-qV-43W" id="7ei-q6-Pp3"/>
                         <outlet property="doctorTable" destination="N9D-wk-abA" id="ZGN-e2-46m"/>
                         <segue destination="hby-1e-sYd" kind="push" identifier="DOCTOR_SPECIFICS" id="eLO-Te-jeC"/>
+                        <segue destination="02z-vy-J4i" kind="modal" identifier="BOOK_DIRECTLY" id="KmQ-ZV-Pl7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cXb-pM-VC1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -277,6 +278,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="RQn-zR-DL7"/>
-        <segue reference="hCx-RE-SQe"/>
+        <segue reference="2oK-4x-KL9"/>
+        <segue reference="KmQ-ZV-Pl7"/>
     </inferredMetricsTieBreakers>
 </document>
