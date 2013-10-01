@@ -11,6 +11,7 @@
 
 @protocol EnterPIProtocol
 
+-(void)doneButtonPressed:(NSDictionary*)dict;
 -(void)removePIView;
 -(void)viewNeedMoveUp:(CGFloat)delta;
 
@@ -25,7 +26,7 @@
 - (IBAction)doneButtonPressed:(id)sender;
 - (IBAction)cancelButtonPressed:(id)sender;
 
--(NSString*)calculateUniqueIdentifier;
++(NSString*)calculateUniqueIdentifier;
 
 -(void)setUpView;
 @end

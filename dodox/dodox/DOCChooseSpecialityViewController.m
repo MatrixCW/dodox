@@ -346,11 +346,39 @@
     NSLog(@"dsfsdfdsg");
     
 }
+
+
+-(void)writeToPlist:(NSDictionary*)dict{
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *plistLocation = [documentsDirectory stringByAppendingPathComponent:@"myplist.plist"];
+    
+    [dict writeToFile:plistLocation atomically:YES];
+    
+    
+}
+
+-(NSDictionary*)readFromFile{
+    
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *plistLocation = [documentsDirectory stringByAppendingPathComponent:@"myplist.plist"];
+    
+    NSMutableDictionary *plistDict = [[NSMutableDictionary alloc] initWithContentsOfFile:plistLocation];
+    NSLog(@"%@", plistDict);
+
+    return plistDict;
+}
+
 - (IBAction)historyButtonPressed:(id)sender {
     
 }
 
 - (IBAction)settingsButtonPressed:(id)sender {
+    
+    
     
     NSLog(@"asjbajk6db");
     self.blurView = [AMBlurView new];
@@ -371,6 +399,26 @@
     [self.view addSubview:self.piView];
     self.piView.myDelegate = self;
     
+    NSDictionary *dict = [self readFromFile];
+    
+    if(dict){
+        
+        NSString *uuid = [dict objectForKey:@"uid"];
+        NSString *userName = [dict objectForKey:@"name"];
+        NSString *phone = [dict objectForKey:@"phone"];
+        
+        self.piView.deviceIDField.text = uuid;
+        self.piView.userNameField.text = userName;
+        self.piView.userPhoneField.text = phone;
+        
+        if([self.piView.deviceIDField.text isEqualToString:@""] || self.piView.deviceIDField.text == Nil)
+            self.piView.deviceIDField.text = [DOCEnterPIView calculateUniqueIdentifier];
+    }
+    
+    if([self.piView.deviceIDField.text isEqualToString:@""] || self.piView.deviceIDField.text == Nil)
+        self.piView.deviceIDField.text = [DOCEnterPIView calculateUniqueIdentifier];
+    
+        
     [UIView animateWithDuration:0.5 animations:^{
         
         self.blurView.center = CGPointMake(self.view.bounds.size.width/2, self.view.bounds.size.height/2);
@@ -380,7 +428,15 @@
     }];
 }
 
+
+-(void)doneButtonPressed:(NSDictionary *)dict{
+    NSLog(@"hahahahahahaha %@", dict);
+    [self writeToPlist:dict];
+    [self removePIView];
+    [self readFromFile];
+}
 -(void)removePIView{
+    
     [UIView animateWithDuration:0.5 animations:^{
         self.piView.center = CGPointMake(self.piView.center.x, self.piView.center.x+700);
         self.blurView.center = CGPointMake(self.blurView.center.x, self.blurView.center.x+700);

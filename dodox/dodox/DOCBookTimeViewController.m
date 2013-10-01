@@ -13,6 +13,10 @@
 #import "SVProgressHUD.h"
 #import "DOCBookingElementsView.h"
 #import "DOCBookConfirmedView.h"
+#import "DOCGlobalUtil.h"
+#import "DOCDoctor.h"
+#import "UIImageView+UIActivityIndicatorForSDWebImage.h"
+
 @interface DOCBookTimeViewController ()
 
 @property DOCBookingElementsView *bookingStartView;
@@ -53,6 +57,26 @@
     [self.bookingStartView.cancelButton addTarget:self action:@selector(dismissView) forControlEvents:UIControlEventTouchUpInside];
     
     [self.bookingStartView.confirmButton addTarget:self action:@selector(saveAndExit) forControlEvents:UIControlEventTouchUpInside];
+    
+    DOCGlobalUtil *sharedInstance = [DOCGlobalUtil getSharedInstance];
+    DOCDoctor *doctor =  sharedInstance.currentSelectedDoctor;
+    
+    [self.bookingStartView.doctorAvator setImageWithURL:[doctor.doctorAvatars objectForKey:@"medium"] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    
+    self.bookingStartView.doctorNameTag.text = doctor.doctorName;
+    
+    self.bookingStartView.doctoraAddress.text = doctor.doctorAddress;
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *plistLocation = [documentsDirectory stringByAppendingPathComponent:@"myplist.plist"];
+    
+    NSMutableDictionary *plistDict = [[NSMutableDictionary alloc] initWithContentsOfFile:plistLocation];
+    
+    NSString *name = [plistDict objectForKey:@"name"];
+    
+    self.bookingStartView.bookingTitle.text = [NSString stringWithFormat:@"Booking for %@ with:",name];
+    
 
     
 }
@@ -82,6 +106,15 @@
                                                                forControlEvents:UIControlEventTouchUpInside];
                          
                          [self.view addSubview:self.bookingConfirmedView];
+                         
+                         DOCGlobalUtil *sharedInstance = [DOCGlobalUtil getSharedInstance];
+                         DOCDoctor *doctor =  sharedInstance.currentSelectedDoctor;
+                         
+                         [self.bookingConfirmedView.doctorAvatar setImageWithURL:[doctor.doctorAvatars objectForKey:@"medium"] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+                         
+                         self.bookingConfirmedView.doctorNameTag.text = doctor.doctorName;
+                         
+                         self.bookingConfirmedView.doctorAddress.text = doctor.doctorAddress;
                          
                          [UIView animateWithDuration:0.8 animations:^{
                              

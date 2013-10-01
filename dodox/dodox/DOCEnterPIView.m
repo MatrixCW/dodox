@@ -31,7 +31,17 @@
 
 - (IBAction)doneButtonPressed:(id)sender {
     
-    [self.myDelegate removePIView];
+    NSString *myName = self.userNameField.text;
+    NSString *myPhone = self.userPhoneField.text;
+    NSString *uuid = self.deviceIDField.text;
+    
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+    
+    [dict setObject:uuid forKey:@"uid"];
+    [dict setObject:myName forKey:@"name"];
+    [dict setObject:myPhone forKey:@"phone"];
+    
+    [self.myDelegate doneButtonPressed:dict];
 }
 
 - (IBAction)cancelButtonPressed:(id)sender {
@@ -45,11 +55,10 @@
     self.userPhoneField.returnKeyType = UIReturnKeyDone;
     self.userNameField.delegate = self;
     self.userPhoneField.delegate = self;
-    self.deviceIDField.text = [self calculateUniqueIdentifier];
     self.deviceIDField.userInteractionEnabled = NO;
 }
 
--(NSString*)calculateUniqueIdentifier{
++(NSString*)calculateUniqueIdentifier{
     CFUUIDRef uuidRef = CFUUIDCreate(kCFAllocatorDefault);
     NSString *uuidString = (NSString *)CFBridgingRelease(CFUUIDCreateString(NULL,uuidRef));
     CFRelease(uuidRef);

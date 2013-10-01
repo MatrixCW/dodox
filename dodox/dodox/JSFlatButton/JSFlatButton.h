@@ -36,6 +36,8 @@
 @property (assign, nonatomic) BOOL shouldHighlightText;
 @property (assign, nonatomic) BOOL shouldHighlightImage;
 
+@property int associateCell;
+
 #pragma mark - Initialization
 - (id)initWithFrame:(CGRect)frame
     backgroundColor:(UIColor *)back

@@ -16,6 +16,8 @@
 #import <MapKit/MapKit.h>
 #import "UIImageView+UIActivityIndicatorForSDWebImage.h"
 #import "JSFlatButton.h"
+#import "DOCEnterPIView.h"
+#import "AMBlurView.h"
 
 
 @interface DOCSelectDoctorViewController ()
@@ -26,6 +28,9 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *doctorTable;
 @property NSMutableArray *doctors;
+
+@property AMBlurView *blurView;
+@property DOCEnterPIView *piView;
 
 @end
 
@@ -232,6 +237,7 @@
     //rateView.alignment = RateViewAlignmentRight;
     //[cell.rate addSubview:rateView];
     
+    cell.bookButton.associateCell = indexPath.row;
     cell.bookButton.buttonBackgroundColor = [UIColor colorWithRed:101.0/255 green:153.0/255 blue:255.0/255 alpha:1.00f]; //[UIColor colorWithHue:0.0f saturation:0.0f brightness:0.60f alpha:1.0f];
     cell.bookButton.buttonForegroundColor = [UIColor colorWithHue:0.0f saturation:0.0f brightness:1.0f alpha:1.0f];
     cell.bookButton.titleLabel.font = [UIFont systemFontOfSize:11];
@@ -249,7 +255,7 @@
     [cell.thumbnailImageView.layer setCornerRadius:8.0];
     
     [cell.bookButton addTarget:self
-                        action:@selector(book)
+                        action:@selector(book:)
               forControlEvents:UIControlEventTouchUpInside];
     
     return cell;
@@ -257,7 +263,22 @@
 
 
 
--(void)book{
+-(void)book:(JSFlatButton*) buttom{
+    
+    assert(buttom != nil);
+    
+    NSLog(@"%d", buttom.associateCell);
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *plistLocation = [documentsDirectory stringByAppendingPathComponent:@"myplist.plist"];
+    
+    NSMutableDictionary *plistDict = [[NSMutableDictionary alloc] initWithContentsOfFile:plistLocation];
+    
+    DOCGlobalUtil *sharedInstance = [DOCGlobalUtil getSharedInstance];
+    
+    sharedInstance.currentSelectedDoctor = [self.doctors objectAtIndex:buttom.associateCell];
+    
     [self performSegueWithIdentifier:@"BOOK_DIRECTLY" sender:self];
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
