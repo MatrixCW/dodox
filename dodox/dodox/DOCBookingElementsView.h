@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface DOCBookingElementsView : UIView
+
 @property (weak, nonatomic) IBOutlet UILabel *bookingTitle;
 @property (weak, nonatomic) IBOutlet UILabel *doctorNameTag;
 @property (weak, nonatomic) IBOutlet UIImageView *doctorAvator;
@@ -17,5 +18,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *dateTag;
 @property (weak, nonatomic) IBOutlet UIButton *confirmButton;
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
+@property (weak, nonatomic) IBOutlet UIButton *previousButton;
+@property (weak, nonatomic) IBOutlet UIButton *nextButton;
+
+@property int currentIndex;
 
 @end

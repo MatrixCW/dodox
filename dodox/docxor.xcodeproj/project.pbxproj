@@ -108,6 +108,7 @@
 		FBCB50EE17DC90140099AA5C /* SpecialityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBCB50ED17DC90140099AA5C /* SpecialityTableViewCell.xib */; };
 		FBCB50F117DC917E0099AA5C /* DOCSpecialityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCB50F017DC917E0099AA5C /* DOCSpecialityTableViewCell.m */; };
 		FBCBDDD717FC33DB00D241DE /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCBDDD617FC33DB00D241DE /* TestViewController.m */; };
+		FBCC165817FCB7FA001FAF9C /* DOCDate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCC165717FCB7FA001FAF9C /* DOCDate.m */; };
 		FBD5926017F579A70098AF20 /* BookingConfirmed.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBD5925F17F579A70098AF20 /* BookingConfirmed.xib */; };
 		FBD5926317F57A650098AF20 /* DOCBookConfirmedView.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD5926217F57A650098AF20 /* DOCBookConfirmedView.m */; };
 		FBD5C90717F3326200E3E3DA /* placeholder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FBD5C90617F3326200E3E3DA /* placeholder.jpg */; };
@@ -292,6 +293,8 @@
 		FBCB50F017DC917E0099AA5C /* DOCSpecialityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCSpecialityTableViewCell.m; sourceTree = "<group>"; };
 		FBCBDDD517FC33DB00D241DE /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		FBCBDDD617FC33DB00D241DE /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		FBCC165617FCB7FA001FAF9C /* DOCDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCDate.h; sourceTree = "<group>"; };
+		FBCC165717FCB7FA001FAF9C /* DOCDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCDate.m; sourceTree = "<group>"; };
 		FBD5925F17F579A70098AF20 /* BookingConfirmed.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookingConfirmed.xib; sourceTree = "<group>"; };
 		FBD5926117F57A650098AF20 /* DOCBookConfirmedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCBookConfirmedView.h; sourceTree = "<group>"; };
 		FBD5926217F57A650098AF20 /* DOCBookConfirmedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCBookConfirmedView.m; sourceTree = "<group>"; };
@@ -346,10 +349,10 @@
 			children = (
 				4BAC7D2E17E8A0C100EE293C /* DOCBookTimeViewController.h */,
 				4BAC7D2F17E8A0C100EE293C /* DOCBookTimeViewController.m */,
-				FBD5C91317F3448500E3E3DA /* BookElements.xib */,
 				FBD5925F17F579A70098AF20 /* BookingConfirmed.xib */,
 				FBD5926117F57A650098AF20 /* DOCBookConfirmedView.h */,
 				FBD5926217F57A650098AF20 /* DOCBookConfirmedView.m */,
+				FBD5C91317F3448500E3E3DA /* BookElements.xib */,
 				FBD5C91517F345B900E3E3DA /* DOCBookingElementsView.h */,
 				FBD5C91617F345B900E3E3DA /* DOCBookingElementsView.m */,
 			);
@@ -432,6 +435,8 @@
 		A00F364817DCC36200BD0467 /* Common Util */ = {
 			isa = PBXGroup;
 			children = (
+				FBCC165617FCB7FA001FAF9C /* DOCDate.h */,
+				FBCC165717FCB7FA001FAF9C /* DOCDate.m */,
 				A00F365C17DCECFD00BD0467 /* DOCLeftToRightSegue.h */,
 				A00F365D17DCECFD00BD0467 /* DOCLeftToRightSegue.m */,
 				A00F365117DCC64200BD0467 /* Reachability.h */,
@@ -888,6 +893,7 @@
 				FBD9242A17F05EA5008FB24F /* JSFlatButton.m in Sources */,
 				A00F367617DD959400BD0467 /* AFJSONRequestOperation.m in Sources */,
 				FBD5C90E17F33B9E00E3E3DA /* DOCTimeSlotCell.m in Sources */,
+				FBCC165817FCB7FA001FAF9C /* DOCDate.m in Sources */,
 				4BAC7D3017E8A0C100EE293C /* DOCBookTimeViewController.m in Sources */,
 				A00F365317DCC64200BD0467 /* Reachability.m in Sources */,
 				A0C5D89B17E74D1C00C311CE /* NSData+GIF.m in Sources */,

@@ -141,6 +141,8 @@
     
     NSLog(@"%@", requestUrlString);
     
+    NSLog(@"%@", requestUrlString);
+    
     NSURL *url = [NSURL URLWithString:requestUrlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
@@ -167,8 +169,12 @@
 }
 
 
+
+
+
+
 -(void)constructDoctorObjectFromDictionary:(NSDictionary *)dict{
-        
+    
     NSString *doctorID = [dict valueForKey:@"id"];
     NSString *doctorName = [dict valueForKey:@"name"];
     NSString *doctorSpeciality = [dict valueForKey:@"category_name"];
@@ -182,6 +188,9 @@
     
     NSString *lat = [doctorCoordinate objectForKey:@"lat"];
     NSString *lng = [doctorCoordinate objectForKey:@"lng"];
+    
+    
+
     
     lat = @"123";
     lng = @"234";
@@ -201,9 +210,14 @@
                                                     avatars:doctorAvatar
                                                 description:doctorDescription
                                              andPictureURLs:doctorGallery];
+    
+
         
+    
+    [doctor getMyTimeSlots];
     [self.doctors addObject:doctor];
     
+ 
     
     
     

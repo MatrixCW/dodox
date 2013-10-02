@@ -20,6 +20,8 @@
 @property (readonly) CLLocationCoordinate2D doctorPosition;
 @property (readonly) NSString *doctorPhoneNumber;
 
+@property NSMutableArray *timeSlots;
+
 @property (readonly) NSDictionary *doctorAvatars;
 @property (readonly) NSDictionary *doctorDescription;
 @property (readonly) NSArray *doctorPictureURLs;
@@ -41,6 +43,8 @@
 - (NSComparisonResult)compareName:(DOCDoctor *)otherObject;
 - (NSComparisonResult)compareRate:(DOCDoctor *)otherObject;
 - (NSComparisonResult)compareDistance:(DOCDoctor *)otherObject;
+
+-(void)getMyTimeSlots;
 
 
 @end

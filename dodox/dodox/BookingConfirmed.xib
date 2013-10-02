@@ -49,7 +49,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.20392156862745098" green="0.51372549019607838" blue="0.2627450980392157" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                    <state key="normal" title="Add to Calendar">
+                    <state key="normal" title="Exit">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                     </state>

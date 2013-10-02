@@ -87,6 +87,8 @@
                 <outlet property="doctorAvator" destination="3iY-If-ewT" id="0Vt-WF-sup"/>
                 <outlet property="doctorNameTag" destination="brD-8S-oRd" id="nfR-EL-EPN"/>
                 <outlet property="doctoraAddress" destination="HXc-2E-shD" id="s20-mL-Y5w"/>
+                <outlet property="nextButton" destination="Kiq-8g-XBA" id="TSy-CK-WDF"/>
+                <outlet property="previousButton" destination="Vno-cJ-VLf" id="JsC-xc-lz0"/>
                 <outlet property="timeMinute" destination="FdI-45-WKY" id="kdX-cI-VI8"/>
             </connections>
         </view>

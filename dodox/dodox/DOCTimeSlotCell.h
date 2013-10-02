@@ -10,4 +10,14 @@
 
 @interface DOCTimeSlotCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIButton *previousSlots;
+@property (weak, nonatomic) IBOutlet UIButton *nextSlots;
+@property (weak, nonatomic) IBOutlet UILabel *labelOne;
+@property (weak, nonatomic) IBOutlet UILabel *labelTwo;
+@property (weak, nonatomic) IBOutlet UILabel *labelThree;
+@property (weak, nonatomic) IBOutlet UILabel *labelFour;
+
+@property int currentIndex;
+@property int totalIndex;
+
 @end

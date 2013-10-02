@@ -18,6 +18,7 @@
 #import "DOCGlobalUtil.h"
 #import "UIImageView+UIActivityIndicatorForSDWebImage.h"
 #import "DOCTimeSlotCell.h"
+#import "DOCDate.h"
 
 @interface DOCDoctorSpecificsViewController ()
 
@@ -76,7 +77,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return 7;
+    return 6;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -118,7 +119,70 @@
             NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"AvailableSlots" owner:self options:nil];
             cell = [nib objectAtIndex:0];
             
+            [cell.previousSlots addTarget:self action:@selector(previousTimeSlot:) forControlEvents:UIControlEventTouchUpInside];
+            [cell.nextSlots addTarget:self action:@selector(nextTimeSlot:) forControlEvents:UIControlEventTouchUpInside];
             
+            cell.currentIndex = 0;
+            
+            if(currentDoctor.timeSlots.count % 4 == 0)
+                cell.totalIndex =currentDoctor.timeSlots.count/4-1;
+            else
+                cell.totalIndex = currentDoctor.timeSlots.count/4;
+            
+            NSMutableArray *ary = [NSMutableArray array];
+            [ary addObject:cell.labelOne];
+            [ary addObject:cell.labelTwo];
+            [ary addObject:cell.labelThree];
+            [ary addObject:cell.labelFour];
+            
+            for(int i = 0; i <= 3; i++){
+                
+                UILabel *tempLabel = [ary objectAtIndex:i];
+                tempLabel.hidden = NO;
+                
+            }
+            
+            int startIndex = 0;
+            int endIndex = startIndex + 3;
+            
+            if(endIndex > (currentDoctor.timeSlots.count -1))
+                endIndex = (currentDoctor.timeSlots.count -1);
+            
+            NSDateFormatter * df = [[NSDateFormatter alloc] init];
+            [df setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+            [df setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
+            [df setFormatterBehavior:NSDateFormatterBehaviorDefault];
+            
+            
+            for(int i=startIndex;i<=endIndex;i++){
+                
+                int markDownIndex = i - startIndex;
+                
+                UILabel *tempLabel = [ary objectAtIndex:markDownIndex];
+                DOCDate *tempDate = (DOCDate*)[currentDoctor.timeSlots objectAtIndex:i];
+                tempLabel.text = [df stringFromDate:tempDate.myDate];
+                
+                
+            }
+            
+            if(endIndex - startIndex < 3){
+                
+                int totalNumOfDate = endIndex - startIndex + 1;
+                int left = 4 - totalNumOfDate;
+                
+                for(int j = 3; j > (3-left); j--){
+                    
+                    UILabel *tempLabel = [ary objectAtIndex:j];
+                    tempLabel.hidden = YES;
+                    
+                }
+                
+            }
+            
+
+        
+        
+
             
         }
         
@@ -141,6 +205,7 @@
         return cell;
     }
     
+    /*
     if(index == 3){
         
         DOCDoctorGalleryCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DoctorGallery"];
@@ -157,9 +222,10 @@
         return cell;
         
     }
+     */
 
     
-    if(index == 4){
+    if(index == 3){
         
         DOCDoctorLocationCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DoctorLocation"];
         
@@ -176,7 +242,7 @@
     }
 
     
-    if(index == 5){
+    if(index == 4){
         
         DOCDoctorPhoneNumberCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DoctorPhoneNumber"];
         
@@ -193,7 +259,7 @@
     }
 
     
-    assert(index == 6);
+    assert(index == 5);
         
         DOCDoctorDescriptionCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DoctorDescription"];
         
@@ -218,15 +284,145 @@
         
         return cell;
         
-    
-
-    
-    
-    
-
-
 }
 
+-(void)previousTimeSlot:(UIButton*)button{
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:0];
+    DOCTimeSlotCell *cell = (DOCTimeSlotCell*)[self.doctorInfoTable cellForRowAtIndexPath:indexPath];
+    
+    NSLog(@"%d",cell.currentIndex);
+    
+    if(cell.currentIndex == 0)
+        return;
+    
+    NSMutableArray *ary = [NSMutableArray array];
+    [ary addObject:cell.labelOne];
+    [ary addObject:cell.labelTwo];
+    [ary addObject:cell.labelThree];
+    [ary addObject:cell.labelFour];
+    
+    for(int i = 0; i <= 3; i++){
+        
+        UILabel *tempLabel = [ary objectAtIndex:i];
+        tempLabel.hidden = NO;
+        
+    }
+    
+    DOCGlobalUtil *sharedInstance = [DOCGlobalUtil getSharedInstance];
+    DOCDoctor *currentDoctor = sharedInstance.currentSelectedDoctor;
+    
+    cell.currentIndex --;
+    
+    int startIndex = cell.currentIndex * 4;
+    int endIndex = startIndex + 3;
+    
+    if(endIndex > (currentDoctor.timeSlots.count -1))
+        endIndex = (currentDoctor.timeSlots.count -1);
+    
+    NSDateFormatter * df = [[NSDateFormatter alloc] init];
+    [df setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    [df setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
+    [df setFormatterBehavior:NSDateFormatterBehaviorDefault];
+
+    
+    for(int i=startIndex;i<=endIndex;i++){
+        
+        int markDownIndex = i - startIndex;
+        
+        UILabel *tempLabel = [ary objectAtIndex:markDownIndex];
+        DOCDate *tempDate = (DOCDate*)[currentDoctor.timeSlots objectAtIndex:i];
+        tempLabel.text = [df stringFromDate:tempDate.myDate];
+        
+        
+    }
+    
+    if(endIndex - startIndex < 3){
+        
+        int totalNumOfDate = endIndex - startIndex + 1;
+        int left = 4 - totalNumOfDate;
+        
+        for(int j = 3; j > (3-left); j--){
+            
+            UILabel *tempLabel = [ary objectAtIndex:j];
+            tempLabel.hidden = YES;
+            
+        }
+    }
+    
+    NSLog(@"previous!");
+    
+}
+
+-(void)nextTimeSlot:(UIButton*)button{
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:0];
+    DOCTimeSlotCell *cell = (DOCTimeSlotCell*)[self.doctorInfoTable cellForRowAtIndexPath:indexPath];
+    
+    NSLog(@"%d",cell.currentIndex);
+    
+    if(cell.currentIndex == cell.totalIndex)
+        return;
+    
+    NSMutableArray *ary = [NSMutableArray array];
+    [ary addObject:cell.labelOne];
+    [ary addObject:cell.labelTwo];
+    [ary addObject:cell.labelThree];
+    [ary addObject:cell.labelFour];
+    
+    for(int i = 0; i <= 3; i++){
+        
+        UILabel *tempLabel = [ary objectAtIndex:i];
+        tempLabel.hidden = NO;
+        
+    }
+    
+    DOCGlobalUtil *sharedInstance = [DOCGlobalUtil getSharedInstance];
+    DOCDoctor *currentDoctor = sharedInstance.currentSelectedDoctor;
+    
+    cell.currentIndex ++;
+    
+    int startIndex = cell.currentIndex * 4;
+    int endIndex = startIndex + 3;
+    
+    if(endIndex > (currentDoctor.timeSlots.count -1))
+        endIndex = (currentDoctor.timeSlots.count -1);
+    
+    NSDateFormatter * df = [[NSDateFormatter alloc] init];
+    [df setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    [df setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
+    [df setFormatterBehavior:NSDateFormatterBehaviorDefault];
+    
+    
+    for(int i=startIndex;i<=endIndex;i++){
+        
+        int markDownIndex = i - startIndex;
+        
+        UILabel *tempLabel = [ary objectAtIndex:markDownIndex];
+        DOCDate *tempDate = (DOCDate*)[currentDoctor.timeSlots objectAtIndex:i];
+        tempLabel.text = [df stringFromDate:tempDate.myDate];
+        
+        
+    }
+    
+    if(endIndex - startIndex < 3){
+        
+        int totalNumOfDate = endIndex - startIndex + 1;
+        int left = 4 - totalNumOfDate;
+        
+        for(int j = 3; j > (3-left); j--){
+            
+            UILabel *tempLabel = [ary objectAtIndex:j];
+            tempLabel.hidden = YES;
+            
+        }
+    }
+    
+    NSLog(@"next!");
+
+
+    
+}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 
@@ -242,16 +438,16 @@
         case 2:
             height = 60;
             break;
+        //case 3:
+           // height = 320;
+           // break;
         case 3:
-            height = 320;
+            height = 50;
             break;
         case 4:
             height = 50;
             break;
         case 5:
-            height = 50;
-            break;
-        case 6:
             height = 630;
             break;
 
@@ -268,7 +464,7 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    if(indexPath.row == 5){
+    if(indexPath.row == 4){
         
         NSLog(@"phone phone phone");
         
