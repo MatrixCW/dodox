@@ -242,7 +242,7 @@
     cell.bookButton.buttonForegroundColor = [UIColor colorWithHue:0.0f saturation:0.0f brightness:1.0f alpha:1.0f];
     cell.bookButton.titleLabel.font = [UIFont systemFontOfSize:11];
     [cell.bookButton setFlatTitle:@"Book now"];
-    [cell.bookButton setFlatImage:[UIImage imageNamed:@"play.png"]];
+    //[cell.bookButton setFlatImage:[UIImage imageNamed:@"play.png"]];
     
     
     //cell.bookButton.buttonBackgroundColor =  [UIColor colorWithRed:82 green:163 blue:82 alpha:1.0];

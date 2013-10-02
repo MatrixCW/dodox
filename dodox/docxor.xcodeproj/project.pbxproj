@@ -107,6 +107,7 @@
 		FBCB50EC17DC88880099AA5C /* dentist.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FBCB50EB17DC88880099AA5C /* dentist.jpg */; };
 		FBCB50EE17DC90140099AA5C /* SpecialityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBCB50ED17DC90140099AA5C /* SpecialityTableViewCell.xib */; };
 		FBCB50F117DC917E0099AA5C /* DOCSpecialityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCB50F017DC917E0099AA5C /* DOCSpecialityTableViewCell.m */; };
+		FBCBDDD717FC33DB00D241DE /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCBDDD617FC33DB00D241DE /* TestViewController.m */; };
 		FBD5926017F579A70098AF20 /* BookingConfirmed.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBD5925F17F579A70098AF20 /* BookingConfirmed.xib */; };
 		FBD5926317F57A650098AF20 /* DOCBookConfirmedView.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD5926217F57A650098AF20 /* DOCBookConfirmedView.m */; };
 		FBD5C90717F3326200E3E3DA /* placeholder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FBD5C90617F3326200E3E3DA /* placeholder.jpg */; };
@@ -289,6 +290,8 @@
 		FBCB50ED17DC90140099AA5C /* SpecialityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpecialityTableViewCell.xib; sourceTree = "<group>"; };
 		FBCB50EF17DC917E0099AA5C /* DOCSpecialityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCSpecialityTableViewCell.h; sourceTree = "<group>"; };
 		FBCB50F017DC917E0099AA5C /* DOCSpecialityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCSpecialityTableViewCell.m; sourceTree = "<group>"; };
+		FBCBDDD517FC33DB00D241DE /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		FBCBDDD617FC33DB00D241DE /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		FBD5925F17F579A70098AF20 /* BookingConfirmed.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookingConfirmed.xib; sourceTree = "<group>"; };
 		FBD5926117F57A650098AF20 /* DOCBookConfirmedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCBookConfirmedView.h; sourceTree = "<group>"; };
 		FBD5926217F57A650098AF20 /* DOCBookConfirmedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCBookConfirmedView.m; sourceTree = "<group>"; };
@@ -447,6 +450,8 @@
 				FBCB50BB17DC81B70099AA5C /* DOCAppDelegate.m */,
 				FBCB50C017DC81B70099AA5C /* DOCViewController.h */,
 				FBCB50BD17DC81B70099AA5C /* Main.storyboard */,
+				FBCBDDD517FC33DB00D241DE /* TestViewController.h */,
+				FBCBDDD617FC33DB00D241DE /* TestViewController.m */,
 				FBCB50C117DC81B70099AA5C /* DOCViewController.m */,
 			);
 			name = "Auto-generated";
@@ -862,6 +867,7 @@
 				A0C5D87B17E74D0B00C311CE /* UIImageView+UIActivityIndicatorForSDWebImage.m in Sources */,
 				A00F367B17DD959500BD0467 /* UIImageView+AFNetworking.m in Sources */,
 				FB05891017F15B1C0023B254 /* DOCEnterPIView.m in Sources */,
+				FBCBDDD717FC33DB00D241DE /* TestViewController.m in Sources */,
 				FBCB50BC17DC81B70099AA5C /* DOCAppDelegate.m in Sources */,
 				A00F367717DD959500BD0467 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				A0C5D8A017E74D1C00C311CE /* SDWebImageDownloaderOperation.m in Sources */,
