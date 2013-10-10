@@ -220,6 +220,7 @@
     [httpClient setParameterEncoding:AFJSONParameterEncoding];
     [httpClient registerHTTPOperationClass:[AFJSONRequestOperation class]];
     
+    
     [httpClient postPath:@"api/bookings.json" parameters:booking success:^(AFHTTPRequestOperation *operation, id responseObject) {
         // Print the response body in text
         NSLog(@"SUCCEEDED!");
@@ -282,8 +283,7 @@
                          
                          
                          [UIView animateWithDuration:0.8 animations:^{
-                             
-                             self.bookingConfirmedView.center = CGPointMake(self.view.bounds.size.width/2, self.view.bounds.size.height/2);
+                                                          self.bookingConfirmedView.center = CGPointMake(self.view.bounds.size.width/2, self.view.bounds.size.height/2);
                          }];
      }];
     

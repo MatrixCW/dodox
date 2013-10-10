@@ -88,6 +88,19 @@
 		FB05891417F15E9A0023B254 /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = FB05891217F15E9A0023B254 /* cancel.png */; };
 		FB05891617F16CE50023B254 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = FB05891517F16CE50023B254 /* back.png */; };
 		FB05891A17F173110023B254 /* leftarrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FB05891917F173110023B254 /* leftarrow.png */; };
+		FB1CCEBF1806DA12005348F8 /* cover1iphone5.png in Resources */ = {isa = PBXBuildFile; fileRef = FB1CCEBB1806DA12005348F8 /* cover1iphone5.png */; };
+		FB1CCEC01806DA12005348F8 /* cover2iphone5.png in Resources */ = {isa = PBXBuildFile; fileRef = FB1CCEBC1806DA12005348F8 /* cover2iphone5.png */; };
+		FB1CCEC11806DA12005348F8 /* cover2iphone4.png in Resources */ = {isa = PBXBuildFile; fileRef = FB1CCEBD1806DA12005348F8 /* cover2iphone4.png */; };
+		FB1CCEC21806DA12005348F8 /* cover1iphone4.png in Resources */ = {isa = PBXBuildFile; fileRef = FB1CCEBE1806DA12005348F8 /* cover1iphone4.png */; };
+		FB1CCEC41806E68D005348F8 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = FB1CCEC31806E68D005348F8 /* search.png */; };
+		FB1CCEC71806EA02005348F8 /* menu_location.png in Resources */ = {isa = PBXBuildFile; fileRef = FB1CCEC51806EA02005348F8 /* menu_location.png */; };
+		FB1CCEC81806EA02005348F8 /* menu_mybookings.png in Resources */ = {isa = PBXBuildFile; fileRef = FB1CCEC61806EA02005348F8 /* menu_mybookings.png */; };
+		FB1CCECA1806EC82005348F8 /* menu_next.png in Resources */ = {isa = PBXBuildFile; fileRef = FB1CCEC91806EC82005348F8 /* menu_next.png */; };
+		FB1CCECC1806ECB3005348F8 /* pin_location.png in Resources */ = {isa = PBXBuildFile; fileRef = FB1CCECB1806ECB3005348F8 /* pin_location.png */; };
+		FBCB497718004706007D17A8 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCB497618004706007D17A8 /* EventKit.framework */; };
+		FBCB497B180056E3007D17A8 /* ViewBookingHistory.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBCB497A180056E3007D17A8 /* ViewBookingHistory.xib */; };
+		FBCB497E18005950007D17A8 /* DOCViewHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCB497D18005950007D17A8 /* DOCViewHistoryViewController.m */; };
+		FBCB498118005B57007D17A8 /* DOCBookingHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCB498018005B57007D17A8 /* DOCBookingHistoryCell.m */; };
 		FBCB50AC17DC81B70099AA5C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCB50AB17DC81B70099AA5C /* Foundation.framework */; };
 		FBCB50AE17DC81B70099AA5C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCB50AD17DC81B70099AA5C /* CoreGraphics.framework */; };
 		FBCB50B017DC81B70099AA5C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCB50AF17DC81B70099AA5C /* UIKit.framework */; };
@@ -264,6 +277,22 @@
 		FB05891217F15E9A0023B254 /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
 		FB05891517F16CE50023B254 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		FB05891917F173110023B254 /* leftarrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftarrow.png; sourceTree = "<group>"; };
+		FB1CCEBB1806DA12005348F8 /* cover1iphone5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cover1iphone5.png; sourceTree = "<group>"; };
+		FB1CCEBC1806DA12005348F8 /* cover2iphone5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cover2iphone5.png; sourceTree = "<group>"; };
+		FB1CCEBD1806DA12005348F8 /* cover2iphone4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cover2iphone4.png; sourceTree = "<group>"; };
+		FB1CCEBE1806DA12005348F8 /* cover1iphone4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cover1iphone4.png; sourceTree = "<group>"; };
+		FB1CCEC31806E68D005348F8 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
+		FB1CCEC51806EA02005348F8 /* menu_location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_location.png; sourceTree = "<group>"; };
+		FB1CCEC61806EA02005348F8 /* menu_mybookings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_mybookings.png; sourceTree = "<group>"; };
+		FB1CCEC91806EC82005348F8 /* menu_next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_next.png; sourceTree = "<group>"; };
+		FB1CCECB1806ECB3005348F8 /* pin_location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin_location.png; sourceTree = "<group>"; };
+		FB1CCECD1806EDCD005348F8 /* AvenirNext.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = AvenirNext.ttc; path = dodox/AvenirNext.ttc; sourceTree = "<group>"; };
+		FBCB497618004706007D17A8 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		FBCB497A180056E3007D17A8 /* ViewBookingHistory.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewBookingHistory.xib; sourceTree = "<group>"; };
+		FBCB497C18005950007D17A8 /* DOCViewHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCViewHistoryViewController.h; sourceTree = "<group>"; };
+		FBCB497D18005950007D17A8 /* DOCViewHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCViewHistoryViewController.m; sourceTree = "<group>"; };
+		FBCB497F18005B57007D17A8 /* DOCBookingHistoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCBookingHistoryCell.h; sourceTree = "<group>"; };
+		FBCB498018005B57007D17A8 /* DOCBookingHistoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCBookingHistoryCell.m; sourceTree = "<group>"; };
 		FBCB50A817DC81B70099AA5C /* docxor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = docxor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBCB50AB17DC81B70099AA5C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FBCB50AD17DC81B70099AA5C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -323,6 +352,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBCB497718004706007D17A8 /* EventKit.framework in Frameworks */,
 				3BA8213017F0D46700AA19BE /* QuartzCore.framework in Frameworks */,
 				A00F365517DCC96800BD0467 /* SystemConfiguration.framework in Frameworks */,
 				FBCB50AE17DC81B70099AA5C /* CoreGraphics.framework in Frameworks */,
@@ -575,9 +605,30 @@
 			name = blurview;
 			sourceTree = "<group>";
 		};
+		FB1CCECE1806F04B005348F8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FB1CCECD1806EDCD005348F8 /* AvenirNext.ttc */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		FBCB4979180056C2007D17A8 /* view booking history */ = {
+			isa = PBXGroup;
+			children = (
+				FBCB497A180056E3007D17A8 /* ViewBookingHistory.xib */,
+				FBCB497F18005B57007D17A8 /* DOCBookingHistoryCell.h */,
+				FBCB498018005B57007D17A8 /* DOCBookingHistoryCell.m */,
+				FBCB497C18005950007D17A8 /* DOCViewHistoryViewController.h */,
+				FBCB497D18005950007D17A8 /* DOCViewHistoryViewController.m */,
+			);
+			name = "view booking history";
+			sourceTree = "<group>";
+		};
 		FBCB509F17DC81B70099AA5C = {
 			isa = PBXGroup;
 			children = (
+				FB1CCECE1806F04B005348F8 /* Resources */,
 				FBCB50B117DC81B70099AA5C /* dodox */,
 				FBCB50D017DC81B70099AA5C /* dodoxTests */,
 				FBCB50AA17DC81B70099AA5C /* Frameworks */,
@@ -597,6 +648,7 @@
 		FBCB50AA17DC81B70099AA5C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FBCB497618004706007D17A8 /* EventKit.framework */,
 				3BA8212F17F0D46700AA19BE /* QuartzCore.framework */,
 				A00F365417DCC96800BD0467 /* SystemConfiguration.framework */,
 				FBCB50AB17DC81B70099AA5C /* Foundation.framework */,
@@ -610,6 +662,7 @@
 		FBCB50B117DC81B70099AA5C /* dodox */ = {
 			isa = PBXGroup;
 			children = (
+				FBCB4979180056C2007D17A8 /* view booking history */,
 				FB05890817F14FB70023B254 /* blurview */,
 				FBD9242317F05EA5008FB24F /* JSFlatButton */,
 				4BDE1C2117E8CD9F00001517 /* SVProgressHUD */,
@@ -663,6 +716,15 @@
 		FBCB50E017DC83E20099AA5C /* pictures */ = {
 			isa = PBXGroup;
 			children = (
+				FB1CCECB1806ECB3005348F8 /* pin_location.png */,
+				FB1CCEC91806EC82005348F8 /* menu_next.png */,
+				FB1CCEC51806EA02005348F8 /* menu_location.png */,
+				FB1CCEC61806EA02005348F8 /* menu_mybookings.png */,
+				FB1CCEC31806E68D005348F8 /* search.png */,
+				FB1CCEBB1806DA12005348F8 /* cover1iphone5.png */,
+				FB1CCEBC1806DA12005348F8 /* cover2iphone5.png */,
+				FB1CCEBE1806DA12005348F8 /* cover1iphone4.png */,
+				FB1CCEBD1806DA12005348F8 /* cover2iphone4.png */,
 				FBD5C90A17F33A2200E3E3DA /* smallrightarrow.png */,
 				FBD5C90617F3326200E3E3DA /* placeholder.jpg */,
 				FB05891917F173110023B254 /* leftarrow.png */,
@@ -774,8 +836,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB1CCECA1806EC82005348F8 /* menu_next.png in Resources */,
 				FBD5C90B17F33A2200E3E3DA /* smallrightarrow.png in Resources */,
+				FBCB497B180056E3007D17A8 /* ViewBookingHistory.xib in Resources */,
 				FBD9242E17F06AC1008FB24F /* play@2x.png in Resources */,
+				FB1CCEC41806E68D005348F8 /* search.png in Resources */,
 				FB05891317F15E9A0023B254 /* done.png in Resources */,
 				A00F363617DCB85300BD0467 /* StarFullLarge.png in Resources */,
 				FBD9242217F05D2A008FB24F /* play.png in Resources */,
@@ -786,8 +851,10 @@
 				FB05890717F14E410023B254 /* settings.png in Resources */,
 				FBD5C90717F3326200E3E3DA /* placeholder.jpg in Resources */,
 				FB05890D17F15AA70023B254 /* editPI.xib in Resources */,
+				FB1CCEBF1806DA12005348F8 /* cover1iphone5.png in Resources */,
 				FBD5C90917F3392000E3E3DA /* AvailableSlots.xib in Resources */,
 				A039186517E21FD400934DFA /* DoctorSpecificsTableViewCellPhone.xib in Resources */,
+				FB1CCECC1806ECB3005348F8 /* pin_location.png in Resources */,
 				A039187A17E2FFAE00934DFA /* green button.png in Resources */,
 				A00F360E17DCA8F900BD0467 /* aesthetic medicine doctor.jpg in Resources */,
 				A00F363117DCB85300BD0467 /* StarEmpty@2x.png in Resources */,
@@ -796,13 +863,16 @@
 				A039186717E2200900934DFA /* DoctorSpecificsTableViewCellDescription.xib in Resources */,
 				FBCB50EC17DC88880099AA5C /* dentist.jpg in Resources */,
 				A00F361617DCA90000BD0467 /* chiropracter.jpg in Resources */,
+				FB1CCEC21806DA12005348F8 /* cover1iphone4.png in Resources */,
 				FBD5C91417F3448500E3E3DA /* BookElements.xib in Resources */,
 				A00F363017DCB85300BD0467 /* StarEmpty.png in Resources */,
+				FB1CCEC81806EA02005348F8 /* menu_mybookings.png in Resources */,
 				A00F360A17DCA1BA00BD0467 /* cancer specialist.jpg in Resources */,
 				A039186117E21F6B00934DFA /* DoctorSpecificsTableViewCellPhotos.xib in Resources */,
 				FBCB50C417DC81B70099AA5C /* Images.xcassets in Resources */,
 				A039186317E21FA500934DFA /* DoctorSpecificsTableViewCellLocation.xib in Resources */,
 				A00F363217DCB85300BD0467 /* StarEmptyLarge.png in Resources */,
+				FB1CCEC01806DA12005348F8 /* cover2iphone5.png in Resources */,
 				A00F363517DCB85300BD0467 /* StarFull@2x.png in Resources */,
 				FBCB50E417DC84800099AA5C /* doctor.jpg in Resources */,
 				FBD5C91117F33E3800E3E3DA /* greenrightarrow.png in Resources */,
@@ -815,8 +885,10 @@
 				A00F361417DCA90000BD0467 /* psychologist.jpg in Resources */,
 				FB05891617F16CE50023B254 /* back.png in Resources */,
 				A039188D17E73FE100934DFA /* clinic.JPG in Resources */,
+				FB1CCEC71806EA02005348F8 /* menu_location.png in Resources */,
 				A039187817E2FF8700934DFA /* BookButtonCell.xib in Resources */,
 				A00F363417DCB85300BD0467 /* StarFull.png in Resources */,
+				FB1CCEC11806DA12005348F8 /* cover2iphone4.png in Resources */,
 				4BDE1C2517E8CD9F00001517 /* SVProgressHUD.bundle in Resources */,
 				FBCB50EE17DC90140099AA5C /* SpecialityTableViewCell.xib in Resources */,
 				FBCB50BF17DC81B70099AA5C /* Main.storyboard in Resources */,
@@ -847,6 +919,7 @@
 				A0C5D8A217E74D1C00C311CE /* SDWebImagePrefetcher.m in Sources */,
 				A0C5D89A17E74D1C00C311CE /* MKAnnotationView+WebCache.m in Sources */,
 				4BDE1C2617E8CD9F00001517 /* SVProgressHUD.m in Sources */,
+				FBCB497E18005950007D17A8 /* DOCViewHistoryViewController.m in Sources */,
 				A00F364A17DCC3F000BD0467 /* DOCGlobalUtil.m in Sources */,
 				A00F367F17DDB3BB00BD0467 /* DOCDoctorSpecificsViewController.m in Sources */,
 				FBCB50C217DC81B70099AA5C /* DOCViewController.m in Sources */,
@@ -887,6 +960,7 @@
 				FBCB50F117DC917E0099AA5C /* DOCSpecialityTableViewCell.m in Sources */,
 				A0C5D8A317E74D1C00C311CE /* UIButton+WebCache.m in Sources */,
 				A039187017E2FAE100934DFA /* DOCDoctorLocationCell.m in Sources */,
+				FBCB498118005B57007D17A8 /* DOCBookingHistoryCell.m in Sources */,
 				A00F363A17DCB86A00BD0467 /* DYRateView.m in Sources */,
 				A00F367417DD959400BD0467 /* AFHTTPRequestOperation.m in Sources */,
 				A0C5D89C17E74D1C00C311CE /* SDImageCache.m in Sources */,

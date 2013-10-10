@@ -19,19 +19,31 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Speciality" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eoC-ey-ZlG">
-                        <rect key="frame" x="82" y="20" width="380" height="21"/>
+                        <rect key="frame" x="80" y="15" width="380" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="right arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="R9F-Io-JBu">
-                        <rect key="frame" x="301" y="23" width="10" height="15"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="menu_next.png" translatesAutoresizingMaskIntoConstraints="NO" id="R9F-Io-JBu">
+                        <rect key="frame" x="296" y="24" width="10" height="15"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="7 within 3km, 20 within 10km" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMX-dv-ggk">
+                        <rect key="frame" x="93" y="34" width="188" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pin_location.png" translatesAutoresizingMaskIntoConstraints="NO" id="IDy-Yz-vtA">
+                        <rect key="frame" x="80" y="38" width="8" height="12"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
                 </subviews>
             </tableViewCellContentView>
             <connections>
+                <outlet property="numberInfo" destination="NMX-dv-ggk" id="hy4-OP-j1B"/>
                 <outlet property="speciality" destination="eoC-ey-ZlG" id="K4e-Fx-Q8a"/>
                 <outlet property="thumbnailImageView" destination="8j6-lR-KiZ" id="hG8-Gl-4Lm"/>
             </connections>
@@ -39,6 +51,7 @@
     </objects>
     <resources>
         <image name="dentist.jpg" width="1000" height="766"/>
-        <image name="right arrow.png" width="378" height="597"/>
+        <image name="menu_next.png" width="15" height="26"/>
+        <image name="pin_location.png" width="12" height="17"/>
     </resources>
 </document>

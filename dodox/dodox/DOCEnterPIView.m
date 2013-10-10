@@ -33,7 +33,7 @@
     
     NSString *myName = self.userNameField.text;
     NSString *myPhone = self.userPhoneField.text;
-    NSString *uuid = self.deviceIDField.text;
+    NSString *uuid = self.userEmailField.text;
     
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
     
@@ -53,9 +53,10 @@
 -(void)setUpView{
     self.userNameField.returnKeyType = UIReturnKeyDone;
     self.userPhoneField.returnKeyType = UIReturnKeyDone;
+    self.userEmailField.returnKeyType - UIReturnKeyDone;
+    self.userEmailField.delegate = self;
     self.userNameField.delegate = self;
     self.userPhoneField.delegate = self;
-    self.deviceIDField.userInteractionEnabled = NO;
 }
 
 +(NSString*)calculateUniqueIdentifier{

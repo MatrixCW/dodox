@@ -18,7 +18,7 @@
 @end
 
 @interface DOCEnterPIView : UIView<UITextFieldDelegate>
-@property (weak, nonatomic) IBOutlet UITextField *deviceIDField;
+@property (weak, nonatomic) IBOutlet UITextField *userEmailField;
 @property (weak, nonatomic) IBOutlet UITextField *userNameField;
 @property (weak, nonatomic) IBOutlet UITextField *userPhoneField;
 @property (weak) id<EnterPIProtocol> myDelegate;

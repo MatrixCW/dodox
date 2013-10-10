@@ -20,6 +20,8 @@
 
 @interface DOCChooseSpecialityViewController ()
 
+- (IBAction)searchButtonPressed:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *searchField;
 @property (weak, nonatomic) IBOutlet UITableView *specialityTable;
 @property UIView *coverView;
 @property NSArray *specialities;
@@ -32,7 +34,9 @@
 
 @end
 
-@implementation DOCChooseSpecialityViewController
+@implementation DOCChooseSpecialityViewController{
+    UIColor *greyBGColor;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -46,24 +50,19 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 
-       self.specialityTable.backgroundColor = [UIColor colorWithRed:236.0/255 green:240.0/255 blue:243.0/255 alpha:1.0];
-
-    self.specialityTitle.backgroundColor = [UIColor whiteColor];
+    greyBGColor = [UIColor colorWithRed:245.0/255 green:245.0/255 blue:245.0/255 alpha:1.0];
+    
+    self.specialityTable.backgroundColor = greyBGColor;
+    
     self.specialityTitle.numberOfLines = 0;
-    self.specialityTitle.text = @"\nChoose Speciality";
+    self.specialityTitle.text = @"\nSpecialists";
+    self.specialityTitle.backgroundColor = greyBGColor;
     
-    
-    CALayer *leftBorder = [CALayer layer];
-    leftBorder.borderColor = [UIColor colorWithRed:228.0/255 green:227.0/255 blue:230.0/255 alpha:1.0].CGColor;
-    leftBorder.borderWidth = 2.0;
-    leftBorder.frame = CGRectMake(-10, -2, self.specialityTitle.frame.size.width*2, self.specialityTitle.frame.size.height+3);
-    
-    [self.specialityTitle.layer addSublayer:leftBorder];
+    self.searchField.backgroundColor = [UIColor whiteColor];
+    [self.searchField.layer setMasksToBounds:YES];
+    [self.searchField.layer setCornerRadius:5.0];
 
-    
-    NSLog(@"coming!!");
-    
-    self.view.backgroundColor = [UIColor colorWithRed:236.0/255 green:240.0/255 blue:243.0/255 alpha:1.0];
+    self.view.backgroundColor = greyBGColor;
 
     DOCGlobalUtil *sharedUtil = [DOCGlobalUtil getSharedInstance];
     
@@ -132,66 +131,29 @@
     if(createImgView){
         
         
-        NSLog(@"%f %f", self.view.bounds.size.width, self.view.bounds.size.height);
         [self.coverView removeFromSuperview];
-        self.coverView = Nil;
         self.coverView = [[UIView alloc] initWithFrame:self.view.bounds];
         
-        self.coverView.backgroundColor = [UIColor whiteColor];
-        self.coverView.alpha = 1.0;
+        int index = arc4random()%2+1;
+        int screenSize = IS_IPHONE5?5:4;
         
-        UIImage *img = [UIImage imageNamed:@"doctor.jpg"];
-        CGFloat imgWidth = img.size.width;
-        CGFloat imgHeight = img.size.height;
+        NSString *imgName = [NSString stringWithFormat:@"cover%diphone%d.png",index,screenSize];
+        UIImage *img = [UIImage imageNamed:imgName];
         
-        CGFloat referenceWidth = self.view.bounds.size.width;
-        
-        if(IS_IPHONE5)
-            referenceWidth *=1.03;
-        
-        CGFloat correspondingHeight = imgHeight/imgWidth*referenceWidth;
-        
-        if(IS_IPHONE5)
-            correspondingHeight *=1.1;
-        
-        UIImageView *imgView = [[UIImageView alloc] initWithFrame:
-                                CGRectMake(0, 0, referenceWidth, correspondingHeight)];
+        UIImageView *imgView = [[UIImageView alloc] initWithFrame:self.coverView.bounds];
         
         [imgView setImage:img];
-        imgView.center = CGPointMake(self.coverView.bounds.size.width/2,
-                                     self.coverView.bounds.size.height-correspondingHeight/2);
         
         [self.coverView addSubview:imgView];
-        
-        UILabel *title = [[UILabel alloc] init];
-        [title setFrame:CGRectMake(0,0,320,100)];
-        title.backgroundColor=[UIColor clearColor];
-        title.textColor=[UIColor blackColor];
-        title.textAlignment = NSTextAlignmentCenter;
-        title.numberOfLines = 0;
-        title.text= @"Doxor\n\nEasy appointment, like never before";
-        
-        CGFloat adjustment;
-        
-        if(IS_IPHONE5)
-            adjustment = 50;
-        else
-            adjustment = 35;
-        title.center = CGPointMake(self.coverView.bounds.size.width/2,
-                                   (imgView.center.y - correspondingHeight/2 -adjustment));
-            
-        
-        [self.coverView addSubview:title];
-        
         [self.view addSubview:self.coverView];
         
         
     }
     else{
         
-            [NSThread sleepForTimeInterval:1.5];
+        [NSThread sleepForTimeInterval:1.0];
         
-            [UIView animateWithDuration:1.6 animations:^{
+        [UIView animateWithDuration:1.0 animations:^{
             
             self.coverView.center = CGPointMake(self.coverView.center.x-320,
                                                 self.coverView.center.y);
@@ -305,9 +267,15 @@
                                     }
                  usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     
-
+    
+    cell.speciality.font = [UIFont fontWithName:@"Avenir Next" size:14];
+    cell.speciality.textColor = [UIColor colorWithRed:102.0/255 green:104.0/255 blue:107.0/255 alpha:1.0];
+    
+    cell.numberInfo.font = [UIFont fontWithName:@"Avenir Next" size:8];
+    cell.numberInfo.textColor = [UIColor colorWithRed:102.0/255 green:104.0/255 blue:107.0/255 alpha:1.0];
+    
     [cell.thumbnailImageView.layer setMasksToBounds:YES];
-    [cell.thumbnailImageView.layer setCornerRadius:8.0];
+    [cell.thumbnailImageView.layer setCornerRadius:cell.thumbnailImageView.frame.size.width/2];
     return cell;
 }
 
@@ -407,16 +375,16 @@
         NSString *userName = [dict objectForKey:@"name"];
         NSString *phone = [dict objectForKey:@"phone"];
         
-        self.piView.deviceIDField.text = uuid;
+        self.piView.userEmailField.text = uuid;
         self.piView.userNameField.text = userName;
         self.piView.userPhoneField.text = phone;
         
-        if([self.piView.deviceIDField.text isEqualToString:@""] || self.piView.deviceIDField.text == Nil)
-            self.piView.deviceIDField.text = [DOCEnterPIView calculateUniqueIdentifier];
+        if([self.piView.userEmailField.text isEqualToString:@""] || self.piView.userEmailField.text == Nil)
+            self.piView.userEmailField.text = [DOCEnterPIView calculateUniqueIdentifier];
     }
     
-    if([self.piView.deviceIDField.text isEqualToString:@""] || self.piView.deviceIDField.text == Nil)
-        self.piView.deviceIDField.text = [DOCEnterPIView calculateUniqueIdentifier];
+    if([self.piView.userEmailField.text isEqualToString:@""] || self.piView.userEmailField.text == Nil)
+        self.piView.userEmailField.text = [DOCEnterPIView calculateUniqueIdentifier];
     
         
     [UIView animateWithDuration:0.5 animations:^{
@@ -458,5 +426,7 @@
     }];
     
     
+}
+- (IBAction)searchButtonPressed:(id)sender {
 }
 @end
