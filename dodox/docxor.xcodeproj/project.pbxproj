@@ -97,6 +97,12 @@
 		FB1CCEC81806EA02005348F8 /* menu_mybookings.png in Resources */ = {isa = PBXBuildFile; fileRef = FB1CCEC61806EA02005348F8 /* menu_mybookings.png */; };
 		FB1CCECA1806EC82005348F8 /* menu_next.png in Resources */ = {isa = PBXBuildFile; fileRef = FB1CCEC91806EC82005348F8 /* menu_next.png */; };
 		FB1CCECC1806ECB3005348F8 /* pin_location.png in Resources */ = {isa = PBXBuildFile; fileRef = FB1CCECB1806ECB3005348F8 /* pin_location.png */; };
+		FB1CCED01807063E005348F8 /* menu_back.png in Resources */ = {isa = PBXBuildFile; fileRef = FB1CCECF1807063E005348F8 /* menu_back.png */; };
+		FB1CCED218071EDB005348F8 /* menu_add.png in Resources */ = {isa = PBXBuildFile; fileRef = FB1CCED118071EDB005348F8 /* menu_add.png */; };
+		FB1CCED918072FDC005348F8 /* star_gold.png in Resources */ = {isa = PBXBuildFile; fileRef = FB1CCED718072FDC005348F8 /* star_gold.png */; };
+		FB1CCEDA18072FDC005348F8 /* star_none.png in Resources */ = {isa = PBXBuildFile; fileRef = FB1CCED818072FDC005348F8 /* star_none.png */; };
+		FB1CCEDD18073272005348F8 /* star_gold_half.png in Resources */ = {isa = PBXBuildFile; fileRef = FB1CCEDB18073272005348F8 /* star_gold_half.png */; };
+		FB1CCEDE18073272005348F8 /* star_none_half.png in Resources */ = {isa = PBXBuildFile; fileRef = FB1CCEDC18073272005348F8 /* star_none_half.png */; };
 		FBCB497718004706007D17A8 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCB497618004706007D17A8 /* EventKit.framework */; };
 		FBCB497B180056E3007D17A8 /* ViewBookingHistory.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBCB497A180056E3007D17A8 /* ViewBookingHistory.xib */; };
 		FBCB497E18005950007D17A8 /* DOCViewHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCB497D18005950007D17A8 /* DOCViewHistoryViewController.m */; };
@@ -287,6 +293,12 @@
 		FB1CCEC91806EC82005348F8 /* menu_next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_next.png; sourceTree = "<group>"; };
 		FB1CCECB1806ECB3005348F8 /* pin_location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin_location.png; sourceTree = "<group>"; };
 		FB1CCECD1806EDCD005348F8 /* AvenirNext.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = AvenirNext.ttc; path = dodox/AvenirNext.ttc; sourceTree = "<group>"; };
+		FB1CCECF1807063E005348F8 /* menu_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_back.png; sourceTree = "<group>"; };
+		FB1CCED118071EDB005348F8 /* menu_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_add.png; sourceTree = "<group>"; };
+		FB1CCED718072FDC005348F8 /* star_gold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_gold.png; sourceTree = "<group>"; };
+		FB1CCED818072FDC005348F8 /* star_none.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_none.png; sourceTree = "<group>"; };
+		FB1CCEDB18073272005348F8 /* star_gold_half.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_gold_half.png; sourceTree = "<group>"; };
+		FB1CCEDC18073272005348F8 /* star_none_half.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_none_half.png; sourceTree = "<group>"; };
 		FBCB497618004706007D17A8 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		FBCB497A180056E3007D17A8 /* ViewBookingHistory.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewBookingHistory.xib; sourceTree = "<group>"; };
 		FBCB497C18005950007D17A8 /* DOCViewHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCViewHistoryViewController.h; sourceTree = "<group>"; };
@@ -716,6 +728,12 @@
 		FBCB50E017DC83E20099AA5C /* pictures */ = {
 			isa = PBXGroup;
 			children = (
+				FB1CCEDB18073272005348F8 /* star_gold_half.png */,
+				FB1CCEDC18073272005348F8 /* star_none_half.png */,
+				FB1CCED718072FDC005348F8 /* star_gold.png */,
+				FB1CCED818072FDC005348F8 /* star_none.png */,
+				FB1CCED118071EDB005348F8 /* menu_add.png */,
+				FB1CCECF1807063E005348F8 /* menu_back.png */,
 				FB1CCECB1806ECB3005348F8 /* pin_location.png */,
 				FB1CCEC91806EC82005348F8 /* menu_next.png */,
 				FB1CCEC51806EA02005348F8 /* menu_location.png */,
@@ -841,20 +859,25 @@
 				FBCB497B180056E3007D17A8 /* ViewBookingHistory.xib in Resources */,
 				FBD9242E17F06AC1008FB24F /* play@2x.png in Resources */,
 				FB1CCEC41806E68D005348F8 /* search.png in Resources */,
+				FB1CCEDD18073272005348F8 /* star_gold_half.png in Resources */,
 				FB05891317F15E9A0023B254 /* done.png in Resources */,
 				A00F363617DCB85300BD0467 /* StarFullLarge.png in Resources */,
 				FBD9242217F05D2A008FB24F /* play.png in Resources */,
 				3BA8212E17F0C11200AA19BE /* right arrow.png in Resources */,
+				FB1CCEDA18072FDC005348F8 /* star_none.png in Resources */,
 				A00F362617DCB50D00BD0467 /* DoctorTableViewCell.xib in Resources */,
 				FB05891A17F173110023B254 /* leftarrow.png in Resources */,
 				A00F365B17DCE06A00BD0467 /* cartoon-doctor.png in Resources */,
 				FB05890717F14E410023B254 /* settings.png in Resources */,
 				FBD5C90717F3326200E3E3DA /* placeholder.jpg in Resources */,
+				FB1CCED01807063E005348F8 /* menu_back.png in Resources */,
 				FB05890D17F15AA70023B254 /* editPI.xib in Resources */,
+				FB1CCED218071EDB005348F8 /* menu_add.png in Resources */,
 				FB1CCEBF1806DA12005348F8 /* cover1iphone5.png in Resources */,
 				FBD5C90917F3392000E3E3DA /* AvailableSlots.xib in Resources */,
 				A039186517E21FD400934DFA /* DoctorSpecificsTableViewCellPhone.xib in Resources */,
 				FB1CCECC1806ECB3005348F8 /* pin_location.png in Resources */,
+				FB1CCED918072FDC005348F8 /* star_gold.png in Resources */,
 				A039187A17E2FFAE00934DFA /* green button.png in Resources */,
 				A00F360E17DCA8F900BD0467 /* aesthetic medicine doctor.jpg in Resources */,
 				A00F363117DCB85300BD0467 /* StarEmpty@2x.png in Resources */,
@@ -881,6 +904,7 @@
 				3B4EB07017EF7652001D5533 /* specialityHolder.jpg in Resources */,
 				A00F361917DCACC600BD0467 /* cardiothoracic surgeon.jpg in Resources */,
 				FBCB50B617DC81B70099AA5C /* InfoPlist.strings in Resources */,
+				FB1CCEDE18073272005348F8 /* star_none_half.png in Resources */,
 				A039188B17E729B300934DFA /* TimeSlotPicker.xib in Resources */,
 				A00F361417DCA90000BD0467 /* psychologist.jpg in Resources */,
 				FB05891617F16CE50023B254 /* back.png in Resources */,

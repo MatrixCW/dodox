@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "JSFlatButton.h"
 
 @interface DOCDoctorTableViewCell : UITableViewCell
 
@@ -15,8 +14,12 @@
 @property (nonatomic, weak) IBOutlet UILabel *doctorAddress;
 @property (nonatomic, weak) IBOutlet UIImageView *thumbnailImageView;
 
-@property (weak, nonatomic) IBOutlet JSFlatButton *bookButton;
+@property (weak, nonatomic) IBOutlet UIButton *bookButton;
+@property (weak, nonatomic) IBOutlet UIView *rateView;
+@property (weak, nonatomic) IBOutlet UILabel *dayLabel;
+@property (weak, nonatomic) IBOutlet UILabel *atLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
-- (IBAction)bookButtonPressed:(id)sender;
+
 
 @end

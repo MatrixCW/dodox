@@ -18,13 +18,18 @@
 #import "JSFlatButton.h"
 #import "DOCEnterPIView.h"
 #import "AMBlurView.h"
+#import <QuartzCore/QuartzCore.h>
+#import "DYRateView.h"
 
 
 @interface DOCSelectDoctorViewController ()
 
 //@property (weak, nonatomic) IBOutlet UISegmentedControl *sortingChoice;
+- (IBAction)searchButtonPressed:(id)sender;
 
-@property (weak, nonatomic) IBOutlet UILabel *currentSprciality;
+@property (weak, nonatomic) IBOutlet UITextField *searchField;
+
+@property (weak, nonatomic) IBOutlet UILabel *currentSpeciality;
 
 @property (weak, nonatomic) IBOutlet UITableView *doctorTable;
 @property NSMutableArray *doctors;
@@ -34,7 +39,10 @@
 
 @end
 
-@implementation DOCSelectDoctorViewController
+@implementation DOCSelectDoctorViewController{
+    UIColor *greyBGColor;
+}
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -52,35 +60,30 @@
     self.doctorTable.delegate = self;
     self.doctorTable.dataSource = self;
     
+    greyBGColor = [UIColor colorWithRed:245.0/255 green:245.0/255 blue:245.0/255 alpha:1.0];
+    
     DOCGlobalUtil *sharedInstance = [DOCGlobalUtil getSharedInstance];
     
-    self.currentSprciality.textAlignment = NSTextAlignmentCenter;
-    self.currentSprciality.numberOfLines = 0;
-    self.currentSprciality.text =[NSString stringWithFormat:@"\n%@", sharedInstance.currentSelectedSpeciality];
+    self.currentSpeciality.textAlignment = NSTextAlignmentCenter;
+    self.currentSpeciality.numberOfLines = 0;
+    self.currentSpeciality.text =[NSString stringWithFormat:@"\n%@", sharedInstance.currentSelectedSpeciality];
     
-    self.currentSprciality.backgroundColor = [UIColor whiteColor];
+    self.currentSpeciality.backgroundColor = greyBGColor;
     
+    self.searchField.backgroundColor = [UIColor whiteColor];
+    [self.searchField.layer setMasksToBounds:YES];
+    [self.searchField.layer setCornerRadius:5.0];
     
-    CALayer *leftBorder = [CALayer layer];
-    leftBorder.borderColor = [UIColor colorWithRed:228.0/255 green:227.0/255 blue:230.0/255 alpha:1.0].CGColor;
-    leftBorder.borderWidth = 2.0;
-    leftBorder.frame = CGRectMake(-10, -2, self.currentSprciality.frame.size.width*2, self.currentSprciality.frame.size.height+3);
+
+    self.doctorTable.backgroundColor =greyBGColor;
     
-    [self.currentSprciality.layer addSublayer:leftBorder];
-    
-    self.doctorTable.backgroundColor =[UIColor colorWithRed:236.0/255 green:240.0/255 blue:243.0/255 alpha:1.0];
-    NSLog(@"coming!!");
-    
-    self.view.backgroundColor = [UIColor colorWithRed:236.0/255 green:240.0/255 blue:243.0/255 alpha:1.0];
+    self.view.backgroundColor = greyBGColor;
     
     self.doctors = [NSMutableArray array];
     
     [self retriveDoctorUnderSpeciality];
     
-    //[self.sortingChoice addTarget:self
-      //                     action:@selector(pickOne:)
-        //         forControlEvents:UIControlEventValueChanged];
-}
+   }
 
 -(void) pickOne:(id)sender{
     
@@ -227,7 +230,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return [self.doctors count];
+    //return [self.doctors count];
+    
+    return 12;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -239,8 +244,9 @@
         cell = [nib objectAtIndex:0];
     }
     
-    DOCDoctor *tempDoctor = [self.doctors objectAtIndex:indexPath.row];
+    //DOCDoctor *tempDoctor = [self.doctors objectAtIndex:indexPath.row];
     
+    /*
     cell.doctorName.numberOfLines = 0;
     cell.doctorAddress.numberOfLines = 0;
     cell.doctorName.text = tempDoctor.doctorName;
@@ -271,11 +277,57 @@
     [cell.bookButton addTarget:self
                         action:@selector(book:)
               forControlEvents:UIControlEventTouchUpInside];
+     */
+    
+    cell.doctorName.font = [UIFont fontWithName:@"Avenir Next" size:14];
+    cell.doctorName.textColor = [UIColor colorWithRed:113.0/255 green:115.0/255 blue:117.0/255 alpha:1.0];
+    
+    cell.doctorAddress.font = [UIFont fontWithName:@"Avenir Next" size:8];
+    cell.doctorAddress.textColor = [UIColor colorWithRed:102.0/255 green:104.0/255 blue:107.0/255 alpha:1.0];
+    
+    cell.dayLabel.backgroundColor = [UIColor colorWithRed:254.0/255 green:252.0/255 blue:157.0/255 alpha:1.0];
+    cell.dayLabel.font = [UIFont fontWithName:@"Avenir Next" size:8];
+    cell.dayLabel.textColor = [UIColor colorWithRed:157.0/255 green:160.0/255 blue:145.0/255 alpha:1.0];
+    [cell.dayLabel.layer setMasksToBounds:YES];
+    [cell.dayLabel.layer setCornerRadius:2.0];
+
+    cell.atLabel.font = [UIFont fontWithName:@"Avenir Next" size:8];
+    cell.atLabel.textColor = [UIColor colorWithRed:157.0/255 green:160.0/255 blue:145.0/255 alpha:1.0];
+    
+    cell.timeLabel.backgroundColor = [UIColor colorWithRed:107.0/255 green:189.0/255 blue:156.0/255 alpha:1.0];
+    cell.timeLabel.font = [UIFont fontWithName:@"Avenir Next" size:8];
+    cell.timeLabel.textColor = [UIColor whiteColor];
+    [cell.timeLabel.layer setMasksToBounds:YES];
+    [cell.timeLabel.layer setCornerRadius:2.0];
+    
+    [cell.thumbnailImageView.layer setMasksToBounds:YES];
+    [cell.thumbnailImageView.layer setCornerRadius:cell.thumbnailImageView.frame.size.width/2];
+    
+    UIImage *fullStar = [UIImage imageNamed:@"star_gold_half.png"];
+    //fullStar = [self resizeImage:fullStar to:CGSizeMake(fullStar.size.width/2.0, fullStar.size.width/2.0)];
+    UIImage *emptyStar = [UIImage imageNamed:@"star_none_half.png"];
+    //emptyStar = [self resizeImage:emptyStar to:CGSizeMake(emptyStar.size.width/2.0, emptyStar.size.width/2.0)];
+
+    DYRateView *rateView = [[DYRateView alloc] initWithFrame:cell.rateView.bounds fullStar:fullStar emptyStar:emptyStar];
+    rateView.rate = 3.6;
+    rateView.alignment = RateViewAlignmentCenter;
+    [cell.rateView addSubview:rateView];
+    
+    NSLog(@"%lf",cell.thumbnailImageView.frame.size.width);
+
     
     return cell;
 }
 
-
+-(UIImage *)resizeImage:(UIImage*)img to:(CGSize)newSize
+{
+    UIGraphicsBeginImageContext( newSize );
+    [img drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
+    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
+}
 
 -(void)book:(JSFlatButton*) buttom{
     
@@ -296,7 +348,7 @@
     [self performSegueWithIdentifier:@"BOOK_DIRECTLY" sender:self];
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 85;
+    return 75;
 }
 
 #pragma mark UITableView Delegate
@@ -316,4 +368,6 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)searchButtonPressed:(id)sender {
+}
 @end
