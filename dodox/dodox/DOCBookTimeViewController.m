@@ -46,6 +46,7 @@
     self.view.backgroundColor = [UIColor colorWithRed:236.0/255 green:240.0/255 blue:243.0/255 alpha:1.0];
 	// Do any additional setup after loading the view.
     
+    
     DOCGlobalUtil *sharedInstance = [DOCGlobalUtil getSharedInstance];
     DOCDoctor *doctor =  sharedInstance.currentSelectedDoctor;
     
@@ -65,7 +66,7 @@
     
     [self.bookingStartView.confirmButton addTarget:self action:@selector(makeABook) forControlEvents:UIControlEventTouchUpInside];
     
-    
+    /*
     self.bookingStartView.currentIndex = 0 ;
     
     DOCDate *tempDate = [doctor.timeSlots objectAtIndex:self.bookingStartView.currentIndex];
@@ -104,6 +105,7 @@
     NSString *name = [plistDict objectForKey:@"name"];
     
     self.bookingStartView.bookingTitle.text = [NSString stringWithFormat:@"Booking for %@ with:",name];
+     */
     
 
     
@@ -180,6 +182,8 @@
 
 -(void)makeABook{
     
+    /*
+    
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *plistLocation = [documentsDirectory stringByAppendingPathComponent:@"myplist.plist"];
@@ -230,7 +234,34 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"%@", error);
     }];
+    */
     
+    
+    [UIView animateWithDuration:0.8
+                     animations:^{
+                         
+                         self.bookingStartView.center  = CGPointMake(self.bookingStartView.center.x,self.bookingStartView.center.y+1000);
+                         
+                     }
+                     completion:^(BOOL finished){
+                         
+                         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"BookingConfirmed" owner:self options:nil];
+                         self.bookingConfirmedView = [nib objectAtIndex:0];
+                         self.bookingConfirmedView.backgroundColor = [UIColor clearColor];
+                         self.bookingConfirmedView.center = CGPointMake(self.view.bounds.size.width/2, self.view.bounds.size.height/2+1000);
+                         
+                         [self.bookingConfirmedView.addCalendarButton addTarget:self
+                                                                         action:@selector(dismissView)
+                                                               forControlEvents:UIControlEventTouchUpInside];
+                         
+                         [self.view addSubview:self.bookingConfirmedView];
+                         
+                                                  
+                         
+                         [UIView animateWithDuration:0.8 animations:^{
+                             self.bookingConfirmedView.center = CGPointMake(self.view.bounds.size.width/2, self.view.bounds.size.height/2);
+                         }];
+                     }];
 
     
     

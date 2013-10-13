@@ -130,11 +130,11 @@
                         <viewControllerLayoutGuide type="bottom" id="n00-1L-IgO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4Dy-bu-alf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="OGE-ii-bEj">
-                                <rect key="frame" x="0.0" y="90" width="320" height="434"/>
+                                <rect key="frame" x="0.0" y="68" width="320" height="500"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
@@ -172,9 +172,9 @@
                         <constraints>
                             <constraint firstItem="slb-NN-U3Q" firstAttribute="trailing" secondItem="OGE-ii-bEj" secondAttribute="trailing" id="DaC-P0-oEZ"/>
                             <constraint firstItem="slb-NN-U3Q" firstAttribute="leading" secondItem="4Dy-bu-alf" secondAttribute="leading" id="ETQ-K4-9Dw"/>
-                            <constraint firstItem="OGE-ii-bEj" firstAttribute="top" secondItem="slb-NN-U3Q" secondAttribute="bottom" constant="30" id="S57-w6-gPi"/>
                             <constraint firstAttribute="bottom" secondItem="OGE-ii-bEj" secondAttribute="bottom" id="VOU-fH-KcS"/>
                             <constraint firstItem="slb-NN-U3Q" firstAttribute="top" secondItem="4Dy-bu-alf" secondAttribute="top" id="ZJn-3s-m4f"/>
+                            <constraint firstItem="OGE-ii-bEj" firstAttribute="top" secondItem="slb-NN-U3Q" secondAttribute="bottom" constant="8" symbolic="YES" id="dIS-Sh-8h3"/>
                             <constraint firstAttribute="trailing" secondItem="slb-NN-U3Q" secondAttribute="trailing" id="frf-Ni-v22"/>
                             <constraint firstItem="slb-NN-U3Q" firstAttribute="leading" secondItem="OGE-ii-bEj" secondAttribute="leading" id="s5I-sO-SA8"/>
                         </constraints>
@@ -386,12 +386,9 @@
     <resources>
         <image name="leftarrow.png" width="64" height="64"/>
         <image name="menu_back.png" width="40" height="40"/>
-        <image name="menu_back.png" width="40" height="40"/>
         <image name="menu_call.png" width="40" height="40"/>
         <image name="menu_location.png" width="40" height="40"/>
-        <image name="menu_location.png" width="40" height="40"/>
         <image name="menu_mybookings.png" width="40" height="40"/>
-        <image name="search.png" width="40" height="40"/>
         <image name="search.png" width="40" height="40"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

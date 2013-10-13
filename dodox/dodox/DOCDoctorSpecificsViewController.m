@@ -239,7 +239,7 @@
             NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"BookButtonCell" owner:self options:nil];
             cell = [nib objectAtIndex:0];
             
-            [cell.bookButton addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
+            [cell.bookButton addTarget:self action:@selector(startBooking) forControlEvents:UIControlEventTouchUpInside];
             
             
         }
@@ -536,12 +536,16 @@
     
     if(indexPath.row == 2){
         
-        [self performSegueWithIdentifier:@"BOOK_DOCTOR_SEGUE" sender:self];
+        [self startBooking];
     }
 
     
 }
 
+
+-(void)startBooking{
+    [self performSegueWithIdentifier:@"BOOK_DOCTOR_SEGUE" sender:self];
+}
 - (void)showPicker {
     
     self.blackView = [[UIView alloc] initWithFrame:self.view.bounds];
