@@ -128,6 +128,11 @@
 		FBCB50F117DC917E0099AA5C /* DOCSpecialityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCB50F017DC917E0099AA5C /* DOCSpecialityTableViewCell.m */; };
 		FBCBDDD717FC33DB00D241DE /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCBDDD617FC33DB00D241DE /* TestViewController.m */; };
 		FBCC165817FCB7FA001FAF9C /* DOCDate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCC165717FCB7FA001FAF9C /* DOCDate.m */; };
+		FBCDA2E7180A9E1F00AF92BF /* menu_call.png in Resources */ = {isa = PBXBuildFile; fileRef = FBCDA2E6180A9E1F00AF92BF /* menu_call.png */; };
+		FBCDA2E9180AABC000AF92BF /* menu_forward.png in Resources */ = {isa = PBXBuildFile; fileRef = FBCDA2E8180AABC000AF92BF /* menu_forward.png */; };
+		FBCDA2EB180AAC1E00AF92BF /* dummy.png in Resources */ = {isa = PBXBuildFile; fileRef = FBCDA2EA180AAC1E00AF92BF /* dummy.png */; };
+		FBCDA2ED180AAD4300AF92BF /* button_red_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = FBCDA2EC180AAD4300AF92BF /* button_red_normal.png */; };
+		FBCDA2EF180AAF7E00AF92BF /* button_red_active.png in Resources */ = {isa = PBXBuildFile; fileRef = FBCDA2EE180AAF7E00AF92BF /* button_red_active.png */; };
 		FBD5926017F579A70098AF20 /* BookingConfirmed.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBD5925F17F579A70098AF20 /* BookingConfirmed.xib */; };
 		FBD5926317F57A650098AF20 /* DOCBookConfirmedView.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD5926217F57A650098AF20 /* DOCBookConfirmedView.m */; };
 		FBD5C90717F3326200E3E3DA /* placeholder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FBD5C90617F3326200E3E3DA /* placeholder.jpg */; };
@@ -336,6 +341,11 @@
 		FBCBDDD617FC33DB00D241DE /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		FBCC165617FCB7FA001FAF9C /* DOCDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCDate.h; sourceTree = "<group>"; };
 		FBCC165717FCB7FA001FAF9C /* DOCDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCDate.m; sourceTree = "<group>"; };
+		FBCDA2E6180A9E1F00AF92BF /* menu_call.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_call.png; sourceTree = "<group>"; };
+		FBCDA2E8180AABC000AF92BF /* menu_forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_forward.png; sourceTree = "<group>"; };
+		FBCDA2EA180AAC1E00AF92BF /* dummy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dummy.png; sourceTree = "<group>"; };
+		FBCDA2EC180AAD4300AF92BF /* button_red_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_red_normal.png; sourceTree = "<group>"; };
+		FBCDA2EE180AAF7E00AF92BF /* button_red_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_red_active.png; sourceTree = "<group>"; };
 		FBD5925F17F579A70098AF20 /* BookingConfirmed.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookingConfirmed.xib; sourceTree = "<group>"; };
 		FBD5926117F57A650098AF20 /* DOCBookConfirmedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCBookConfirmedView.h; sourceTree = "<group>"; };
 		FBD5926217F57A650098AF20 /* DOCBookConfirmedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCBookConfirmedView.m; sourceTree = "<group>"; };
@@ -541,6 +551,9 @@
 				A00F368017E1CEE700BD0467 /* DoctorSpecificsTableViewCellGeneral.xib */,
 				A039186817E2FAA200934DFA /* DOCDoctorGeneralInfoCell.h */,
 				A039186917E2FAA200934DFA /* DOCDoctorGeneralInfoCell.m */,
+				FBD5C90817F3392000E3E3DA /* AvailableSlots.xib */,
+				FBD5C90C17F33B9E00E3E3DA /* DOCTimeSlotCell.h */,
+				FBD5C90D17F33B9E00E3E3DA /* DOCTimeSlotCell.m */,
 				A039186017E21F6B00934DFA /* DoctorSpecificsTableViewCellPhotos.xib */,
 				A039187117E2FB1A00934DFA /* DOCDoctorGalleryCell.h */,
 				A039187217E2FB1A00934DFA /* DOCDoctorGalleryCell.m */,
@@ -556,9 +569,6 @@
 				A039187717E2FF8700934DFA /* BookButtonCell.xib */,
 				A039187B17E300A800934DFA /* DOCStartBookCell.h */,
 				A039187C17E300A800934DFA /* DOCStartBookCell.m */,
-				FBD5C90817F3392000E3E3DA /* AvailableSlots.xib */,
-				FBD5C90C17F33B9E00E3E3DA /* DOCTimeSlotCell.h */,
-				FBD5C90D17F33B9E00E3E3DA /* DOCTimeSlotCell.m */,
 			);
 			name = "step 3 view doctor specifics";
 			sourceTree = "<group>";
@@ -728,6 +738,11 @@
 		FBCB50E017DC83E20099AA5C /* pictures */ = {
 			isa = PBXGroup;
 			children = (
+				FBCDA2EE180AAF7E00AF92BF /* button_red_active.png */,
+				FBCDA2EC180AAD4300AF92BF /* button_red_normal.png */,
+				FBCDA2EA180AAC1E00AF92BF /* dummy.png */,
+				FBCDA2E8180AABC000AF92BF /* menu_forward.png */,
+				FBCDA2E6180A9E1F00AF92BF /* menu_call.png */,
 				FB1CCEDB18073272005348F8 /* star_gold_half.png */,
 				FB1CCEDC18073272005348F8 /* star_none_half.png */,
 				FB1CCED718072FDC005348F8 /* star_gold.png */,
@@ -878,7 +893,9 @@
 				A039186517E21FD400934DFA /* DoctorSpecificsTableViewCellPhone.xib in Resources */,
 				FB1CCECC1806ECB3005348F8 /* pin_location.png in Resources */,
 				FB1CCED918072FDC005348F8 /* star_gold.png in Resources */,
+				FBCDA2ED180AAD4300AF92BF /* button_red_normal.png in Resources */,
 				A039187A17E2FFAE00934DFA /* green button.png in Resources */,
+				FBCDA2EB180AAC1E00AF92BF /* dummy.png in Resources */,
 				A00F360E17DCA8F900BD0467 /* aesthetic medicine doctor.jpg in Resources */,
 				A00F363117DCB85300BD0467 /* StarEmpty@2x.png in Resources */,
 				A00F360C17DCA8DE00BD0467 /* cardiologist.jpg in Resources */,
@@ -887,6 +904,7 @@
 				FBCB50EC17DC88880099AA5C /* dentist.jpg in Resources */,
 				A00F361617DCA90000BD0467 /* chiropracter.jpg in Resources */,
 				FB1CCEC21806DA12005348F8 /* cover1iphone4.png in Resources */,
+				FBCDA2E7180A9E1F00AF92BF /* menu_call.png in Resources */,
 				FBD5C91417F3448500E3E3DA /* BookElements.xib in Resources */,
 				A00F363017DCB85300BD0467 /* StarEmpty.png in Resources */,
 				FB1CCEC81806EA02005348F8 /* menu_mybookings.png in Resources */,
@@ -905,10 +923,12 @@
 				A00F361917DCACC600BD0467 /* cardiothoracic surgeon.jpg in Resources */,
 				FBCB50B617DC81B70099AA5C /* InfoPlist.strings in Resources */,
 				FB1CCEDE18073272005348F8 /* star_none_half.png in Resources */,
+				FBCDA2EF180AAF7E00AF92BF /* button_red_active.png in Resources */,
 				A039188B17E729B300934DFA /* TimeSlotPicker.xib in Resources */,
 				A00F361417DCA90000BD0467 /* psychologist.jpg in Resources */,
 				FB05891617F16CE50023B254 /* back.png in Resources */,
 				A039188D17E73FE100934DFA /* clinic.JPG in Resources */,
+				FBCDA2E9180AABC000AF92BF /* menu_forward.png in Resources */,
 				FB1CCEC71806EA02005348F8 /* menu_location.png in Resources */,
 				A039187817E2FF8700934DFA /* BookButtonCell.xib in Resources */,
 				A00F363417DCB85300BD0467 /* StarFull.png in Resources */,

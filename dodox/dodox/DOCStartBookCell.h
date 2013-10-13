@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface DOCStartBookCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIButton *bookButton;
 
 @end

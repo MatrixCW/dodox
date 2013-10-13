@@ -319,15 +319,7 @@
     return cell;
 }
 
--(UIImage *)resizeImage:(UIImage*)img to:(CGSize)newSize
-{
-    UIGraphicsBeginImageContext( newSize );
-    [img drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
-    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return newImage;
-}
+
 
 -(void)book:(JSFlatButton*) buttom{
     
@@ -354,9 +346,9 @@
 #pragma mark UITableView Delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    DOCGlobalUtil *sharedInstance = [DOCGlobalUtil getSharedInstance];
+   // DOCGlobalUtil *sharedInstance = [DOCGlobalUtil getSharedInstance];
     
-    sharedInstance.currentSelectedDoctor = [self.doctors objectAtIndex:indexPath.row];
+    //sharedInstance.currentSelectedDoctor = [self.doctors objectAtIndex:indexPath.row];
     
     [self performSegueWithIdentifier:@"DOCTOR_SPECIFICS" sender:self];
     

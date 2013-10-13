@@ -19,6 +19,7 @@
 #import "UIImageView+UIActivityIndicatorForSDWebImage.h"
 #import "DOCTimeSlotCell.h"
 #import "DOCDate.h"
+#import "DYRateView.h"
 
 @interface DOCDoctorSpecificsViewController ()
 
@@ -48,8 +49,9 @@
     self.doctorInfoTable.delegate = self;
     self.doctorInfoTable.dataSource = self;
     
-    DOCGlobalUtil *sharedInstance = [DOCGlobalUtil getSharedInstance];
+    //DOCGlobalUtil *sharedInstance = [DOCGlobalUtil getSharedInstance];
     
+    /*
     self.doctorTitleLabel.textAlignment = NSTextAlignmentCenter;
     self.doctorTitleLabel.numberOfLines = 0;
     self.doctorTitleLabel.backgroundColor = [UIColor whiteColor];
@@ -62,8 +64,9 @@
     
     else
         self.doctorTitleLabel.text = [NSString stringWithFormat:@"\n%@", sharedInstance.currentSelectedDoctor.doctorName];
+     */
     
-    self.view.backgroundColor = [UIColor colorWithRed:236.0/255 green:240.0/255 blue:243.0/255 alpha:1.0];
+    self.view.backgroundColor = [UIColor colorWithRed:245.0/255 green:245.0/255 blue:245.0/255 alpha:1.0];
     
     self.doctorInfoTable.backgroundColor = self.view.backgroundColor;
     
@@ -77,7 +80,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return 6;
+    return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -95,15 +98,51 @@
             NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"DoctorSpecificsTableViewCellGeneral" owner:self options:nil];
             cell = [nib objectAtIndex:0];
             
+            UIImage *fullStar = [UIImage imageNamed:@"star_gold_half.png"];
+            //fullStar = [self resizeImage:fullStar to:CGSizeMake(fullStar.size.width/2.0, fullStar.size.width/2.0)];
+            UIImage *emptyStar = [UIImage imageNamed:@"star_none_half.png"];
+            //emptyStar = [self resizeImage:emptyStar to:CGSizeMake(emptyStar.size.width/2.0, emptyStar.size.width/2.0)];
+            
+            DYRateView *rateView = [[DYRateView alloc] initWithFrame:cell.rateView.bounds fullStar:fullStar emptyStar:emptyStar];
+            rateView.rate = 3.6;
+            rateView.alignment = RateViewAlignmentCenter;
+            [cell.rateView addSubview:rateView];
+            
+            cell.doctorName.font = [UIFont fontWithName:@"Avenir Next" size:20];
+            cell.doctorName.textColor = [UIColor blackColor];
+            
+            cell.doctorCategpry.font = [UIFont fontWithName:@"Avenir Next" size:14];
+            cell.doctorCategpry.textColor = [UIColor redColor];
+            
+            cell.doctorSubCategory.font = [UIFont fontWithName:@"Avenir Next" size:10];
+            cell.doctorSubCategory.textColor = [UIColor colorWithRed:113.0/255 green:115.0/255 blue:117.0/255 alpha:1.0];
+
+            
+            cell.doctorClinicName.font = [UIFont fontWithName:@"Avenir Next" size:9];
+            cell.doctorClinicName.textColor = [UIColor colorWithRed:113.0/255 green:115.0/255 blue:117.0/255 alpha:1.0];
+
+            
+            cell.doctorLocation.font = [UIFont fontWithName:@"Avenir Next" size:10];
+            cell.doctorLocation.textColor = [UIColor colorWithRed:113.0/255 green:115.0/255 blue:117.0/255 alpha:1.0];
+
+
+
+
+            
+            /*
             NSURL *avatarThumbnail = [NSURL URLWithString:[currentDoctor.doctorAvatars objectForKey:@"original"]];
             
             [cell.doctorAvatar setImageWithURL:avatarThumbnail usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
             
             
-            cell.doctorCategory.text = currentDoctor.doctorSpeciality;
+            cell.doctorName.text = currentDoctor.doctorSpeciality;
             
             [cell.doctorAvatar.layer setMasksToBounds:YES];
             [cell.doctorAvatar.layer setCornerRadius:8.0];
+             */
+            [cell.doctorAvatar.layer setMasksToBounds:YES];
+            [cell.doctorAvatar.layer setCornerRadius:cell.doctorAvatar.bounds.size.width/2];
+            
         }
         
         return cell;
@@ -119,6 +158,7 @@
             NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"AvailableSlots" owner:self options:nil];
             cell = [nib objectAtIndex:0];
             
+            /*
             [cell.previousSlots addTarget:self action:@selector(previousTimeSlot:) forControlEvents:UIControlEventTouchUpInside];
             [cell.nextSlots addTarget:self action:@selector(nextTimeSlot:) forControlEvents:UIControlEventTouchUpInside];
             
@@ -178,6 +218,7 @@
                 }
                 
             }
+             */
             
 
         
@@ -198,6 +239,7 @@
             NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"BookButtonCell" owner:self options:nil];
             cell = [nib objectAtIndex:0];
             
+            [cell.bookButton addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
             
             
         }
@@ -286,6 +328,20 @@
         
 }
 
+- (IBAction)buttonPressed:(id)sender
+{
+    UIButton *button = (UIButton*)sender;
+    
+    NSLog(@"hahahaha");
+    
+    if(button.selected) {
+        [button setSelected:NO];
+    } else {
+        [button setSelected:YES];
+    }
+    
+}
+/*
 -(void)previousTimeSlot:(UIButton*)button{
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:0];
@@ -423,6 +479,7 @@
 
     
 }
+ */
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 
@@ -430,10 +487,10 @@
     
     switch (indexPath.row) {
         case 0:
-            height = 120;
+            height = 140;
             break;
         case 1:
-            height = 140;
+            height = 275;
             break;
         case 2:
             height = 60;
@@ -441,15 +498,15 @@
         //case 3:
            // height = 320;
            // break;
-        case 3:
-            height = 50;
-            break;
-        case 4:
-            height = 50;
-            break;
-        case 5:
-            height = 630;
-            break;
+        //case 3:
+         //   height = 50;
+          //  break;
+        //case 4:
+          //  height = 50;
+            //break;
+       // case 5:
+          //  height = 630;
+          //  break;
 
             
         default:
