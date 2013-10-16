@@ -6,29 +6,29 @@
 //  Copyright (c) 2013年 Cui Wei. All rights reserved.
 //
 
-#import "DOCBookTimeViewController.h"
+#import "DOCBookOneViewController.h"
 #import "DOCGlobalUtil.h"
 #import "AFHTTPRequestOperation.h"
 #import "AFHTTPClient.h"
 #import "SVProgressHUD.h"
-#import "DOCBookingElementsView.h"
-#import "DOCBookConfirmedView.h"
 #import "DOCGlobalUtil.h"
 #import "DOCDoctor.h"
 #import "UIImageView+UIActivityIndicatorForSDWebImage.h"
 #import "AFJSONRequestOperation.h"
 #import "DOCDate.h"
+#import "DOCDoctorGeneralInfoCell.h"
+#import "DYRateView.h"
+#import "DOCPICell.h"
 
-@interface DOCBookTimeViewController ()
+@interface DOCBookOneViewController ()
 
-@property DOCBookingElementsView *bookingStartView;
-@property DOCBookConfirmedView *bookingConfirmedView;
+
 @property int confirmedID;
-
+@property BOOL tableDidMoveup;
 
 @end
 
-@implementation DOCBookTimeViewController
+@implementation DOCBookOneViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -43,30 +43,32 @@
 {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor colorWithRed:236.0/255 green:240.0/255 blue:243.0/255 alpha:1.0];
-	// Do any additional setup after loading the view.
+    self.infoTable.delegate = self;
+    self.infoTable.dataSource = self;
     
+    self.view.backgroundColor = [UIColor colorWithRed:245.0/255 green:245.0/255 blue:245.0/255 alpha:1.0];
     
+    self.titleLabel.backgroundColor = [UIColor colorWithRed:245.0/255 green:245.0/255 blue:245.0/255 alpha:1.0];
+    self.titleLabel.text = @"\nPatient";
+    self.titleLabel.numberOfLines = 0;
+    /*
     DOCGlobalUtil *sharedInstance = [DOCGlobalUtil getSharedInstance];
     DOCDoctor *doctor =  sharedInstance.currentSelectedDoctor;
     
-    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"BookElements" owner:self options:nil];
-    self.bookingStartView = [nib objectAtIndex:0];
-    self.bookingStartView.backgroundColor = [UIColor clearColor];
-    self.bookingStartView.center = CGPointMake(self.view.bounds.size.width/2, self.view.bounds.size.height/2);
+    
     
     self.bookingStartView.confirmButton.backgroundColor = [UIColor colorWithRed:68.0/255 green:149.0/255 blue:85.0/255 alpha:1.0];
     
     self.bookingStartView.confirmButton.tintColor = [UIColor whiteColor];
     
-    [self.view addSubview:self.bookingStartView];
+    
     
     
     [self.bookingStartView.cancelButton addTarget:self action:@selector(dismissView) forControlEvents:UIControlEventTouchUpInside];
     
     [self.bookingStartView.confirmButton addTarget:self action:@selector(makeABook) forControlEvents:UIControlEventTouchUpInside];
     
-    /*
+    
     self.bookingStartView.currentIndex = 0 ;
     
     DOCDate *tempDate = [doctor.timeSlots objectAtIndex:self.bookingStartView.currentIndex];
@@ -111,9 +113,156 @@
     
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    return 2;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    int height = 0;
+    
+    switch (indexPath.row) {
+        case 0:
+            height = 140;
+            break;
+        case 1:
+            height = 350;
+            break;
+        default:
+            break;
+    }
+    
+    return height;
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    int index = indexPath.row;
+    
+    if(index == 0){
+        
+        DOCDoctorGeneralInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DoctorGeneral"];
+        
+        if (cell == nil) {
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"DoctorSpecificsTableViewCellGeneral" owner:self options:nil];
+            cell = [nib objectAtIndex:0];
+            
+            UIImage *fullStar = [UIImage imageNamed:@"star_gold_half.png"];
+            //fullStar = [self resizeImage:fullStar to:CGSizeMake(fullStar.size.width/2.0, fullStar.size.width/2.0)];
+            UIImage *emptyStar = [UIImage imageNamed:@"star_none_half.png"];
+            //emptyStar = [self resizeImage:emptyStar to:CGSizeMake(emptyStar.size.width/2.0, emptyStar.size.width/2.0)];
+            
+            DYRateView *rateView = [[DYRateView alloc] initWithFrame:cell.rateView.bounds fullStar:fullStar emptyStar:emptyStar];
+            rateView.rate = 3.6;
+            rateView.alignment = RateViewAlignmentCenter;
+            [cell.rateView addSubview:rateView];
+            
+            cell.doctorName.font = [UIFont fontWithName:@"Avenir Next" size:20];
+            cell.doctorName.textColor = [UIColor blackColor];
+            
+            cell.doctorCategpry.font = [UIFont fontWithName:@"Avenir Next" size:14];
+            cell.doctorCategpry.textColor = [UIColor redColor];
+            
+            cell.doctorSubCategory.font = [UIFont fontWithName:@"Avenir Next" size:10];
+            cell.doctorSubCategory.textColor = [UIColor colorWithRed:113.0/255 green:115.0/255 blue:117.0/255 alpha:1.0];
+            
+            
+            cell.doctorClinicName.font = [UIFont fontWithName:@"Avenir Next" size:9];
+            cell.doctorClinicName.textColor = [UIColor colorWithRed:113.0/255 green:115.0/255 blue:117.0/255 alpha:1.0];
+            
+            
+            cell.doctorLocation.font = [UIFont fontWithName:@"Avenir Next" size:10];
+            cell.doctorLocation.textColor = [UIColor colorWithRed:113.0/255 green:115.0/255 blue:117.0/255 alpha:1.0];
+            
+            
+            
+            
+            
+            /*
+             NSURL *avatarThumbnail = [NSURL URLWithString:[currentDoctor.doctorAvatars objectForKey:@"original"]];
+             
+             [cell.doctorAvatar setImageWithURL:avatarThumbnail usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+             
+             
+             cell.doctorName.text = currentDoctor.doctorSpeciality;
+             
+             [cell.doctorAvatar.layer setMasksToBounds:YES];
+             [cell.doctorAvatar.layer setCornerRadius:8.0];
+             */
+            [cell.doctorAvatar.layer setMasksToBounds:YES];
+            [cell.doctorAvatar.layer setCornerRadius:cell.doctorAvatar.bounds.size.width/2];
+            
+        }
+        
+        return cell;
+        
+    }
+    else{
+        
+        DOCPICell *cell = [tableView dequeueReusableCellWithIdentifier:@"PICELL"];
+        
+        if (cell == nil) {
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"personalInfo" owner:self options:nil];
+            cell = [nib objectAtIndex:0];
+        }
+        
+        [cell setBorderColor];
+        
+        cell.nameField.delegate = self;
+        cell.phoneField.delegate = self;
+        cell.emailField.delegate = self;
+        
+        cell.nameField.returnKeyType = UIReturnKeyDone;
+        cell.phoneField.returnKeyType = UIReturnKeyDone;
+        cell.emailField.returnKeyType = UIReturnKeyDone;
+
+               
+        return cell;
+        
+        
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    [textField resignFirstResponder];
+    
+    if(self.tableDidMoveup){
+        
+        [UIView animateWithDuration:0.2 animations:^{
+            
+            self.infoTable.center = CGPointMake(self.infoTable.center.x, self.infoTable.center.y+186);
+            
+        }];
+        
+        self.tableDidMoveup = FALSE;
+    }
+    return NO;
+}
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField{
+    
+    if(!self.tableDidMoveup){
+        [UIView animateWithDuration:0.2 animations:^{
+            
+            self.infoTable.center = CGPointMake(self.infoTable.center.x, self.infoTable.center.y-186);
+            
+        }];
+        self.tableDidMoveup = TRUE;
+    }
+    
+}
 
 -(void)previousSlot{
     
+    /*
     if(self.bookingStartView.currentIndex == 0)
         return;
     
@@ -138,13 +287,14 @@
     self.bookingStartView.dateTag.text = theDate;
     
     NSLog(@"previous!");
+     */
     
 }
 
 
 -(void)nextSlot{
     
-    
+    /*
     DOCGlobalUtil *sharedInstance = [DOCGlobalUtil getSharedInstance];
     DOCDoctor *currentDoctor =  sharedInstance.currentSelectedDoctor;
     
@@ -171,6 +321,7 @@
     self.bookingStartView.dateTag.text = theDate;
     
     NSLog(@"next!");
+     */
 
     
 }
@@ -236,7 +387,7 @@
     }];
     */
     
-    
+    /*
     [UIView animateWithDuration:0.8
                      animations:^{
                          
@@ -264,11 +415,11 @@
                      }];
 
     
-    
+   */
 }
 -(void)saveAndExit{
     
-    
+    /*
     [UIView animateWithDuration:0.8
                      animations:^{
                          
@@ -321,6 +472,7 @@
     
     
     //[self dismissViewControllerAnimated:YES completion:Nil];
+     */
     
 }
 

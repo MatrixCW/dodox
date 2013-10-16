@@ -20,12 +20,13 @@
 
 @interface DOCChooseSpecialityViewController ()
 
-- (IBAction)searchButtonPressed:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *searchField;
 @property (weak, nonatomic) IBOutlet UITableView *specialityTable;
 @property UIView *coverView;
 @property NSArray *specialities;
+@property NSMutableArray *displayArray;
 @property (weak, nonatomic) IBOutlet UILabel *specialityTitle;
+- (IBAction)searchButtonPressed:(id)sender;
 
 @property DOCEnterPIView *piView;
 @property AMBlurView *blurView;
@@ -61,6 +62,10 @@
     self.searchField.backgroundColor = [UIColor whiteColor];
     [self.searchField.layer setMasksToBounds:YES];
     [self.searchField.layer setCornerRadius:5.0];
+    self.searchField.returnKeyType = UIReturnKeyDone;
+    self.searchField.delegate = self;
+    
+    [self.searchField addTarget:self action:@selector(searchSpecialists) forControlEvents:UIControlEventEditingChanged];
 
     self.view.backgroundColor = greyBGColor;
 
@@ -79,7 +84,66 @@
     
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return NO;
+}
 
+-(void)searchSpecialists{
+    
+    NSLog(@"%d",self.searchField.text.length);
+    
+    
+    if(self.searchField.text.length == 0){
+        
+        self.displayArray = [NSMutableArray arrayWithArray:self.specialities];
+        
+        [self.specialityTable reloadData];
+        
+    }
+    
+    else{
+        
+        self.displayArray = [NSMutableArray array];
+        
+        for(DOCSpeciality *item in self.specialities){
+            
+            NSString *specialityName = item.specialityName;
+            
+            if([self string:specialityName containscharsFromString:self.searchField.text])
+                
+               [self.displayArray addObject: item];
+            
+        }
+        
+        [self.specialityTable reloadData];
+    }
+    
+    
+}
+
+
+-(BOOL)string:(NSString*)receiver containscharsFromString:(NSString*)queryString{
+    
+    NSString *lowerQueryString = [queryString lowercaseString];
+    NSString *lowerReceiver = [receiver lowercaseString];
+    
+    NSMutableArray *array = [NSMutableArray array];
+    for (int i = 0; i < [lowerQueryString length]; i++) {
+        [array addObject:[NSString stringWithFormat:@"%C", [lowerQueryString characterAtIndex:i]]];
+    }
+    
+    for(NSString *item in array){
+        if ([lowerReceiver rangeOfString:item].location == NSNotFound)
+            
+            return FALSE;
+    }
+    
+    return true;
+    
+    
+    
+}
 -(void)performTaskAfterUserEnteringInfo{
     NSLog(@"dadadadad cancelled");
 
@@ -120,6 +184,7 @@
     else
     {
         self.specialities = sharedUtil.storedSpecialities;
+        self.displayArray = [NSMutableArray arrayWithArray:self.specialities];
     }
     
     
@@ -172,7 +237,9 @@
 
 -(void)populateSpecialities{
     
-    NSURL *url = [NSURL URLWithString:@"http://doxor.herokuapp.com/api/categories.json"];
+    
+    NSURL *url = [NSURL URLWithString:@"http://doxor.herokuapp.com/api/categories.json?lat=1.29135368&lng=103.779730"];
+    
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
     NSMutableArray *dataArray = [NSMutableArray array];
@@ -180,7 +247,7 @@
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request
                                                                                         success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
                                                                                             
-                                                                                            NSLog(@"ddddsdfsdfsdf");
+                                                                                            NSLog(@"ddddsdfsdfsdf %@",JSON);
                                                                                             
                                                                                             for(NSDictionary *dic in JSON){
                                                                                                 
@@ -190,20 +257,28 @@
                                                                                                 
                                                                                                 NSString *imageUrl = [dic objectForKey:@"pic"];
                                                                                                 
-                                                                                                                                                                                                NSString *numberOfDoctors = [dic objectForKey:@"number_of_doctors"];
                                                                                                 
-                                                                                                DOCSpeciality *tempSpeciality = [[DOCSpeciality alloc] initWithName:specialityName
-                                                                                                                                                           identity:[specialityID intValue]
-                                                                                                                                                             number:[numberOfDoctors intValue]
-                                                                                                                                                        andImageURL:imageUrl];
+                                                                                                NSString *numInThree = [dic objectForKey:@"doctors_within_three_km"];
                                                                                                 
-                                                                                        [dataArray addObject:tempSpeciality];
+                                                                                                NSString *numInTen = [dic objectForKey:@"doctors_within_ten_km"];
+                                                                                                
+                                                                                                DOCSpeciality *tempSpeciality = [[DOCSpeciality alloc] init];
+                                                                                                tempSpeciality.specialityID = [specialityID intValue];
+                                                                                                tempSpeciality.specialityName = specialityName;
+                                                                                                tempSpeciality.specialityImageURL = imageUrl;
+                                                                                                tempSpeciality.numInThree = [numInThree intValue];
+                                                                                                tempSpeciality.numInTen = [numInTen intValue];
+                                                                                                
+                                                                                                
+                                                                                                [dataArray addObject:tempSpeciality];
                                                                                                 
                                                                                             }
                                                                                             
-                                                                                            [self formarRetrivedResults:dataArray];
+                                                                                            [self formatRetrivedResults:dataArray];
                                                                                         }
                                                                                         failure:nil];
+    
+    
     [operation start];
     
     
@@ -212,14 +287,14 @@
 }
 
 
--(void)setCategoryImage{
-    
-}
--(void)formarRetrivedResults:(NSMutableArray *)dataArray{
+
+-(void)formatRetrivedResults:(NSMutableArray *)dataArray{
     
     self.specialities = [dataArray sortedArrayUsingComparator:^NSComparisonResult(DOCSpeciality *first, DOCSpeciality *second) {
         return [first compare:second];
     }];
+    
+    self.displayArray = [NSArray arrayWithArray:self.specialities];
     
     [self.specialityTable reloadData];
     
@@ -239,7 +314,7 @@
 #pragma mark UITableView DataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.specialities.count;
+    return self.displayArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -251,12 +326,10 @@
         cell = [nib objectAtIndex:0];
     }
     
-    DOCSpeciality *speciality = (DOCSpeciality*)[self.specialities objectAtIndex:indexPath.row];
+    DOCSpeciality *speciality = (DOCSpeciality*)[self.displayArray objectAtIndex:indexPath.row];
     cell.speciality.text = speciality.specialityName;
-    cell.numberOfSpecialists.text = [NSString stringWithFormat:@"Number of doctors: %d", speciality.numberOfDoctors];
+    cell.numberInfo.text = [NSString stringWithFormat:@"%d within 3km, %d within 10km", speciality.numInThree,speciality.numInTen];
     
-    [cell.speciality sizeToFit];
-    [cell.numberOfSpecialists sizeToFit];
     
     
     [cell.thumbnailImageView setImageWithURL:[NSURL URLWithString:speciality.specialityImageURL]
@@ -290,7 +363,7 @@
     
     DOCGlobalUtil *sharedInstance = [DOCGlobalUtil getSharedInstance];
     
-    DOCSpeciality *selectedSpeciality = [self.specialities objectAtIndex:indexPath.row];
+    DOCSpeciality *selectedSpeciality = [self.displayArray objectAtIndex:indexPath.row];
      sharedInstance.currentSelectedSpeciality = selectedSpeciality.specialityName;
      sharedInstance.currentSelectedSpecialityID = selectedSpeciality.specialityID;
     
@@ -428,5 +501,8 @@
     
 }
 - (IBAction)searchButtonPressed:(id)sender {
+    
+    [self.searchField becomeFirstResponder];
 }
+
 @end

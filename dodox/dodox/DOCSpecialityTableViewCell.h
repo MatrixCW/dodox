@@ -12,7 +12,6 @@
 
 
 @property (nonatomic, weak) IBOutlet UILabel *speciality;
-@property (nonatomic, weak) IBOutlet UILabel *numberOfSpecialists;
 @property (nonatomic, weak) IBOutlet UIImageView *thumbnailImageView;
 @property (weak, nonatomic) IBOutlet UILabel *numberInfo;
 

@@ -10,6 +10,8 @@
 #import "DOCEnterPIView.h"
 
 
-@interface DOCChooseSpecialityViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,EnterPIProtocol>
+@interface DOCChooseSpecialityViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,EnterPIProtocol,UITextFieldDelegate>
+
+
 
 @end

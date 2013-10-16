@@ -13,55 +13,11 @@
 
 @interface DOCDoctor ()
 
-@property (readwrite) int doctorID;
-@property (readwrite) NSString *doctorName;
-@property (readwrite) NSString *doctorSpeciality;
-@property (readwrite) NSString *doctorAddress;
-@property (readwrite) CGFloat doctorRate;
-@property (readwrite) CGFloat distance;
-@property (readwrite) CLLocationCoordinate2D doctorPosition;
-@property (readwrite) NSString *doctorPhoneNumber;
-@property (readwrite) NSDictionary *doctorAvatars;
-@property (readwrite) NSDictionary *doctorDescription;
-@property (readwrite) NSArray *doctorPictureURLs;
-
 @end
 
 
 @implementation DOCDoctor
 
-
--(id)initWithIdentity:(int)doctorID
-                 Name:(NSString*)doctorName
-           speciality:(NSString*)doctorSpeciality
-              address:(NSString*)doctorAddress
-                 rate:(CGFloat)rate
-             position:(CLLocationCoordinate2D) position
-                phone:(NSString*) phoneNumber
-              avatars:(NSDictionary*)avatarUrls
-          description:(NSDictionary*)description
-       andPictureURLs:(NSArray*)pictureURLs{
-    
-    self = [super init];
-    
-    if (self) {
-        self.doctorID = doctorID;
-        self.doctorName = doctorName;
-        self.doctorSpeciality = doctorSpeciality;
-        self.doctorAddress = doctorAddress;
-        self.doctorRate = rate;
-        self.doctorPosition = position;
-        self.doctorPhoneNumber = phoneNumber;
-        self.doctorAvatars = [NSDictionary dictionaryWithDictionary:avatarUrls];
-        self.doctorDescription = [NSDictionary dictionaryWithDictionary:description];
-        self.doctorPictureURLs = [NSArray arrayWithArray:pictureURLs];
-        
-        
-        [self calculateDistance];
-    }
-    return self;
-    
-}
 
 
 - (NSComparisonResult)compareName:(DOCDoctor *)otherObject{
@@ -81,22 +37,6 @@
     
 }
 
-
--(void)calculateDistance{
-    
-    DOCGlobalUtil *sharedInstance = [DOCGlobalUtil getSharedInstance];
-    CLLocation *locA = [[CLLocation alloc] initWithLatitude:sharedInstance.myCurrentPosotion.latitude
-                                                  longitude:sharedInstance.myCurrentPosotion.longitude];
-    
-    CLLocation *locB = [[CLLocation alloc] initWithLatitude:self.doctorPosition.latitude
-                                                  longitude:self.doctorPosition.longitude];
-    
-    CLLocationDistance distance = [locA distanceFromLocation:locB];
-    
-    self.distance = distance;
-
-    
-}
 
 
 -(void)getMyTimeSlots{
@@ -127,19 +67,19 @@
                                                                                                 
                                                                                                 NSString *bookingID = [dict valueForKey:@"booking_id"];
                                                                                                 
-                                                                                                NSLog(@"the id %@",bookingID);
+                                                                                                //NSLog(@"the id %@",bookingID);
                                                                                                 
                                                                                                 
                                                                                                 
                                                                                                 if([bookingID isKindOfClass:[NSNull class]]){
-                                                                                                    NSLog(@"dadadadadad");
+                                                                                                   // NSLog(@"dadadadadad");
                                                                                                     [self.timeSlots addObject:dict];
                                                                                                 }
                                                                                                 
                                                                                                 
                                                                                             }
                                                                                             
-                                                                                            NSLog(@"total %d",self.timeSlots.count);
+                                                                                           // NSLog(@"total %d",self.timeSlots.count);
                                                                                             
                                                                                             [self sortDate];
                                                                                         }
@@ -176,8 +116,8 @@
         [df setFormatterBehavior:NSDateFormatterBehaviorDefault];
         
         NSDate *theDate = [df dateFromString:finalDate];
-        NSLog(@"date string: %@", finalDate);
-        NSLog(@"date: %@", theDate);
+       // NSLog(@"date string: %@", finalDate);
+       // NSLog(@"date: %@", theDate);
         
         DOCDate *dateToAdd = [[DOCDate alloc] init];
         dateToAdd.myDate = theDate;

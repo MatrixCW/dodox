@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DOCSelectDoctorViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+@interface DOCSelectDoctorViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 
 @end

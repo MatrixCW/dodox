@@ -10,7 +10,7 @@
 		3B4EB07017EF7652001D5533 /* specialityHolder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3B4EB06F17EF7652001D5533 /* specialityHolder.jpg */; };
 		3BA8212E17F0C11200AA19BE /* right arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA8212D17F0C11200AA19BE /* right arrow.png */; };
 		3BA8213017F0D46700AA19BE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA8212F17F0D46700AA19BE /* QuartzCore.framework */; };
-		4BAC7D3017E8A0C100EE293C /* DOCBookTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAC7D2F17E8A0C100EE293C /* DOCBookTimeViewController.m */; };
+		4BAC7D3017E8A0C100EE293C /* DOCBookOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAC7D2F17E8A0C100EE293C /* DOCBookOneViewController.m */; };
 		4BDE1C2517E8CD9F00001517 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4BDE1C2217E8CD9F00001517 /* SVProgressHUD.bundle */; };
 		4BDE1C2617E8CD9F00001517 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BDE1C2417E8CD9F00001517 /* SVProgressHUD.m */; };
 		A00F360A17DCA1BA00BD0467 /* cancer specialist.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A00F360917DCA1BA00BD0467 /* cancer specialist.jpg */; };
@@ -133,16 +133,30 @@
 		FBCDA2EB180AAC1E00AF92BF /* dummy.png in Resources */ = {isa = PBXBuildFile; fileRef = FBCDA2EA180AAC1E00AF92BF /* dummy.png */; };
 		FBCDA2ED180AAD4300AF92BF /* button_red_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = FBCDA2EC180AAD4300AF92BF /* button_red_normal.png */; };
 		FBCDA2EF180AAF7E00AF92BF /* button_red_active.png in Resources */ = {isa = PBXBuildFile; fileRef = FBCDA2EE180AAF7E00AF92BF /* button_red_active.png */; };
-		FBD5926017F579A70098AF20 /* BookingConfirmed.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBD5925F17F579A70098AF20 /* BookingConfirmed.xib */; };
-		FBD5926317F57A650098AF20 /* DOCBookConfirmedView.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD5926217F57A650098AF20 /* DOCBookConfirmedView.m */; };
+		FBD05BF8180E3EB100C2FD70 /* DOCBookTwoController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD05BF7180E3EB100C2FD70 /* DOCBookTwoController.m */; };
+		FBD05BFC180E3FCA00C2FD70 /* bookfor.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBD05BFB180E3FCA00C2FD70 /* bookfor.xib */; };
+		FBD05BFE180E405D00C2FD70 /* simpledoctor.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBD05BFD180E405D00C2FD70 /* simpledoctor.xib */; };
+		FBD05C00180E413C00C2FD70 /* locationcell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBD05BFF180E413C00C2FD70 /* locationcell.xib */; };
+		FBD05C04180E43C800C2FD70 /* continuecell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBD05C03180E43C800C2FD70 /* continuecell.xib */; };
+		FBD05C07180E44BB00C2FD70 /* DOCBookForCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD05C06180E44BB00C2FD70 /* DOCBookForCell.m */; };
+		FBD05C0A180E44CB00C2FD70 /* DOCSimpleDoctorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD05C09180E44CB00C2FD70 /* DOCSimpleDoctorCell.m */; };
+		FBD05C0D180E44DA00C2FD70 /* DOCLocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD05C0C180E44DA00C2FD70 /* DOCLocationCell.m */; };
+		FBD05C10180E44E800C2FD70 /* DOCTimeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD05C0F180E44E800C2FD70 /* DOCTimeCell.m */; };
+		FBD05C13180E44F500C2FD70 /* DOCContinueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD05C12180E44F500C2FD70 /* DOCContinueCell.m */; };
+		FBD05C15180E73BC00C2FD70 /* booktwotimeslot.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBD05C14180E73BC00C2FD70 /* booktwotimeslot.xib */; };
+		FBD05C18180E840D00C2FD70 /* DOCBookThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD05C17180E840D00C2FD70 /* DOCBookThreeViewController.m */; };
+		FBD05C1A180E859000C2FD70 /* addCalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBD05C19180E859000C2FD70 /* addCalCell.xib */; };
+		FBD05C1F180E865700C2FD70 /* button_addtocal_active.png in Resources */ = {isa = PBXBuildFile; fileRef = FBD05C1E180E865700C2FD70 /* button_addtocal_active.png */; };
+		FBD05C22180E87F000C2FD70 /* DOCAddCalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD05C21180E87F000C2FD70 /* DOCAddCalCell.m */; };
+		FBD49FDA180DA696008852C4 /* personalInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBD49FD9180DA696008852C4 /* personalInfo.xib */; };
+		FBD49FDC180DA785008852C4 /* button_continue_active.png in Resources */ = {isa = PBXBuildFile; fileRef = FBD49FDB180DA785008852C4 /* button_continue_active.png */; };
+		FBD49FDF180DA7DF008852C4 /* DOCPICell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD49FDE180DA7DF008852C4 /* DOCPICell.m */; };
 		FBD5C90717F3326200E3E3DA /* placeholder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FBD5C90617F3326200E3E3DA /* placeholder.jpg */; };
 		FBD5C90917F3392000E3E3DA /* AvailableSlots.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBD5C90817F3392000E3E3DA /* AvailableSlots.xib */; };
 		FBD5C90B17F33A2200E3E3DA /* smallrightarrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FBD5C90A17F33A2200E3E3DA /* smallrightarrow.png */; };
 		FBD5C90E17F33B9E00E3E3DA /* DOCTimeSlotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD5C90D17F33B9E00E3E3DA /* DOCTimeSlotCell.m */; };
 		FBD5C91117F33E3800E3E3DA /* greenrightarrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FBD5C90F17F33E3800E3E3DA /* greenrightarrow.png */; };
 		FBD5C91217F33E3800E3E3DA /* greenleftarrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FBD5C91017F33E3800E3E3DA /* greenleftarrow.png */; };
-		FBD5C91417F3448500E3E3DA /* BookElements.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBD5C91317F3448500E3E3DA /* BookElements.xib */; };
-		FBD5C91717F345B900E3E3DA /* DOCBookingElementsView.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD5C91617F345B900E3E3DA /* DOCBookingElementsView.m */; };
 		FBD9242217F05D2A008FB24F /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = FBD9242117F05D2A008FB24F /* play.png */; };
 		FBD9242A17F05EA5008FB24F /* JSFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD9242517F05EA5008FB24F /* JSFlatButton.m */; };
 		FBD9242B17F05EA5008FB24F /* UIColor+JSFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD9242717F05EA5008FB24F /* UIColor+JSFlatButton.m */; };
@@ -164,8 +178,8 @@
 		3B4EB06F17EF7652001D5533 /* specialityHolder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = specialityHolder.jpg; sourceTree = "<group>"; };
 		3BA8212D17F0C11200AA19BE /* right arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right arrow.png"; sourceTree = "<group>"; };
 		3BA8212F17F0D46700AA19BE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		4BAC7D2E17E8A0C100EE293C /* DOCBookTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCBookTimeViewController.h; sourceTree = "<group>"; };
-		4BAC7D2F17E8A0C100EE293C /* DOCBookTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCBookTimeViewController.m; sourceTree = "<group>"; };
+		4BAC7D2E17E8A0C100EE293C /* DOCBookOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCBookOneViewController.h; sourceTree = "<group>"; };
+		4BAC7D2F17E8A0C100EE293C /* DOCBookOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCBookOneViewController.m; sourceTree = "<group>"; };
 		4BDE1C2217E8CD9F00001517 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		4BDE1C2317E8CD9F00001517 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		4BDE1C2417E8CD9F00001517 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
@@ -346,9 +360,33 @@
 		FBCDA2EA180AAC1E00AF92BF /* dummy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dummy.png; sourceTree = "<group>"; };
 		FBCDA2EC180AAD4300AF92BF /* button_red_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_red_normal.png; sourceTree = "<group>"; };
 		FBCDA2EE180AAF7E00AF92BF /* button_red_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_red_active.png; sourceTree = "<group>"; };
-		FBD5925F17F579A70098AF20 /* BookingConfirmed.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookingConfirmed.xib; sourceTree = "<group>"; };
-		FBD5926117F57A650098AF20 /* DOCBookConfirmedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCBookConfirmedView.h; sourceTree = "<group>"; };
-		FBD5926217F57A650098AF20 /* DOCBookConfirmedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCBookConfirmedView.m; sourceTree = "<group>"; };
+		FBD05BF6180E3EB100C2FD70 /* DOCBookTwoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCBookTwoController.h; sourceTree = "<group>"; };
+		FBD05BF7180E3EB100C2FD70 /* DOCBookTwoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCBookTwoController.m; sourceTree = "<group>"; };
+		FBD05BFB180E3FCA00C2FD70 /* bookfor.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = bookfor.xib; sourceTree = "<group>"; };
+		FBD05BFD180E405D00C2FD70 /* simpledoctor.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = simpledoctor.xib; sourceTree = "<group>"; };
+		FBD05BFF180E413C00C2FD70 /* locationcell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = locationcell.xib; sourceTree = "<group>"; };
+		FBD05C03180E43C800C2FD70 /* continuecell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = continuecell.xib; sourceTree = "<group>"; };
+		FBD05C05180E44BB00C2FD70 /* DOCBookForCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCBookForCell.h; sourceTree = "<group>"; };
+		FBD05C06180E44BB00C2FD70 /* DOCBookForCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCBookForCell.m; sourceTree = "<group>"; };
+		FBD05C08180E44CB00C2FD70 /* DOCSimpleDoctorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCSimpleDoctorCell.h; sourceTree = "<group>"; };
+		FBD05C09180E44CB00C2FD70 /* DOCSimpleDoctorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCSimpleDoctorCell.m; sourceTree = "<group>"; };
+		FBD05C0B180E44DA00C2FD70 /* DOCLocationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCLocationCell.h; sourceTree = "<group>"; };
+		FBD05C0C180E44DA00C2FD70 /* DOCLocationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCLocationCell.m; sourceTree = "<group>"; };
+		FBD05C0E180E44E800C2FD70 /* DOCTimeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCTimeCell.h; sourceTree = "<group>"; };
+		FBD05C0F180E44E800C2FD70 /* DOCTimeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCTimeCell.m; sourceTree = "<group>"; };
+		FBD05C11180E44F500C2FD70 /* DOCContinueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCContinueCell.h; sourceTree = "<group>"; };
+		FBD05C12180E44F500C2FD70 /* DOCContinueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCContinueCell.m; sourceTree = "<group>"; };
+		FBD05C14180E73BC00C2FD70 /* booktwotimeslot.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = booktwotimeslot.xib; sourceTree = "<group>"; };
+		FBD05C16180E840D00C2FD70 /* DOCBookThreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCBookThreeViewController.h; sourceTree = "<group>"; };
+		FBD05C17180E840D00C2FD70 /* DOCBookThreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCBookThreeViewController.m; sourceTree = "<group>"; };
+		FBD05C19180E859000C2FD70 /* addCalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = addCalCell.xib; sourceTree = "<group>"; };
+		FBD05C1E180E865700C2FD70 /* button_addtocal_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_addtocal_active.png; sourceTree = "<group>"; };
+		FBD05C20180E87F000C2FD70 /* DOCAddCalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCAddCalCell.h; sourceTree = "<group>"; };
+		FBD05C21180E87F000C2FD70 /* DOCAddCalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCAddCalCell.m; sourceTree = "<group>"; };
+		FBD49FD9180DA696008852C4 /* personalInfo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = personalInfo.xib; sourceTree = "<group>"; };
+		FBD49FDB180DA785008852C4 /* button_continue_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_continue_active.png; sourceTree = "<group>"; };
+		FBD49FDD180DA7DF008852C4 /* DOCPICell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCPICell.h; sourceTree = "<group>"; };
+		FBD49FDE180DA7DF008852C4 /* DOCPICell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCPICell.m; sourceTree = "<group>"; };
 		FBD5C90617F3326200E3E3DA /* placeholder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = placeholder.jpg; sourceTree = "<group>"; };
 		FBD5C90817F3392000E3E3DA /* AvailableSlots.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AvailableSlots.xib; sourceTree = "<group>"; };
 		FBD5C90A17F33A2200E3E3DA /* smallrightarrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smallrightarrow.png; sourceTree = "<group>"; };
@@ -356,9 +394,6 @@
 		FBD5C90D17F33B9E00E3E3DA /* DOCTimeSlotCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCTimeSlotCell.m; sourceTree = "<group>"; };
 		FBD5C90F17F33E3800E3E3DA /* greenrightarrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenrightarrow.png; sourceTree = "<group>"; };
 		FBD5C91017F33E3800E3E3DA /* greenleftarrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenleftarrow.png; sourceTree = "<group>"; };
-		FBD5C91317F3448500E3E3DA /* BookElements.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookElements.xib; sourceTree = "<group>"; };
-		FBD5C91517F345B900E3E3DA /* DOCBookingElementsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCBookingElementsView.h; sourceTree = "<group>"; };
-		FBD5C91617F345B900E3E3DA /* DOCBookingElementsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCBookingElementsView.m; sourceTree = "<group>"; };
 		FBD9242117F05D2A008FB24F /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
 		FBD9242417F05EA5008FB24F /* JSFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSFlatButton.h; sourceTree = "<group>"; };
 		FBD9242517F05EA5008FB24F /* JSFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSFlatButton.m; sourceTree = "<group>"; };
@@ -399,14 +434,15 @@
 		4BAC7D2D17E8A06C00EE293C /* Step 4 book a timeslot */ = {
 			isa = PBXGroup;
 			children = (
-				4BAC7D2E17E8A0C100EE293C /* DOCBookTimeViewController.h */,
-				4BAC7D2F17E8A0C100EE293C /* DOCBookTimeViewController.m */,
-				FBD5925F17F579A70098AF20 /* BookingConfirmed.xib */,
-				FBD5926117F57A650098AF20 /* DOCBookConfirmedView.h */,
-				FBD5926217F57A650098AF20 /* DOCBookConfirmedView.m */,
-				FBD5C91317F3448500E3E3DA /* BookElements.xib */,
-				FBD5C91517F345B900E3E3DA /* DOCBookingElementsView.h */,
-				FBD5C91617F345B900E3E3DA /* DOCBookingElementsView.m */,
+				FBD05C1B180E859700C2FD70 /* cells for book three */,
+				FBD05BFA180E3FA000C2FD70 /* cells for book two */,
+				FBD05BF9180E3F8C00C2FD70 /* cells for book one */,
+				4BAC7D2E17E8A0C100EE293C /* DOCBookOneViewController.h */,
+				4BAC7D2F17E8A0C100EE293C /* DOCBookOneViewController.m */,
+				FBD05BF6180E3EB100C2FD70 /* DOCBookTwoController.h */,
+				FBD05BF7180E3EB100C2FD70 /* DOCBookTwoController.m */,
+				FBD05C16180E840D00C2FD70 /* DOCBookThreeViewController.h */,
+				FBD05C17180E840D00C2FD70 /* DOCBookThreeViewController.m */,
 			);
 			name = "Step 4 book a timeslot";
 			sourceTree = "<group>";
@@ -738,6 +774,8 @@
 		FBCB50E017DC83E20099AA5C /* pictures */ = {
 			isa = PBXGroup;
 			children = (
+				FBD05C1E180E865700C2FD70 /* button_addtocal_active.png */,
+				FBD49FDB180DA785008852C4 /* button_continue_active.png */,
 				FBCDA2EE180AAF7E00AF92BF /* button_red_active.png */,
 				FBCDA2EC180AAD4300AF92BF /* button_red_normal.png */,
 				FBCDA2EA180AAC1E00AF92BF /* dummy.png */,
@@ -777,6 +815,48 @@
 				FBCB50E317DC84800099AA5C /* doctor.jpg */,
 			);
 			name = pictures;
+			sourceTree = "<group>";
+		};
+		FBD05BF9180E3F8C00C2FD70 /* cells for book one */ = {
+			isa = PBXGroup;
+			children = (
+				FBD49FD9180DA696008852C4 /* personalInfo.xib */,
+				FBD49FDD180DA7DF008852C4 /* DOCPICell.h */,
+				FBD49FDE180DA7DF008852C4 /* DOCPICell.m */,
+			);
+			name = "cells for book one";
+			sourceTree = "<group>";
+		};
+		FBD05BFA180E3FA000C2FD70 /* cells for book two */ = {
+			isa = PBXGroup;
+			children = (
+				FBD05BFB180E3FCA00C2FD70 /* bookfor.xib */,
+				FBD05C05180E44BB00C2FD70 /* DOCBookForCell.h */,
+				FBD05C06180E44BB00C2FD70 /* DOCBookForCell.m */,
+				FBD05BFD180E405D00C2FD70 /* simpledoctor.xib */,
+				FBD05C08180E44CB00C2FD70 /* DOCSimpleDoctorCell.h */,
+				FBD05C09180E44CB00C2FD70 /* DOCSimpleDoctorCell.m */,
+				FBD05BFF180E413C00C2FD70 /* locationcell.xib */,
+				FBD05C0B180E44DA00C2FD70 /* DOCLocationCell.h */,
+				FBD05C0C180E44DA00C2FD70 /* DOCLocationCell.m */,
+				FBD05C14180E73BC00C2FD70 /* booktwotimeslot.xib */,
+				FBD05C0E180E44E800C2FD70 /* DOCTimeCell.h */,
+				FBD05C0F180E44E800C2FD70 /* DOCTimeCell.m */,
+				FBD05C03180E43C800C2FD70 /* continuecell.xib */,
+				FBD05C11180E44F500C2FD70 /* DOCContinueCell.h */,
+				FBD05C12180E44F500C2FD70 /* DOCContinueCell.m */,
+			);
+			name = "cells for book two";
+			sourceTree = "<group>";
+		};
+		FBD05C1B180E859700C2FD70 /* cells for book three */ = {
+			isa = PBXGroup;
+			children = (
+				FBD05C20180E87F000C2FD70 /* DOCAddCalCell.h */,
+				FBD05C21180E87F000C2FD70 /* DOCAddCalCell.m */,
+				FBD05C19180E859000C2FD70 /* addCalCell.xib */,
+			);
+			name = "cells for book three";
 			sourceTree = "<group>";
 		};
 		FBD9242317F05EA5008FB24F /* JSFlatButton */ = {
@@ -873,6 +953,7 @@
 				FBD5C90B17F33A2200E3E3DA /* smallrightarrow.png in Resources */,
 				FBCB497B180056E3007D17A8 /* ViewBookingHistory.xib in Resources */,
 				FBD9242E17F06AC1008FB24F /* play@2x.png in Resources */,
+				FBD05C1A180E859000C2FD70 /* addCalCell.xib in Resources */,
 				FB1CCEC41806E68D005348F8 /* search.png in Resources */,
 				FB1CCEDD18073272005348F8 /* star_gold_half.png in Resources */,
 				FB05891317F15E9A0023B254 /* done.png in Resources */,
@@ -891,6 +972,7 @@
 				FB1CCEBF1806DA12005348F8 /* cover1iphone5.png in Resources */,
 				FBD5C90917F3392000E3E3DA /* AvailableSlots.xib in Resources */,
 				A039186517E21FD400934DFA /* DoctorSpecificsTableViewCellPhone.xib in Resources */,
+				FBD05BFC180E3FCA00C2FD70 /* bookfor.xib in Resources */,
 				FB1CCECC1806ECB3005348F8 /* pin_location.png in Resources */,
 				FB1CCED918072FDC005348F8 /* star_gold.png in Resources */,
 				FBCDA2ED180AAD4300AF92BF /* button_red_normal.png in Resources */,
@@ -898,27 +980,31 @@
 				FBCDA2EB180AAC1E00AF92BF /* dummy.png in Resources */,
 				A00F360E17DCA8F900BD0467 /* aesthetic medicine doctor.jpg in Resources */,
 				A00F363117DCB85300BD0467 /* StarEmpty@2x.png in Resources */,
+				FBD05C1F180E865700C2FD70 /* button_addtocal_active.png in Resources */,
+				FBD05C15180E73BC00C2FD70 /* booktwotimeslot.xib in Resources */,
 				A00F360C17DCA8DE00BD0467 /* cardiologist.jpg in Resources */,
 				A00F363717DCB85300BD0467 /* StarFullLarge@2x.png in Resources */,
+				FBD05BFE180E405D00C2FD70 /* simpledoctor.xib in Resources */,
 				A039186717E2200900934DFA /* DoctorSpecificsTableViewCellDescription.xib in Resources */,
 				FBCB50EC17DC88880099AA5C /* dentist.jpg in Resources */,
 				A00F361617DCA90000BD0467 /* chiropracter.jpg in Resources */,
 				FB1CCEC21806DA12005348F8 /* cover1iphone4.png in Resources */,
 				FBCDA2E7180A9E1F00AF92BF /* menu_call.png in Resources */,
-				FBD5C91417F3448500E3E3DA /* BookElements.xib in Resources */,
 				A00F363017DCB85300BD0467 /* StarEmpty.png in Resources */,
 				FB1CCEC81806EA02005348F8 /* menu_mybookings.png in Resources */,
 				A00F360A17DCA1BA00BD0467 /* cancer specialist.jpg in Resources */,
 				A039186117E21F6B00934DFA /* DoctorSpecificsTableViewCellPhotos.xib in Resources */,
+				FBD05C00180E413C00C2FD70 /* locationcell.xib in Resources */,
+				FBD49FDA180DA696008852C4 /* personalInfo.xib in Resources */,
 				FBCB50C417DC81B70099AA5C /* Images.xcassets in Resources */,
 				A039186317E21FA500934DFA /* DoctorSpecificsTableViewCellLocation.xib in Resources */,
 				A00F363217DCB85300BD0467 /* StarEmptyLarge.png in Resources */,
 				FB1CCEC01806DA12005348F8 /* cover2iphone5.png in Resources */,
 				A00F363517DCB85300BD0467 /* StarFull@2x.png in Resources */,
+				FBD05C04180E43C800C2FD70 /* continuecell.xib in Resources */,
 				FBCB50E417DC84800099AA5C /* doctor.jpg in Resources */,
 				FBD5C91117F33E3800E3E3DA /* greenrightarrow.png in Resources */,
 				FB05890517F14D3B0023B254 /* account.png in Resources */,
-				FBD5926017F579A70098AF20 /* BookingConfirmed.xib in Resources */,
 				3B4EB07017EF7652001D5533 /* specialityHolder.jpg in Resources */,
 				A00F361917DCACC600BD0467 /* cardiothoracic surgeon.jpg in Resources */,
 				FBCB50B617DC81B70099AA5C /* InfoPlist.strings in Resources */,
@@ -937,6 +1023,7 @@
 				FBCB50EE17DC90140099AA5C /* SpecialityTableViewCell.xib in Resources */,
 				FBCB50BF17DC81B70099AA5C /* Main.storyboard in Resources */,
 				FBD5C91217F33E3800E3E3DA /* greenleftarrow.png in Resources */,
+				FBD49FDC180DA785008852C4 /* button_continue_active.png in Resources */,
 				A00F363317DCB85300BD0467 /* StarEmptyLarge@2x.png in Resources */,
 				FB05891417F15E9A0023B254 /* cancel.png in Resources */,
 				A00F368117E1CEE700BD0467 /* DoctorSpecificsTableViewCellGeneral.xib in Resources */,
@@ -963,8 +1050,11 @@
 				A0C5D8A217E74D1C00C311CE /* SDWebImagePrefetcher.m in Sources */,
 				A0C5D89A17E74D1C00C311CE /* MKAnnotationView+WebCache.m in Sources */,
 				4BDE1C2617E8CD9F00001517 /* SVProgressHUD.m in Sources */,
+				FBD05C10180E44E800C2FD70 /* DOCTimeCell.m in Sources */,
 				FBCB497E18005950007D17A8 /* DOCViewHistoryViewController.m in Sources */,
+				FBD05C13180E44F500C2FD70 /* DOCContinueCell.m in Sources */,
 				A00F364A17DCC3F000BD0467 /* DOCGlobalUtil.m in Sources */,
+				FBD05C18180E840D00C2FD70 /* DOCBookThreeViewController.m in Sources */,
 				A00F367F17DDB3BB00BD0467 /* DOCDoctorSpecificsViewController.m in Sources */,
 				FBCB50C217DC81B70099AA5C /* DOCViewController.m in Sources */,
 				A039187D17E300A800934DFA /* DOCStartBookCell.m in Sources */,
@@ -984,7 +1074,6 @@
 				FBCB50B817DC81B70099AA5C /* main.m in Sources */,
 				A039187317E2FB1A00934DFA /* DOCDoctorGalleryCell.m in Sources */,
 				A0C5D89E17E74D1C00C311CE /* SDWebImageDecoder.m in Sources */,
-				FBD5926317F57A650098AF20 /* DOCBookConfirmedView.m in Sources */,
 				A0C5D8A117E74D1C00C311CE /* SDWebImageManager.m in Sources */,
 				A0C5D87B17E74D0B00C311CE /* UIImageView+UIActivityIndicatorForSDWebImage.m in Sources */,
 				A00F367B17DD959500BD0467 /* UIImageView+AFNetworking.m in Sources */,
@@ -993,11 +1082,12 @@
 				FBCB50BC17DC81B70099AA5C /* DOCAppDelegate.m in Sources */,
 				A00F367717DD959500BD0467 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				A0C5D8A017E74D1C00C311CE /* SDWebImageDownloaderOperation.m in Sources */,
+				FBD05C0A180E44CB00C2FD70 /* DOCSimpleDoctorCell.m in Sources */,
 				A00F367517DD959400BD0467 /* AFImageRequestOperation.m in Sources */,
+				FBD05C07180E44BB00C2FD70 /* DOCBookForCell.m in Sources */,
 				A00F361C17DCB36300BD0467 /* DOCSelectDoctorViewController.m in Sources */,
 				A00F367A17DD959500BD0467 /* AFXMLRequestOperation.m in Sources */,
 				A039187617E2FB3F00934DFA /* DOCDoctorDescriptionCell.m in Sources */,
-				FBD5C91717F345B900E3E3DA /* DOCBookingElementsView.m in Sources */,
 				A00F365E17DCECFD00BD0467 /* DOCLeftToRightSegue.m in Sources */,
 				A0C5D8A717E74D1C00C311CE /* UIImageView+WebCache.m in Sources */,
 				A039186D17E2FAC500934DFA /* DOCDoctorPhoneNumberCell.m in Sources */,
@@ -1007,14 +1097,18 @@
 				FBCB498118005B57007D17A8 /* DOCBookingHistoryCell.m in Sources */,
 				A00F363A17DCB86A00BD0467 /* DYRateView.m in Sources */,
 				A00F367417DD959400BD0467 /* AFHTTPRequestOperation.m in Sources */,
+				FBD49FDF180DA7DF008852C4 /* DOCPICell.m in Sources */,
 				A0C5D89C17E74D1C00C311CE /* SDImageCache.m in Sources */,
 				FBD9242A17F05EA5008FB24F /* JSFlatButton.m in Sources */,
+				FBD05C22180E87F000C2FD70 /* DOCAddCalCell.m in Sources */,
 				A00F367617DD959400BD0467 /* AFJSONRequestOperation.m in Sources */,
+				FBD05C0D180E44DA00C2FD70 /* DOCLocationCell.m in Sources */,
 				FBD5C90E17F33B9E00E3E3DA /* DOCTimeSlotCell.m in Sources */,
 				FBCC165817FCB7FA001FAF9C /* DOCDate.m in Sources */,
-				4BAC7D3017E8A0C100EE293C /* DOCBookTimeViewController.m in Sources */,
+				4BAC7D3017E8A0C100EE293C /* DOCBookOneViewController.m in Sources */,
 				A00F365317DCC64200BD0467 /* Reachability.m in Sources */,
 				A0C5D89B17E74D1C00C311CE /* NSData+GIF.m in Sources */,
+				FBD05BF8180E3EB100C2FD70 /* DOCBookTwoController.m in Sources */,
 				A00F364517DCC0BE00BD0467 /* DOCDoctor.m in Sources */,
 				A0C5D8A617E74D1C00C311CE /* UIImage+WebP.m in Sources */,
 			);

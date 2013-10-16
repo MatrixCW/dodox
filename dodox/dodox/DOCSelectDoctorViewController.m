@@ -28,11 +28,11 @@
 - (IBAction)searchButtonPressed:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UITextField *searchField;
-
 @property (weak, nonatomic) IBOutlet UILabel *currentSpeciality;
-
 @property (weak, nonatomic) IBOutlet UITableView *doctorTable;
 @property NSMutableArray *doctors;
+
+@property NSMutableArray *displayDoctors;
 
 @property AMBlurView *blurView;
 @property DOCEnterPIView *piView;
@@ -60,6 +60,9 @@
     self.doctorTable.delegate = self;
     self.doctorTable.dataSource = self;
     
+    self.searchField.returnKeyType = UIReturnKeyDone;
+    self.searchField.delegate = self;
+    
     greyBGColor = [UIColor colorWithRed:245.0/255 green:245.0/255 blue:245.0/255 alpha:1.0];
     
     DOCGlobalUtil *sharedInstance = [DOCGlobalUtil getSharedInstance];
@@ -83,64 +86,82 @@
     
     [self retriveDoctorUnderSpeciality];
     
-   }
-
--(void) pickOne:(id)sender{
-    
-   UISegmentedControl *segmentedControl = (UISegmentedControl *)sender;
-    
-    NSLog(@"%ld",(long)segmentedControl.selectedSegmentIndex);
-
-    
-    if(segmentedControl.selectedSegmentIndex == 0){
-        
-        
-        NSArray *dataArray = [self.doctors sortedArrayUsingComparator:^NSComparisonResult(DOCDoctor *first, DOCDoctor *second) {
-            return [first compareName:second];
-        }];
-        
-        self.doctors = [NSMutableArray arrayWithArray:dataArray];
-        
-        [self.doctorTable reloadData];
-        
-    }
-    
-    if(segmentedControl.selectedSegmentIndex == 1){
-        
-        NSArray *dataArray = [self.doctors sortedArrayUsingComparator:^NSComparisonResult(DOCDoctor *first, DOCDoctor *second) {
-            return [first compareDistance:second];
-        }];
-        
-        self.doctors = [NSMutableArray arrayWithArray:dataArray];
-        
-        [self.doctorTable reloadData];
-        
-    }
-    
-    if(segmentedControl.selectedSegmentIndex == 2){
-        
-        NSArray *dataArray = [self.doctors sortedArrayUsingComparator:^NSComparisonResult(DOCDoctor *first, DOCDoctor *second) {
-            return [first compareRate:second];
-        }];
-        
-        self.doctors = [NSMutableArray arrayWithArray:dataArray];
-        
-        [self.doctorTable reloadData];
-        
-    }
 }
+
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return NO;
+}
+
+-(void)searchSpecialists{
+    
+    NSLog(@"%d",self.searchField.text.length);
+    
+    
+    if(self.searchField.text.length == 0){
+        
+        self.displayDoctors = [NSMutableArray arrayWithArray:self.doctors];
+        
+        [self.doctorTable reloadData];
+        
+    }
+    
+    else{
+        
+       // self.displayArray = [NSMutableArray array];
+        
+       // for(DOCSpeciality *item in self.specialities){
+            
+          //  NSString *specialityName = item.specialityName;
+            
+           /// if([self string:specialityName containscharsFromString:self.searchField.text])
+                
+                //[self.displayArray addObject: item];
+            
+       // }
+        
+       // [self.specialityTable reloadData];
+    }
+    
+    
+}
+
+-(BOOL)string:(NSString*)receiver containscharsFromString:(NSString*)queryString{
+    
+    NSString *lowerQueryString = [queryString lowercaseString];
+    NSString *lowerReceiver = [receiver lowercaseString];
+    
+    NSMutableArray *array = [NSMutableArray array];
+    for (int i = 0; i < [lowerQueryString length]; i++) {
+        [array addObject:[NSString stringWithFormat:@"%C", [lowerQueryString characterAtIndex:i]]];
+    }
+    
+    for(NSString *item in array){
+        if ([lowerReceiver rangeOfString:item].location == NSNotFound)
+            
+            return FALSE;
+    }
+    
+    return true;
+    
+    
+    
+}
+
+
 
 
 
 -(void)retriveDoctorUnderSpeciality{
     
-    NSString *urlPrefix = @"http://doxor.herokuapp.com/api/categories/%d/doctors.json";
+    NSString *queryUrl = @"http://doxor.herokuapp.com/api/categories/%d/doctors.json?lat=1.29135368&lng=103.779730";
     
     DOCGlobalUtil *sharedInstance = [DOCGlobalUtil getSharedInstance];
     
     int specialityID = sharedInstance.currentSelectedSpecialityID;
     
-    NSString *requestUrlString = [NSString stringWithFormat:urlPrefix,specialityID];
+    NSString *requestUrlString = [NSString stringWithFormat:queryUrl,specialityID];
     
     NSLog(@"%@", requestUrlString);
     
@@ -163,6 +184,8 @@
                                                                                             }];
                                                                                             
                                                                                             self.doctors = [NSMutableArray arrayWithArray:dataArray];
+                                                                                            
+                                                                                            self.displayDoctors = [NSMutableArray arrayWithArray:dataArray];
                                                                                             
                                                                                             [self.doctorTable reloadData];
                                                                                         }
@@ -230,9 +253,10 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    //return [self.doctors count];
+    NSLog(@"i have %d", self.doctors.count);
+    return [self.doctors count];
     
-    return 12;
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
