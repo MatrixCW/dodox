@@ -14,7 +14,6 @@
 #import "DOCDoctorPhoneNumberCell.h"
 #import "DOCDoctorDescriptionCell.h"
 #import "DOCStartBookCell.h"
-#import "DOCTimeSlotPicker.h"
 #import "DOCGlobalUtil.h"
 #import "UIImageView+UIActivityIndicatorForSDWebImage.h"
 #import "DOCTimeSlotCell.h"
@@ -23,8 +22,7 @@
 
 @interface DOCDoctorSpecificsViewController ()
 
-
-@property UIView *blackView;
+@property DOCDoctor *currentDoctor;
 
 @end
 
@@ -49,8 +47,13 @@
     self.doctorInfoTable.delegate = self;
     self.doctorInfoTable.dataSource = self;
     
-    //DOCGlobalUtil *sharedInstance = [DOCGlobalUtil getSharedInstance];
+    DOCGlobalUtil *sharedInstance = [DOCGlobalUtil getSharedInstance];
     
+    self.currentDoctor = sharedInstance.currentSelectedDoctor;
+    
+    self.doctorTitleLabel.numberOfLines = 0;
+    self.doctorTitleLabel.text = @"\nAvailability";
+   
     /*
     self.doctorTitleLabel.textAlignment = NSTextAlignmentCenter;
     self.doctorTitleLabel.numberOfLines = 0;
@@ -104,26 +107,31 @@
             //emptyStar = [self resizeImage:emptyStar to:CGSizeMake(emptyStar.size.width/2.0, emptyStar.size.width/2.0)];
             
             DYRateView *rateView = [[DYRateView alloc] initWithFrame:cell.rateView.bounds fullStar:fullStar emptyStar:emptyStar];
-            rateView.rate = 3.6;
+            rateView.rate = currentDoctor.doctorRate;
             rateView.alignment = RateViewAlignmentCenter;
             [cell.rateView addSubview:rateView];
             
             cell.doctorName.font = [UIFont fontWithName:@"Avenir Next" size:20];
             cell.doctorName.textColor = [UIColor blackColor];
+            cell.doctorName.text = currentDoctor.doctorName;
             
             cell.doctorCategpry.font = [UIFont fontWithName:@"Avenir Next" size:14];
             cell.doctorCategpry.textColor = [UIColor redColor];
+            cell.doctorCategpry.text = currentDoctor.doctorSpeciality;
             
             cell.doctorSubCategory.font = [UIFont fontWithName:@"Avenir Next" size:10];
             cell.doctorSubCategory.textColor = [UIColor colorWithRed:113.0/255 green:115.0/255 blue:117.0/255 alpha:1.0];
+            cell.doctorSubCategory.text = currentDoctor.subCategory;
 
             
             cell.doctorClinicName.font = [UIFont fontWithName:@"Avenir Next" size:9];
             cell.doctorClinicName.textColor = [UIColor colorWithRed:113.0/255 green:115.0/255 blue:117.0/255 alpha:1.0];
+            cell.doctorClinicName.text = currentDoctor.clinicName;
 
             
             cell.doctorLocation.font = [UIFont fontWithName:@"Avenir Next" size:10];
             cell.doctorLocation.textColor = [UIColor colorWithRed:113.0/255 green:115.0/255 blue:117.0/255 alpha:1.0];
+            cell.doctorLocation.text = currentDoctor.doctorAddress;
 
 
 
@@ -143,6 +151,9 @@
             [cell.doctorAvatar.layer setMasksToBounds:YES];
             [cell.doctorAvatar.layer setCornerRadius:cell.doctorAvatar.bounds.size.width/2];
             
+            NSString *imgUrlString = [currentDoctor.doctorAvatars valueForKey:@"original"];
+            [cell.doctorAvatar setImageWithURL:[NSURL URLWithString:imgUrlString] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+            
         }
         
         return cell;
@@ -157,7 +168,8 @@
         if (cell == nil) {
             NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"AvailableSlots" owner:self options:nil];
             cell = [nib objectAtIndex:0];
-            
+            cell.slotPicker.delegate = self;
+            cell.slotPicker.dataSource = self;
             /*
             [cell.previousSlots addTarget:self action:@selector(previousTimeSlot:) forControlEvents:UIControlEventTouchUpInside];
             [cell.nextSlots addTarget:self action:@selector(nextTimeSlot:) forControlEvents:UIControlEventTouchUpInside];
@@ -328,19 +340,7 @@
         
 }
 
-- (IBAction)buttonPressed:(id)sender
-{
-    UIButton *button = (UIButton*)sender;
-    
-    NSLog(@"hahahaha");
-    
-    if(button.selected) {
-        [button setSelected:NO];
-    } else {
-        [button setSelected:YES];
-    }
-    
-}
+
 /*
 -(void)previousTimeSlot:(UIButton*)button{
     
@@ -521,18 +521,6 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    if(indexPath.row == 4){
-        
-        NSLog(@"phone phone phone");
-        
-        DOCDoctorPhoneNumberCell *cell = (DOCDoctorPhoneNumberCell*)[self.doctorInfoTable cellForRowAtIndexPath:indexPath];
-        
-        NSString *phoneNumber = [NSString stringWithFormat:@"tel://%@",cell.doctorPhoneNumber.text];
-        
-        
-        NSLog(@"%@",phoneNumber);
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
-    }
     
     if(indexPath.row == 2){
         
@@ -546,67 +534,14 @@
 -(void)startBooking{
     [self performSegueWithIdentifier:@"BOOK_DOCTOR_SEGUE" sender:self];
 }
-- (void)showPicker {
-    
-    self.blackView = [[UIView alloc] initWithFrame:self.view.bounds];
-    self.blackView.center = CGPointMake(self.blackView.center.x, self.blackView.center.y+600);
-    
-    
-    self.blackView.backgroundColor = [UIColor whiteColor];
-    self.blackView.alpha = 0.90;
-    [self.view addSubview:self.blackView];
-    
+
         
-    UIPickerView *picker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 330, 320, 100)];
-    picker.dataSource = self;
-    picker.delegate = self;
-    [self.blackView addSubview:picker];
-    
-    UIToolbar *toolbar = [[UIToolbar alloc] init];
-    toolbar.frame = CGRectMake(0, 300, 320, 50);
-    NSMutableArray *items = [[NSMutableArray alloc] init];
-    
-    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel"
-                                                                     style:UIBarButtonItemStyleBordered
-                                                                    target:self
-                                                                    action:@selector(cancelPicker)];
-    
-    UIBarButtonItem *flexible = [[UIBarButtonItem alloc]
-                                 initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
-                                                                              target:nil
-                                                                              action:nil];
-    
-    
-    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Done"
-                                                                     style:UIBarButtonItemStyleBordered
-                                                                    target:self
-                                                                    action:Nil];
-    
-    [items addObject:cancelButton];
-    [items addObject:flexible];
-
-    [items addObject:doneButton];
-    [toolbar setItems:items animated:NO];
-    [self.blackView addSubview:toolbar];
-    
-    [UIView animateWithDuration:1.5
-                     animations:^{
-                         self.blackView.center = CGPointMake(self.blackView.center.x, self.blackView.center.y-600);
-                     }];
-    
-    
-        
-    
-}
 
 
--(void)cancelPicker{
-    [self.blackView removeFromSuperview];
-    self.blackView = Nil;
-}
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
-    return 3;
+    
+    return 1;
     
     
 }
@@ -614,24 +549,64 @@
 // returns the # of rows in each component..
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent: (NSInteger)component{
     
-    return 5;
+    return self.currentDoctor.timeSlots.count;
     
 }
 
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
     
-    if(component == 0)
-    return @"Oct";
-    if(component == 1)
-        return @"10th";
-    return @"10am";
+    DOCDate *date = [self.currentDoctor.timeSlots objectAtIndex: row];
+    NSDate *myDate = date.myDate;
     
+    NSDateFormatter * df = [[NSDateFormatter alloc] init];
+    [df setDateFormat:@"yyyy-MM-dd HH:mm"];
+    [df setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
+    [df setFormatterBehavior:NSDateFormatterBehaviorDefault];
+    
+    NSString *theDateString = [df stringFromDate:myDate];
+    
+    return theDateString;
+    
+}
+
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
+    
+    UILabel* tView = (UILabel*)view;
+    if (!tView){
+        tView = [[UILabel alloc] init];
+        
+        tView.font = [UIFont fontWithName:@"Arial" size:15];
+        
+        tView.textAlignment = NSTextAlignmentCenter;
+    }
+    
+    DOCDate *date = [self.currentDoctor.timeSlots objectAtIndex: row];
+    NSDate *myDate = date.myDate;
+    
+    NSDateFormatter * df = [[NSDateFormatter alloc] init];
+    [df setDateFormat:@"yyyy-MM-dd HH:mm"];
+    [df setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
+    [df setFormatterBehavior:NSDateFormatterBehaviorDefault];
+    NSString *theDateString = [df stringFromDate:myDate];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+	NSArray *daysOfWeek = @[@"",@"Sun",@"Mon",@"Tue",@"Wed",@"Thur",@"Fri",@"Sat"];
+	[dateFormatter setDateFormat:@"e"];
+	NSInteger weekdayNumber = (NSInteger)[[dateFormatter stringFromDate:myDate] integerValue];
+	NSString *dayOfWeek = [daysOfWeek objectAtIndex:weekdayNumber];
+    
+    tView.text = [NSString stringWithFormat:@"%@   %@",theDateString,dayOfWeek];
+    
+    return tView;
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row   inComponent:(NSInteger)component
 {
-    NSLog(@"haha");
+    NSLog(@"haha %d",row);
+    DOCGlobalUtil *sharedInstance = [DOCGlobalUtil getSharedInstance];
+    sharedInstance.currentDate = [self.currentDoctor.timeSlots objectAtIndex:row];
+    
 }
 
 - (void)didReceiveMemoryWarning

@@ -20,7 +20,7 @@
 #import "AMBlurView.h"
 #import <QuartzCore/QuartzCore.h>
 #import "DYRateView.h"
-
+#import "DOCDate.h"
 
 @interface DOCSelectDoctorViewController ()
 
@@ -96,8 +96,6 @@
 
 -(void)searchSpecialists{
     
-    NSLog(@"%d",self.searchField.text.length);
-    
     
     if(self.searchField.text.length == 0){
         
@@ -163,10 +161,6 @@
     
     NSString *requestUrlString = [NSString stringWithFormat:queryUrl,specialityID];
     
-    NSLog(@"%@", requestUrlString);
-    
-    NSLog(@"%@", requestUrlString);
-    
     NSURL *url = [NSURL URLWithString:requestUrlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
@@ -207,40 +201,33 @@
     NSString *doctorAddress = [dict valueForKey:@"address"];
     NSString *doctorRate = [dict valueForKey:@"rate"];
     NSString *doctorPhone = [dict valueForKey:@"phone"];
-    NSArray *doctorGallery = [dict valueForKey:@"doctor_gallary_images"];
+    NSString *subCategory = [dict valueForKey:@"subcategory"];
+    NSString *clinicName = [dict valueForKey:@"clinic_name"];
+
+    //NSArray *doctorGallery = [dict valueForKey:@"doctor_gallary_images"];
     NSDictionary *doctorAvatar = [dict valueForKey:@"pic"];
-    NSDictionary *doctorCoordinate = [dict valueForKey:@"coorinate"];
-    NSDictionary *doctorDescription = [dict valueForKey:@"description"];
+    NSArray *timeslots = [dict valueForKey:@"timeslots"];
+    //NSDictionary *doctorCoordinate = [dict valueForKey:@"coorinate"];
+    //NSDictionary *doctorDescription = [dict valueForKey:@"description"];
     
-    NSString *lat = [doctorCoordinate objectForKey:@"lat"];
-    NSString *lng = [doctorCoordinate objectForKey:@"lng"];
+    //NSString *lat = [doctorCoordinate objectForKey:@"lat"];
+    //NSString *lng = [doctorCoordinate objectForKey:@"lng"];
+    
+    DOCDoctor *doctor = [[DOCDoctor alloc] init];
+    
+    doctor.doctorID = [doctorID intValue];
+    doctor.doctorName = doctorName;
+    doctor.doctorAddress = doctorAddress;
+    doctor.doctorPhoneNumber = doctorPhone;
+    doctor.doctorRate = [doctorRate floatValue];
+    doctor.doctorSpeciality = doctorSpeciality;
+    doctor.doctorAvatars = doctorAvatar;
+    doctor.timeSlots = timeslots;
+    doctor.subCategory = subCategory;
+    doctor.clinicName = clinicName;
     
     
-
-    
-    lat = @"123";
-    lng = @"234";
-    /*
-    NSLog(@"%@ %@ %@ %@ %@ %@ %@ %@ %@ %@", doctorID, doctorName, doctorSpeciality, doctorAddress, doctorRate
-          , doctorPhone, doctorGallery, doctorAvatar, doctorCoordinate, doctorDescription);
-     */
-    
-    
-   DOCDoctor *doctor = [[DOCDoctor alloc] initWithIdentity:[doctorID integerValue]
-                                                       Name:doctorName
-                                                 speciality:doctorSpeciality
-                                                    address:doctorAddress
-                                                       rate:[doctorRate floatValue]
-                                                   position:CLLocationCoordinate2DMake([lat floatValue], [lng floatValue])
-                                                      phone:doctorPhone
-                                                    avatars:doctorAvatar
-                                                description:doctorDescription
-                                             andPictureURLs:doctorGallery];
-    
-
-        
-    
-    [doctor getMyTimeSlots];
+    [doctor parseTime];
     [self.doctors addObject:doctor];
     
  
@@ -253,10 +240,10 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
+    
     NSLog(@"i have %d", self.doctors.count);
-    return [self.doctors count];
     
-    
+    return self.doctors.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -268,7 +255,7 @@
         cell = [nib objectAtIndex:0];
     }
     
-    //DOCDoctor *tempDoctor = [self.doctors objectAtIndex:indexPath.row];
+       DOCDoctor *tempDoctor = [self.doctors objectAtIndex:indexPath.row];
     
     /*
     cell.doctorName.numberOfLines = 0;
@@ -304,12 +291,24 @@
      */
     
     cell.doctorName.font = [UIFont fontWithName:@"Avenir Next" size:14];
+    cell.doctorName.text = tempDoctor.doctorName;
     cell.doctorName.textColor = [UIColor colorWithRed:113.0/255 green:115.0/255 blue:117.0/255 alpha:1.0];
     
     cell.doctorAddress.font = [UIFont fontWithName:@"Avenir Next" size:8];
+    cell.doctorAddress.text = tempDoctor.doctorAddress;
     cell.doctorAddress.textColor = [UIColor colorWithRed:102.0/255 green:104.0/255 blue:107.0/255 alpha:1.0];
     
+    
+    DOCDate *firstSlot = [tempDoctor.timeSlots objectAtIndex:0];
+    NSDate *firstDate = firstSlot.myDate;
+    
+	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+	NSArray *daysOfWeek = @[@"",@"Sun",@"Mon",@"Tue",@"Wed",@"Thu",@"Fri",@"Sat"];
+	[dateFormatter setDateFormat:@"e"];
+	NSInteger weekdayNumber = (NSInteger)[[dateFormatter stringFromDate:firstDate] integerValue];
+    
     cell.dayLabel.backgroundColor = [UIColor colorWithRed:254.0/255 green:252.0/255 blue:157.0/255 alpha:1.0];
+    cell.dayLabel.text = [daysOfWeek objectAtIndex:weekdayNumber];
     cell.dayLabel.font = [UIFont fontWithName:@"Avenir Next" size:8];
     cell.dayLabel.textColor = [UIColor colorWithRed:157.0/255 green:160.0/255 blue:145.0/255 alpha:1.0];
     [cell.dayLabel.layer setMasksToBounds:YES];
@@ -318,7 +317,15 @@
     cell.atLabel.font = [UIFont fontWithName:@"Avenir Next" size:8];
     cell.atLabel.textColor = [UIColor colorWithRed:157.0/255 green:160.0/255 blue:145.0/255 alpha:1.0];
     
+    NSDateFormatter * df = [[NSDateFormatter alloc] init];
+    [df setDateFormat:@"HH:mm"];
+    [df setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
+    [df setFormatterBehavior:NSDateFormatterBehaviorDefault];
+
+    NSString *timeString = [df stringFromDate:firstDate];
+    
     cell.timeLabel.backgroundColor = [UIColor colorWithRed:107.0/255 green:189.0/255 blue:156.0/255 alpha:1.0];
+    cell.timeLabel.text = timeString;
     cell.timeLabel.font = [UIFont fontWithName:@"Avenir Next" size:8];
     cell.timeLabel.textColor = [UIColor whiteColor];
     [cell.timeLabel.layer setMasksToBounds:YES];
@@ -327,42 +334,42 @@
     [cell.thumbnailImageView.layer setMasksToBounds:YES];
     [cell.thumbnailImageView.layer setCornerRadius:cell.thumbnailImageView.frame.size.width/2];
     
+    NSString *imgUrlString = [tempDoctor.doctorAvatars valueForKey:@"medium"];
+    [cell.thumbnailImageView setImageWithURL:[NSURL URLWithString:imgUrlString] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    
     UIImage *fullStar = [UIImage imageNamed:@"star_gold_half.png"];
     //fullStar = [self resizeImage:fullStar to:CGSizeMake(fullStar.size.width/2.0, fullStar.size.width/2.0)];
     UIImage *emptyStar = [UIImage imageNamed:@"star_none_half.png"];
     //emptyStar = [self resizeImage:emptyStar to:CGSizeMake(emptyStar.size.width/2.0, emptyStar.size.width/2.0)];
 
     DYRateView *rateView = [[DYRateView alloc] initWithFrame:cell.rateView.bounds fullStar:fullStar emptyStar:emptyStar];
-    rateView.rate = 3.6;
+    rateView.rate = tempDoctor.doctorRate;
     rateView.alignment = RateViewAlignmentCenter;
     [cell.rateView addSubview:rateView];
     
-    NSLog(@"%lf",cell.thumbnailImageView.frame.size.width);
-
+    [cell.bookButton addTarget:self action:@selector(book:) forControlEvents:UIControlEventTouchUpInside];
+    
     
     return cell;
 }
 
 
 
--(void)book:(JSFlatButton*) buttom{
+-(void)book:(id)sender{
     
-    assert(buttom != nil);
+    CGPoint buttonPosition = [sender convertPoint:CGPointZero toView:self.doctorTable];
     
-    NSLog(@"%d", buttom.associateCell);
+    NSIndexPath *indexPath = [self.doctorTable indexPathForRowAtPoint:buttonPosition];
     
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *plistLocation = [documentsDirectory stringByAppendingPathComponent:@"myplist.plist"];
-    
-    NSMutableDictionary *plistDict = [[NSMutableDictionary alloc] initWithContentsOfFile:plistLocation];
+    NSLog(@"%d",indexPath.row);
     
     DOCGlobalUtil *sharedInstance = [DOCGlobalUtil getSharedInstance];
-    
-    sharedInstance.currentSelectedDoctor = [self.doctors objectAtIndex:buttom.associateCell];
-    
+    sharedInstance.currentSelectedDoctor = [self.doctors objectAtIndex:indexPath.row];
+
+ 
     [self performSegueWithIdentifier:@"BOOK_DIRECTLY" sender:self];
 }
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 75;
 }
@@ -370,9 +377,9 @@
 #pragma mark UITableView Delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-   // DOCGlobalUtil *sharedInstance = [DOCGlobalUtil getSharedInstance];
+    DOCGlobalUtil *sharedInstance = [DOCGlobalUtil getSharedInstance];
     
-    //sharedInstance.currentSelectedDoctor = [self.doctors objectAtIndex:indexPath.row];
+    sharedInstance.currentSelectedDoctor = [self.doctors objectAtIndex:indexPath.row];
     
     [self performSegueWithIdentifier:@"DOCTOR_SPECIFICS" sender:self];
     

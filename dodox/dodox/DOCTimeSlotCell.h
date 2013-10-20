@@ -11,5 +11,6 @@
 @interface DOCTimeSlotCell : UITableViewCell
 
 
+@property (weak, nonatomic) IBOutlet UIPickerView *slotPicker;
 
 @end

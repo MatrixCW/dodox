@@ -14,12 +14,14 @@
 @property  int doctorID;
 @property  NSString *doctorName;
 @property  NSString *doctorSpeciality;
+@property  NSString *subCategory;
+@property  NSString *clinicName;
 @property  NSString *doctorAddress;
 @property  CGFloat doctorRate;
 @property  CGFloat distance;
 @property  NSString *doctorPhoneNumber;
 
-@property NSMutableArray *timeSlots;
+@property NSArray *timeSlots;
 
 @property  NSDictionary *doctorAvatars;
 @property  NSDictionary *doctorDescription;
@@ -29,6 +31,8 @@
 - (NSComparisonResult)compareRate:(DOCDoctor *)otherObject;
 - (NSComparisonResult)compareDistance:(DOCDoctor *)otherObject;
 
+
+-(void)parseTime;
 
 
 @end

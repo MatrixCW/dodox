@@ -131,6 +131,9 @@
                                 <state key="normal" backgroundImage="menu_back.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="hby-1e-sYd" kind="custom" customClass="DOCLeftToRightSegue" id="T0E-qG-9Ho"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="dgN-JJ-e3e">
                                 <rect key="frame" x="0.0" y="63" width="320" height="417"/>
@@ -150,14 +153,16 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="laI-cB-R4l"/>
                     <connections>
                         <outlet property="infoTable" destination="dgN-JJ-e3e" id="L67-BR-fCv"/>
                         <outlet property="titleLabel" destination="dGz-jB-wbl" id="i83-Gm-cPK"/>
+                        <segue destination="tzf-JP-PPQ" kind="push" identifier="ONE_TO_TWO" id="DjY-Sl-8Oe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CqM-8H-2eb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="695" y="-14"/>
+            <point key="canvasLocation" x="1519" y="-242"/>
         </scene>
         <!--Book Two Controller-->
         <scene sceneID="kHB-Ia-JIw">
@@ -182,6 +187,9 @@
                                 <state key="normal" backgroundImage="menu_back.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="02z-vy-J4i" kind="custom" customClass="DOCLeftToRightSegue" id="hQT-fH-dha"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="c74-Vt-dy0">
                                 <rect key="frame" x="0.0" y="58" width="320" height="422"/>
@@ -197,13 +205,14 @@
                             <constraint firstAttribute="bottom" secondItem="c74-Vt-dy0" secondAttribute="bottom" id="fVd-IF-hWG"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="8uH-uN-CsV"/>
                     <connections>
                         <outlet property="bookTable" destination="c74-Vt-dy0" id="ZYr-K4-EpN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZCO-52-sfK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1243" y="-5"/>
+            <point key="canvasLocation" x="2127" y="-568"/>
         </scene>
         <!--Book Three View Controller-->
         <scene sceneID="mmu-wq-fRJ">
@@ -258,7 +267,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BYc-CS-Acv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1822" y="-48"/>
+            <point key="canvasLocation" x="2594" y="-440"/>
         </scene>
         <!--Doctor Specifics View Controller-->
         <scene sceneID="z6X-Wu-baA">
@@ -536,8 +545,9 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="BvF-q0-49Y"/>
         <segue reference="2oK-4x-KL9"/>
         <segue reference="RQn-zR-DL7"/>
+        <segue reference="T0E-qG-9Ho"/>
+        <segue reference="hQT-fH-dha"/>
     </inferredMetricsTieBreakers>
 </document>

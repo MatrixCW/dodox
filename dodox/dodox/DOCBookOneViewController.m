@@ -141,6 +141,12 @@
     
     int index = indexPath.row;
     
+    DOCGlobalUtil *sharedInstance = [DOCGlobalUtil getSharedInstance];
+    DOCDoctor *currentDoc = sharedInstance.currentSelectedDoctor;
+    DOCDate *currentDate = sharedInstance.currentDate;
+    if(!currentDate)
+        currentDate = [currentDoc.timeSlots objectAtIndex:0];
+    
     if(index == 0){
         
         DOCDoctorGeneralInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DoctorGeneral"];
@@ -155,27 +161,29 @@
             //emptyStar = [self resizeImage:emptyStar to:CGSizeMake(emptyStar.size.width/2.0, emptyStar.size.width/2.0)];
             
             DYRateView *rateView = [[DYRateView alloc] initWithFrame:cell.rateView.bounds fullStar:fullStar emptyStar:emptyStar];
-            rateView.rate = 3.6;
+            rateView.rate = currentDoc.doctorRate;
             rateView.alignment = RateViewAlignmentCenter;
             [cell.rateView addSubview:rateView];
             
             cell.doctorName.font = [UIFont fontWithName:@"Avenir Next" size:20];
             cell.doctorName.textColor = [UIColor blackColor];
+            cell.doctorName.text = currentDoc.doctorName;
             
             cell.doctorCategpry.font = [UIFont fontWithName:@"Avenir Next" size:14];
             cell.doctorCategpry.textColor = [UIColor redColor];
-            
+            cell.doctorCategpry.text = currentDoc.doctorSpeciality;
+
             cell.doctorSubCategory.font = [UIFont fontWithName:@"Avenir Next" size:10];
             cell.doctorSubCategory.textColor = [UIColor colorWithRed:113.0/255 green:115.0/255 blue:117.0/255 alpha:1.0];
-            
+            cell.doctorSubCategory.text = currentDoc.subCategory;
             
             cell.doctorClinicName.font = [UIFont fontWithName:@"Avenir Next" size:9];
             cell.doctorClinicName.textColor = [UIColor colorWithRed:113.0/255 green:115.0/255 blue:117.0/255 alpha:1.0];
-            
+            cell.doctorClinicName.text = currentDoc.clinicName;
             
             cell.doctorLocation.font = [UIFont fontWithName:@"Avenir Next" size:10];
             cell.doctorLocation.textColor = [UIColor colorWithRed:113.0/255 green:115.0/255 blue:117.0/255 alpha:1.0];
-            
+            cell.doctorLocation.text = currentDoc.doctorAddress;
             
             
             
@@ -193,6 +201,9 @@
              */
             [cell.doctorAvatar.layer setMasksToBounds:YES];
             [cell.doctorAvatar.layer setCornerRadius:cell.doctorAvatar.bounds.size.width/2];
+            
+            NSString *imgUrlString = [currentDoc.doctorAvatars valueForKey:@"original"];
+            [cell.doctorAvatar setImageWithURL:[NSURL URLWithString:imgUrlString] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
             
         }
         
@@ -217,12 +228,62 @@
         cell.nameField.returnKeyType = UIReturnKeyDone;
         cell.phoneField.returnKeyType = UIReturnKeyDone;
         cell.emailField.returnKeyType = UIReturnKeyDone;
+        
+        NSDictionary *dict = [self readFromFile];
+        
+        if(dict.allValues.count > 0){
+            cell.nameField.text = [dict valueForKey:@"user_name"];
+            cell.phoneField.text = [dict valueForKey:@"user_phone"];
+            cell.emailField.text = [dict valueForKey:@"user_email"];
+        }
+        
+        [cell.continueButton addTarget:self action:@selector(nextStep) forControlEvents:UIControlEventTouchUpInside];
 
                
         return cell;
         
         
     }
+}
+
+
+-(void)nextStep{
+    
+    DOCPICell *cell = (DOCPICell*)[self.infoTable cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+    NSString *userName = cell.nameField.text;
+    NSString *userPhone = cell.phoneField.text;
+    NSString *userEmail = cell.emailField.text;
+    
+    NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:userName, @"user_name",userPhone,@"user_phone",userEmail,@"user_email",nil];
+    NSLog(@"%@",dict);
+    [self writeToPlist:dict];
+    [self performSegueWithIdentifier:@"ONE_TO_TWO" sender:self];
+    
+}
+
+
+-(void)writeToPlist:(NSDictionary*)dict{
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *plistLocation = [documentsDirectory stringByAppendingPathComponent:@"myplist.plist"];
+    
+    [dict writeToFile:plistLocation atomically:YES];
+    
+    
+}
+
+-(NSDictionary*)readFromFile{
+    
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *plistLocation = [documentsDirectory stringByAppendingPathComponent:@"myplist.plist"];
+    
+    NSMutableDictionary *plistDict = [[NSMutableDictionary alloc] initWithContentsOfFile:plistLocation];
+    NSLog(@"%@", plistDict);
+    
+    return plistDict;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

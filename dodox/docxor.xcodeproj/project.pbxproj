@@ -61,8 +61,6 @@
 		A039187817E2FF8700934DFA /* BookButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A039187717E2FF8700934DFA /* BookButtonCell.xib */; };
 		A039187A17E2FFAE00934DFA /* green button.png in Resources */ = {isa = PBXBuildFile; fileRef = A039187917E2FFAE00934DFA /* green button.png */; };
 		A039187D17E300A800934DFA /* DOCStartBookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A039187C17E300A800934DFA /* DOCStartBookCell.m */; };
-		A039188917E728BC00934DFA /* DOCTimeSlotPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = A039188817E728BC00934DFA /* DOCTimeSlotPicker.m */; };
-		A039188B17E729B300934DFA /* TimeSlotPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = A039188A17E729B300934DFA /* TimeSlotPicker.xib */; };
 		A039188D17E73FE100934DFA /* clinic.JPG in Resources */ = {isa = PBXBuildFile; fileRef = A039188C17E73FE100934DFA /* clinic.JPG */; };
 		A0C5D87B17E74D0B00C311CE /* UIImageView+UIActivityIndicatorForSDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C5D87A17E74D0B00C311CE /* UIImageView+UIActivityIndicatorForSDWebImage.m */; };
 		A0C5D89A17E74D1C00C311CE /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C5D87E17E74D1C00C311CE /* MKAnnotationView+WebCache.m */; };
@@ -256,9 +254,6 @@
 		A039187917E2FFAE00934DFA /* green button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green button.png"; sourceTree = "<group>"; };
 		A039187B17E300A800934DFA /* DOCStartBookCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCStartBookCell.h; sourceTree = "<group>"; };
 		A039187C17E300A800934DFA /* DOCStartBookCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCStartBookCell.m; sourceTree = "<group>"; };
-		A039188717E728BC00934DFA /* DOCTimeSlotPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCTimeSlotPicker.h; sourceTree = "<group>"; };
-		A039188817E728BC00934DFA /* DOCTimeSlotPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCTimeSlotPicker.m; sourceTree = "<group>"; };
-		A039188A17E729B300934DFA /* TimeSlotPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeSlotPicker.xib; sourceTree = "<group>"; };
 		A039188C17E73FE100934DFA /* clinic.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = clinic.JPG; sourceTree = "<group>"; };
 		A0C5D87917E74D0B00C311CE /* UIImageView+UIActivityIndicatorForSDWebImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+UIActivityIndicatorForSDWebImage.h"; sourceTree = "<group>"; };
 		A0C5D87A17E74D0B00C311CE /* UIImageView+UIActivityIndicatorForSDWebImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+UIActivityIndicatorForSDWebImage.m"; sourceTree = "<group>"; };
@@ -579,9 +574,6 @@
 		A00F367C17DDA19B00BD0467 /* step 3 view doctor specifics */ = {
 			isa = PBXGroup;
 			children = (
-				A039188717E728BC00934DFA /* DOCTimeSlotPicker.h */,
-				A039188817E728BC00934DFA /* DOCTimeSlotPicker.m */,
-				A039188A17E729B300934DFA /* TimeSlotPicker.xib */,
 				A00F367D17DDB3BB00BD0467 /* DOCDoctorSpecificsViewController.h */,
 				A00F367E17DDB3BB00BD0467 /* DOCDoctorSpecificsViewController.m */,
 				A00F368017E1CEE700BD0467 /* DoctorSpecificsTableViewCellGeneral.xib */,
@@ -1010,7 +1002,6 @@
 				FBCB50B617DC81B70099AA5C /* InfoPlist.strings in Resources */,
 				FB1CCEDE18073272005348F8 /* star_none_half.png in Resources */,
 				FBCDA2EF180AAF7E00AF92BF /* button_red_active.png in Resources */,
-				A039188B17E729B300934DFA /* TimeSlotPicker.xib in Resources */,
 				A00F361417DCA90000BD0467 /* psychologist.jpg in Resources */,
 				FB05891617F16CE50023B254 /* back.png in Resources */,
 				A039188D17E73FE100934DFA /* clinic.JPG in Resources */,
@@ -1059,7 +1050,6 @@
 				FBCB50C217DC81B70099AA5C /* DOCViewController.m in Sources */,
 				A039187D17E300A800934DFA /* DOCStartBookCell.m in Sources */,
 				A0C5D8A517E74D1C00C311CE /* UIImage+MultiFormat.m in Sources */,
-				A039188917E728BC00934DFA /* DOCTimeSlotPicker.m in Sources */,
 				A00F364217DCBD8100BD0467 /* DOCSpeciality.m in Sources */,
 				A00F363D17DCB8D500BD0467 /* DOCDoctorTableViewCell.m in Sources */,
 				A00F367917DD959500BD0467 /* AFURLConnectionOperation.m in Sources */,

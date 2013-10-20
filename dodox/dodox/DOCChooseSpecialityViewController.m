@@ -294,7 +294,7 @@
         return [first compare:second];
     }];
     
-    self.displayArray = [NSArray arrayWithArray:self.specialities];
+    self.displayArray = [NSMutableArray arrayWithArray:self.specialities];
     
     [self.specialityTable reloadData];
     

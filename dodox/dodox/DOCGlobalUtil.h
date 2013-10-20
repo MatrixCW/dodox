@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
 #import "DOCDoctor.h"
+#import "DOCDate.h"
 
 @interface DOCGlobalUtil : NSObject
 
@@ -20,6 +21,11 @@
 
 @property BOOL firstTimeLaunch;
 @property DOCDoctor *currentSelectedDoctor;
+
+@property DOCDate *currentDate;
+
+
+@property NSDictionary *userInfo;
 
 @property NSArray *storedSpecialities;
 

@@ -39,59 +39,7 @@
 
 
 
--(void)getMyTimeSlots{
-    
-    NSString *urlPrefix = @"http://doxor.herokuapp.com/api/doctors/%d/timeslots.json";
-    
-    
-    int doctorID = self.doctorID;
-    
-    NSString *requestUrlString = [NSString stringWithFormat:urlPrefix,doctorID];
-    
-    NSLog(@"%@", requestUrlString);
-    
-    NSURL *url = [NSURL URLWithString:requestUrlString];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    
-    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request
-                                                                                        success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-                                                                                            
-                                                                                            NSLog(@"dadada%@",JSON);
-                                                                                            
-                                                                                            if(!self.timeSlots)
-                                                                                                self.timeSlots = [NSMutableArray array];
-                                                                                            
-                                                                                            [self.timeSlots removeAllObjects];
-                                                                                            
-                                                                                            for(NSDictionary *dict in JSON){
-                                                                                                
-                                                                                                NSString *bookingID = [dict valueForKey:@"booking_id"];
-                                                                                                
-                                                                                                //NSLog(@"the id %@",bookingID);
-                                                                                                
-                                                                                                
-                                                                                                
-                                                                                                if([bookingID isKindOfClass:[NSNull class]]){
-                                                                                                   // NSLog(@"dadadadadad");
-                                                                                                    [self.timeSlots addObject:dict];
-                                                                                                }
-                                                                                                
-                                                                                                
-                                                                                            }
-                                                                                            
-                                                                                           // NSLog(@"total %d",self.timeSlots.count);
-                                                                                            
-                                                                                            [self sortDate];
-                                                                                        }
-                                                                                        failure:nil];
-    [operation start];
-    
-
-    
-}
-
-
--(void)sortDate{
+-(void)parseTime{
     
     NSMutableArray *ary = [NSMutableArray array];
     
@@ -116,9 +64,7 @@
         [df setFormatterBehavior:NSDateFormatterBehaviorDefault];
         
         NSDate *theDate = [df dateFromString:finalDate];
-       // NSLog(@"date string: %@", finalDate);
-       // NSLog(@"date: %@", theDate);
-        
+
         DOCDate *dateToAdd = [[DOCDate alloc] init];
         dateToAdd.myDate = theDate;
         dateToAdd.slotID = slotID;
@@ -135,9 +81,6 @@
     }];
     
     self.timeSlots = [NSMutableArray arrayWithArray:dataArray];
-    
-    NSLog(@"%@", self.timeSlots);
-    
     
     
     
