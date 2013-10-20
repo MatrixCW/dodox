@@ -196,6 +196,13 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please Verify" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbk-t1-YeZ">
+                                <rect key="frame" x="111" y="25" width="98" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -208,11 +215,12 @@
                     <navigationItem key="navigationItem" id="8uH-uN-CsV"/>
                     <connections>
                         <outlet property="bookTable" destination="c74-Vt-dy0" id="ZYr-K4-EpN"/>
+                        <segue destination="p0p-iT-u1O" kind="push" identifier="TWO_TO_THREE" id="ewO-9k-sIb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZCO-52-sfK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2127" y="-568"/>
+            <point key="canvasLocation" x="2101" y="-532"/>
         </scene>
         <!--Book Three View Controller-->
         <scene sceneID="mmu-wq-fRJ">
@@ -260,6 +268,7 @@
                             <constraint firstItem="MjJ-F7-deZ" firstAttribute="leading" secondItem="WQz-qH-lua" secondAttribute="leading" id="nNu-77-WHB"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="r2R-7N-E1N"/>
                     <connections>
                         <outlet property="confirmLabel" destination="MjJ-F7-deZ" id="FMi-oc-1bA"/>
                         <outlet property="confirmTable" destination="WQz-qH-lua" id="Fzh-QC-h6m"/>
@@ -267,7 +276,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BYc-CS-Acv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2594" y="-440"/>
+            <point key="canvasLocation" x="2724" y="-682"/>
         </scene>
         <!--Doctor Specifics View Controller-->
         <scene sceneID="z6X-Wu-baA">

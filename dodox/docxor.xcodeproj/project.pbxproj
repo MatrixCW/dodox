@@ -135,12 +135,12 @@
 		FBD05BFC180E3FCA00C2FD70 /* bookfor.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBD05BFB180E3FCA00C2FD70 /* bookfor.xib */; };
 		FBD05BFE180E405D00C2FD70 /* simpledoctor.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBD05BFD180E405D00C2FD70 /* simpledoctor.xib */; };
 		FBD05C00180E413C00C2FD70 /* locationcell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBD05BFF180E413C00C2FD70 /* locationcell.xib */; };
-		FBD05C04180E43C800C2FD70 /* continuecell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBD05C03180E43C800C2FD70 /* continuecell.xib */; };
+		FBD05C04180E43C800C2FD70 /* confirmcell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBD05C03180E43C800C2FD70 /* confirmcell.xib */; };
 		FBD05C07180E44BB00C2FD70 /* DOCBookForCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD05C06180E44BB00C2FD70 /* DOCBookForCell.m */; };
 		FBD05C0A180E44CB00C2FD70 /* DOCSimpleDoctorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD05C09180E44CB00C2FD70 /* DOCSimpleDoctorCell.m */; };
 		FBD05C0D180E44DA00C2FD70 /* DOCLocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD05C0C180E44DA00C2FD70 /* DOCLocationCell.m */; };
 		FBD05C10180E44E800C2FD70 /* DOCTimeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD05C0F180E44E800C2FD70 /* DOCTimeCell.m */; };
-		FBD05C13180E44F500C2FD70 /* DOCContinueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD05C12180E44F500C2FD70 /* DOCContinueCell.m */; };
+		FBD05C13180E44F500C2FD70 /* DOCConfirmCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD05C12180E44F500C2FD70 /* DOCConfirmCell.m */; };
 		FBD05C15180E73BC00C2FD70 /* booktwotimeslot.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBD05C14180E73BC00C2FD70 /* booktwotimeslot.xib */; };
 		FBD05C18180E840D00C2FD70 /* DOCBookThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD05C17180E840D00C2FD70 /* DOCBookThreeViewController.m */; };
 		FBD05C1A180E859000C2FD70 /* addCalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBD05C19180E859000C2FD70 /* addCalCell.xib */; };
@@ -160,6 +160,7 @@
 		FBD9242B17F05EA5008FB24F /* UIColor+JSFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD9242717F05EA5008FB24F /* UIColor+JSFlatButton.m */; };
 		FBD9242C17F05EA5008FB24F /* UIImage+JSFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD9242917F05EA5008FB24F /* UIImage+JSFlatButton.m */; };
 		FBD9242E17F06AC1008FB24F /* play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FBD9242D17F06AC1008FB24F /* play@2x.png */; };
+		FBEFFB8818141D67001188F7 /* button_confirm_active.png in Resources */ = {isa = PBXBuildFile; fileRef = FBEFFB8718141D67001188F7 /* button_confirm_active.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -360,7 +361,7 @@
 		FBD05BFB180E3FCA00C2FD70 /* bookfor.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = bookfor.xib; sourceTree = "<group>"; };
 		FBD05BFD180E405D00C2FD70 /* simpledoctor.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = simpledoctor.xib; sourceTree = "<group>"; };
 		FBD05BFF180E413C00C2FD70 /* locationcell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = locationcell.xib; sourceTree = "<group>"; };
-		FBD05C03180E43C800C2FD70 /* continuecell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = continuecell.xib; sourceTree = "<group>"; };
+		FBD05C03180E43C800C2FD70 /* confirmcell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = confirmcell.xib; sourceTree = "<group>"; };
 		FBD05C05180E44BB00C2FD70 /* DOCBookForCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCBookForCell.h; sourceTree = "<group>"; };
 		FBD05C06180E44BB00C2FD70 /* DOCBookForCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCBookForCell.m; sourceTree = "<group>"; };
 		FBD05C08180E44CB00C2FD70 /* DOCSimpleDoctorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCSimpleDoctorCell.h; sourceTree = "<group>"; };
@@ -369,8 +370,8 @@
 		FBD05C0C180E44DA00C2FD70 /* DOCLocationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCLocationCell.m; sourceTree = "<group>"; };
 		FBD05C0E180E44E800C2FD70 /* DOCTimeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCTimeCell.h; sourceTree = "<group>"; };
 		FBD05C0F180E44E800C2FD70 /* DOCTimeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCTimeCell.m; sourceTree = "<group>"; };
-		FBD05C11180E44F500C2FD70 /* DOCContinueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCContinueCell.h; sourceTree = "<group>"; };
-		FBD05C12180E44F500C2FD70 /* DOCContinueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCContinueCell.m; sourceTree = "<group>"; };
+		FBD05C11180E44F500C2FD70 /* DOCConfirmCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCConfirmCell.h; sourceTree = "<group>"; };
+		FBD05C12180E44F500C2FD70 /* DOCConfirmCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCConfirmCell.m; sourceTree = "<group>"; };
 		FBD05C14180E73BC00C2FD70 /* booktwotimeslot.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = booktwotimeslot.xib; sourceTree = "<group>"; };
 		FBD05C16180E840D00C2FD70 /* DOCBookThreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCBookThreeViewController.h; sourceTree = "<group>"; };
 		FBD05C17180E840D00C2FD70 /* DOCBookThreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCBookThreeViewController.m; sourceTree = "<group>"; };
@@ -397,6 +398,7 @@
 		FBD9242817F05EA5008FB24F /* UIImage+JSFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JSFlatButton.h"; sourceTree = "<group>"; };
 		FBD9242917F05EA5008FB24F /* UIImage+JSFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JSFlatButton.m"; sourceTree = "<group>"; };
 		FBD9242D17F06AC1008FB24F /* play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play@2x.png"; sourceTree = "<group>"; };
+		FBEFFB8718141D67001188F7 /* button_confirm_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_confirm_active.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -766,6 +768,7 @@
 		FBCB50E017DC83E20099AA5C /* pictures */ = {
 			isa = PBXGroup;
 			children = (
+				FBEFFB8718141D67001188F7 /* button_confirm_active.png */,
 				FBD05C1E180E865700C2FD70 /* button_addtocal_active.png */,
 				FBD49FDB180DA785008852C4 /* button_continue_active.png */,
 				FBCDA2EE180AAF7E00AF92BF /* button_red_active.png */,
@@ -834,9 +837,9 @@
 				FBD05C14180E73BC00C2FD70 /* booktwotimeslot.xib */,
 				FBD05C0E180E44E800C2FD70 /* DOCTimeCell.h */,
 				FBD05C0F180E44E800C2FD70 /* DOCTimeCell.m */,
-				FBD05C03180E43C800C2FD70 /* continuecell.xib */,
-				FBD05C11180E44F500C2FD70 /* DOCContinueCell.h */,
-				FBD05C12180E44F500C2FD70 /* DOCContinueCell.m */,
+				FBD05C03180E43C800C2FD70 /* confirmcell.xib */,
+				FBD05C11180E44F500C2FD70 /* DOCConfirmCell.h */,
+				FBD05C12180E44F500C2FD70 /* DOCConfirmCell.m */,
 			);
 			name = "cells for book two";
 			sourceTree = "<group>";
@@ -971,6 +974,7 @@
 				A039187A17E2FFAE00934DFA /* green button.png in Resources */,
 				FBCDA2EB180AAC1E00AF92BF /* dummy.png in Resources */,
 				A00F360E17DCA8F900BD0467 /* aesthetic medicine doctor.jpg in Resources */,
+				FBEFFB8818141D67001188F7 /* button_confirm_active.png in Resources */,
 				A00F363117DCB85300BD0467 /* StarEmpty@2x.png in Resources */,
 				FBD05C1F180E865700C2FD70 /* button_addtocal_active.png in Resources */,
 				FBD05C15180E73BC00C2FD70 /* booktwotimeslot.xib in Resources */,
@@ -993,7 +997,7 @@
 				A00F363217DCB85300BD0467 /* StarEmptyLarge.png in Resources */,
 				FB1CCEC01806DA12005348F8 /* cover2iphone5.png in Resources */,
 				A00F363517DCB85300BD0467 /* StarFull@2x.png in Resources */,
-				FBD05C04180E43C800C2FD70 /* continuecell.xib in Resources */,
+				FBD05C04180E43C800C2FD70 /* confirmcell.xib in Resources */,
 				FBCB50E417DC84800099AA5C /* doctor.jpg in Resources */,
 				FBD5C91117F33E3800E3E3DA /* greenrightarrow.png in Resources */,
 				FB05890517F14D3B0023B254 /* account.png in Resources */,
@@ -1043,7 +1047,7 @@
 				4BDE1C2617E8CD9F00001517 /* SVProgressHUD.m in Sources */,
 				FBD05C10180E44E800C2FD70 /* DOCTimeCell.m in Sources */,
 				FBCB497E18005950007D17A8 /* DOCViewHistoryViewController.m in Sources */,
-				FBD05C13180E44F500C2FD70 /* DOCContinueCell.m in Sources */,
+				FBD05C13180E44F500C2FD70 /* DOCConfirmCell.m in Sources */,
 				A00F364A17DCC3F000BD0467 /* DOCGlobalUtil.m in Sources */,
 				FBD05C18180E840D00C2FD70 /* DOCBookThreeViewController.m in Sources */,
 				A00F367F17DDB3BB00BD0467 /* DOCDoctorSpecificsViewController.m in Sources */,

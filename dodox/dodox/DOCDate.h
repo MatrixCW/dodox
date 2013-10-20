@@ -11,6 +11,6 @@
 @interface DOCDate : NSObject
 
 @property NSDate *myDate;
-@property NSString *slotID;
+@property NSString *slotIdentifier;
 
 @end

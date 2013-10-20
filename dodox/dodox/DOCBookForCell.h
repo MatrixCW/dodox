@@ -12,5 +12,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *bookForTitle;
 @property (weak, nonatomic) IBOutlet UILabel *bookNameTitle;
 @property (weak, nonatomic) IBOutlet UILabel *withTitle;
+@property (weak, nonatomic) IBOutlet UILabel *confirmLabel;
 
 @end

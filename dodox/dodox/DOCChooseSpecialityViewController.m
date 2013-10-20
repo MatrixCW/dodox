@@ -175,10 +175,8 @@
         [self setCoverImageViewMode:YES];
     }
     
-    NSLog(@"s;dvdfvnfjdnjdf %d", sharedUtil.storedSpecialities.count);
     
     if(!sharedUtil.storedSpecialities){
-        NSLog(@"i am here");
         [self populateSpecialities];
     }
     else
@@ -247,7 +245,6 @@
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request
                                                                                         success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
                                                                                             
-                                                                                            NSLog(@"ddddsdfsdfsdf %@",JSON);
                                                                                             
                                                                                             for(NSDictionary *dic in JSON){
                                                                                                 
@@ -298,7 +295,6 @@
     
     [self.specialityTable reloadData];
     
-    NSLog(@"I am done!!");
     
     
     
@@ -336,7 +332,6 @@
                             placeholderImage:[UIImage imageNamed:@"specialityHolder.jpg"]
                                    completed:^(UIImage *iamge, NSError *error, SDImageCacheType cachetype){
                                        
-                                       NSLog(@"loading image");
                                     }
                  usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     

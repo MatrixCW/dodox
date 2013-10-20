@@ -203,6 +203,7 @@
     NSString *doctorPhone = [dict valueForKey:@"phone"];
     NSString *subCategory = [dict valueForKey:@"subcategory"];
     NSString *clinicName = [dict valueForKey:@"clinic_name"];
+    NSString *postCode = [dict valueForKey:@"post"];
 
     //NSArray *doctorGallery = [dict valueForKey:@"doctor_gallary_images"];
     NSDictionary *doctorAvatar = [dict valueForKey:@"pic"];
@@ -225,9 +226,11 @@
     doctor.timeSlots = timeslots;
     doctor.subCategory = subCategory;
     doctor.clinicName = clinicName;
+    doctor.postCode = postCode;
     
     
     [doctor parseTime];
+    
     [self.doctors addObject:doctor];
     
  
@@ -239,9 +242,6 @@
 #pragma mark UITableView DataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    
-    
-    NSLog(@"i have %d", self.doctors.count);
     
     return self.doctors.count;
 }
@@ -365,6 +365,8 @@
     
     DOCGlobalUtil *sharedInstance = [DOCGlobalUtil getSharedInstance];
     sharedInstance.currentSelectedDoctor = [self.doctors objectAtIndex:indexPath.row];
+    sharedInstance.currentDate = [sharedInstance.currentSelectedDoctor.timeSlots objectAtIndex:0];
+    assert(sharedInstance.currentDate.slotIdentifier != nil);
 
  
     [self performSegueWithIdentifier:@"BOOK_DIRECTLY" sender:self];

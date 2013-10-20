@@ -143,9 +143,7 @@
     
     DOCGlobalUtil *sharedInstance = [DOCGlobalUtil getSharedInstance];
     DOCDoctor *currentDoc = sharedInstance.currentSelectedDoctor;
-    DOCDate *currentDate = sharedInstance.currentDate;
-    if(!currentDate)
-        currentDate = [currentDoc.timeSlots objectAtIndex:0];
+    
     
     if(index == 0){
         

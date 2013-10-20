@@ -20,6 +20,7 @@
 @property  CGFloat doctorRate;
 @property  CGFloat distance;
 @property  NSString *doctorPhoneNumber;
+@property  NSString *postCode;
 
 @property NSArray *timeSlots;
 

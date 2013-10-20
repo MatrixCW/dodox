@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Cui Wei. All rights reserved.
 //
 
-#import "DOCContinueCell.h"
+#import "DOCConfirmCell.h"
 
-@implementation DOCContinueCell
+@implementation DOCConfirmCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

@@ -67,7 +67,7 @@
 
         DOCDate *dateToAdd = [[DOCDate alloc] init];
         dateToAdd.myDate = theDate;
-        dateToAdd.slotID = slotID;
+        dateToAdd.slotIdentifier = slotID;
         [ary addObject:dateToAdd];
         
        

@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DOCContinueCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIButton *continueButton;
+@interface DOCConfirmCell : UITableViewCell
+
+@property (weak, nonatomic) IBOutlet UIButton *confirmButton;
 
 @end
