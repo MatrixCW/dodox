@@ -14,6 +14,8 @@
 #import "DOCAddCalCell.h"
 #import "DOCGlobalUtil.h"
 #import "UIImageView+UIActivityIndicatorForSDWebImage.h"
+#import <EventKit/EventKit.h>
+
 
 @interface DOCBookThreeViewController ()
 
@@ -57,7 +59,12 @@
     self.confirmLabel.backgroundColor = [UIColor colorWithRed:245.0/255 green:245.0/255 blue:245.0/255 alpha:1.0];;
     
     self.confirmLabel.numberOfLines = 0;
-    self.confirmLabel.text = @"\nDr. Simon Chua";
+    
+    DOCGlobalUtil *sharedInstance = [DOCGlobalUtil getSharedInstance];
+    DOCDoctor *currentDoc = sharedInstance.currentSelectedDoctor;
+
+    
+    self.confirmLabel.text = [NSString stringWithFormat:@"\n%@",currentDoc.doctorName];
     
     self.confirmTable.delegate = self;
     self.confirmTable.dataSource = self;
@@ -226,7 +233,14 @@
             NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"addCalCell" owner:self options:nil];
             cell = [nib objectAtIndex:0];
             
-            cell.daysLabel.text = [NSString stringWithFormat:@"See you in %d days", [self daysBetween:[NSDate date] and:currentDate.myDate]];
+            int days = [self daysBetween:[NSDate date] and:currentDate.myDate];
+            
+            if(days == 0 || days == 1)
+               cell.daysLabel.text = [NSString stringWithFormat:@"%d day", days];
+            else
+               cell.daysLabel.text = [NSString stringWithFormat:@"%d days", days];
+            
+            [cell.addCalButton addTarget:self action:@selector(addToCalender) forControlEvents:UIControlEventTouchUpInside];
         }
         
         NSLog(@"3333333333");
@@ -324,6 +338,64 @@
     
     
 }
+
+- (void)addToCalender {
+    
+    
+    EKEventStore *eventStore = [[EKEventStore alloc] init];
+    
+    if([eventStore respondsToSelector:@selector(requestAccessToEntityType:completion:)]) {
+        // iOS 6 and later
+        [eventStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
+            if (granted){
+                //---- codes here when user allow your app to access theirs' calendar.
+                [self performCalendarActivity:eventStore];
+            }else
+            {
+                //----- codes here when user NOT allow your app to access the calendar.
+            }
+        }];
+    }
+    else {
+        //---- codes here for IOS < 6.0.
+        [self performCalendarActivity:eventStore];
+    }
+    
+}
+
+
+-(void)performCalendarActivity:(EKEventStore*)eventStore{
+    NSLog(@"hahahahaha");
+    
+    DOCGlobalUtil *sharedInstance = [DOCGlobalUtil getSharedInstance];
+    DOCDoctor *currentDoc = sharedInstance.currentSelectedDoctor;
+    DOCDate *currentDate = sharedInstance.currentDate;
+
+    
+    EKEvent *event = [EKEvent eventWithEventStore:eventStore];
+    NSDate *date = currentDate.myDate;//today,s date
+    event.title = @"TABIBIN Reminder";//title for your remainder
+    event.notes = [NSString stringWithFormat:@"See doctor %@ at %@", currentDoc.doctorName, currentDoc.doctorAddress];
+    
+    event.startDate=date;//start time of your remainder
+    event.endDate = [[NSDate alloc] initWithTimeInterval:1800 sinceDate:event.startDate];//end time of your remainder
+    
+    NSTimeInterval interval = (60 *60)* -3 ;
+    EKAlarm *alarm = [EKAlarm alarmWithRelativeOffset:interval]; //Create object of alarm
+    
+    [event addAlarm:alarm]; //Add alarm to your event
+    
+    [event setCalendar:[eventStore defaultCalendarForNewEvents]];
+    NSError *err;
+    NSString *ical_event_id;
+    //save your event
+    if([eventStore saveEvent:event span:EKSpanThisEvent error:&err]){
+        ical_event_id = event.eventIdentifier;
+        NSLog(@"%@",ical_event_id);
+    }
+    
+}
+
 
 - (void)didReceiveMemoryWarning
 {

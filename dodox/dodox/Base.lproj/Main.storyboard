@@ -250,6 +250,9 @@
                                 <state key="normal" backgroundImage="menu_back.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="OBW-3V-YcF" kind="push" id="Wpp-qi-cEw"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="WQz-qH-lua">
                                 <rect key="frame" x="0.0" y="68" width="320" height="412"/>
@@ -555,8 +558,8 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="2oK-4x-KL9"/>
-        <segue reference="RQn-zR-DL7"/>
-        <segue reference="T0E-qG-9Ho"/>
+        <segue reference="Wpp-qi-cEw"/>
         <segue reference="hQT-fH-dha"/>
+        <segue reference="T0E-qG-9Ho"/>
     </inferredMetricsTieBreakers>
 </document>
