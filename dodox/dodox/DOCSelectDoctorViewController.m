@@ -299,7 +299,10 @@
     cell.doctorAddress.textColor = [UIColor colorWithRed:102.0/255 green:104.0/255 blue:107.0/255 alpha:1.0];
     
     
-    DOCDate *firstSlot = [tempDoctor.timeSlots objectAtIndex:0];
+    DOCDate *firstSlot;
+    
+    if(tempDoctor.timeSlots.count  > 0)
+        firstSlot = [tempDoctor.timeSlots objectAtIndex:0];
     NSDate *firstDate = firstSlot.myDate;
     
 	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];

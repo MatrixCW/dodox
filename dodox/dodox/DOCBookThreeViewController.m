@@ -391,7 +391,20 @@
     //save your event
     if([eventStore saveEvent:event span:EKSpanThisEvent error:&err]){
         ical_event_id = event.eventIdentifier;
-        NSLog(@"%@",ical_event_id);
+        NSLog(@"THE ID IS %@",ical_event_id);
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error!"
+                                                        message:@"Failed to access your calendar, please add manually"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Dismiss"
+                                              otherButtonTitles:nil];
+        
+        [alert show];
+    }
+    else{
+        
+        [self performSegueWithIdentifier:@"GO_BACK_ORIGIN" sender:self];
+        
     }
     
 }

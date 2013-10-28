@@ -100,7 +100,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cXb-pM-VC1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1573" y="-1494"/>
+            <point key="canvasLocation" x="1505" y="-1776"/>
         </scene>
         <!--Book One View Controller-->
         <scene sceneID="Mf4-5m-MN2">
@@ -251,7 +251,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="OBW-3V-YcF" kind="push" id="Wpp-qi-cEw"/>
+                                    <segue destination="OBW-3V-YcF" kind="push" identifier="GO_BACK_ORIGIN" id="Wpp-qi-cEw"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="WQz-qH-lua">
@@ -290,11 +290,11 @@
                         <viewControllerLayoutGuide type="bottom" id="n00-1L-IgO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4Dy-bu-alf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="436"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="OGE-ii-bEj">
-                                <rect key="frame" x="0.0" y="68" width="320" height="412"/>
+                                <rect key="frame" x="0.0" y="68" width="320" height="368"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
@@ -401,6 +401,9 @@
                                 <state key="normal" backgroundImage="menu_mybookings.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Nu9-WZ-8pE" kind="push" id="seM-cr-Tj3"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MDD-1q-aFD">
                                 <rect key="frame" x="291" y="40" width="20" height="20"/>
@@ -439,7 +442,73 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3An-eL-L1e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="908" y="-1494"/>
+            <point key="canvasLocation" x="352" y="-2102"/>
+        </scene>
+        <!--History View Controller-->
+        <scene sceneID="YYr-cV-mqh">
+            <objects>
+                <viewController id="Nu9-WZ-8pE" customClass="DOCHistoryViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hfZ-Qi-HX8"/>
+                        <viewControllerLayoutGuide type="bottom" id="u9q-ln-LNF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Q2R-Hj-TTn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Bookings" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="HYV-Nm-kof">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="1Zn-jB-KNY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="al0-Hp-PyX">
+                                <rect key="frame" x="0.0" y="68" width="320" height="412"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UqW-P5-UXi">
+                                <rect key="frame" x="7" y="40" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="elF-zT-iLf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" backgroundImage="menu_back.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="OBW-3V-YcF" kind="custom" customClass="DOCLeftToRightSegue" id="yFt-hB-ZgM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="HYV-Nm-kof" secondAttribute="trailing" id="27D-ct-VEE"/>
+                            <constraint firstItem="UqW-P5-UXi" firstAttribute="leading" secondItem="Q2R-Hj-TTn" secondAttribute="leading" constant="7" id="2ZT-Rt-mYn"/>
+                            <constraint firstItem="UqW-P5-UXi" firstAttribute="top" secondItem="hfZ-Qi-HX8" secondAttribute="bottom" constant="20" id="ALH-wU-LXF"/>
+                            <constraint firstItem="al0-Hp-PyX" firstAttribute="top" secondItem="UqW-P5-UXi" secondAttribute="bottom" constant="8" symbolic="YES" id="T98-Jh-7lw"/>
+                            <constraint firstItem="HYV-Nm-kof" firstAttribute="trailing" secondItem="al0-Hp-PyX" secondAttribute="trailing" id="iWt-vE-6a0"/>
+                            <constraint firstItem="al0-Hp-PyX" firstAttribute="top" secondItem="HYV-Nm-kof" secondAttribute="bottom" constant="8" symbolic="YES" id="ilX-zD-cRq"/>
+                            <constraint firstAttribute="bottom" secondItem="al0-Hp-PyX" secondAttribute="bottom" id="in1-eL-QY7"/>
+                            <constraint firstItem="HYV-Nm-kof" firstAttribute="leading" secondItem="Q2R-Hj-TTn" secondAttribute="leading" id="jXO-xX-bT7"/>
+                            <constraint firstItem="HYV-Nm-kof" firstAttribute="top" secondItem="Q2R-Hj-TTn" secondAttribute="top" id="oMO-xH-ZY9"/>
+                            <constraint firstItem="HYV-Nm-kof" firstAttribute="leading" secondItem="al0-Hp-PyX" secondAttribute="leading" id="zQ6-wR-1dF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="8uQ-sk-aL5"/>
+                    <connections>
+                        <outlet property="dataTable" destination="al0-Hp-PyX" id="Kb2-IL-ZFW"/>
+                        <outlet property="titleLabel" destination="HYV-Nm-kof" id="gSd-7w-JLU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nao-fE-G3W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="965" y="-2295"/>
         </scene>
         <!--Test View Controller-->
         <scene sceneID="ojU-Zc-h6s">
@@ -469,7 +538,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t0T-sS-Ied" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1079" y="-1678"/>
+            <point key="canvasLocation" x="-1511" y="-1742"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bhn-dq-XXB">
@@ -487,7 +556,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G5j-VD-XkX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-441" y="-1463"/>
+            <point key="canvasLocation" x="-345" y="-1335"/>
         </scene>
         <!--View History View Controller-->
         <scene sceneID="ExG-gu-ION">
@@ -540,7 +609,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QmV-Gh-Lvh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-95" y="-657"/>
+            <point key="canvasLocation" x="-183" y="87"/>
         </scene>
     </scenes>
     <resources>
@@ -557,9 +626,9 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="2oK-4x-KL9"/>
         <segue reference="Wpp-qi-cEw"/>
         <segue reference="hQT-fH-dha"/>
-        <segue reference="T0E-qG-9Ho"/>
+        <segue reference="2oK-4x-KL9"/>
+        <segue reference="eLO-Te-jeC"/>
     </inferredMetricsTieBreakers>
 </document>

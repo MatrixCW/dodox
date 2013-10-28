@@ -131,6 +131,11 @@
 		FBCDA2EB180AAC1E00AF92BF /* dummy.png in Resources */ = {isa = PBXBuildFile; fileRef = FBCDA2EA180AAC1E00AF92BF /* dummy.png */; };
 		FBCDA2ED180AAD4300AF92BF /* button_red_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = FBCDA2EC180AAD4300AF92BF /* button_red_normal.png */; };
 		FBCDA2EF180AAF7E00AF92BF /* button_red_active.png in Resources */ = {isa = PBXBuildFile; fileRef = FBCDA2EE180AAF7E00AF92BF /* button_red_active.png */; };
+		FBCE8273181EB6A100E68B5B /* DOCHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCE8272181EB6A100E68B5B /* DOCHistoryViewController.m */; };
+		FBCE8275181EB93A00E68B5B /* nextBook.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBCE8274181EB93A00E68B5B /* nextBook.xib */; };
+		FBCE8277181EB94700E68B5B /* previousBook.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBCE8276181EB94700E68B5B /* previousBook.xib */; };
+		FBCE827A181EB9FA00E68B5B /* DOCNextBookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCE8279181EB9FA00E68B5B /* DOCNextBookCell.m */; };
+		FBCE827D181EBAD100E68B5B /* DOCPreviousBookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCE827C181EBAD100E68B5B /* DOCPreviousBookCell.m */; };
 		FBD05BF8180E3EB100C2FD70 /* DOCBookTwoController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD05BF7180E3EB100C2FD70 /* DOCBookTwoController.m */; };
 		FBD05BFC180E3FCA00C2FD70 /* bookfor.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBD05BFB180E3FCA00C2FD70 /* bookfor.xib */; };
 		FBD05BFE180E405D00C2FD70 /* simpledoctor.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBD05BFD180E405D00C2FD70 /* simpledoctor.xib */; };
@@ -356,6 +361,14 @@
 		FBCDA2EA180AAC1E00AF92BF /* dummy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dummy.png; sourceTree = "<group>"; };
 		FBCDA2EC180AAD4300AF92BF /* button_red_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_red_normal.png; sourceTree = "<group>"; };
 		FBCDA2EE180AAF7E00AF92BF /* button_red_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_red_active.png; sourceTree = "<group>"; };
+		FBCE8271181EB6A100E68B5B /* DOCHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCHistoryViewController.h; sourceTree = "<group>"; };
+		FBCE8272181EB6A100E68B5B /* DOCHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCHistoryViewController.m; sourceTree = "<group>"; };
+		FBCE8274181EB93A00E68B5B /* nextBook.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = nextBook.xib; sourceTree = "<group>"; };
+		FBCE8276181EB94700E68B5B /* previousBook.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = previousBook.xib; sourceTree = "<group>"; };
+		FBCE8278181EB9FA00E68B5B /* DOCNextBookCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCNextBookCell.h; sourceTree = "<group>"; };
+		FBCE8279181EB9FA00E68B5B /* DOCNextBookCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCNextBookCell.m; sourceTree = "<group>"; };
+		FBCE827B181EBAD100E68B5B /* DOCPreviousBookCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCPreviousBookCell.h; sourceTree = "<group>"; };
+		FBCE827C181EBAD100E68B5B /* DOCPreviousBookCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCPreviousBookCell.m; sourceTree = "<group>"; };
 		FBD05BF6180E3EB100C2FD70 /* DOCBookTwoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCBookTwoController.h; sourceTree = "<group>"; };
 		FBD05BF7180E3EB100C2FD70 /* DOCBookTwoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCBookTwoController.m; sourceTree = "<group>"; };
 		FBD05BFB180E3FCA00C2FD70 /* bookfor.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = bookfor.xib; sourceTree = "<group>"; };
@@ -723,6 +736,7 @@
 				A00F365F17DD959400BD0467 /* AFNetworking */,
 				A00F364917DCC37F00BD0467 /* Auto-generated */,
 				A00F364817DCC36200BD0467 /* Common Util */,
+				FBCE826D181EB18300E68B5B /* history */,
 				A00F363E17DCBB0E00BD0467 /* step 1 choose speciality */,
 				A00F363F17DCBB2000BD0467 /* step 2 choose doctor */,
 				A00F367C17DDA19B00BD0467 /* step 3 view doctor specifics */,
@@ -810,6 +824,21 @@
 				FBCB50E317DC84800099AA5C /* doctor.jpg */,
 			);
 			name = pictures;
+			sourceTree = "<group>";
+		};
+		FBCE826D181EB18300E68B5B /* history */ = {
+			isa = PBXGroup;
+			children = (
+				FBCE8271181EB6A100E68B5B /* DOCHistoryViewController.h */,
+				FBCE8272181EB6A100E68B5B /* DOCHistoryViewController.m */,
+				FBCE8274181EB93A00E68B5B /* nextBook.xib */,
+				FBCE8278181EB9FA00E68B5B /* DOCNextBookCell.h */,
+				FBCE8279181EB9FA00E68B5B /* DOCNextBookCell.m */,
+				FBCE8276181EB94700E68B5B /* previousBook.xib */,
+				FBCE827B181EBAD100E68B5B /* DOCPreviousBookCell.h */,
+				FBCE827C181EBAD100E68B5B /* DOCPreviousBookCell.m */,
+			);
+			name = history;
 			sourceTree = "<group>";
 		};
 		FBD05BF9180E3F8C00C2FD70 /* cells for book one */ = {
@@ -950,6 +979,7 @@
 				FBD9242E17F06AC1008FB24F /* play@2x.png in Resources */,
 				FBD05C1A180E859000C2FD70 /* addCalCell.xib in Resources */,
 				FB1CCEC41806E68D005348F8 /* search.png in Resources */,
+				FBCE8275181EB93A00E68B5B /* nextBook.xib in Resources */,
 				FB1CCEDD18073272005348F8 /* star_gold_half.png in Resources */,
 				FB05891317F15E9A0023B254 /* done.png in Resources */,
 				A00F363617DCB85300BD0467 /* StarFullLarge.png in Resources */,
@@ -968,6 +998,7 @@
 				FBD5C90917F3392000E3E3DA /* AvailableSlots.xib in Resources */,
 				A039186517E21FD400934DFA /* DoctorSpecificsTableViewCellPhone.xib in Resources */,
 				FBD05BFC180E3FCA00C2FD70 /* bookfor.xib in Resources */,
+				FBCE8277181EB94700E68B5B /* previousBook.xib in Resources */,
 				FB1CCECC1806ECB3005348F8 /* pin_location.png in Resources */,
 				FB1CCED918072FDC005348F8 /* star_gold.png in Resources */,
 				FBCDA2ED180AAD4300AF92BF /* button_red_normal.png in Resources */,
@@ -1045,6 +1076,7 @@
 				A0C5D8A217E74D1C00C311CE /* SDWebImagePrefetcher.m in Sources */,
 				A0C5D89A17E74D1C00C311CE /* MKAnnotationView+WebCache.m in Sources */,
 				4BDE1C2617E8CD9F00001517 /* SVProgressHUD.m in Sources */,
+				FBCE827A181EB9FA00E68B5B /* DOCNextBookCell.m in Sources */,
 				FBD05C10180E44E800C2FD70 /* DOCTimeCell.m in Sources */,
 				FBCB497E18005950007D17A8 /* DOCViewHistoryViewController.m in Sources */,
 				FBD05C13180E44F500C2FD70 /* DOCConfirmCell.m in Sources */,
@@ -1089,6 +1121,7 @@
 				A0C5D8A317E74D1C00C311CE /* UIButton+WebCache.m in Sources */,
 				A039187017E2FAE100934DFA /* DOCDoctorLocationCell.m in Sources */,
 				FBCB498118005B57007D17A8 /* DOCBookingHistoryCell.m in Sources */,
+				FBCE827D181EBAD100E68B5B /* DOCPreviousBookCell.m in Sources */,
 				A00F363A17DCB86A00BD0467 /* DYRateView.m in Sources */,
 				A00F367417DD959400BD0467 /* AFHTTPRequestOperation.m in Sources */,
 				FBD49FDF180DA7DF008852C4 /* DOCPICell.m in Sources */,
@@ -1100,6 +1133,7 @@
 				FBD5C90E17F33B9E00E3E3DA /* DOCTimeSlotCell.m in Sources */,
 				FBCC165817FCB7FA001FAF9C /* DOCDate.m in Sources */,
 				4BAC7D3017E8A0C100EE293C /* DOCBookOneViewController.m in Sources */,
+				FBCE8273181EB6A100E68B5B /* DOCHistoryViewController.m in Sources */,
 				A00F365317DCC64200BD0467 /* Reachability.m in Sources */,
 				A0C5D89B17E74D1C00C311CE /* NSData+GIF.m in Sources */,
 				FBD05BF8180E3EB100C2FD70 /* DOCBookTwoController.m in Sources */,
