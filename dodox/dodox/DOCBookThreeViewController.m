@@ -389,7 +389,9 @@
     NSError *err;
     NSString *ical_event_id;
     //save your event
+    
     if([eventStore saveEvent:event span:EKSpanThisEvent error:&err]){
+        
         ical_event_id = event.eventIdentifier;
         NSLog(@"THE ID IS %@",ical_event_id);
         

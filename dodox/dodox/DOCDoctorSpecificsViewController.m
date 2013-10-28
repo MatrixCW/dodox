@@ -53,6 +53,8 @@
     
     self.doctorTitleLabel.numberOfLines = 0;
     self.doctorTitleLabel.text = @"\nAvailability";
+    
+    sharedInstance.currentDate = [self.currentDoctor.timeSlots objectAtIndex:0];
    
     /*
     self.doctorTitleLabel.textAlignment = NSTextAlignmentCenter;
