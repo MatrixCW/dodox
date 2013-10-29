@@ -5,6 +5,53 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
+        <!--View Next Book View Controller-->
+        <scene sceneID="ktd-5F-9Vf">
+            <objects>
+                <viewController id="VHk-Fz-sjb" customClass="DOCViewNextBookViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aMt-LF-UF3"/>
+                        <viewControllerLayoutGuide type="bottom" id="Uii-Mh-tX3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZPb-eO-OPq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Next Booking" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pp-TO-vCu">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ba7-tA-MNo">
+                                <rect key="frame" x="7" y="40" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Button" backgroundImage="menu_back.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Nu9-WZ-8pE" kind="custom" customClass="DOCLeftToRightSegue" id="n9S-td-NuV"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="IKx-sC-elY">
+                                <rect key="frame" x="0.0" y="68" width="320" height="412"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Lzi-qI-qVQ"/>
+                    <connections>
+                        <outlet property="confirmLabel" destination="6pp-TO-vCu" id="SOK-We-4UM"/>
+                        <outlet property="confirmTable" destination="IKx-sC-elY" id="dsw-r1-bv6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dXg-JC-BYK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1641" y="-2389"/>
+        </scene>
         <!--Select Doctor View Controller-->
         <scene sceneID="zB1-6t-CPx">
             <objects>
@@ -279,7 +326,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BYc-CS-Acv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2724" y="-682"/>
+            <point key="canvasLocation" x="2436" y="-1962"/>
         </scene>
         <!--Doctor Specifics View Controller-->
         <scene sceneID="z6X-Wu-baA">
@@ -504,11 +551,12 @@
                     <connections>
                         <outlet property="dataTable" destination="al0-Hp-PyX" id="Kb2-IL-ZFW"/>
                         <outlet property="titleLabel" destination="HYV-Nm-kof" id="gSd-7w-JLU"/>
+                        <segue destination="VHk-Fz-sjb" kind="push" identifier="HISTORY_NEXT_BOOK" id="hNM-C2-S68"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nao-fE-G3W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="965" y="-2295"/>
+            <point key="canvasLocation" x="971" y="-2339"/>
         </scene>
         <!--Test View Controller-->
         <scene sceneID="ojU-Zc-h6s">
@@ -626,9 +674,10 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Wpp-qi-cEw"/>
-        <segue reference="hQT-fH-dha"/>
+        <segue reference="n9S-td-NuV"/>
+        <segue reference="yFt-hB-ZgM"/>
         <segue reference="2oK-4x-KL9"/>
         <segue reference="eLO-Te-jeC"/>
+        <segue reference="KmQ-ZV-Pl7"/>
     </inferredMetricsTieBreakers>
 </document>

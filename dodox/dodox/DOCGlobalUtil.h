@@ -29,6 +29,7 @@
 
 @property NSArray *storedSpecialities;
 
+
 - (NSString *)findMyCurrentLocation;
 -(void)alertNoNetwork;
 -(BOOL)isNetworkActive;

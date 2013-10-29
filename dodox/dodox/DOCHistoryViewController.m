@@ -9,10 +9,16 @@
 #import "DOCHistoryViewController.h"
 #import "DOCPreviousBookCell.h"
 #import "DOCNextBookCell.h"
+#import "AFJSONRequestOperation.h"
+
 
 @interface DOCHistoryViewController ()
+
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UITableView *dataTable;
+
+@property NSArray *nextBookings;
+@property NSArray *previousBookings;
 
 @end
 
@@ -42,8 +48,48 @@
     self.dataTable.dataSource = self;
     self.dataTable.delegate = self;
 
-    [self readFromFile];
     
+    [self getDataForBookings];
+    
+    
+}
+
+
+-(void)getDataForBookings{
+    
+    
+    NSDictionary *dict = [self readFromFile];
+    NSString *userEmail = [dict valueForKey:@"user_email"];
+    NSString *urlString = [NSString stringWithFormat:@"http://doxor.herokuapp.com/api/bookings.json?email=%@",userEmail];
+    
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    NSMutableArray *dataArray = [NSMutableArray array];
+    
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request
+                                                                                        success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+                                                                                            
+                                                                                            
+                                                                                            for(NSDictionary *dic in JSON){
+                                                                                                
+                                                                                                NSString *doctorID = [dic objectForKey:@"doctor_id"];
+                                                                                                
+                                                                                                NSDictionary *timeslots = [dic objectForKey:@"timeslots"];
+                                                                                                
+                                                                                                NSLog(@"%@ \n %@", doctorID, timeslots);
+                                                                                                
+                                                                                                
+                                                                                            }
+                                                                                            
+                                                                                          
+                                                                                        }
+                                                                                        failure:nil];
+    
+    
+    [operation start];
+
     
 }
 

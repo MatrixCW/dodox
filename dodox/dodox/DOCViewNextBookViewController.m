@@ -1,32 +1,32 @@
 //
-//  DOCBookThreeViewController.m
+//  DOCViewNextBookViewController.m
 //  docxor
 //
-//  Created by Cui Wei on 10/16/13.
+//  Created by Cui Wei on 10/30/13.
 //  Copyright (c) 2013 Cui Wei. All rights reserved.
 //
 
-#import "DOCBookThreeViewController.h"
+#import "DOCViewNextBookViewController.h"
 #import "DOCBookForCell.h"
 #import "DOCSimpleDoctorCell.h"
 #import "DOCLocationCell.h"
 #import "DOCTimeCell.h"
-#import "DOCAddCalCell.h"
 #import "DOCGlobalUtil.h"
+#import "AFJSONRequestOperation.h"
 #import "UIImageView+UIActivityIndicatorForSDWebImage.h"
-#import <EventKit/EventKit.h>
 
 
-@interface DOCBookThreeViewController ()
+@interface DOCViewNextBookViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *confirmLabel;
+@property (weak, nonatomic) IBOutlet UITableView *confirmTable;
 @property NSString *userName;
 @property NSString *userPhone;
 @property NSString *userEmail;
 
-
 @end
 
-@implementation DOCBookThreeViewController
+@implementation DOCViewNextBookViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,18 +37,6 @@
     return self;
 }
 
--(NSDictionary*)readFromFile{
-    
-    
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *plistLocation = [documentsDirectory stringByAppendingPathComponent:@"myplist.plist"];
-    
-    NSMutableDictionary *plistDict = [[NSMutableDictionary alloc] initWithContentsOfFile:plistLocation];
-    NSLog(@"%@", plistDict);
-    
-    return plistDict;
-}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -62,7 +50,7 @@
     
     DOCGlobalUtil *sharedInstance = [DOCGlobalUtil getSharedInstance];
     DOCDoctor *currentDoc = sharedInstance.currentSelectedDoctor;
-
+    
     
     self.confirmLabel.text = [NSString stringWithFormat:@"\n%@",currentDoc.doctorName];
     
@@ -73,13 +61,27 @@
     self.userName = [dict valueForKey:@"user_name"];
     self.userPhone = [dict valueForKey:@"user_phone"];
     self.userEmail = [dict valueForKey:@"user_email"];
-    
 }
+
+
+-(NSDictionary*)readFromFile{
+    
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *plistLocation = [documentsDirectory stringByAppendingPathComponent:@"myplist.plist"];
+    
+    NSMutableDictionary *plistDict = [[NSMutableDictionary alloc] initWithContentsOfFile:plistLocation];
+    NSLog(@"%@", plistDict);
+    
+    return plistDict;
+}
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     
-        return 5;
+    return 4;
     
 }
 
@@ -100,9 +102,7 @@
         case 3:
             height = 100;
             break;
-        case 4:
-            height = 128;
-            break;
+        
         default:
             break;
     }
@@ -118,7 +118,7 @@
     DOCGlobalUtil *sharedInstance = [DOCGlobalUtil getSharedInstance];
     DOCDoctor *currentDoc = sharedInstance.currentSelectedDoctor;
     DOCDate *currentDate = sharedInstance.currentDate;
-
+    
     
     
     if(index == 0){
@@ -174,7 +174,7 @@
         NSString *imgUrlString = [currentDoc.doctorAvatars valueForKey:@"original"];
         [cell.doctorAvatar setImageWithURL:[NSURL URLWithString:imgUrlString] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
         
-
+        
         return cell;
         
         
@@ -190,16 +190,16 @@
             cell.clinicName.text = currentDoc.clinicName;
             cell.addressTag.text = currentDoc.doctorAddress;
             cell.postCodeTag.text = currentDoc.postCode;
-
+            
         }
         
         
-       
+        
         return cell;
         
         
     }
-    else if(index == 3){
+    else {
         
         DOCTimeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ddddd"];
         
@@ -219,7 +219,7 @@
             
             cell.leftButton.userInteractionEnabled = NO;
             cell.leftButton.hidden = YES;
-
+            
         }
         
         
@@ -227,30 +227,6 @@
         
         
     }
-    else{
-        
-        DOCAddCalCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-        
-        if (cell == nil) {
-            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"addCalCell" owner:self options:nil];
-            cell = [nib objectAtIndex:0];
-            
-            int days = [self daysBetween:[NSDate date] and:currentDate.myDate];
-            
-            if(days == 0 || days == 1)
-               cell.daysLabel.text = [NSString stringWithFormat:@"%d day", days];
-            else
-               cell.daysLabel.text = [NSString stringWithFormat:@"%d days", days];
-            
-            [cell.addCalButton addTarget:self action:@selector(addToCalender) forControlEvents:UIControlEventTouchUpInside];
-        }
-        
-        NSLog(@"3333333333");
-        return cell;
-        
-        
-    }
-    
 }
 
 - (int)daysBetween:(NSDate *)dt1 and:(NSDate *)dt2 {
@@ -338,78 +314,6 @@
     
     return timeString;
     
-    
-}
-
-- (void)addToCalender {
-    
-    
-    EKEventStore *eventStore = [[EKEventStore alloc] init];
-    
-    if([eventStore respondsToSelector:@selector(requestAccessToEntityType:completion:)]) {
-        // iOS 6 and later
-        [eventStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
-            if (granted){
-                //---- codes here when user allow your app to access theirs' calendar.
-                [self performCalendarActivity:eventStore];
-            }else
-            {
-                //----- codes here when user NOT allow your app to access the calendar.
-            }
-        }];
-    }
-    else {
-        //---- codes here for IOS < 6.0.
-        [self performCalendarActivity:eventStore];
-    }
-    
-}
-
-
--(void)performCalendarActivity:(EKEventStore*)eventStore{
-    NSLog(@"hahahahaha");
-    
-    DOCGlobalUtil *sharedInstance = [DOCGlobalUtil getSharedInstance];
-    DOCDoctor *currentDoc = sharedInstance.currentSelectedDoctor;
-    DOCDate *currentDate = sharedInstance.currentDate;
-
-    
-    EKEvent *event = [EKEvent eventWithEventStore:eventStore];
-    NSDate *date = currentDate.myDate;//today,s date
-    event.title = @"TABIBIN Reminder";//title for your remainder
-    event.notes = [NSString stringWithFormat:@"See doctor %@ at %@", currentDoc.doctorName, currentDoc.doctorAddress];
-    
-    event.startDate=date;//start time of your remainder
-    event.endDate = [[NSDate alloc] initWithTimeInterval:1800 sinceDate:event.startDate];//end time of your remainder
-    
-    NSTimeInterval interval = (60 *60)* -3 ;
-    EKAlarm *alarm = [EKAlarm alarmWithRelativeOffset:interval]; //Create object of alarm
-    
-    [event addAlarm:alarm]; //Add alarm to your event
-    
-    [event setCalendar:[eventStore defaultCalendarForNewEvents]];
-    NSError *err;
-    NSString *ical_event_id;
-    //save your event
-    
-    if([eventStore saveEvent:event span:EKSpanThisEvent error:&err]){
-        
-        ical_event_id = event.eventIdentifier;
-        NSLog(@"THE ID IS %@",ical_event_id);
-        
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error!"
-                                                        message:@"Failed to access your calendar, please add manually"
-                                                       delegate:nil
-                                              cancelButtonTitle:@"Dismiss"
-                                              otherButtonTitles:nil];
-        
-        [alert show];
-    }
-    else{
-        
-        [self performSegueWithIdentifier:@"GO_BACK_ORIGIN" sender:self];
-        
-    }
     
 }
 

@@ -126,6 +126,8 @@
 		FBCB50F117DC917E0099AA5C /* DOCSpecialityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCB50F017DC917E0099AA5C /* DOCSpecialityTableViewCell.m */; };
 		FBCBDDD717FC33DB00D241DE /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCBDDD617FC33DB00D241DE /* TestViewController.m */; };
 		FBCC165817FCB7FA001FAF9C /* DOCDate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCC165717FCB7FA001FAF9C /* DOCDate.m */; };
+		FBCC216F18201AEF009C3FA5 /* DOCViewNextBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCC216E18201AEF009C3FA5 /* DOCViewNextBookViewController.m */; };
+		FBCC217218201F79009C3FA5 /* DOCBookObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCC217118201F79009C3FA5 /* DOCBookObject.m */; };
 		FBCDA2E7180A9E1F00AF92BF /* menu_call.png in Resources */ = {isa = PBXBuildFile; fileRef = FBCDA2E6180A9E1F00AF92BF /* menu_call.png */; };
 		FBCDA2E9180AABC000AF92BF /* menu_forward.png in Resources */ = {isa = PBXBuildFile; fileRef = FBCDA2E8180AABC000AF92BF /* menu_forward.png */; };
 		FBCDA2EB180AAC1E00AF92BF /* dummy.png in Resources */ = {isa = PBXBuildFile; fileRef = FBCDA2EA180AAC1E00AF92BF /* dummy.png */; };
@@ -356,6 +358,10 @@
 		FBCBDDD617FC33DB00D241DE /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		FBCC165617FCB7FA001FAF9C /* DOCDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCDate.h; sourceTree = "<group>"; };
 		FBCC165717FCB7FA001FAF9C /* DOCDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCDate.m; sourceTree = "<group>"; };
+		FBCC216D18201AEF009C3FA5 /* DOCViewNextBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCViewNextBookViewController.h; sourceTree = "<group>"; };
+		FBCC216E18201AEF009C3FA5 /* DOCViewNextBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCViewNextBookViewController.m; sourceTree = "<group>"; };
+		FBCC217018201F79009C3FA5 /* DOCBookObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCBookObject.h; sourceTree = "<group>"; };
+		FBCC217118201F79009C3FA5 /* DOCBookObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCBookObject.m; sourceTree = "<group>"; };
 		FBCDA2E6180A9E1F00AF92BF /* menu_call.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_call.png; sourceTree = "<group>"; };
 		FBCDA2E8180AABC000AF92BF /* menu_forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_forward.png; sourceTree = "<group>"; };
 		FBCDA2EA180AAC1E00AF92BF /* dummy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dummy.png; sourceTree = "<group>"; };
@@ -837,6 +843,10 @@
 				FBCE8276181EB94700E68B5B /* previousBook.xib */,
 				FBCE827B181EBAD100E68B5B /* DOCPreviousBookCell.h */,
 				FBCE827C181EBAD100E68B5B /* DOCPreviousBookCell.m */,
+				FBCC216D18201AEF009C3FA5 /* DOCViewNextBookViewController.h */,
+				FBCC216E18201AEF009C3FA5 /* DOCViewNextBookViewController.m */,
+				FBCC217018201F79009C3FA5 /* DOCBookObject.h */,
+				FBCC217118201F79009C3FA5 /* DOCBookObject.m */,
 			);
 			name = history;
 			sourceTree = "<group>";
@@ -1099,6 +1109,7 @@
 				FBD9242B17F05EA5008FB24F /* UIColor+JSFlatButton.m in Sources */,
 				FBCB50B817DC81B70099AA5C /* main.m in Sources */,
 				A039187317E2FB1A00934DFA /* DOCDoctorGalleryCell.m in Sources */,
+				FBCC217218201F79009C3FA5 /* DOCBookObject.m in Sources */,
 				A0C5D89E17E74D1C00C311CE /* SDWebImageDecoder.m in Sources */,
 				A0C5D8A117E74D1C00C311CE /* SDWebImageManager.m in Sources */,
 				A0C5D87B17E74D0B00C311CE /* UIImageView+UIActivityIndicatorForSDWebImage.m in Sources */,
@@ -1138,6 +1149,7 @@
 				A0C5D89B17E74D1C00C311CE /* NSData+GIF.m in Sources */,
 				FBD05BF8180E3EB100C2FD70 /* DOCBookTwoController.m in Sources */,
 				A00F364517DCC0BE00BD0467 /* DOCDoctor.m in Sources */,
+				FBCC216F18201AEF009C3FA5 /* DOCViewNextBookViewController.m in Sources */,
 				A0C5D8A617E74D1C00C311CE /* UIImage+WebP.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -26,9 +26,12 @@ static DOCGlobalUtil *sharedInstance;
 +(id)getSharedInstance{
     
     if(sharedInstance == NULL){
+        
         sharedInstance = [[DOCGlobalUtil alloc] init];
         sharedInstance.firstTimeLaunch = YES;
+        
     }
+    
     
     return sharedInstance;
     
