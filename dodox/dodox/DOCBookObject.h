@@ -14,4 +14,8 @@
 @property int doctorID;
 @property DOCDate *bookDate;
 
+
+- (NSComparisonResult)compare:(DOCBookObject *)otherObject;
+
+
 @end

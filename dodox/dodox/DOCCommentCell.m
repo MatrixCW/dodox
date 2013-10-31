@@ -1,13 +1,14 @@
 //
-//  DOCPreviousBookCell.m
+//  DOCCommentCell.m
 //  docxor
 //
-//  Created by Cui Wei on 10/28/13.
+//  Created by Cui Wei on 31/10/13.
 //  Copyright (c) 2013 Cui Wei. All rights reserved.
 //
 
-#import "DOCPreviousBookCell.h"
-@implementation DOCPreviousBookCell
+#import "DOCCommentCell.h"
+
+@implementation DOCCommentCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

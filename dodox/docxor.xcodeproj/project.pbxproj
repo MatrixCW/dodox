@@ -101,6 +101,14 @@
 		FB1CCEDA18072FDC005348F8 /* star_none.png in Resources */ = {isa = PBXBuildFile; fileRef = FB1CCED818072FDC005348F8 /* star_none.png */; };
 		FB1CCEDD18073272005348F8 /* star_gold_half.png in Resources */ = {isa = PBXBuildFile; fileRef = FB1CCEDB18073272005348F8 /* star_gold_half.png */; };
 		FB1CCEDE18073272005348F8 /* star_none_half.png in Resources */ = {isa = PBXBuildFile; fileRef = FB1CCEDC18073272005348F8 /* star_none_half.png */; };
+		FB8017AA1822AD5600417B02 /* rateDoctor.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB8017A91822AD5600417B02 /* rateDoctor.xib */; };
+		FB8017AC1822AD6600417B02 /* commentDoctor.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB8017AB1822AD6600417B02 /* commentDoctor.xib */; };
+		FB8017AE1822AD7600417B02 /* rateButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB8017AD1822AD7600417B02 /* rateButton.xib */; };
+		FB8017B41822B24F00417B02 /* DOCViewPreviousBooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8017B31822B24F00417B02 /* DOCViewPreviousBooksViewController.m */; };
+		FB8017B61822B31600417B02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB8017B51822B31600417B02 /* Main.storyboard */; };
+		FB8017B91822B57A00417B02 /* DOCRateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8017B81822B57A00417B02 /* DOCRateCell.m */; };
+		FB8017BC1822B5A000417B02 /* DOCCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8017BB1822B5A000417B02 /* DOCCommentCell.m */; };
+		FB8017BF1822B5B200417B02 /* DOCRateButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8017BE1822B5B200417B02 /* DOCRateButtonCell.m */; };
 		FBCB497718004706007D17A8 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCB497618004706007D17A8 /* EventKit.framework */; };
 		FBCB497B180056E3007D17A8 /* ViewBookingHistory.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBCB497A180056E3007D17A8 /* ViewBookingHistory.xib */; };
 		FBCB497E18005950007D17A8 /* DOCViewHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCB497D18005950007D17A8 /* DOCViewHistoryViewController.m */; };
@@ -111,7 +119,6 @@
 		FBCB50B617DC81B70099AA5C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FBCB50B417DC81B70099AA5C /* InfoPlist.strings */; };
 		FBCB50B817DC81B70099AA5C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCB50B717DC81B70099AA5C /* main.m */; };
 		FBCB50BC17DC81B70099AA5C /* DOCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCB50BB17DC81B70099AA5C /* DOCAppDelegate.m */; };
-		FBCB50BF17DC81B70099AA5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBCB50BD17DC81B70099AA5C /* Main.storyboard */; };
 		FBCB50C217DC81B70099AA5C /* DOCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCB50C117DC81B70099AA5C /* DOCViewController.m */; };
 		FBCB50C417DC81B70099AA5C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBCB50C317DC81B70099AA5C /* Images.xcassets */; };
 		FBCB50CB17DC81B70099AA5C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCB50CA17DC81B70099AA5C /* XCTest.framework */; };
@@ -321,6 +328,18 @@
 		FB1CCED818072FDC005348F8 /* star_none.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_none.png; sourceTree = "<group>"; };
 		FB1CCEDB18073272005348F8 /* star_gold_half.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_gold_half.png; sourceTree = "<group>"; };
 		FB1CCEDC18073272005348F8 /* star_none_half.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_none_half.png; sourceTree = "<group>"; };
+		FB8017A91822AD5600417B02 /* rateDoctor.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = rateDoctor.xib; sourceTree = "<group>"; };
+		FB8017AB1822AD6600417B02 /* commentDoctor.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = commentDoctor.xib; sourceTree = "<group>"; };
+		FB8017AD1822AD7600417B02 /* rateButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = rateButton.xib; sourceTree = "<group>"; };
+		FB8017B21822B24F00417B02 /* DOCViewPreviousBooksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCViewPreviousBooksViewController.h; sourceTree = "<group>"; };
+		FB8017B31822B24F00417B02 /* DOCViewPreviousBooksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCViewPreviousBooksViewController.m; sourceTree = "<group>"; };
+		FB8017B51822B31600417B02 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		FB8017B71822B57A00417B02 /* DOCRateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCRateCell.h; sourceTree = "<group>"; };
+		FB8017B81822B57A00417B02 /* DOCRateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCRateCell.m; sourceTree = "<group>"; };
+		FB8017BA1822B5A000417B02 /* DOCCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCCommentCell.h; sourceTree = "<group>"; };
+		FB8017BB1822B5A000417B02 /* DOCCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCCommentCell.m; sourceTree = "<group>"; };
+		FB8017BD1822B5B100417B02 /* DOCRateButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCRateButtonCell.h; sourceTree = "<group>"; };
+		FB8017BE1822B5B200417B02 /* DOCRateButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOCRateButtonCell.m; sourceTree = "<group>"; };
 		FBCB497618004706007D17A8 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		FBCB497A180056E3007D17A8 /* ViewBookingHistory.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewBookingHistory.xib; sourceTree = "<group>"; };
 		FBCB497C18005950007D17A8 /* DOCViewHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOCViewHistoryViewController.h; sourceTree = "<group>"; };
@@ -337,7 +356,6 @@
 		FBCB50B917DC81B70099AA5C /* docxor-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "docxor-Prefix.pch"; sourceTree = "<group>"; };
 		FBCB50BA17DC81B70099AA5C /* DOCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DOCAppDelegate.h; sourceTree = "<group>"; };
 		FBCB50BB17DC81B70099AA5C /* DOCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DOCAppDelegate.m; sourceTree = "<group>"; };
-		FBCB50BE17DC81B70099AA5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FBCB50C017DC81B70099AA5C /* DOCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DOCViewController.h; sourceTree = "<group>"; };
 		FBCB50C117DC81B70099AA5C /* DOCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DOCViewController.m; sourceTree = "<group>"; };
 		FBCB50C317DC81B70099AA5C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -555,10 +573,10 @@
 		A00F364917DCC37F00BD0467 /* Auto-generated */ = {
 			isa = PBXGroup;
 			children = (
+				FB8017B51822B31600417B02 /* Main.storyboard */,
 				FBCB50BA17DC81B70099AA5C /* DOCAppDelegate.h */,
 				FBCB50BB17DC81B70099AA5C /* DOCAppDelegate.m */,
 				FBCB50C017DC81B70099AA5C /* DOCViewController.h */,
-				FBCB50BD17DC81B70099AA5C /* Main.storyboard */,
 				FBCBDDD517FC33DB00D241DE /* TestViewController.h */,
 				FBCBDDD617FC33DB00D241DE /* TestViewController.m */,
 				FBCB50C117DC81B70099AA5C /* DOCViewController.m */,
@@ -682,6 +700,39 @@
 				FB1CCECD1806EDCD005348F8 /* AvenirNext.ttc */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		FB8017A71822AD0E00417B02 /* next books */ = {
+			isa = PBXGroup;
+			children = (
+				FBCC216D18201AEF009C3FA5 /* DOCViewNextBookViewController.h */,
+				FBCC216E18201AEF009C3FA5 /* DOCViewNextBookViewController.m */,
+				FBCE8274181EB93A00E68B5B /* nextBook.xib */,
+				FBCE8278181EB9FA00E68B5B /* DOCNextBookCell.h */,
+				FBCE8279181EB9FA00E68B5B /* DOCNextBookCell.m */,
+			);
+			name = "next books";
+			sourceTree = "<group>";
+		};
+		FB8017A81822AD2800417B02 /* previous books */ = {
+			isa = PBXGroup;
+			children = (
+				FBCE8276181EB94700E68B5B /* previousBook.xib */,
+				FBCE827B181EBAD100E68B5B /* DOCPreviousBookCell.h */,
+				FBCE827C181EBAD100E68B5B /* DOCPreviousBookCell.m */,
+				FB8017A91822AD5600417B02 /* rateDoctor.xib */,
+				FB8017B71822B57A00417B02 /* DOCRateCell.h */,
+				FB8017B81822B57A00417B02 /* DOCRateCell.m */,
+				FB8017AB1822AD6600417B02 /* commentDoctor.xib */,
+				FB8017BA1822B5A000417B02 /* DOCCommentCell.h */,
+				FB8017BB1822B5A000417B02 /* DOCCommentCell.m */,
+				FB8017AD1822AD7600417B02 /* rateButton.xib */,
+				FB8017BD1822B5B100417B02 /* DOCRateButtonCell.h */,
+				FB8017BE1822B5B200417B02 /* DOCRateButtonCell.m */,
+				FB8017B21822B24F00417B02 /* DOCViewPreviousBooksViewController.h */,
+				FB8017B31822B24F00417B02 /* DOCViewPreviousBooksViewController.m */,
+			);
+			name = "previous books";
 			sourceTree = "<group>";
 		};
 		FBCB4979180056C2007D17A8 /* view booking history */ = {
@@ -835,16 +886,10 @@
 		FBCE826D181EB18300E68B5B /* history */ = {
 			isa = PBXGroup;
 			children = (
+				FB8017A81822AD2800417B02 /* previous books */,
+				FB8017A71822AD0E00417B02 /* next books */,
 				FBCE8271181EB6A100E68B5B /* DOCHistoryViewController.h */,
 				FBCE8272181EB6A100E68B5B /* DOCHistoryViewController.m */,
-				FBCE8274181EB93A00E68B5B /* nextBook.xib */,
-				FBCE8278181EB9FA00E68B5B /* DOCNextBookCell.h */,
-				FBCE8279181EB9FA00E68B5B /* DOCNextBookCell.m */,
-				FBCE8276181EB94700E68B5B /* previousBook.xib */,
-				FBCE827B181EBAD100E68B5B /* DOCPreviousBookCell.h */,
-				FBCE827C181EBAD100E68B5B /* DOCPreviousBookCell.m */,
-				FBCC216D18201AEF009C3FA5 /* DOCViewNextBookViewController.h */,
-				FBCC216E18201AEF009C3FA5 /* DOCViewNextBookViewController.m */,
 				FBCC217018201F79009C3FA5 /* DOCBookObject.h */,
 				FBCC217118201F79009C3FA5 /* DOCBookObject.m */,
 			);
@@ -1018,11 +1063,13 @@
 				FBEFFB8818141D67001188F7 /* button_confirm_active.png in Resources */,
 				A00F363117DCB85300BD0467 /* StarEmpty@2x.png in Resources */,
 				FBD05C1F180E865700C2FD70 /* button_addtocal_active.png in Resources */,
+				FB8017AE1822AD7600417B02 /* rateButton.xib in Resources */,
 				FBD05C15180E73BC00C2FD70 /* booktwotimeslot.xib in Resources */,
 				A00F360C17DCA8DE00BD0467 /* cardiologist.jpg in Resources */,
 				A00F363717DCB85300BD0467 /* StarFullLarge@2x.png in Resources */,
 				FBD05BFE180E405D00C2FD70 /* simpledoctor.xib in Resources */,
 				A039186717E2200900934DFA /* DoctorSpecificsTableViewCellDescription.xib in Resources */,
+				FB8017AC1822AD6600417B02 /* commentDoctor.xib in Resources */,
 				FBCB50EC17DC88880099AA5C /* dentist.jpg in Resources */,
 				A00F361617DCA90000BD0467 /* chiropracter.jpg in Resources */,
 				FB1CCEC21806DA12005348F8 /* cover1iphone4.png in Resources */,
@@ -1036,6 +1083,7 @@
 				FBCB50C417DC81B70099AA5C /* Images.xcassets in Resources */,
 				A039186317E21FA500934DFA /* DoctorSpecificsTableViewCellLocation.xib in Resources */,
 				A00F363217DCB85300BD0467 /* StarEmptyLarge.png in Resources */,
+				FB8017AA1822AD5600417B02 /* rateDoctor.xib in Resources */,
 				FB1CCEC01806DA12005348F8 /* cover2iphone5.png in Resources */,
 				A00F363517DCB85300BD0467 /* StarFull@2x.png in Resources */,
 				FBD05C04180E43C800C2FD70 /* confirmcell.xib in Resources */,
@@ -1049,6 +1097,7 @@
 				FBCDA2EF180AAF7E00AF92BF /* button_red_active.png in Resources */,
 				A00F361417DCA90000BD0467 /* psychologist.jpg in Resources */,
 				FB05891617F16CE50023B254 /* back.png in Resources */,
+				FB8017B61822B31600417B02 /* Main.storyboard in Resources */,
 				A039188D17E73FE100934DFA /* clinic.JPG in Resources */,
 				FBCDA2E9180AABC000AF92BF /* menu_forward.png in Resources */,
 				FB1CCEC71806EA02005348F8 /* menu_location.png in Resources */,
@@ -1057,7 +1106,6 @@
 				FB1CCEC11806DA12005348F8 /* cover2iphone4.png in Resources */,
 				4BDE1C2517E8CD9F00001517 /* SVProgressHUD.bundle in Resources */,
 				FBCB50EE17DC90140099AA5C /* SpecialityTableViewCell.xib in Resources */,
-				FBCB50BF17DC81B70099AA5C /* Main.storyboard in Resources */,
 				FBD5C91217F33E3800E3E3DA /* greenleftarrow.png in Resources */,
 				FBD49FDC180DA785008852C4 /* button_continue_active.png in Resources */,
 				A00F363317DCB85300BD0467 /* StarEmptyLarge@2x.png in Resources */,
@@ -1086,6 +1134,7 @@
 				A0C5D8A217E74D1C00C311CE /* SDWebImagePrefetcher.m in Sources */,
 				A0C5D89A17E74D1C00C311CE /* MKAnnotationView+WebCache.m in Sources */,
 				4BDE1C2617E8CD9F00001517 /* SVProgressHUD.m in Sources */,
+				FB8017BC1822B5A000417B02 /* DOCCommentCell.m in Sources */,
 				FBCE827A181EB9FA00E68B5B /* DOCNextBookCell.m in Sources */,
 				FBD05C10180E44E800C2FD70 /* DOCTimeCell.m in Sources */,
 				FBCB497E18005950007D17A8 /* DOCViewHistoryViewController.m in Sources */,
@@ -1104,6 +1153,7 @@
 				A00F367317DD959400BD0467 /* AFHTTPClient.m in Sources */,
 				A0C5D89F17E74D1C00C311CE /* SDWebImageDownloader.m in Sources */,
 				A0C5D89D17E74D1C00C311CE /* SDWebImageCompat.m in Sources */,
+				FB8017B41822B24F00417B02 /* DOCViewPreviousBooksViewController.m in Sources */,
 				A00F367817DD959500BD0467 /* AFPropertyListRequestOperation.m in Sources */,
 				FBD9242C17F05EA5008FB24F /* UIImage+JSFlatButton.m in Sources */,
 				FBD9242B17F05EA5008FB24F /* UIColor+JSFlatButton.m in Sources */,
@@ -1135,9 +1185,11 @@
 				FBCE827D181EBAD100E68B5B /* DOCPreviousBookCell.m in Sources */,
 				A00F363A17DCB86A00BD0467 /* DYRateView.m in Sources */,
 				A00F367417DD959400BD0467 /* AFHTTPRequestOperation.m in Sources */,
+				FB8017BF1822B5B200417B02 /* DOCRateButtonCell.m in Sources */,
 				FBD49FDF180DA7DF008852C4 /* DOCPICell.m in Sources */,
 				A0C5D89C17E74D1C00C311CE /* SDImageCache.m in Sources */,
 				FBD9242A17F05EA5008FB24F /* JSFlatButton.m in Sources */,
+				FB8017B91822B57A00417B02 /* DOCRateCell.m in Sources */,
 				FBD05C22180E87F000C2FD70 /* DOCAddCalCell.m in Sources */,
 				A00F367617DD959400BD0467 /* AFJSONRequestOperation.m in Sources */,
 				FBD05C0D180E44DA00C2FD70 /* DOCLocationCell.m in Sources */,
@@ -1179,14 +1231,6 @@
 				FBCB50B517DC81B70099AA5C /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		FBCB50BD17DC81B70099AA5C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FBCB50BE17DC81B70099AA5C /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		FBCB50D317DC81B70099AA5C /* InfoPlist.strings */ = {

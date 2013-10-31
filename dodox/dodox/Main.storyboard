@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="aTf-vp-PGO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A2093" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="aTf-vp-PGO">
     <dependencies>
         <development version="5000" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
     </dependencies>
     <scenes>
         <!--View Next Book View Controller-->
@@ -50,7 +50,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dXg-JC-BYK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1641" y="-2389"/>
+            <point key="canvasLocation" x="1753" y="-3185"/>
         </scene>
         <!--Select Doctor View Controller-->
         <scene sceneID="zB1-6t-CPx">
@@ -269,6 +269,53 @@
             </objects>
             <point key="canvasLocation" x="2101" y="-532"/>
         </scene>
+        <!--View Previous Books View Controller-->
+        <scene sceneID="gzv-kT-ib0">
+            <objects>
+                <viewController id="rGu-aK-RUs" customClass="DOCViewPreviousBooksViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="q1g-64-Lj4"/>
+                        <viewControllerLayoutGuide type="bottom" id="bdz-jf-1qt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xBt-6f-uS7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gd0-Ut-Y4I">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tsV-c2-dgt">
+                                <rect key="frame" x="7" y="40" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" backgroundImage="menu_back.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Nu9-WZ-8pE" kind="custom" customClass="DOCLeftToRightSegue" id="K2N-sn-Fvf"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="zuW-uj-bSJ">
+                                <rect key="frame" x="0.0" y="68" width="320" height="412"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="s6x-tf-Zzs"/>
+                    <connections>
+                        <outlet property="rateTable" destination="zuW-uj-bSJ" id="8Or-sM-JkW"/>
+                        <outlet property="rateTitle" destination="Gd0-Ut-Y4I" id="4R5-GV-K91"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OrW-K8-fGl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1787" y="-2496"/>
+        </scene>
         <!--Book Three View Controller-->
         <scene sceneID="mmu-wq-fRJ">
             <objects>
@@ -337,11 +384,11 @@
                         <viewControllerLayoutGuide type="bottom" id="n00-1L-IgO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4Dy-bu-alf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="436"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="OGE-ii-bEj">
-                                <rect key="frame" x="0.0" y="68" width="320" height="368"/>
+                                <rect key="frame" x="0.0" y="68" width="320" height="412"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
@@ -552,11 +599,12 @@
                         <outlet property="dataTable" destination="al0-Hp-PyX" id="Kb2-IL-ZFW"/>
                         <outlet property="titleLabel" destination="HYV-Nm-kof" id="gSd-7w-JLU"/>
                         <segue destination="VHk-Fz-sjb" kind="push" identifier="HISTORY_NEXT_BOOK" id="hNM-C2-S68"/>
+                        <segue destination="rGu-aK-RUs" kind="push" identifier="HOSTORY_TO_PREVIOUS" id="BfF-X6-uvo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nao-fE-G3W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="971" y="-2339"/>
+            <point key="canvasLocation" x="1101" y="-2415"/>
         </scene>
         <!--Test View Controller-->
         <scene sceneID="ojU-Zc-h6s">
@@ -674,7 +722,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="n9S-td-NuV"/>
+        <segue reference="K2N-sn-Fvf"/>
         <segue reference="yFt-hB-ZgM"/>
         <segue reference="2oK-4x-KL9"/>
         <segue reference="eLO-Te-jeC"/>

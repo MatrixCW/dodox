@@ -10,4 +10,11 @@
 
 @implementation DOCBookObject
 
+
+- (NSComparisonResult)compare:(DOCBookObject *)otherObject{
+    
+    return [self.bookDate.myDate compare:otherObject.bookDate.myDate];
+    
+}
+
 @end
